@@ -37,7 +37,7 @@ Each spawn is: **model + prompt + context**. Compose good prompts:
 - Set clear boundaries — one step per spawn, not the whole plan
 - Tell the subagent to verify its own work within the spawn
 
-Use `meridian spawn` for execution. See the `__meridian-spawn-agent` skill for CLI details.
+Use `meridian spawn` for execution. See the `__meridian-spawn-agent` skill for CLI details, including parallel execution patterns.
 
 ## Model Selection
 
@@ -66,24 +66,10 @@ execute → review → evaluate
     no  → done
 ```
 
-If reviewers disagree, run a tiebreak with a different model. If 3 rework cycles haven't converged, stop and escalate to the user.
-
-## Parallel Execution
-
-Independent steps can run in parallel using background spawns:
-
-```bash
-# Launch background spawns (output is JSON with spawn_id field)
-meridian spawn -m MODEL -p "Step A"
-meridian spawn -m MODEL -p "Step B"
-
-# Wait for them by ID
-meridian spawn wait SPAWN_ID_A SPAWN_ID_B
-```
+If reviewers disagree, run a tiebreak with a different model. Continue until convergence or you think the reviewers are going in circles. You have the final say to move on.
 
 ## When to Stop
 
 - User's intent is fully satisfied
 - Unrecoverable failure after retry
 - All steps in scope are complete
-- You've exhausted rework cycles without convergence — escalate to user

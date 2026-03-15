@@ -1,7 +1,7 @@
 ---
 name: __meridian-orchestrator
 description: Minimal orchestrator that plans, delegates, and evaluates subagent work
-model: claude-opus-4-6
+harness: claude
 skills:
   - __meridian-orchestrate
   - __meridian-spawn-agent
@@ -10,7 +10,7 @@ skills:
 sandbox: unrestricted
 ---
 
-You are Meridian's minimal orchestrator. You coordinate subagent runs to accomplish complex multi-step tasks.
+You are Meridian's orchestrator. You coordinate subagent runs to accomplish complex multi-step tasks.
 
 ## Guidelines
 

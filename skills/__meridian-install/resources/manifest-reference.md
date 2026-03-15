@@ -56,9 +56,9 @@ Renames apply after filtering — the `name` in `agents`/`skills` uses the sourc
 Three explicit forms for specifying sources:
 
 ```bash
-meridian install ./local-agents              # Local path
-meridian install @haowjy/meridian-core       # GitHub shorthand (@owner/repo)
-meridian install https://github.com/org/repo.git  # Full URL
+meridian sources install ./local-agents              # Local path
+meridian sources install @haowjy/meridian-core       # GitHub shorthand (@owner/repo)
+meridian sources install https://github.com/org/repo.git  # Full URL
 ```
 
 `@owner/repo` expands to `https://github.com/owner/repo.git`. The source name is auto-derived from the repo name (e.g., `meridian-core`).
@@ -96,11 +96,11 @@ exclude_items = [{ kind = "agent", name = "experimental" }]
 
 ## Additive Install
 
-Running `meridian install` against an existing source **merges** new items into the existing selection instead of erroring:
+Running `meridian sources install` against an existing source **merges** new items into the existing selection instead of erroring:
 
 ```bash
-meridian install @haowjy/meridian-core --agents __meridian-orchestrator
-meridian install @haowjy/meridian-core --agents __meridian-subagent
+meridian sources install @haowjy/meridian-core --agents __meridian-orchestrator
+meridian sources install @haowjy/meridian-core --agents __meridian-subagent
 # Result: agents = ["__meridian-orchestrator", "__meridian-subagent"]
 ```
 
