@@ -114,13 +114,22 @@ Work items are directories under `.meridian/work/<slug>/` — they can hold desi
 
 ## Parallel Spawns
 
-Launch independent spawns in the background, then wait for all:
+Use your harness's native background execution to run multiple spawns concurrently. Each spawn runs in foreground (blocking), but your harness runs them in parallel:
 
 ```bash
+# Launch these concurrently using your harness's background/parallel feature
 meridian spawn -a agent -p "Step A" --desc "Step A"
 meridian spawn -a agent -p "Step B" --desc "Step B"
 
-# Read both returned spawn_ids from the JSON results, then wait for both.
+# Each returns when its spawn completes — no need for spawn wait.
+```
+
+If your harness doesn't support parallel execution, use `--background` and `spawn wait`:
+
+```bash
+meridian spawn --background -a agent -p "Step A" --desc "Step A"
+meridian spawn --background -a agent -p "Step B" --desc "Step B"
+# Read spawn_ids from JSON results, then wait for both
 meridian spawn wait p108 p109
 ```
 
