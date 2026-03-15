@@ -71,12 +71,12 @@ meridian install https://github.com/org/repo.git  # Full URL
 # Skill deps (__meridian-orchestrate, __meridian-spawn-agent) are
 # auto-resolved from agent frontmatter.
 [[sources]]
-name = "meridian-agents"
+name = "meridian-base"
 kind = "git"
-url = "https://github.com/haowjy/meridian-agents.git"
+url = "https://github.com/haowjy/meridian-base.git"
 ref = "main"
 agents = ["__meridian-orchestrator", "__meridian-subagent"]
-skills = ["__meridian-orchestrate", "__meridian-spawn-agent", "__meridian-managed-install"]
+skills = ["__meridian-orchestrate", "__meridian-spawn-agent", "install"]
 
 # Team-shared agents pinned to a release tag.
 [[sources]]

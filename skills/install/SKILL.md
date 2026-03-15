@@ -1,5 +1,5 @@
 ---
-name: __meridian-managed-install
+name: install
 description: Managed install system for syncing agent profiles and skills from external sources (git repos, local paths) into .agents/. Use this whenever you need to install, update, uninstall, or list managed sources of agents or skills, check install drift with `meridian status`, understand the agents.toml manifest or agents.lock file, troubleshoot missing agents/skills, set up a freshly cloned repo, or share agents across projects. Also use this when the user mentions syncing, installing, or managing agent sources — even if they don't say "install" explicitly.
 ---
 

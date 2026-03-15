@@ -63,19 +63,13 @@ The key rule is:
 
 Keep the current phase visible with `meridian work update --status ...`.
 
-Recommended lifecycle:
-
-```text
-designing -> reviewing -> planning -> implementing -> done
-```
+Status values are free-form strings. Use whatever vocabulary fits your workflow — the system does not enforce a specific lifecycle.
 
 Typical commands:
 
 ```bash
 meridian work start "auth refactor"
 meridian work update auth-refactor --status designing
-meridian work update auth-refactor --status reviewing
-meridian work update auth-refactor --status planning
 meridian work update auth-refactor --status implementing
 meridian work done auth-refactor
 meridian work reopen auth-refactor
@@ -93,13 +87,7 @@ echo "$MERIDIAN_WORK_DIR"
 # .meridian/work/auth-refactor/
 ```
 
-Use `$MERIDIAN_WORK_DIR` for work-specific coordination artifacts such as:
-
-- `overview.md`
-- `decision-log.md`
-- `implementation-log.md`
-- `plan/phase-N-slug.md`
-- ad hoc notes, diagrams, and phase-local scratch files
+Use `$MERIDIAN_WORK_DIR` for work-specific coordination artifacts — design docs, decision logs, implementation notes, phase plans, and ad hoc scratch files.
 
 Use `.meridian/fs/` for broader shared reference material that is not specific to one work item, such as:
 
@@ -110,32 +98,4 @@ Use `.meridian/fs/` for broader shared reference material that is not specific t
 If a file mainly exists to help one work item move forward, keep it in `$MERIDIAN_WORK_DIR`.
 If it is shared project context across multiple work items, put it in `.meridian/fs/`.
 
-## Standard Work Artifacts
-
-Unless the task is trivial, the orchestrator should keep these artifacts under `$MERIDIAN_WORK_DIR`:
-
-- `overview.md`
-  - current design/approach
-- `decision-log.md`
-  - append-only design and planning decisions
-- `implementation-log.md`
-  - append-only findings, deferred issues, and coordination notes during execution
-- `plan/`
-  - per-phase specs when the work needs decomposition
-
-These are conventions, not mandatory ceremony. Scale the artifact set to the size of the task.
-
-## Handing Off To Other Skills
-
-This skill owns work policy. Other skills own their craft:
-
-- `design`
-  - how to collaborate with the user on architecture and write design artifacts
-- `plan-implementation`
-  - how to decompose the design into phases
-- `dev-workflow`
-  - how to run the phase loop and staff agents
-- `issue-tracking`
-  - how to mirror findings into GitHub Issues
-
-Those skills should assume the work item is already attached and should use the artifact placement rules from this skill rather than redefining them.
+Other installed skills may extend this workflow with domain-specific methodology, artifacts, and phase conventions.
