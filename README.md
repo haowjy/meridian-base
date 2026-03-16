@@ -20,12 +20,13 @@ Meridian discovers this repo by layout convention. No source manifest is require
 | `__meridian-orchestrator` | opus | Multi-step orchestrator with work coordination |
 | `__meridian-subagent` | (default) | Default execution agent for scoped tasks |
 
-### Skills (5)
+### Skills (6)
 
 | Skill | Purpose |
 |---|---|
 | `__meridian-orchestrate` | Supervisor methodology — planning, delegation, review cycles, model selection |
 | `__meridian-spawn-agent` | CLI reference for `meridian spawn`, work items, parallel execution |
+| `__meridian-session-context` | Session context mining — reading transcripts, searching decisions, discovering sessions per work item |
 | `__meridian-work-coordination` | Work item lifecycle, artifact placement, status management |
 | `__meridian-install` | Managed install system — syncing agents/skills from external sources |
 | `__meridian-troubleshoot` | Diagnostics, common failure patterns, state recovery |
