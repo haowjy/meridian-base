@@ -63,8 +63,7 @@ You never need to think about this unless you're debugging install issues.
 ## Install
 
 ```bash
-meridian sources add @haowjy/meridian-base
-meridian sources install
+meridian sources install @haowjy/meridian-base
 ```
 
 ## Layout
