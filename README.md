@@ -17,8 +17,8 @@ Meridian discovers this repo by layout convention. No source manifest is require
 
 | Agent | Model | Purpose |
 |---|---|---|
-| `__meridian-orchestrator` | opus | Multi-step orchestrator with work coordination |
-| `__meridian-subagent` | (default) | Default execution agent for scoped tasks |
+| `__meridian-orchestrator` | (default) | Multi-step orchestrator with work coordination |
+| `__meridian-subagent` | gpt-5.3-codex | Default execution agent for scoped tasks |
 
 ### Skills (6)
 
@@ -38,14 +38,8 @@ Meridian auto-installs `__meridian-orchestrator` and `__meridian-subagent` (plus
 ## Install
 
 ```bash
-meridian install @haowjy/meridian-base
-```
-
-Or selectively:
-
-```bash
-meridian install @haowjy/meridian-base --agents __meridian-orchestrator
-# skill deps auto-resolved from agent frontmatter
+meridian sources add @haowjy/meridian-base
+meridian sources install
 ```
 
 ## See Also
