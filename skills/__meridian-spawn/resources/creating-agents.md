@@ -60,7 +60,13 @@ Run tests and type checks after making changes. Commit after each passing step.
 | `skills` | string[] | no | Skills to load for this agent |
 | `sandbox` | string | no | Permission tier: `read-only`, `workspace-write`, `full-access`, `unrestricted` |
 | `tools` | string[] | no | Explicit tool allowlist (permission-required tools for Claude/OpenCode `-p` mode) |
-| `mcp_tools` | string[] | no | MCP tools to expose |
+| `mcp-tools` | string[] | no | MCP tools to expose |
+
+Example frontmatter field:
+
+```yaml
+mcp-tools: [fetch, filesystem]
+```
 
 ## Body
 
@@ -81,12 +87,9 @@ meridian sources list   # shows installed agents and skills
 
 ## Search Paths
 
-Meridian looks for agent profiles in this order:
+At runtime, Meridian reads agent profiles from `.agents/agents/` only.
 
-1. `.agents/agents/` (repo-local)
-2. Meridian's bundled defaults (`__meridian-orchestrator`, `__meridian-subagent`)
-
-Repo-local profiles take precedence over bundled ones with the same name.
+Bundled agents are installed/bootstrapped into that directory (for example via auto-bootstrap or `meridian sources update`), so they appear as normal local profiles.
 
 ## Tips
 
