@@ -57,6 +57,7 @@ Run tests and type checks after making changes. Commit after each passing step.
 | `name` | string | yes | Profile identifier, used with `-a` |
 | `description` | string | yes | Short description of the agent's role |
 | `model` | string | no | Default model (can be overridden with `-m`) |
+| `effort` | string | no | Effort level for reasoning: low, medium, high, xhigh |
 | `skills` | string[] | no | Skills to load for this agent |
 | `sandbox` | string | no | Permission tier: `read-only`, `workspace-write`, `full-access`, `unrestricted` |
 | `tools` | string[] | no | Explicit tool allowlist (permission-required tools for Claude/OpenCode `-p` mode) |
