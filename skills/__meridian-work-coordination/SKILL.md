@@ -18,8 +18,8 @@ meridian work switch descriptive-name    # attach to existing
 
 ```bash
 meridian work                    # dashboard — what's in flight
-meridian work list               # list all work items
-meridian work list --active      # hide done items
+meridian work list               # list active work items
+meridian work list --done        # list done/archived items
 meridian work show auth-refactor # drill into one work item
 ```
 
@@ -32,9 +32,11 @@ meridian work update auth-refactor --status designing
 meridian work update auth-refactor --status implementing
 meridian work done auth-refactor
 meridian work reopen auth-refactor
+meridian work delete stale-item          # remove empty work items
+meridian work delete old-item --force    # remove even if it has artifacts
 ```
 
-`work done` archives the work directory. `work reopen` restores it.
+`work done` archives the work directory. `work reopen` restores it. `work delete` removes the work item entirely — requires `--force` if it has artifacts.
 
 ## Artifact Placement
 
