@@ -95,7 +95,7 @@ Bundled agents are installed/bootstrapped into that directory (for example via a
 ## Tips
 
 - **One role per profile.** Mixing review and implementation in one agent creates conflicts of interest and bloats the system prompt, diluting both sets of instructions.
-- **Model choice matters.** Strong reasoning models (opus, gpt-5.4) for review and architecture. Fast models (codex, sonnet) for implementation and bulk work.
+- **Model choice matters.** Match model strength to task value — strong reasoning models for review and architecture, fast models for implementation and bulk work. Run `meridian models list` for current options.
 - **Permissions scope risk.** Use `read-only` for analysis, `workspace-write` for implementation, `full-access` only when needed.
 - **Tools enable `-p` mode.** Without `tools:`, Claude agents can't use permission-required tools (Bash, Write, Edit, WebSearch, etc.) in non-interactive mode. Only list tools that need permission — Read, Glob, Grep, and Agent are always available.
 - **Skills are optional.** Most task agents don't need skills — they get their instructions from the prompt. Skills are for agents that need to coordinate (orchestrators) or follow specific workflows.
