@@ -48,21 +48,20 @@ orchestrator's system prompt so the agent knows how to use meridian's CLI.
 | `__meridian-spawn` | The `meridian spawn` CLI — launching, waiting, parallel execution, reading reports |
 | `__meridian-work-coordination` | Work item lifecycle — creating, switching, updating status, placing artifacts |
 | `__meridian-session-context` | Mining past sessions — reading transcripts, searching decisions, finding related work |
-| `__meridian-install` | Managing agent/skill sources — installing, updating, resolving dependencies |
+| `__mars` | Agent package management via the `mars` CLI — installing, syncing, linking, validating |
 | `__meridian-diagnostics` | Diagnosing problems — failed spawns, corrupt state, harness issues |
 
 ## Bootstrap
 
 Meridian auto-installs the orchestrator, subagent, and their skill dependencies
-when they're missing locally. This repo is the well-known bootstrap source — if
-no provenance is found, Meridian adds it to `agents.toml` automatically.
+when they're missing locally. This repo is the well-known bootstrap source.
 
 You never need to think about this unless you're debugging install issues.
 
 ## Install
 
 ```bash
-meridian sources install @haowjy/meridian-base
+mars add haowjy/meridian-base
 ```
 
 ## Layout

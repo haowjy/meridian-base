@@ -83,14 +83,14 @@ meridian spawn -a reviewer -p "Review the auth changes"
 meridian spawn -a reviewer -m sonnet -p "Quick review"
 
 # List available profiles
-meridian sources list   # shows installed agents and skills
+mars list               # shows installed agents and skills
 ```
 
 ## Search Paths
 
 At runtime, Meridian reads agent profiles from `.agents/agents/` only.
 
-Bundled agents are installed/bootstrapped into that directory (for example via auto-bootstrap or `meridian sources update`), so they appear as normal local profiles.
+Bundled agents are installed/bootstrapped into that directory (for example via `mars sync`), so they appear as normal local profiles.
 
 ## Tips
 

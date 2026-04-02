@@ -58,7 +58,7 @@ meridian spawn -a agent -p "Implement fix" \
   -f src/module.py
 ```
 
-Run `meridian models list` to see available models and aliases. Run `meridian mars list` to see available agent profiles and skills — useful when your harness doesn't show agents natively. Model and agent preferences belong in your project's agent profiles, `meridian config`, or project docs (CLAUDE.md, AGENTS.md) — hardcoding them into spawn commands makes them invisible to `meridian config show`, impossible to change project-wide, and silently divergent from profile defaults.
+Run `meridian models list` to see available models and aliases. Run `mars list` to see available agent profiles and skills — useful when your harness doesn't show agents natively. Model and agent preferences belong in your project's agent profiles, `meridian config`, or project docs (CLAUDE.md, AGENTS.md) — hardcoding them into spawn commands makes them invisible to `meridian config show`, impossible to change project-wide, and silently divergent from profile defaults.
 
 To create your own agent profiles, see [`resources/creating-agents.md`](resources/creating-agents.md).
 
