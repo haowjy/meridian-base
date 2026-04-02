@@ -46,11 +46,11 @@ meridian spawn -a coder --approval yolo -p "..."   # use sparingly
 Different models route to different harnesses, and each harness has different capability profiles. Switching the model can bypass harness-level restrictions entirely:
 
 ```bash
-# Codex harness has a sandbox that restricts network binding
-meridian spawn -a coder -m codex -p "..."
+# Some harnesses have sandboxes that restrict network binding
+meridian spawn -a coder -m <sandboxed-model> -p "..."
 
-# Claude harness has no sandbox — switching model sidesteps the restriction
-meridian spawn -a coder -m opus -p "..."
+# Switching to a harness without sandbox restrictions sidesteps the issue
+meridian spawn -a coder -m <unsandboxed-model> -p "..."
 ```
 
 Run `meridian models list` to see which models route to which harness.
@@ -58,7 +58,7 @@ Run `meridian models list` to see which models route to which harness.
 ## Common Escalation Scenarios
 
 **"Can't bind to a port / start a server"** — sandbox restricts network listeners.
-→ `--sandbox full-access` or switch to a harness without sandbox restrictions (`-m opus`).
+→ `--sandbox full-access` or switch to a harness without sandbox restrictions.
 
 **"Can't write files outside workspace"** — sandbox restricts filesystem scope.
 → `--sandbox full-access` for the specific spawn that needs it.
@@ -70,4 +70,4 @@ Run `meridian models list` to see which models route to which harness.
 → `--approval auto` or `--approval yolo` for that spawn.
 
 **"Context too small for the task"** — model limitation.
-→ Switch to a model with a larger context window (`-m gemini` for large context).
+→ Switch to a model with a larger context window.

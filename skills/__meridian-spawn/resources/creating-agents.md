@@ -25,7 +25,7 @@ tools: [Bash(git diff *), Bash(git log *), Bash(git show *)]
 sandbox: read-only
 ---
 
-You are a code reviewer. Focus on:
+Focus on:
 
 - Correctness — does the code do what it claims?
 - Simplicity — is there unnecessary complexity?
@@ -46,8 +46,8 @@ tools: [Bash, Write, Edit]
 sandbox: workspace-write
 ---
 
-You are an implementation agent. Execute the task described in your prompt.
-Run tests and type checks after making changes. Commit after each passing step.
+Execute the task described in your prompt. Run tests and type checks after
+making changes. Commit after each passing step.
 ```
 
 ## Frontmatter Fields
@@ -71,7 +71,7 @@ mcp-tools: [fetch, filesystem]
 
 ## Body
 
-The markdown body below the frontmatter is the agent's system prompt — instructions, persona, constraints. Keep it focused on what the agent should do and how it should report results.
+The markdown body below the frontmatter is the agent's system prompt. Describe behaviors directly — what the agent should do, how it should report results, and what constraints it operates under. Avoid assigning roles or personas ("You are a..."); the frontmatter already identifies the agent's purpose, so the body should focus on actionable instructions and reasoning.
 
 ## Usage
 
@@ -94,7 +94,7 @@ Bundled agents are installed/bootstrapped into that directory (for example via a
 
 ## Tips
 
-- **One role per profile.** A reviewer shouldn't also be an implementer. Keep agents focused.
+- **One role per profile.** Mixing review and implementation in one agent creates conflicts of interest and bloats the system prompt, diluting both sets of instructions.
 - **Model choice matters.** Strong reasoning models (opus, gpt-5.4) for review and architecture. Fast models (codex, sonnet) for implementation and bulk work.
 - **Permissions scope risk.** Use `read-only` for analysis, `workspace-write` for implementation, `full-access` only when needed.
 - **Tools enable `-p` mode.** Without `tools:`, Claude agents can't use permission-required tools (Bash, Write, Edit, WebSearch, etc.) in non-interactive mode. Only list tools that need permission — Read, Glob, Grep, and Agent are always available.
