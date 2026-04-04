@@ -7,7 +7,7 @@ description: Agent package management via the mars CLI. Use when installing, upd
 
 Mars manages `.agents/` directories — installing agent profiles and skills from git repos and local paths, tracking ownership in `mars.lock`, and linking managed content into tool directories like `.claude/`.
 
-Install: `cargo install mars-agents`
+Install: `cargo install mars-agents` or `npm install -g @haowjy/mars-agents`
 
 ## Quick Start
 
