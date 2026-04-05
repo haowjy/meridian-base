@@ -94,7 +94,7 @@ Bundled agents are installed/bootstrapped into that directory (for example via `
 
 ## Design Principles
 
-For guidance on writing effective agent prompts and skills — no role identity, explaining why constraints exist, right altitude, progressive disclosure, tool restrictions — read [`resources/design-principles.md`](resources/design-principles.md).
+For guidance on writing effective agent prompts and skills — no role identity, explaining why constraints exist, right altitude, progressive disclosure, tool restrictions — read [`resources/agent-design-principles.md`](resources/agent-design-principles.md).
 
 ## Tips
 

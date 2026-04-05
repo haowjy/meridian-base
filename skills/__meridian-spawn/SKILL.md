@@ -11,16 +11,17 @@ description: >
 
 ## Core Loop
 
-All CLI output is JSON in agent mode — parse `spawn_id` and `status` programmatically from responses.
+All CLI output is JSON when running from a meridian CLI — parse `spawn_id` and `status` programmatically from responses.
 
-Spawns run in the **foreground** by default — the command blocks until the spawn completes, then returns the result.
+Spawns block until the spawn completes, then returns the result. The preferred pattern is to spawn these in the in the background to later get a notification when they complete.
 
 ```bash
-meridian spawn -a agent -p "task description"
+meridian spawn -a agent -p "task description" --desc "Implement step 1"
+meridian spawn -a agent2 -p "task2 description" --desc "Review step 1"
 # → blocks until done, returns terminal status with spawn_id
 
-meridian spawn show p107
-# → full report + metadata (re-inspect a past spawn)
+# you can then wait for them both to complete with (make sure to spawn all the spawns you want to wait for before calling this):
+meridian spawn wait p107 p108
 ```
 
 ## Spawning
