@@ -19,8 +19,8 @@ meridian config reset defaults.model  # remove override, revert to builtin
 | Key | Description | Default |
 |-----|-------------|---------|
 | `defaults.model` | Default model for `meridian spawn` when no `-m` given | `gpt-5.3-codex` |
-| `defaults.agent` | Default agent profile for spawns | `__meridian-subagent` |
-| `defaults.primary_agent` | Agent profile for `meridian` primary sessions | `__meridian-orchestrator` |
+| `defaults.agent` | Default agent profile for spawns | @meridian-subagent |
+| `defaults.primary_agent` | Agent profile for `meridian` primary sessions | @meridian-default-orchestrator |
 
 ### Per-Harness Model Defaults
 

@@ -1,6 +1,6 @@
 # Advanced Spawn Commands
 
-Read this when you need continue, cancel, stats, permissions, reports, or dry-run — commands beyond the core loop. For troubleshooting, read `debugging.md`.
+Read this when you need continue, cancel, stats, permissions, reports, or dry-run — commands beyond the core loop. For troubleshooting, read `../../meridian-cli/resources/debugging.md`.
 
 ## Continue & Fork
 
@@ -118,4 +118,4 @@ meridian spawn wait p108 p109
 
 Most harnesses have built-in background execution that handles per-spawn notification natively. Prefer that over `--background` + `spawn wait`.
 
-For stuck spawns, logs, or low-level state inspection, see `debugging.md`.
+For stuck spawns, logs, or low-level state inspection, see `../../meridian-cli/resources/debugging.md`.

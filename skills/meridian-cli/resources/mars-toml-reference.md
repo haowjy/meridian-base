@@ -34,7 +34,7 @@ A source must have either `url` or `path`, not both.
 
 ```toml
 [settings]
-links = [".claude"]     # directories linked via mars link
+links = [".claude"]     # directories linked via meridian mars link
 ```
 
 ## Item Filtering

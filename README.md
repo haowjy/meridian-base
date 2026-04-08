@@ -35,18 +35,16 @@ orchestrator's system prompt so the agent knows how to use meridian's CLI.
 
 | Agent | Model | Purpose |
 |---|---|---|
-| `__meridian-orchestrator` | (configured default) | Plans, delegates, and evaluates subagent work. Loaded with coordination skills. |
-| `__meridian-subagent` | gpt-5.3-codex | Default execution agent for scoped tasks. Receives a prompt, does the work, reports back. |
+| `meridian-default-orchestrator` | (configured default) | Plans, delegates, and evaluates subagent work. Loaded with coordination skills. |
+| `meridian-subagent` | gpt-5.3-codex | Default execution agent for scoped tasks. Receives a prompt, does the work, reports back. |
 
 ## Skills
 
 | Skill | What it teaches the agent |
 |---|---|
-| `__meridian-spawn` | The `meridian spawn` CLI — launching, waiting, parallel execution, reading reports |
-| `__meridian-work-coordination` | Work item lifecycle — creating, switching, updating status, placing artifacts |
-| `__meridian-session-context` | Mining past sessions — reading transcripts, searching decisions, finding related work |
-| `__mars` | Agent package management via `meridian mars ...` — adding, syncing, linking, validating |
-| `__meridian-diagnostics` | Diagnosing problems — failed spawns, corrupt state, harness issues |
+| `meridian-cli` | Meridian and Mars CLI mental model — command-surface discovery, diagnostics patterns, sessions, and core principles |
+| `meridian-spawn` | The `meridian spawn` CLI — launching, waiting, parallel execution, reading reports |
+| `meridian-work-coordination` | Work item lifecycle — creating, switching, updating status, placing artifacts |
 
 ## Install Into a Project
 

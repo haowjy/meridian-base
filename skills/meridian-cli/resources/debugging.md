@@ -1,4 +1,4 @@
-# Spawn Debugging
+# Debugging meridian state
 
 Read this only when something looks wrong: a spawn seems stuck, expected output is missing, `show` and `wait` disagree with what you expected, or you need to inspect low-level state.
 

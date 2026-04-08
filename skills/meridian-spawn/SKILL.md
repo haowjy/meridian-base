@@ -1,5 +1,5 @@
 ---
-name: __meridian-spawn
+name: meridian-spawn
 description: >
   Multi-agent coordination via the meridian CLI. Use this skill whenever you
   need to delegate work to another agent, run tasks in parallel, check on
@@ -7,13 +7,13 @@ description: >
   use when you want to route work to a specific model or provider.
 ---
 
-# __meridian-spawn
+# meridian-spawn
 
 ## Core Loop
 
-All CLI output is JSON when running from a meridian CLI — parse `spawn_id` and `status` programmatically from responses.
+See `meridian-cli` for output mode discipline and JSON parsing expectations.
 
-Spawns block until the spawn completes, then returns the result. The preferred pattern is to spawn these in the in the background to later get a notification when they complete.
+Spawns block until the spawn completes, then returns the result. The preferred pattern is to spawn these in the background so you get a completion notification later.
 
 ```bash
 meridian spawn -a agent -p "task description" --desc "Implement step 1"
@@ -54,9 +54,9 @@ meridian spawn -a agent -p "Implement fix" \
   -f src/module.py
 ```
 
-Run `meridian models list` to see available models with their strengths and cost tiers. Run `meridian mars models -h` for the full model management surface. Run `mars list` to see available agent profiles and skills. Model and agent preferences belong in your project's agent profiles, `meridian config`, or project docs (CLAUDE.md, AGENTS.md) — hardcoding them into spawn commands makes them invisible to `meridian config show`, impossible to change project-wide, and silently divergent from profile defaults.
+Run `meridian models list` to see available models with their strengths and cost tiers. Run `meridian models -h` for the full model management surface. Run `meridian mars list` to see available agent profiles and skills. Model and agent preferences belong in your project's agent profiles, `meridian config`, or project docs (CLAUDE.md, AGENTS.md) — hardcoding them into spawn commands makes them invisible to `meridian config show`, impossible to change project-wide, and silently divergent from profile defaults.
 
-To create your own agent profiles, see [`resources/creating-agents.md`](resources/creating-agents.md).
+To create or edit agent profiles, load the `agent-creator` skill. To create or edit skill files, load the `skill-creator` skill.
 
 
 ## Work Items
@@ -73,7 +73,7 @@ meridian spawn -a reviewer --work auth-refactor --desc "Review step 1" -p "..."
 
 Use `--desc` to give spawns a human-readable label — it shows up in `meridian work` and `spawn list`, so you're not staring at bare spawn IDs.
 
-For work item lifecycle (creating, switching, updating, completing, and dashboard), see the `/__meridian-work-coordination` skill.
+For work item lifecycle (creating, switching, updating, completing, and dashboard), see the `/meridian-work-coordination` skill.
 
 ## Parallel Spawns
 
@@ -94,7 +94,7 @@ Track spawns by their ID. For situational awareness, use the work dashboard — 
 meridian work
 ```
 
-Stuck spawns auto-recover: if a spawn's process dies or goes stale, the next read (`show`) detects it and marks it failed. No manual cleanup needed — just check the status and move on.
+See `meridian-cli` for crash-only recovery behavior and reconciliation details.
 
 To reattach to a spawn still running from a previous session, use `meridian spawn wait <spawn_id>`.
 
@@ -108,16 +108,13 @@ meridian spawn children p107   # list direct children of p107
 
 ## When a Spawn Fails
 
-If a spawn returns `"status": "failed"`, read the report via `spawn show SPAWN_ID` — it usually contains the error or the agent's last output. For deeper investigation, see [`resources/debugging.md`](resources/debugging.md) for log inspection.
+If a spawn returns `"status": "failed"`, read the report via `spawn show SPAWN_ID` — it usually contains the error or the agent's last output. For deeper investigation, see [`../meridian-cli/resources/debugging.md`](../meridian-cli/resources/debugging.md) for log inspection.
 
 ## Shared Filesystem
 
-Spawns share two directories for exchanging data. This is how spawns pass artifacts to each other without relying on conversation context (which doesn't survive across spawn boundaries):
+Spawns share filesystem directories for exchanging data without relying on conversation context (which does not survive across spawn boundaries). See `meridian-cli` for environment variable definitions.
 
-- **`$MERIDIAN_FS_DIR`** — long-lived project reference material that persists across work items
-- **`$MERIDIAN_WORK_DIR`** — active work scratch, scoped to the current work item
-
-See the `/__meridian-work-coordination` skill for when to use which.
+See the `/meridian-work-coordination` skill for when to use which.
 
 ## Committing Spawn Changes
 
@@ -142,6 +139,5 @@ meridian spawn -a coder \
 ## Beyond the Basics
 
 For continue/fork, cancel, stats, permission tiers, reports, and dry-run, see [`resources/advanced-commands.md`](resources/advanced-commands.md).
-For troubleshooting strange behavior, see [`resources/debugging.md`](resources/debugging.md).
-For writing your own agent profiles, see [`resources/creating-agents.md`](resources/creating-agents.md).
-For project defaults (model, agent, permissions, timeouts), see [`resources/configuration.md`](resources/configuration.md).
+For troubleshooting strange behavior, see [`../meridian-cli/resources/debugging.md`](../meridian-cli/resources/debugging.md).
+For project defaults (model, agent, permissions, timeouts), see [`../meridian-cli/resources/configuration.md`](../meridian-cli/resources/configuration.md).

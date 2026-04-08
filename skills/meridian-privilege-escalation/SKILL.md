@@ -1,5 +1,5 @@
 ---
-name: __meridian-privilege-escalation
+name: meridian-privilege-escalation
 description: How to escalate agent permissions in meridian when a spawn hits capability limits — sandbox tiers, approval modes, model/harness switching, and per-spawn overrides. Use when a spawned agent fails because of sandbox restrictions, missing tools, harness limitations, or insufficient permissions, and you need to change the spawn configuration to unblock it.
 ---
 

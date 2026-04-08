@@ -1,8 +1,8 @@
 ---
-name: __meridian-subagent
+name: meridian-subagent
 description: >
   Minimal default subagent profile for repo-local Meridian work. Spawn with
-  `meridian spawn -a __meridian-subagent`, passing task files with -f.
+  `meridian spawn -a meridian-subagent`, passing task files with -f.
   Executes the described task directly and reports results.
 model: codex
 skills: []
