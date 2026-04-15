@@ -48,17 +48,13 @@ meridian spawn show SPAWN_ID --include-files  # include file metadata
 meridian spawn show SPAWN_ID
 
 # View a spawn's report
-meridian spawn report show --spawn SPAWN_ID
+meridian spawn report show SPAWN_ID
 
 # Search across all spawn reports by text
 meridian spawn report search "auth refactor" --limit 10
-
-# Create or update a report externally (e.g., orchestrator annotating a spawn)
-meridian spawn report create "Summary of findings..." --spawn SPAWN_ID
-
-# Pipe report content from stdin
-echo "Report content" | meridian spawn report create --spawn SPAWN_ID --stdin
 ```
+
+Reports are written by the spawned agent itself at the end of its run — there is no external `report create` command. If you need to annotate a spawn from the outside, attach notes to the work item instead.
 
 ## Inspecting a Spawn's Conversation
 

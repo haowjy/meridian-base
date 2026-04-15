@@ -47,6 +47,8 @@ ls -la "$MERIDIAN_FS_DIR"
 
 Meridian reconciles running spawns on read. If a process died, wrote a report without finalizing, or went stale, the next `spawn list`, `spawn show`, `spawn wait`, or `meridian doctor` call detects that and marks it failed.
 
+A spawn in `finalizing` status is **not stuck** — it's in a short transient window between process exit and terminal state commit. Give it a few seconds before treating it as stuck. If a `finalizing` record persists with no recent activity, reconciliation will move it to `failed` with `orphan_finalization` on the next read; the extracted `report.md` may still contain useful content from before the abandonment.
+
 If a spawn seems stuck, run:
 
 ```bash

@@ -5,6 +5,10 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Changed
+- `meridian-cli/SKILL.md`: add `finalizing` to spawn lifecycle ("queued → running → finalizing → terminal"). Teach `finalizing` as transient/non-terminal so agents stop treating it as stuck. Failure-mode table: drop `orphan_stale_harness` (deleted upstream), add `orphan_finalization` row, rename `missing_wrapper_pid`/`missing_worker_pid` → `missing_runner_pid`.
+- `meridian-cli/resources/configuration.md`: drop `defaults.agent` and `defaults.primary_agent` rows (both removed upstream). Teach profile-less spawn default when no `-a`. Add `primary.*` namespace section for primary-session knobs. Add `defaults.harness` row. Bump `timeouts.wait_minutes` default 30 → 120. Tighten resolution-order list to match live precedence; add per-field-override note.
+- `meridian-cli/resources/debugging.md`: teach that `finalizing` is not stuck, give the reconciliation path to `orphan_finalization`, note `report.md` may still hold useful content after abandonment.
+- `meridian-spawn/resources/advanced-commands.md`: remove `meridian spawn report create` examples (subcommand deleted upstream). Fix `report show` example to positional form. Add explanatory note that reports are written by the spawned agent itself at end-of-run.
 - `agent-creator` and `skill-creator`: "dial back aggressive language" guidance now more precise. Prefer ordinary framing by default, but keep load-bearing negatives when they carry a real boundary with reasoning. Warn against blind rewrite sweeps that strip every `must`/`never`.
 
 ## [0.0.14] - 2026-04-10

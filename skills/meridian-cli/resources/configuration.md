@@ -18,23 +18,35 @@ meridian config reset defaults.model  # remove override, revert to builtin
 
 | Key | Description | Default |
 |-----|-------------|---------|
-| `defaults.model` | Default model for `meridian spawn` when no `-m` given | `gpt-5.3-codex` |
-| `defaults.agent` | Default agent profile for spawns | @meridian-subagent |
-| `defaults.primary_agent` | Agent profile for `meridian` primary sessions | @meridian-default-orchestrator |
+| `defaults.model` | Default model for `meridian spawn` when no `-m` given | *(empty — harness default applies)* |
+| `defaults.harness` | Default harness routing target | `codex` |
+
+`meridian spawn` without `-a` runs profile-less: no agent profile is loaded, the prompt runs against the resolved model with nothing more than the supplied skills and reference files. There is no implicit default agent. Pass `-a <profile>` to opt into a profile.
+
+### Primary-Session Settings
+
+Settings under the `primary.*` namespace apply to `meridian` primary sessions (the interactive top-level launch), not to `spawn` subagents.
+
+| Key | Description | Default |
+|-----|-------------|---------|
+| `primary.model` | Model for primary sessions | *(null — inherits `defaults.model`)* |
+| `primary.harness` | Harness for primary sessions | *(null — inherits `defaults.harness`)* |
+| `primary.agent` | Agent profile for primary sessions | *(null — no profile)* |
+| `primary.autocompact_pct` | Auto-compaction threshold (harness-specific) | *(null)* |
 
 ### Per-Harness Model Defaults
 
 | Key | Description | Default |
 |-----|-------------|---------|
-| `harness.claude` | Default model routed to Claude | `claude-opus-4-6` |
-| `harness.codex` | Default model routed to Codex | `gpt-5.3-codex` |
-| `harness.opencode` | Default model routed to OpenCode | `gemini-3.1-pro` |
+| `harness.claude` | Default model routed to Claude | *(harness default)* |
+| `harness.codex` | Default model routed to Codex | *(harness default)* |
+| `harness.opencode` | Default model routed to OpenCode | *(harness default)* |
 
 ### Timeouts
 
 | Key | Description | Default |
 |-----|-------------|---------|
-| `timeouts.wait_minutes` | How long `spawn wait` blocks | `30` |
+| `timeouts.wait_minutes` | How long `spawn wait` blocks before timing out | `120` |
 | `timeouts.guardrail_minutes` | Grace period before timeout warning | `0.5` |
 | `timeouts.kill_grace_minutes` | Grace period after SIGINT before SIGKILL | `0.033` |
 
@@ -52,7 +64,10 @@ meridian config reset defaults.model  # remove override, revert to builtin
 
 [defaults]
 model = "gpt-5.4"
-agent = "my-custom-agent"
+harness = "codex"
+
+[primary]
+agent = "my-orchestrator"
 
 [timeouts]
 wait_minutes = 60
@@ -60,12 +75,15 @@ wait_minutes = 60
 
 ## Resolution Order
 
-Config values resolve in this order (later wins):
+Per-field precedence (later wins):
 
 1. Builtin defaults (hardcoded)
-2. `.meridian/config.toml` (project-local overrides)
-3. Environment variables
-4. Agent profile defaults
-5. CLI flags (`-m`, `-a`, `--timeout`)
+2. User config (`~/.meridian/config.toml`)
+3. Project config (`.meridian/config.toml`)
+4. Agent profile YAML
+5. Environment variables (`MERIDIAN_*`)
+6. CLI flags (`-m`, `-a`, `--timeout`, etc.)
+
+Resolution is per field — a CLI override of one field must drive derived resolution for that field (e.g. `-m` overriding model also overrides harness routing), not inherit a profile's value indirectly.
 
 Use `meridian config show` to see the resolved value and its source for every key.

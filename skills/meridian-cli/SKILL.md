@@ -37,6 +37,8 @@ State on disk is the source of truth. If it is not visible in `.meridian/` files
 
 **Crash-only design.** Writes use atomic tmp+rename, reads tolerate truncation, and reconciliation happens on read paths. Recovery is startup behavior, not a shutdown hook.
 
+**Spawn lifecycle.** Spawns transition `queued` → `running` → `finalizing` → `succeeded | failed | cancelled`. `finalizing` is a transient post-exit state where the runner is finishing report extraction and state persistence; treat it as active (not terminal) when polling. `spawn wait` blocks through `finalizing` and only returns on a terminal state. Reconciliation on read paths moves an abandoned `finalizing` record to `failed` with `orphan_finalization` when no recent activity is seen.
+
 ## 4. Mars in One Section
 
 Mars materializes `.agents/` from sources declared in `mars.toml`, and `meridian mars ...` is the bundled entrypoint. `mars.toml` is the committed source manifest, `mars.lock` is committed generated state, and `mars.local.toml` is local override state. Drift and integrity checks live in `meridian mars list --status` and `meridian mars doctor`. Do not edit `.agents/` directly; regenerate it with `meridian mars sync`.
@@ -49,8 +51,9 @@ For full command coverage, use `meridian mars --help`. For the full `mars.toml` 
 
 | Symptom | Likely cause | First move |
 |---|---|---|
-| `orphan_run` / `orphan_stale_harness` | Harness died without finalizing | Relaunch after read-path reconciliation updates the record |
-| `missing_wrapper_pid` / `missing_worker_pid` | Harness crashed during startup | Confirm harness binaries are installed and on `$PATH` |
+| `orphan_run` | Runner process died while `running` without ever reaching `finalizing` | Relaunch after read-path reconciliation updates the record; no report will be present |
+| `orphan_finalization` | Runner reached `finalizing` but was abandoned before writing terminal state | Check `spawn show` — `report.md` may still hold useful content the harness produced before exit |
+| `missing_runner_pid` | Runner PID was never recorded (harness crashed before startup stabilized) | Confirm harness binaries are installed and on `$PATH`; relaunch |
 | `missing_spawn_dir` | Crash during launch before spawn artifacts stabilized | Relaunch the spawn |
 | Exit 127 or 2 with empty report | Harness binary missing from `$PATH` | Install or fix PATH for the selected harness |
 | Exit 143 or 137 | Process terminated externally | Check `meridian spawn show <id>` first; if status is `succeeded`, signal hit during cleanup and no retry is needed. Otherwise check host logs for OOM or external kill, then retry |
