@@ -1,8 +1,9 @@
 [package]
 name = "meridian-base"
-version = "0.0.14"
+version = "0.0.16"
 description = "Core coordination primitives for Meridian — orchestrator, subagent, and skills for spawning, state tracking, and session context."
 
 [dependencies]
 
 [settings]
+models_cache_ttl_hours = 24
