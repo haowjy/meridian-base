@@ -107,6 +107,16 @@ meridian spawn -a agent -p "Step B" --desc "Step B"
 # Each blocks until its spawn completes, then returns results.
 ```
 
+In Claude Code, the mechanism is the Bash tool's `run_in_background: true` parameter — it returns a task ID immediately and delivers a notification when the spawn terminates, so you stay responsive while spawns run:
+
+```bash
+Bash("meridian spawn -a agent -p 'Step A' --desc 'Step A'", run_in_background: true)
+Bash("meridian spawn -a agent -p 'Step B' --desc 'Step B'", run_in_background: true)
+# → both task IDs returned immediately; handle each notification as it arrives.
+```
+
+Other harnesses have equivalent mechanisms; use whichever your harness supports.
+
 ## Checking Status
 
 Track spawns by their ID. For situational awareness, use the work dashboard — it shows active work items with their attached spawns:
