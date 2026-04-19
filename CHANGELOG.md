@@ -4,8 +4,12 @@ Caveman style. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+- `AGENTS.md` and `CLAUDE.md` — project instructions from dev-workflow.
+
 ### Changed
 - `meridian-prompter` dep switched to `local-dependencies` — expects sibling checkout.
+- `meridian-spawn/SKILL.md`: teach `--bg` + single `wait` pattern for parallel spawns. Old pattern (harness-level `run_in_background` per spawn) caused N notifications and N partial summaries — token waste. New pattern: launch with `--bg`, single `wait` for all, one summary. Documents 30-minute wait checkpoint.
 
 ## [0.0.21] - 2026-04-18
 
