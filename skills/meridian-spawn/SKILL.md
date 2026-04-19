@@ -13,15 +13,15 @@ description: >
 
 See `meridian-cli` for output mode discipline and JSON parsing expectations.
 
-Spawns block until the spawn completes, then returns the result. The preferred pattern is to spawn these in the background so you get a completion notification later.
+Spawns block by default. Use `--bg` to return immediately with a spawn ID, then `wait` to block until completion:
 
 ```bash
-meridian spawn -a agent -p "task description" --desc "Implement step 1"
-meridian spawn -a agent2 -p "task2 description" --desc "Review step 1"
-# → blocks until done, returns terminal status with spawn_id
+# Launch in background (returns spawn ID immediately)
+meridian spawn -a coder -p "Step A" --bg  # → p101
+meridian spawn -a coder -p "Step B" --bg  # → p102
 
-# you can then wait for them both to complete with (make sure to spawn all the spawns you want to wait for before calling this):
-meridian spawn wait p107 p108
+# Wait for all at once
+meridian spawn wait p101 p102
 ```
 
 ## Spawning
@@ -94,24 +94,29 @@ For work item lifecycle (creating, switching, updating, completing, and dashboar
 
 ## Parallel Spawns
 
-Use your harness's native background execution to run multiple spawns concurrently. Each spawn runs in foreground (blocking), but your harness runs them in parallel:
+Use `--bg` to launch spawns without blocking, then `wait` to collect results:
 
 ```bash
-# Launch these concurrently using your harness's background/parallel execution
-meridian spawn -a agent -p "Step A" --desc "Step A"
-meridian spawn -a agent -p "Step B" --desc "Step B"
-# Each blocks until its spawn completes, then returns results.
+# Launch all spawns (each returns immediately with spawn ID)
+meridian spawn -a coder -p "Implement auth" --bg --desc "auth"      # → p101
+meridian spawn -a coder -p "Implement cache" --bg --desc "cache"    # → p102
+meridian spawn -a reviewer -p "Review design" --bg --desc "review"  # → p103
+
+# Single wait for all — one result, one summary
+meridian spawn wait p101 p102 p103
 ```
 
-In Claude Code, the mechanism is the Bash tool's `run_in_background: true` parameter — it returns a task ID immediately and delivers a notification when the spawn terminates, so you stay responsive while spawns run:
+**Why this pattern matters:** If you use your harness's background execution (e.g. Claude Code's `run_in_background: true`) on each spawn separately, you get N notifications as spawns complete one by one. Each notification triggers a response and summary, wasting tokens on partial progress. The `--bg` + single `wait` pattern gives you one notification when ALL spawns complete — one summary, no waste.
+
+Wait has a 30-minute checkpoint. If spawns are still running, check their progress and re-wait:
 
 ```bash
-Bash("meridian spawn -a agent -p 'Step A' --desc 'Step A'", run_in_background: true)
-Bash("meridian spawn -a agent -p 'Step B' --desc 'Step B'", run_in_background: true)
-# → both task IDs returned immediately; handle each notification as it arrives.
-```
+# Check if spawn is active
+meridian session log p101 --last 5
 
-Other harnesses have equivalent mechanisms; use whichever your harness supports.
+# Continue waiting if still making progress
+meridian spawn wait p101 p102 p103
+```
 
 ## Checking Status
 
