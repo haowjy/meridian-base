@@ -3,61 +3,15 @@ version = 1
 [dependencies._self]
 path = "."
 
-[dependencies.anthropic-skills]
-url = "https://github.com/anthropics/skills"
-commit = "2c7ec5e78b8e5d43ea02e90bb8826f6b9f147b0c"
-
-[dependencies.caveman]
-url = "https://github.com/JuliusBrussee/caveman"
-version = "v1.6.0"
-commit = "c2ed24b3e5d412cd0c25197b2bc9af587621fd99"
-
 [dependencies.meridian-base]
 url = "https://github.com/meridian-flow/meridian-base"
-version = "v0.0.20"
-commit = "5bb3a40b98a030f0cac3a7add76b8c65d2a6561a"
-
-[dependencies.meridian-dev-workflow]
-url = "https://github.com/meridian-flow/meridian-dev-workflow"
-version = "v0.0.29"
-commit = "b541916810acafd2316d23550be4a4d48a026ace"
+version = "v0.0.21"
+commit = "5ef2cab70944934d8c2e54e0e95e702bb7e3be55"
 
 [dependencies.meridian-prompter]
 url = "https://github.com/meridian-flow/meridian-prompter"
-version = "v0.0.2"
-commit = "9f9c00c8bad75c773b83465420b0934165927443"
-
-[items."agents/agent-reviewer.md"]
-source = "meridian-prompter"
-kind = "agent"
-version = "v0.0.2"
-source_checksum = "sha256:353cdc293a86926be9abb5350641a0254b771a2cd70fb87a354e30a7b9eb880a"
-installed_checksum = "sha256:353cdc293a86926be9abb5350641a0254b771a2cd70fb87a354e30a7b9eb880a"
-dest_path = "agents/agent-reviewer.md"
-
-[items."agents/agent-tester.md"]
-source = "meridian-prompter"
-kind = "agent"
-version = "v0.0.2"
-source_checksum = "sha256:5b851b27d24570da5409aa8c44c55e0202ca938b9132018d9bac803c99939ebb"
-installed_checksum = "sha256:5b851b27d24570da5409aa8c44c55e0202ca938b9132018d9bac803c99939ebb"
-dest_path = "agents/agent-tester.md"
-
-[items."agents/agent-writer.md"]
-source = "meridian-prompter"
-kind = "agent"
-version = "v0.0.2"
-source_checksum = "sha256:d330adeed285c53b38be148267fd1a5313df6630bd399655e671dc097e658edf"
-installed_checksum = "sha256:d330adeed285c53b38be148267fd1a5313df6630bd399655e671dc097e658edf"
-dest_path = "agents/agent-writer.md"
-
-[items."agents/internet-researcher.md"]
-source = "meridian-dev-workflow"
-kind = "agent"
-version = "v0.0.29"
-source_checksum = "sha256:f147ec2d1b1e840741e79563fd2e8ff9e73317d93f118a418044dbdbe0e00468"
-installed_checksum = "sha256:f147ec2d1b1e840741e79563fd2e8ff9e73317d93f118a418044dbdbe0e00468"
-dest_path = "agents/internet-researcher.md"
+version = "v0.0.4"
+commit = "cc0ba458f86238b79ca1d77c04482627ed7b4288"
 
 [items."agents/meridian-default-orchestrator.md"]
 source = "_self"
@@ -73,81 +27,66 @@ source_checksum = "sha256:f939f90b9694738130e7566e80a2c65b5a4b2dac7b637856272baf
 installed_checksum = "sha256:f939f90b9694738130e7566e80a2c65b5a4b2dac7b637856272baf19c9d78bc6"
 dest_path = "agents/meridian-subagent.md"
 
+[items."agents/prompt-reviewer.md"]
+source = "meridian-prompter"
+kind = "agent"
+version = "v0.0.4"
+source_checksum = "sha256:a6dd1dafff624bb678554f6c28ed73ba5b7ef2f7f4399c1cf1b4ee0e124667ee"
+installed_checksum = "sha256:a6dd1dafff624bb678554f6c28ed73ba5b7ef2f7f4399c1cf1b4ee0e124667ee"
+dest_path = "agents/prompt-reviewer.md"
+
+[items."agents/prompt-tester.md"]
+source = "meridian-prompter"
+kind = "agent"
+version = "v0.0.3"
+source_checksum = "sha256:ec3b4a04e4930d297068bff87be30567d96694ced761e7586e3b6f313cff686d"
+installed_checksum = "sha256:ec3b4a04e4930d297068bff87be30567d96694ced761e7586e3b6f313cff686d"
+dest_path = "agents/prompt-tester.md"
+
 [items."agents/prompter-orchestrator.md"]
 source = "meridian-prompter"
 kind = "agent"
-version = "v0.0.2"
-source_checksum = "sha256:a0edeadb631d56bf88571bbc49c5408f40535fdaca7fe210c97df858b617cf67"
-installed_checksum = "sha256:a0edeadb631d56bf88571bbc49c5408f40535fdaca7fe210c97df858b617cf67"
+version = "v0.0.4"
+source_checksum = "sha256:2804e74c8c53758bdcc248b9df98a31c82660ca22d11ec2b5f469e38af2f0da3"
+installed_checksum = "sha256:2804e74c8c53758bdcc248b9df98a31c82660ca22d11ec2b5f469e38af2f0da3"
 dest_path = "agents/prompter-orchestrator.md"
 
-[items."agents/skill-reviewer.md"]
+[items."agents/python-tool-writer.md"]
 source = "meridian-prompter"
 kind = "agent"
-version = "v0.0.2"
-source_checksum = "sha256:2b094225dfcaf78216d5f8e11651bc9470fd5deb592e52a73833de4200106a4a"
-installed_checksum = "sha256:2b094225dfcaf78216d5f8e11651bc9470fd5deb592e52a73833de4200106a4a"
-dest_path = "agents/skill-reviewer.md"
+version = "v0.0.4"
+source_checksum = "sha256:b6ce0c404186cc6f8fc74c281a6d14295d17780feeb93d8939378b9eb32f4c9f"
+installed_checksum = "sha256:b6ce0c404186cc6f8fc74c281a6d14295d17780feeb93d8939378b9eb32f4c9f"
+dest_path = "agents/python-tool-writer.md"
 
-[items."agents/skill-writer.md"]
+[items."agents/web-prompt-researcher.md"]
 source = "meridian-prompter"
 kind = "agent"
-version = "v0.0.2"
-source_checksum = "sha256:43952650d3f9b1c81b01d3e4b27c2b30cfb1964799fc30323770723518cda34e"
-installed_checksum = "sha256:43952650d3f9b1c81b01d3e4b27c2b30cfb1964799fc30323770723518cda34e"
-dest_path = "agents/skill-writer.md"
-
-[items."agents/tool-writer.md"]
-source = "meridian-prompter"
-kind = "agent"
-version = "v0.0.2"
-source_checksum = "sha256:618ad813b3e1c977cb861fef11fdc2e6d6f7566a177ddebd1330f1dae9b59252"
-installed_checksum = "sha256:618ad813b3e1c977cb861fef11fdc2e6d6f7566a177ddebd1330f1dae9b59252"
-dest_path = "agents/tool-writer.md"
+version = "v0.0.4"
+source_checksum = "sha256:a474014b66619b90255ee25761afbd8a9ab1c179e458ed5231a6bdffb5de5091"
+installed_checksum = "sha256:a474014b66619b90255ee25761afbd8a9ab1c179e458ed5231a6bdffb5de5091"
+dest_path = "agents/web-prompt-researcher.md"
 
 [items."skills/agent-artifacts"]
 source = "meridian-prompter"
 kind = "skill"
-version = "v0.0.2"
-source_checksum = "sha256:6db24d28a2a802538ad467977040b3c54046e48a0a96b01bb3b38c11b79e957f"
-installed_checksum = "sha256:6db24d28a2a802538ad467977040b3c54046e48a0a96b01bb3b38c11b79e957f"
+version = "v0.0.4"
+source_checksum = "sha256:7889e6eb1a345fcb5bba15544e2b3283cb7208d0fe8ed39008c11d8b1e6099e0"
+installed_checksum = "sha256:7889e6eb1a345fcb5bba15544e2b3283cb7208d0fe8ed39008c11d8b1e6099e0"
 dest_path = "skills/agent-artifacts"
 
 [items."skills/agent-creator"]
 source = "_self"
 kind = "skill"
-source_checksum = "sha256:a84a104946e49bdc14403043425d904c9c2bc6638438c6db1bfff3c2ba32fbd3"
-installed_checksum = "sha256:a84a104946e49bdc14403043425d904c9c2bc6638438c6db1bfff3c2ba32fbd3"
+source_checksum = "sha256:53f28a0061d2ffc04cb2c2bf20f19f22376d1f73c9d19831c53450c3a11d3be8"
+installed_checksum = "sha256:53f28a0061d2ffc04cb2c2bf20f19f22376d1f73c9d19831c53450c3a11d3be8"
 dest_path = "skills/agent-creator"
-
-[items."skills/agent-principles"]
-source = "meridian-prompter"
-kind = "skill"
-version = "v0.0.2"
-source_checksum = "sha256:998e542cdb8b6365ad786d830520334a61506a7d54bf499addb6da26fb9c7c64"
-installed_checksum = "sha256:998e542cdb8b6365ad786d830520334a61506a7d54bf499addb6da26fb9c7c64"
-dest_path = "skills/agent-principles"
-
-[items."skills/caveman"]
-source = "caveman"
-kind = "skill"
-version = "v1.6.0"
-source_checksum = "sha256:e3cf2c3ba35d34a39f1c54bf9fa3d2afa9569374de327aaa4356226c60ad3b83"
-installed_checksum = "sha256:e3cf2c3ba35d34a39f1c54bf9fa3d2afa9569374de327aaa4356226c60ad3b83"
-dest_path = "skills/caveman"
-
-[items."skills/frontend-design"]
-source = "anthropic-skills"
-kind = "skill"
-source_checksum = "sha256:3dc9d9c837c7f390c1bf8b13e4667cf167340067bfbaf6d734d644eb08c640a1"
-installed_checksum = "sha256:3dc9d9c837c7f390c1bf8b13e4667cf167340067bfbaf6d734d644eb08c640a1"
-dest_path = "skills/frontend-design"
 
 [items."skills/meridian-cli"]
 source = "_self"
 kind = "skill"
-source_checksum = "sha256:c93d9c94063feaaddf1bf79d9afadf6bb8b7f3378ca139953790f3ec0a71043b"
-installed_checksum = "sha256:c93d9c94063feaaddf1bf79d9afadf6bb8b7f3378ca139953790f3ec0a71043b"
+source_checksum = "sha256:f65b1ef88a5ea0ac821c481823bf396714d4e89e7b2e56f14a51f3729a66b951"
+installed_checksum = "sha256:f65b1ef88a5ea0ac821c481823bf396714d4e89e7b2e56f14a51f3729a66b951"
 dest_path = "skills/meridian-cli"
 
 [items."skills/meridian-privilege-escalation"]
@@ -160,24 +99,40 @@ dest_path = "skills/meridian-privilege-escalation"
 [items."skills/meridian-spawn"]
 source = "_self"
 kind = "skill"
-source_checksum = "sha256:fa0f85f0a11b8f61b8984561148e5c7dfb36e5205ae8ff4d8ac2db84f98a9141"
-installed_checksum = "sha256:fa0f85f0a11b8f61b8984561148e5c7dfb36e5205ae8ff4d8ac2db84f98a9141"
+source_checksum = "sha256:de95e810d2e9fc001d997f732900970bfa342e30e246564ad4ec42ae8c43aa6f"
+installed_checksum = "sha256:de95e810d2e9fc001d997f732900970bfa342e30e246564ad4ec42ae8c43aa6f"
 dest_path = "skills/meridian-spawn"
 
 [items."skills/meridian-work-coordination"]
 source = "_self"
 kind = "skill"
-source_checksum = "sha256:c4a914d2dad99d7327f0f4f7bf7222cbdf3ca9b56d453c14b388050a3ac90b57"
-installed_checksum = "sha256:c4a914d2dad99d7327f0f4f7bf7222cbdf3ca9b56d453c14b388050a3ac90b57"
+source_checksum = "sha256:1ddd87065861bfd01adcafc27aebc5ac4ef5028b856bc128dec45ebc0745c9be"
+installed_checksum = "sha256:1ddd87065861bfd01adcafc27aebc5ac4ef5028b856bc128dec45ebc0745c9be"
 dest_path = "skills/meridian-work-coordination"
+
+[items."skills/prompt-principles"]
+source = "meridian-prompter"
+kind = "skill"
+version = "v0.0.4"
+source_checksum = "sha256:000dd16223d10524ad976d1f7146be283594b66dca9e59e36529ee294528b207"
+installed_checksum = "sha256:000dd16223d10524ad976d1f7146be283594b66dca9e59e36529ee294528b207"
+dest_path = "skills/prompt-principles"
 
 [items."skills/prompt-review"]
 source = "meridian-prompter"
 kind = "skill"
-version = "v0.0.2"
-source_checksum = "sha256:daf10fd1e6130fcd8a5e0e6c51634b13a1dd77a2870fadf2d15996da1a075345"
-installed_checksum = "sha256:daf10fd1e6130fcd8a5e0e6c51634b13a1dd77a2870fadf2d15996da1a075345"
+version = "v0.0.4"
+source_checksum = "sha256:47eb3e72585527010be8a71d6a1b34537eab9c200f3a48e965c8914b784add4e"
+installed_checksum = "sha256:47eb3e72585527010be8a71d6a1b34537eab9c200f3a48e965c8914b784add4e"
 dest_path = "skills/prompt-review"
+
+[items."skills/python-tools"]
+source = "meridian-prompter"
+kind = "skill"
+version = "v0.0.3"
+source_checksum = "sha256:453a20e334d662caa065beb0a1b93f70852b3c224833118f1a3e248a50d711b3"
+installed_checksum = "sha256:453a20e334d662caa065beb0a1b93f70852b3c224833118f1a3e248a50d711b3"
+dest_path = "skills/python-tools"
 
 [items."skills/shared-workspace"]
 source = "_self"
@@ -189,9 +144,9 @@ dest_path = "skills/shared-workspace"
 [items."skills/skill-artifacts"]
 source = "meridian-prompter"
 kind = "skill"
-version = "v0.0.2"
-source_checksum = "sha256:755f95acac39ed4409807b3b2d8dec634f189b7fd935475a023c43bf675e72c0"
-installed_checksum = "sha256:755f95acac39ed4409807b3b2d8dec634f189b7fd935475a023c43bf675e72c0"
+version = "v0.0.4"
+source_checksum = "sha256:b0c6ea29e17f3acd6843a73dfc0f3bc890fe04352f6ab8f4bdb8bdf7c26cbd12"
+installed_checksum = "sha256:b0c6ea29e17f3acd6843a73dfc0f3bc890fe04352f6ab8f4bdb8bdf7c26cbd12"
 dest_path = "skills/skill-artifacts"
 
 [items."skills/skill-creator"]
