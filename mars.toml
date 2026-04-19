@@ -1,7 +1,9 @@
 [package]
 name = "meridian-base"
-version = "0.0.21"
+version = "0.0.22"
 description = "Core coordination primitives for Meridian — orchestrator, subagent, and skills for spawning, state tracking, and session context."
+
+[dependencies]
 
 [local-dependencies.meridian-prompter]
 url = "https://github.com/meridian-flow/meridian-prompter"
