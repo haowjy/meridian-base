@@ -17,7 +17,7 @@ meridian-base/skills/meridian-spawn-checkin/
   SKILL.md
 ```
 
-```markdown
+````markdown
 ---
 name: meridian-spawn-checkin
 description: >
@@ -60,7 +60,7 @@ the error is environmental (network, credentials), retry. If it's the
 agent hitting a dead end, read the report carefully before spawning a
 replacement — the replacement will hit the same dead end unless the
 caller briefs it differently.
-```
+````
 
 Notes:
 
@@ -90,7 +90,7 @@ meridian-base/skills/code-review/
 
 Body excerpt:
 
-```markdown
+````markdown
 ---
 name: code-review
 description: >
@@ -131,7 +131,7 @@ Reviews over ~500 lines of diff need a different approach — see
 [`resources/large-diffs.md`](resources/large-diffs.md) for the
 chunking strategy. Read it when the diff is big enough that you'd lose
 track trying to hold it in your head.
-```
+````
 
 Notes:
 
@@ -164,7 +164,7 @@ meridian-base/skills/harness-debugging/
 
 Body excerpt:
 
-```markdown
+````markdown
 ---
 name: harness-debugging
 description: >
@@ -212,7 +212,7 @@ relevant to the failing spawn:
 
 You can tell which harness ran the spawn from `meridian spawn show` —
 look for the `harness` field.
-```
+````
 
 Notes:
 
