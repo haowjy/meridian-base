@@ -156,6 +156,14 @@ meridian spawn children p107   # list direct children of p107
 
 `spawn show` also displays the parent ID when a spawn was created by another spawn.
 
+## Steering a Running Spawn
+
+**Inject before you cancel.** If a spawn is going in the wrong direction, send it additional context or a course correction — don't kill it and start over. Cancel destroys all the context the spawn has built up; inject preserves it.
+
+```bash
+meridian spawn inject p107 --message "Wrong approach — use the existing adapter pattern in src/adapters/"
+```
+
 ## When a Spawn Fails
 
 If a spawn returns `"status": "failed"`, read the report via `spawn show SPAWN_ID` — it usually contains the error or the agent's last output. For deeper investigation, see [`../meridian-cli/resources/debugging.md`](../meridian-cli/resources/debugging.md) for log inspection.
