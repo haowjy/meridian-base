@@ -39,6 +39,20 @@ meridian work delete old-item --force    # remove even if it has artifacts
 
 `work done` archives the work directory. `work reopen` restores it. `work delete` removes the work item entirely — requires `--force` if it has artifacts.
 
+## Completion
+
+Only mark work done when you own the whole work item lifecycle, not just a task inside it.
+
+Before telling the human a work item is complete, run:
+
+```bash
+meridian work done <work-id>
+```
+
+A prose status update does not complete the work item; only `meridian work done` archives it.
+
+If your context only covers one phase, file set, review lane, or implementation slice, report your slice as complete and leave the work item active.
+
 ## Artifact Placement
 
 **work root** (`$MERIDIAN_CONTEXT_WORK_DIR`) — container holding all work item subdirectories. Do NOT write artifacts here directly.

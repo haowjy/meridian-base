@@ -13,11 +13,11 @@ An orchestrator that can do this out of the box:
 
 ```bash
 # Break work into subtasks and delegate
-meridian spawn -m codex -p "Implement the data model" -f plan/phase-1.md
+meridian spawn -m codex --prompt-file implement-model.md -f plan/phase-1.md --bg
 
 # Run tasks in parallel
-meridian spawn -m codex -p "Phase 2a: API endpoints" --bg
-meridian spawn -m codex -p "Phase 2b: CLI handlers" --bg
+meridian spawn -m codex --prompt-file phase-2a.md --bg
+meridian spawn -m codex --prompt-file phase-2b.md --bg
 meridian spawn wait
 
 # Track work items across sessions

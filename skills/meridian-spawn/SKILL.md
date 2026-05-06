@@ -9,14 +9,22 @@ model-invocable: false
 
 # meridian-spawn
 
+## Prompt Passing
+
+Write spawn prompts to files. Use `--prompt-file` for delegation.
+
+Shell quoting mutates prompts before meridian receives them, backticks become command substitutions, `$variables` expand, quotes nest wrong, and multiline formatting collapses. Prompt files preserve exact text and make handoffs inspectable.
+
+`-p` is okay for short, single-line, no-special-characters cases.
+
 ## Core Loop
 
 Spawns block by default. Use `--bg` to return immediately with a spawn ID, then `wait` to block until completion:
 
 ```bash
-meridian spawn -a coder -p "Step A" --bg  # -> p101
-meridian spawn -a coder -p "Step B" --bg  # -> p102
-meridian spawn wait                        # blocks until both complete
+meridian spawn -a coder --prompt-file step-a.md --bg  # -> p101
+meridian spawn -a coder --prompt-file step-b.md --bg  # -> p102
+meridian spawn wait                                    # blocks until both complete
 ```
 
 ### Output Discipline
@@ -36,21 +44,19 @@ Writes are atomic (tmp+rename), reads tolerate truncation. Recovery is startup b
 **`-a` (agent profile)** — use when a profile exists for the role:
 
 ```bash
-meridian spawn -a reviewer -p "Review this change"
+meridian spawn -a reviewer --prompt-file review-task.md --bg
 ```
 
 **`-m` (direct model)** — use for one-off tasks where no profile fits:
 
 ```bash
-meridian spawn -m MODEL -p "Implement the fix"
+meridian spawn -m MODEL --prompt-file task.md --bg
 ```
-
-Pipe from stdin or use `--prompt-file` for multi-paragraph prompts to avoid shell-quoting issues.
 
 Pass reference files or directories with `-f` so the spawned agent starts with context. Scope tightly: 2-4 files is typical, six is heavy, ten means the handoff needs rethinking.
 
 ```bash
-meridian spawn -a coder -p "Implement auth middleware" \
+meridian spawn -a coder --prompt-file implement-auth.md --bg \
   -f src/middleware/ -f src/middleware/base.py -f design/phase-2.md
 ```
 
@@ -63,7 +69,7 @@ Run `meridian mars models list` for available models. Run `meridian mars list` f
 Attach spawns to a work item so they're grouped and traceable. Use `--desc` for human-readable labels.
 
 ```bash
-meridian spawn -a agent --desc "Implement step 2" -p "..."
+meridian spawn -a agent --desc "Implement step 2" --prompt-file step-2.md --bg
 ```
 
 For work item lifecycle, see the `/meridian-work-coordination` skill.
@@ -73,8 +79,8 @@ For work item lifecycle, see the `/meridian-work-coordination` skill.
 Use `--bg` to launch without blocking, then `wait` to collect all results in one notification:
 
 ```bash
-meridian spawn -a coder -p "Implement auth" --bg --desc "auth"
-meridian spawn -a coder -p "Implement cache" --bg --desc "cache"
+meridian spawn -a coder --prompt-file auth.md --bg --desc "auth"
+meridian spawn -a coder --prompt-file cache.md --bg --desc "cache"
 meridian spawn wait   # one notification when ALL complete
 ```
 
@@ -144,11 +150,12 @@ meridian spawn files p107 -0 | xargs -0 git add   # paths with spaces
 Use `{{KEY}}` placeholders in prompts, replaced at launch time with `--prompt-var`:
 
 ```bash
-meridian spawn -a coder \
-  -p "Implement {{TASK}} following {{CONSTRAINT}}" \
+meridian spawn -a coder --prompt-file task.md --bg \
   --prompt-var TASK=auth-refactor \
   --prompt-var CONSTRAINT="no direct DB access"
 ```
+
+Where `task.md` contains `{{TASK}}` and `{{CONSTRAINT}}` placeholders — they're replaced at launch time.
 
 ## Beyond the Basics
 

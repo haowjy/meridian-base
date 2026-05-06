@@ -7,8 +7,8 @@ Read this when you need continue, cancel, stats, permissions, reports, or dry-ru
 Resume a previous spawn's harness session, or fork it to try an alternate approach:
 
 ```bash
-meridian spawn --continue SPAWN_ID -p "Follow up instruction"
-meridian spawn --continue SPAWN_ID --fork -p "Try alternate approach"
+meridian spawn --continue SPAWN_ID --prompt-file followup.md --bg
+meridian spawn --continue SPAWN_ID --fork --prompt-file alt-approach.md --bg
 ```
 
 `--continue` reuses the harness session (conversation history preserved) — use it for follow-ups where you want the agent to build on what it already did. `--fork` branches from the same session but creates a new spawn ID — use it when you want to explore an alternative direction while preserving the original trajectory as a fallback.
@@ -76,7 +76,7 @@ meridian session log p108              # read a child's conversation
 ## Dry Run
 
 ```bash
-meridian spawn --dry-run -m MODEL -p "Plan the migration"
+meridian spawn --dry-run -m MODEL --prompt-file plan-migration.md
 ```
 
 Preview the assembled prompt and command without executing the harness.
@@ -86,8 +86,8 @@ Preview the assembled prompt and command without executing the harness.
 Use `--sandbox` to control filesystem access and `--approval` to control tool approval behavior:
 
 ```bash
-meridian spawn -m MODEL -p "Read-only analysis" --sandbox read-only
-meridian spawn -m MODEL -p "Careful run" --approval confirm
+meridian spawn -m MODEL --prompt-file analysis.md --sandbox read-only --bg
+meridian spawn -m MODEL --prompt-file task.md --approval confirm --bg
 ```
 
 Flags:
@@ -99,15 +99,15 @@ Flags:
 If your harness doesn't support background execution or parallel tool calls, you can use `--background` to launch spawns without blocking:
 
 ```bash
-meridian spawn --background -a agent -p "task description"
+meridian spawn --background -a agent --prompt-file task.md
 # → returns immediately: {"spawn_id": "p107", "status": "running"}
 
 meridian spawn wait
 # → blocks until all pending spawns complete, returns status + full report
 
 # Multiple spawns in parallel
-meridian spawn --background -a agent -p "Step A" --desc "Step A"
-meridian spawn --background -a agent -p "Step B" --desc "Step B"
+meridian spawn --background -a agent --prompt-file step-a.md --desc "Step A"
+meridian spawn --background -a agent --prompt-file step-b.md --desc "Step B"
 # Wait for all pending spawns — IDs discovered automatically
 meridian spawn wait
 ```

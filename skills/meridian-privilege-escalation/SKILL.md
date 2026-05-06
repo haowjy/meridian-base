@@ -26,7 +26,7 @@ Tiers from most to least restrictive:
 
 Override per-spawn:
 ```bash
-meridian spawn -a coder --sandbox full-access -p "Run integration tests that bind to localhost..."
+meridian spawn -a coder --sandbox full-access --prompt-file integration-tests.md --bg
 ```
 
 Agent profiles set a default tier (e.g. `sandbox: workspace-write`). The `--sandbox` flag overrides it for that specific spawn only. The tier passes through directly to Codex's `--sandbox` flag.
@@ -44,8 +44,8 @@ The `--approval` flag controls how the harness handles tool-call approvals:
 
 Override per-spawn:
 ```bash
-meridian spawn -a coder --approval auto -p "..."
-meridian spawn -a coder --approval yolo -p "..."   # use sparingly
+meridian spawn -a coder --approval auto --prompt-file task.md --bg
+meridian spawn -a coder --approval yolo --prompt-file task.md --bg   # use yolo sparingly
 ```
 
 ## Model/Harness Switching
@@ -54,10 +54,10 @@ Different models route to different harnesses, and each harness has different ca
 
 ```bash
 # Some harnesses have sandboxes that restrict network binding
-meridian spawn -a coder -m <sandboxed-model> -p "..."
+meridian spawn -a coder -m <sandboxed-model> --prompt-file task.md --bg
 
 # Switching to a harness without sandbox restrictions sidesteps the issue
-meridian spawn -a coder -m <unsandboxed-model> -p "..."
+meridian spawn -a coder -m <unsandboxed-model> --prompt-file task.md --bg
 ```
 
 Run `meridian mars models list` to see which models route to which harness.

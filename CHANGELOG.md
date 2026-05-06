@@ -4,6 +4,13 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `meridian-work-coordination`: completion guidance now keys work-done authority to lifecycle scope, not agent identity.
+- `meridian-spawn`: added Prompt Passing section — `--prompt-file` as default for delegation, shell quoting rationale. All delegation examples now use `--prompt-file` + `--bg`. `-p` kept for short inline cases.
+- `meridian-spawn/resources/advanced-commands.md`: delegation examples updated to `--prompt-file` + `--bg` (continue/fork, dry-run, permission tiers, background flag).
+- `meridian-privilege-escalation`: spawn examples updated to `--prompt-file` + `--bg`.
+- `README.md`: showcase examples updated to `--prompt-file` + `--bg`.
+
 ## [0.2.6] - 2026-05-04
 
 ### Changed
