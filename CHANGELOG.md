@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.2.7] - 2026-05-06
+
 ### Changed
 - `meridian-work-coordination`: completion guidance now keys work-done authority to lifecycle scope, not agent identity.
 - `meridian-spawn`: added Prompt Passing section — `--prompt-file` as default for delegation, shell quoting rationale. All delegation examples now use `--prompt-file` + `--bg`. `-p` kept for short inline cases.
