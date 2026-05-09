@@ -1,5 +1,6 @@
 ---
 name: meridian-spawn
+type: reference
 description: >
   Use whenever you need to delegate work to another agent, run tasks in
   parallel, check on spawn progress, coordinate multiple agents, or inspect

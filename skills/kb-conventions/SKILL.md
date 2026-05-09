@@ -1,5 +1,6 @@
 ---
 name: kb-conventions
+type: reference
 description: >
   Load when reading from, writing to, or maintaining the KB. Covers layer
   model, structural conventions, and operational tooling.

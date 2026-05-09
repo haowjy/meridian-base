@@ -1,5 +1,6 @@
 ---
 name: decision-log
+type: reference
 description: >
   Use whenever you're making design choices, weighing alternatives,
   adapting plans, or rejecting an approach — any moment where "we chose X

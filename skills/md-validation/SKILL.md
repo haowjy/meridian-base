@@ -1,5 +1,6 @@
 ---
 name: md-validation
+type: reference
 description: >
   Use when writing, reviewing, or refactoring markdown docs and you need
   fast validation of links or Mermaid diagrams. Trigger on phrases like

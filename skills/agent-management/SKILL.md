@@ -1,5 +1,6 @@
 ---
 name: agent-management
+type: reference
 description: >
   Load when you coordinate work across multiple spawns rather than
   implementing directly. Delegation discipline, convergence loops,

@@ -1,5 +1,6 @@
 ---
 name: shared-workspace
+type: guardrail
 description: Load when working in a shared repo with other agents or humans. Covers orientation, safety rules for uncommitted changes, and staging discipline.
 model-invocable: false
 ---
@@ -12,10 +13,8 @@ You are one of several agents working in this repository concurrently. Other age
 
 At the start of your session:
 
-1. Run `meridian context` to discover available context locations. `work` and
-   `kb` always exist — others are project-specific. Route documentation and
-   artifacts to the right context: work-scoped artifacts to `work`, durable
-   knowledge to `kb`, project-specific contexts to their named location.
+1. Run `meridian work current` to get the active work directory. Use
+   `$(meridian work current)` inline in commands to read/write work artifacts.
 2. Run `meridian work` to see active work items and who else may be operating
    in the repo.
 3. Check `git status` for uncommitted changes that may belong to another actor.

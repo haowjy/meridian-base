@@ -4,6 +4,15 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `/reflection` skill — generic self-review guardrail, moved from `meridian-dev-workflow`. Step back, verify, fix before reporting.
+- `meridian-work-coordination`: worktree section — `--worktree` / `--no-worktree` flags for `meridian work start`.
+
+### Changed
+- All skills tagged with `type:` field (principle, guardrail, or reference).
+- `shared-workspace`: orientation step 1 now teaches `$(meridian work current)` inline pattern for resolving work directory.
+- `meridian-work-coordination`: added inline command substitution examples for `meridian work current`.
+
 ## [0.2.12] - 2026-05-09
 
 ### Changed

@@ -1,5 +1,6 @@
 ---
 name: meridian-work-coordination
+type: reference
 description: Use whenever you need to create, switch, update, or complete a work item, or decide where work-scoped notes versus broader shared docs belong.
 model-invocable: false
 ---
@@ -20,10 +21,27 @@ meridian work switch descriptive-name    # attach to existing
 After starting, use `meridian work current` to get the work directory path. Env vars set at launch don't update mid-session, so `$MERIDIAN_ACTIVE_WORK_DIR` may be stale or unset if you started work after launch.
 
 ```bash
-meridian work current   # -> /path/to/work/descriptive-name
+meridian work current                              # -> /path/to/work/descriptive-name
+ls "$(meridian work current)"/design/              # use inline in commands
+cat "$(meridian work current)"/requirements.md     # read work artifacts
 ```
 
 Work context is session-scoped. A new session has no active work until you explicitly start or switch. Check `meridian work` to see what's in flight before creating a duplicate.
+
+## Worktrees
+
+Work items can create a git worktree automatically:
+
+```bash
+meridian work start "auth refactor" --worktree   # create work item + feature worktree
+meridian work start "quick fix" --no-worktree     # skip even if configured as default
+```
+
+With `--worktree`, meridian creates a branch and worktree, then launches spawns
+inside it. All implementation happens in the worktree, not on main. Ship by
+pushing the branch and creating a PR back to main.
+
+Worktree cleanup happens automatically on `meridian work done`.
 
 ## Dashboard
 
