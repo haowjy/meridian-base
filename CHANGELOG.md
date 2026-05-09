@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-05-09
+
 ### Added
 - `/reflection` skill — generic self-review guardrail, moved from `meridian-dev-workflow`. Step back, verify, fix before reporting.
 - `meridian-work-coordination`: worktree section — `--worktree` / `--no-worktree` flags for `meridian work start`.
