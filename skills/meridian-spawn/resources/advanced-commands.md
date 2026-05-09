@@ -106,8 +106,10 @@ meridian spawn wait
 # → blocks until all pending spawns complete, returns status + full report
 
 # Multiple spawns in parallel
-meridian spawn --background -a agent --prompt-file step-a.md --desc "Step A"
-meridian spawn --background -a agent --prompt-file step-b.md --desc "Step B"
+meridian spawn --background -a agent --prompt-file step-a.md \
+  --goal "Step A acceptance criteria met"
+meridian spawn --background -a agent --prompt-file step-b.md \
+  --goal "Step B acceptance criteria met"
 # Wait for all pending spawns — IDs discovered automatically
 meridian spawn wait
 ```

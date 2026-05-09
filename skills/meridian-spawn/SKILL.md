@@ -64,23 +64,32 @@ Pass prior conversation history with `--from` when the spawn needs reasoning tha
 
 Run `meridian mars models list` for available models. Run `meridian mars list` for agent profiles and skills. Model preferences belong in agent profiles or `meridian config`, not hardcoded in spawn commands.
 
-## Work Items
+## Completion Goals
 
-Attach spawns to a work item so they're grouped and traceable. Use `--desc` for human-readable labels.
+`--goal` injects a completion contract into the spawned agent's context. The agent evaluates it as a stopping condition — work until met, report blockers if stuck.
 
 ```bash
-meridian spawn -a agent --desc "Implement step 2" --prompt-file step-2.md --bg
+meridian spawn -a coder --prompt-file impl.md --bg \
+  --goal "All auth middleware tests pass and no type errors"
 ```
 
-For work item lifecycle, see the `/meridian-work-coordination` skill.
+The prompt describes the work. The goal defines the exit condition. Write goals as verifiable states: "Auth module uses the adapter pattern, existing tests pass" — something the agent can check. "Refactor the auth module" belongs in the prompt.
+
+Goals are persisted as spawn metadata and visible in `meridian spawn show`.
+
+## Work Items
+
+Attach spawns to a work item with `--work` so they're grouped and traceable. For work item lifecycle, see the `/meridian-work-coordination` skill.
 
 ## Parallel Spawns
 
 Use `--bg` to launch without blocking, then `wait` to collect all results in one notification:
 
 ```bash
-meridian spawn -a coder --prompt-file auth.md --bg --desc "auth"
-meridian spawn -a coder --prompt-file cache.md --bg --desc "cache"
+meridian spawn -a coder --prompt-file auth.md --bg \
+  --goal "Auth middleware passes all tests"
+meridian spawn -a coder --prompt-file cache.md --bg \
+  --goal "Cache layer passes all tests"
 meridian spawn wait   # one notification when ALL complete
 ```
 
