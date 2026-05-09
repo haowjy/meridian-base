@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.2.12] - 2026-05-09
+
 ### Changed
 - `agent-management`: "Decide from reports" principle — trust agents for work, own decisions, verify at LLM failure seams.
 - `explorer`: description reframed as decision trigger, body emphasizes comprehensive self-contained reports with snippets.
