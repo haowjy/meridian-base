@@ -6,6 +6,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [0.2.9] - 2026-05-09
 
+### Changed
+- `meridian-spawn`: `--goal` taught as completion contract — injected into spawned agent context as verifiable exit condition. `--desc` removed from all examples and skill text; `--goal` replaces it throughout (examples, parallel spawns section, advanced-commands).
+- `meridian-work-coordination`: work context is session-scoped. `work start` before spawning (spawns inherit via session attachment). `meridian work current` for parent agent's own work dir path (env vars don't update mid-session). Completion split into `work done` (archive + detach) and `work clear` (detach only).
+
 ## [0.2.8] - 2026-05-09
 
 ## [0.2.7] - 2026-05-06
