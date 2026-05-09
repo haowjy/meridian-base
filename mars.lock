@@ -5,23 +5,23 @@ path = "."
 
 [dependencies.meridian-base]
 url = "https://github.com/meridian-flow/meridian-base"
-version = "v0.2.6"
-commit = "78c3b007fe4570c01c82da0b69710036784c8132"
+version = "v0.2.11"
+commit = "3f805d9c9c19bad6d1d40addfb1915eac11818b0"
 
 [dependencies.meridian-prompter]
 url = "https://github.com/meridian-flow/meridian-prompter"
-version = "v0.1.11"
-commit = "8ce7c229871da75c59fc0efdac11cad6775afbfa"
+version = "v0.1.12"
+commit = "df83e7be065564feaeb6a2e909ab68fc83593eaf"
 
 [items."agent/explorer"]
 source = "_self"
 kind = "agent"
-source_checksum = "sha256:62b2f32eb41e976b59bec716bfb2521dfe9026956f36da2e4e6bb7cdae2103c0"
+source_checksum = "sha256:238db4bf7b0ee0ccb1c8c96a1aea6335701ecb32aa0ff2fcefc7cf258cbd6569"
 
 [[items."agent/explorer".outputs]]
 target_root = ".mars"
 dest_path = "agents/explorer.md"
-installed_checksum = "sha256:62b2f32eb41e976b59bec716bfb2521dfe9026956f36da2e4e6bb7cdae2103c0"
+installed_checksum = "sha256:238db4bf7b0ee0ccb1c8c96a1aea6335701ecb32aa0ff2fcefc7cf258cbd6569"
 
 [items."agent/kb-maintainer"]
 source = "_self"
@@ -142,12 +142,12 @@ installed_checksum = "sha256:715c6d477390f7e87b29c39244130c545455a838bde276e773b
 [items."skill/agent-management"]
 source = "_self"
 kind = "skill"
-source_checksum = "sha256:705a992e610ec483b391ef89ea090d1f1583357707d77bb67c46d193db3f208b"
+source_checksum = "sha256:e58e0be8ef0f76cea27e2e8206034303d1f6f6122b9eebd3aa14365e28bf52e3"
 
 [[items."skill/agent-management".outputs]]
 target_root = ".mars"
 dest_path = "skills/agent-management"
-installed_checksum = "sha256:705a992e610ec483b391ef89ea090d1f1583357707d77bb67c46d193db3f208b"
+installed_checksum = "sha256:e58e0be8ef0f76cea27e2e8206034303d1f6f6122b9eebd3aa14365e28bf52e3"
 
 [items."skill/decision-log"]
 source = "_self"
@@ -212,22 +212,22 @@ installed_checksum = "sha256:3aa59153bab95c223acad9d9ad578f7a022a2ac01cc7abce09f
 [items."skill/meridian-spawn"]
 source = "_self"
 kind = "skill"
-source_checksum = "sha256:2885283bc0533695e06b36d1f914365168ee07c544160b556d4b3ac66de29955"
+source_checksum = "sha256:03b878acbebc4c1d20f831075b7ad015b01e6b10e258471c917e953ba6df6798"
 
 [[items."skill/meridian-spawn".outputs]]
 target_root = ".mars"
 dest_path = "skills/meridian-spawn"
-installed_checksum = "sha256:2885283bc0533695e06b36d1f914365168ee07c544160b556d4b3ac66de29955"
+installed_checksum = "sha256:03b878acbebc4c1d20f831075b7ad015b01e6b10e258471c917e953ba6df6798"
 
 [items."skill/meridian-work-coordination"]
 source = "_self"
 kind = "skill"
-source_checksum = "sha256:80f7e658559b37df8de1095c05e3129469bf1865aa7b254d2e9223a8d030ea2c"
+source_checksum = "sha256:3657efca11f0b49fe1ba23ee9895454b74a8c81c4c7d2ac6322d04158b8bc4af"
 
 [[items."skill/meridian-work-coordination".outputs]]
 target_root = ".mars"
 dest_path = "skills/meridian-work-coordination"
-installed_checksum = "sha256:80f7e658559b37df8de1095c05e3129469bf1865aa7b254d2e9223a8d030ea2c"
+installed_checksum = "sha256:3657efca11f0b49fe1ba23ee9895454b74a8c81c4c7d2ac6322d04158b8bc4af"
 
 [items."skill/prompt-principles"]
 source = "meridian-prompter"
