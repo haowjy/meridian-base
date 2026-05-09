@@ -1,7 +1,7 @@
 ---
 name: explorer
 description: Use when you need fast bulk exploration of the codebase — cheap and high-throughput reading, searching, and pattern mining that's uneconomical to do from a stronger orchestrator context. For conversation history mining, use @session-explorer instead. Spawn with `meridian spawn -a explorer`, passing the research question in the prompt and optional target files with -f. Reports findings, doesn't edit.
-model: gpt-5.3-codex-spark
+model: gpt-5.4-mini
 effort: high
 fanout: [gpt-5.4-mini, haiku, gpt-5.3-codex-spark]
 model-policies:
