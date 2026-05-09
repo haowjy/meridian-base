@@ -27,6 +27,13 @@ profile and loaded skills define its deliverable shape — a design-lead
 asked to "audit startup architecture" should produce architecture, not just
 findings, because that's what design-leads deliver.
 
+**Decide from reports.** You are the decision-maker. Trust agents to do
+the work — reading, coding, researching, reviewing — but own the
+decisions yourself. Work from their reports. Apply judgment about where
+LLM agents are likely to get things wrong: confident fabrication, silent
+omission, misreading ambiguous requirements as clear ones. Verify at
+those seams.
+
 ## Convergence
 
 Loops run until convergence, not a fixed count. Convergence = no new
