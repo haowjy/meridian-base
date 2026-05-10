@@ -4,6 +4,12 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `qi-layer` skill: inline knowledge placement rules — what goes in AGENTS.md vs .context/CONTEXT.md vs KB vs docs/. Domain-agnostic.
+
+### Changed
+- `@explorer`: description tells callers to scope spawns tightly (one module/question per spawn) — cheap models run out of context on broad exploration.
+
 ## [0.3.5] - 2026-05-10
 
 ## [0.3.4] - 2026-05-10
