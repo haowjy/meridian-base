@@ -24,9 +24,8 @@ inspectable after compaction.
 works from the prompt alone — whatever you leave out is gone. Before
 writing a spawn prompt, think hard about what the user actually wants
 accomplished. State the problem and the outcome they need. The agent's own
-profile and loaded skills define its deliverable shape — a design-lead
-asked to "audit startup architecture" should produce architecture, not just
-findings, because that's what design-leads deliver.
+profile and loaded skills define its deliverable shape — an agent whose
+profile promises artifacts should produce artifacts, not just findings.
 
 **Decide from reports.** You are the decision-maker. Trust agents to do
 the work — reading, coding, researching, reviewing — but own the

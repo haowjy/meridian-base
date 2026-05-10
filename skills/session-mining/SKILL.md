@@ -26,7 +26,7 @@ When the question spans long histories or multiple sessions, spawn @session-expl
 
 ```bash
 meridian spawn -a session-explorer \
-  -p "Mine session history for work item <id>. Summarize decisions, rejected options, constraints, and unresolved questions with session references."
+  --prompt-file session-mine.md
 ```
 
 If you are the @session-explorer, mine directly rather than spawning recursively.

@@ -30,8 +30,8 @@ start — don't assume paths from prior context.
 Durable knowledge that persists across work items:
 
 - **Decisions and rationale** — why we chose X over Y, rejected alternatives,
-  constraints that drove the choice. Decisions are invisible in code and lost
-  from conversations after compaction — the highest-value content.
+  constraints that drove the choice. Decisions disappear after transcript
+  compaction and are invisible in code, so capture them explicitly.
 - **Domain knowledge** — how things actually work, quirks, failure modes,
   patterns discovered.
 - **Architecture** — system design, boundaries, data flows, component

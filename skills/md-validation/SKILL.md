@@ -10,8 +10,7 @@ description: >
 
 # md-validation
 
-Meridian's markdown validation commands work on any markdown file or directory,
-not just KB content.
+Meridian's markdown validation commands work on any markdown file or directory.
 
 ## Commands
 

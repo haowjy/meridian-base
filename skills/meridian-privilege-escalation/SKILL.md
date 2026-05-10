@@ -14,7 +14,7 @@ Prefer the least-privilege escalation that unblocks the task. Try targeted fixes
 
 ## Sandbox Tiers (Codex only)
 
-The `--sandbox` flag controls Codex's process sandboxing — filesystem, network, and process isolation. Other harnesses (Claude, OpenCode) don't have sandbox tiers; see Approval Modes and Model/Harness Switching below for how to escalate permissions on those.
+The `--sandbox` flag controls Codex's process sandboxing — filesystem, network, and process isolation. Other harnesses have different escalation paths: Claude supports approval escalation (`--approval`) but not sandbox tier changes. OpenCode permissions vary by configuration. See Approval Modes and Model/Harness Switching below.
 
 Tiers from most to least restrictive:
 
@@ -54,11 +54,10 @@ meridian spawn -a coder --approval yolo --prompt-file task.md --bg   # use yolo 
 Different models route to different harnesses, and each harness has different capability profiles. Switching the model can bypass harness-level restrictions entirely:
 
 ```bash
-# Some harnesses have sandboxes that restrict network binding
-meridian spawn -a coder -m <sandboxed-model> --prompt-file task.md --bg
-
-# Switching to a harness without sandbox restrictions sidesteps the issue
-meridian spawn -a coder -m <unsandboxed-model> --prompt-file task.md --bg
+# Choose an alias from `meridian mars models list` that routes to the needed harness.
+# Some harnesses have sandboxes that restrict network binding;
+# switching to a harness without sandbox restrictions sidesteps the issue.
+meridian spawn -a coder -m MODEL_ALIAS --prompt-file task.md --bg
 ```
 
 Run `meridian mars models list` to see which models route to which harness.
@@ -71,7 +70,7 @@ On Claude: not sandbox-restricted → check if the tool is in the allowedTools l
 
 **"Can't write files outside workspace"**
 On Codex: sandbox restricts filesystem scope → `--sandbox full-access` for that spawn.
-On Claude: escalate to the user — they can approve `--approval yolo` or `--sandbox danger-full-access` for that spawn.
+On Claude: escalate to the user — they can approve `--approval yolo` for that spawn.
 
 **"Can't access the network / fetch URLs"**
 On Codex: sandbox or tool restriction → ensure WebFetch/WebSearch are in the agent's tools list, or escalate sandbox.

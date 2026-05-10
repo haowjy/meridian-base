@@ -16,7 +16,7 @@ Write spawn prompts to files. Use `--prompt-file` for delegation.
 
 Shell quoting mutates prompts before meridian receives them, backticks become command substitutions, `$variables` expand, quotes nest wrong, and multiline formatting collapses. Prompt files preserve exact text and make handoffs inspectable.
 
-`-p` is okay for short, single-line, no-special-characters cases.
+`-p` is for trivial exact-string smoke tests (e.g. `Reply with exactly OK`). Everything else gets a prompt file.
 
 ## Core Loop
 

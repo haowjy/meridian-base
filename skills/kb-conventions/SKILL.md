@@ -29,10 +29,8 @@ cross-references, keeps everything consistent. Shaped by the decisions.
 **Log** — what changed in the wiki and why. The audit trail of how the KB
 evolved — what was added, updated, or restructured, and what triggered it.
 
-**Schema** (`AGENTS.md`) — user-defined governance. Tells the LLM how the
-layers are structured, what conventions to follow, and what workflows to use.
-The human and LLM co-evolve this. `CLAUDE.md` references `AGENTS.md` via
-`@AGENTS.md`.
+**Schema** (`AGENTS.md`) — user-defined governance. Defines layer structure,
+conventions, and workflows.
 
 ## Wiki Page Conventions
 

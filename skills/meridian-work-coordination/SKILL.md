@@ -11,7 +11,7 @@ The orchestrator owns work state — subagents should not mutate it unless expli
 
 ## Starting Work
 
-Run `work start` before spawning anything. It attaches the work item to your session — spawns inherit the attachment and get `$MERIDIAN_ACTIVE_WORK_DIR` set automatically.
+Before spawning, ensure your session is attached to the correct work item. Spawns inherit the attachment and get `$MERIDIAN_ACTIVE_WORK_DIR` set automatically.
 
 ```bash
 meridian work start "descriptive name"   # create and attach
