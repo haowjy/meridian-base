@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.3.2] - 2026-05-10
+
 ### Added
 - `@explorer`: knowledge-first exploration — `meridian qi <path>` checks AGENTS.md and .context/CONTEXT.md before reading raw source files. `Bash(meridian qi *)` added to tools.
 
