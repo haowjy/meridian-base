@@ -4,11 +4,14 @@
 
 Run `meridian kg [path]` for a fast status pass — file count, link count, broken link count.
 
+All `kg` subcommands accept context aliases as path: `kb`, `strategy`, `work`
+resolve to their context directories (e.g. `meridian kg check kb`).
+
 ### `meridian kg graph`
 
 Run `meridian kg graph [path]` to see link topology.
 
-Targets: file path or directory path.
+Targets: file path, directory path, or context alias (`kb`, `strategy`, `work`).
 
 Flags:
 - `--depth N` — link-hop depth (default `3`)
@@ -26,6 +29,8 @@ Tree markers:
 ### `meridian kg check`
 
 Run `meridian kg check [path]` as a commit/CI gate.
+
+Targets: file path, directory path, or context alias (`kb`, `strategy`, `work`).
 
 Flags:
 - `--exclude PATTERN` — exclude matches by glob (repeatable)

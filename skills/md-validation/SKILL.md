@@ -19,6 +19,9 @@ Meridian's markdown validation commands work on any markdown file or directory.
 - **`meridian kg graph [path]`** — link topology visualization. Use to understand
   doc structure and find orphan pages.
 - **`meridian kg [path]`** — quick stats (file count, link count, broken count).
+
+Context aliases work as path: `kb`, `strategy`, `work` resolve to their
+context directories (e.g. `meridian kg check kb`, `meridian kg graph strategy`).
 - **`meridian mermaid check [path]`** — Mermaid diagram validation (syntax +
   style warnings). Run after diagram edits.
 

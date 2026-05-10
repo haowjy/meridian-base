@@ -26,7 +26,7 @@ you think should be there.
 
 When exploring a module or directory, check for colocated knowledge first:
 
-1. Run `meridian qi <path>` to load AGENTS.md and .context/CONTEXT.md for
+1. Run `meridian qi graph <path>` to load AGENTS.md and .context/CONTEXT.md for
    the target area — contracts, architecture, rationale, patterns.
 2. If knowledge docs exist, read them before reading raw source files.
 3. Read raw source files to confirm specifics, fill gaps, or when no

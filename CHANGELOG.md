@@ -4,6 +4,11 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `@explorer`: `meridian qi <path>` → `meridian qi graph <path>` (bare qi is now summary view).
+- `@kb-maintainer`: uses `meridian kg check kb` / `meridian kg graph kb` context aliases directly.
+- `md-validation`: documents context aliases (`kb`, `strategy`, `work`) as valid path arguments for all kg subcommands.
+
 ## [0.3.3] - 2026-05-10
 
 ## [0.3.2] - 2026-05-10

@@ -36,9 +36,10 @@ Determine the target tree once at the start:
    ambiguity rather than guessing.
 3. Otherwise, run `meridian context kb` to get the durable knowledge base path.
 
-KB-specific topology commands (`meridian kg check`, `meridian kg graph`) are
-valid only when the target is the KB. For non-KB targets, use `rg` and
-directory listing for structural analysis.
+KB-specific topology commands (`meridian kg check kb`, `meridian kg graph kb`)
+target the KB directly via context alias. For non-KB targets, pass the path
+explicitly (`meridian kg check <path>`) or use `rg` and directory listing for
+structural analysis.
 
 ## Structural Refactoring
 
@@ -53,8 +54,8 @@ directory listing for structural analysis.
 
 ## Cross-Reference Integrity
 
-- **KB target:** `meridian kg check` for broken links. `meridian kg graph` for
-  topology — orphan pages, hub pages, disconnected clusters.
+- **KB target:** `meridian kg check kb` for broken links. `meridian kg graph kb`
+  for topology — orphan pages, hub pages, disconnected clusters.
 - **Any target:** When splitting or moving docs, `rg 'old-filename'` to find
   all references. Fix broken links, remove references to deleted pages, add
   links to new pages.
@@ -85,8 +86,8 @@ contradictions inline.
 ## How to Work
 
 1. **Survey first.** Scan directory structure, read `index.md`. For KB targets,
-   run `meridian kg check` and `meridian kg graph`. Understand current state
-   before changing anything.
+   run `meridian kg check kb` and `meridian kg graph kb`. Understand current
+   state before changing anything.
 2. **Fix structural issues.** Splits, merges, renames, folder creation.
 3. **Fix cross-references.** Broken links, missing links between related pages.
 4. **Flag content issues.** Contradictions and staleness — report for kb-writer
