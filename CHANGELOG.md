@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.3.6] - 2026-05-10
+
 ### Added
 - `qi-layer` skill: inline knowledge placement rules — what goes in AGENTS.md vs .context/CONTEXT.md vs KB vs docs/. Domain-agnostic.
 
