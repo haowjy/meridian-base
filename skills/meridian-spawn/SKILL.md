@@ -3,8 +3,8 @@ name: meridian-spawn
 type: reference
 description: >
   Use whenever you need to delegate work to another agent, run tasks in
-  parallel, check on spawn progress, coordinate multiple agents, or inspect
-  spawn outputs. Also use when routing work to a specific model or provider.
+  parallel, coordinate multiple agents, or inspect spawn outputs. Also
+  use when routing work to a specific model or provider.
 model-invocable: false
 ---
 
@@ -96,7 +96,7 @@ meridian spawn wait   # one notification when ALL complete
 
 Every `--bg` spawn must be drained with `meridian spawn wait` before you respond to the user, start dependent work, or end your turn. Background spawns that aren't waited on are invisible — their results are lost and their failures go unnoticed.
 
-When `meridian spawn wait` runs through a harness shell tool, poll sparsely. Wait yield timing is harness-aware — meridian detects the parent harness via `MERIDIAN_HARNESS` env and yields before the parent's prompt cache expires. Use `--yield-after-secs` to override. Check `meridian config show` for current per-harness values.
+`spawn wait` is harness-aware — it yields at the right interval to preserve your prompt cache. When a wait yields, call `meridian spawn wait` again immediately to re-enter the wait. Act on results when it returns a terminal state.
 
 ## Checking Status
 

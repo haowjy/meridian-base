@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `meridian-spawn`: removed `--yield-after-secs` and polling guidance. Agents trust `spawn wait` timing — re-enter wait on yield, act on terminal state. Stops the nervous-babysitter pattern (show → log → short-yield wait → repeat).
+
 ## [0.3.0] - 2026-05-09
 
 ### Added
