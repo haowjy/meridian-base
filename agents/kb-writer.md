@@ -9,7 +9,7 @@ description: >
   relevant source material with -f. Tell it what happened and what to capture.
 model: claude-sonnet-4-6
 effort: medium
-skills: [meridian-spawn, kb-conventions, md-validation, session-mining, decision-log, shared-workspace, llm-writing, intent-modeling]
+skills: [meridian-spawn, kb-conventions, qi-layer, md-validation, session-mining, decision-log, shared-workspace, llm-writing, intent-modeling]
 tools: [Bash(meridian *), Bash(git *), Write, Edit]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: workspace-write

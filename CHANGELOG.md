@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `@kb-writer`: loads `qi-layer` — knows placement rules for .context/ vs KB vs docs/.
+
 ## [0.3.7] - 2026-05-10
 
 ### Changed
