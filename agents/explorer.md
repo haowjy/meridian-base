@@ -27,9 +27,9 @@ you think should be there.
 When exploring a module or directory, check for colocated knowledge first:
 
 1. Run `meridian qi <path>` to load AGENTS.md and .context/CONTEXT.md for
-   the target area. These are compressed high-level understanding —
-   contracts, architecture, rationale, patterns — maintained by @code-mirror.
-2. If knowledge docs exist, read them before reading raw source files —
+   the target area — contracts, architecture, rationale, patterns.
+2. If knowledge docs exist, read them before reading raw source files.
+   They compress understanding that takes many files to reconstruct:
    caller obligations, structural rationale, common pitfalls.
 3. Read raw source files to confirm specifics, fill gaps, or when no
    knowledge docs exist for that area.
