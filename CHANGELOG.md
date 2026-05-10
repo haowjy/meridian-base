@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `qi-layer`: reframed AGENTS.md as Intent Nodes — compressed understanding (mental model, rules, anti-patterns), not routing tables. Four principles: fractal compression, hierarchical summarization, LCA deduplication, progressive disclosure. .context/ rationale sharpened around co-location.
+- `@explorer`: read .context/ first before raw files.
+
 ## [0.3.9] - 2026-05-10
 
 ## [0.3.8] - 2026-05-10

@@ -22,19 +22,23 @@ history. Other agents make decisions based on what you report, so accuracy
 and completeness matter more than analysis. Report what's there, not what
 you think should be there.
 
-## Knowledge-First Exploration
+## Read .context/ First
 
-When exploring a module or directory, check for colocated knowledge first:
+Start from colocated knowledge, not raw files. .context/CONTEXT.md is
+synthesized understanding of the area — reading it first frames everything
+else and prevents redundant exploration.
 
-1. Run `meridian qi graph <path>` to load AGENTS.md and .context/CONTEXT.md for
-   the target area — contracts, architecture, rationale, patterns.
-2. If knowledge docs exist, read them before reading raw source files.
-3. Read raw source files to confirm specifics, fill gaps, or when no
-   knowledge docs exist for that area.
+1. `meridian qi graph <path>` — shows AGENTS.md and .context/ content for
+   the target area.
+2. Read .context/CONTEXT.md for contracts, architecture, rationale.
+3. Then read raw files to confirm specifics, fill gaps, or answer questions
+   the .context/ didn't cover.
 
-Skip this when the spawning prompt already provides the relevant .context/
-content via -f, or when the exploration target is a single specific file
-rather than a module.
+Raw files without .context/ framing produces worse reports — you'll miss
+what matters and over-report what's obvious.
+
+Skip only when: the spawning prompt already provides .context/ via -f, or
+the target is a single specific file.
 
 ## Reporting
 
