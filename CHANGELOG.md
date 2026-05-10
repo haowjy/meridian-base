@@ -4,6 +4,19 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `@explorer`: knowledge-first exploration — `meridian qi <path>` checks AGENTS.md and .context/CONTEXT.md before reading raw source files. `Bash(meridian qi *)` added to tools.
+
+### Changed
+- `agent-management`: removed cross-package design-lead behavioral assumption. Deliverable shape guidance now package-neutral.
+- `meridian-spawn`: `-p` escape hatch tightened to trivial smoke tests only. Everything else requires `--prompt-file`.
+- `session-mining`: example switched from inline `-p` to `--prompt-file`, consistent with meridian-spawn discipline.
+- `meridian-privilege-escalation`: fixed Claude sandbox self-contradiction (approval escalation only, no sandbox tiers). Removed invented model placeholders — use `meridian mars models list`.
+- `meridian-work-coordination`: "run work start before spawning" softened to "ensure session is attached to correct work item."
+- `kb-writer`: replaced vague "highest-value content" with concrete reasoning about why decisions need explicit capture.
+- `kb-conventions`: removed harness-specific `CLAUDE.md`/`@AGENTS.md` reference. Schema layer described generically.
+- `md-validation`: replaced contrastive "not just KB content" with positive framing.
+
 ## [0.3.1] - 2026-05-10
 
 ### Changed
