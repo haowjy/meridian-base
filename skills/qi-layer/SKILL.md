@@ -10,9 +10,8 @@ description: >
 
 # qi-layer
 
-Inline knowledge captures what the surrounding files can't express on
-their own: intent, boundaries, rationale, anti-patterns, relationships.
-The content shows *what*; the qi-layer shows *why* and *where not to go*.
+Inline knowledge captures intent, boundaries, rationale, and anti-patterns —
+what the surrounding files can't express on their own.
 
 ## AGENTS.md
 

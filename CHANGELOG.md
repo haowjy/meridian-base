@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `qi-layer`: tighter opening — removed contrastive framing that corrects a misconception nobody has.
+
 ## [0.3.6] - 2026-05-10
 
 ### Added
