@@ -9,8 +9,24 @@ description: >
   it discover sessions via work item.
 model: sonnet
 skills: [session-mining, intent-modeling, llm-writing]
-tools: [Bash(meridian session *), Bash(meridian work *), Bash(meridian spawn show *), Bash(rg *)]
-disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*)]
+tools:
+  'bash(meridian session *)': allow
+  'bash(meridian work *)': allow
+  'bash(meridian spawn show *)': allow
+  'bash(rg *)': allow
+  agent: deny
+  edit: deny
+  write: deny
+  notebook: deny
+  cron: deny
+  task: deny
+  ask_user: deny
+  notifications: deny
+  plan_mode: deny
+  worktree: deny
+  'bash(git checkout:*)': deny
+  'bash(git switch:*)': deny
+  'bash(git stash:*)': deny
 sandbox: read-only
 ---
 

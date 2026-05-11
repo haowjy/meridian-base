@@ -10,8 +10,26 @@ model-policies:
   - match: {alias: haiku}
     override: {effort: high}
 skills: []
-tools: [Bash(meridian qi *), Bash(rg *), Bash(cat *), Bash(find *), Bash(git show *), Bash(git log *)]
-disallowed-tools: [Agent, Edit, Write, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*)]
+tools:
+  'bash(meridian qi *)': allow
+  'bash(rg *)': allow
+  'bash(cat *)': allow
+  'bash(find *)': allow
+  'bash(git show *)': allow
+  'bash(git log *)': allow
+  agent: deny
+  edit: deny
+  write: deny
+  notebook: deny
+  cron: deny
+  task: deny
+  ask_user: deny
+  notifications: deny
+  plan_mode: deny
+  worktree: deny
+  'bash(git checkout:*)': deny
+  'bash(git switch:*)': deny
+  'bash(git stash:*)': deny
 sandbox: read-only
 ---
 
