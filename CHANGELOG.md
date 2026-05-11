@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.3.12] - 2026-05-11
+
 ### Changed
 - `@kb-maintainer`: gpt-5.5 → gpt-5.4-mini high. Structural doc health checks don't need frontier reasoning. Added reflection + llm-writing skills.
 
