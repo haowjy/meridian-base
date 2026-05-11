@@ -9,9 +9,10 @@ description: >
   human review. Spawn with `meridian spawn -a kb-maintainer`, passing the
   target tree with -f for an explicit target, or let it default to the KB
   via `meridian context kb`.
-model: gpt-5.5
-effort: medium
-skills: [meridian-spawn, kb-conventions, md-validation, shared-workspace]
+model: gpt-5.4-mini
+effort: high
+skills: [meridian-spawn, kb-conventions, md-validation, shared-workspace,
+  reflection, llm-writing]
 tools: [Bash(meridian *), Bash(git *), Bash(rg *), Write, Edit, Read]
 disallowed-tools: [Agent, NotebookEdit, ScheduleWakeup, CronCreate, CronDelete, CronList, TaskCreate, TaskGet, TaskList, TaskOutput, TaskStop, TaskUpdate, AskUserQuestion, PushNotification, RemoteTrigger, EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree, Bash(git revert:*), Bash(git checkout:*), Bash(git switch:*), Bash(git stash:*), Bash(git restore:*), Bash(git reset --hard:*), Bash(git clean:*)]
 sandbox: workspace-write
