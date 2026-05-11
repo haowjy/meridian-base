@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Fixed
+- `meridian-privilege-escalation`: replaced stale `full-access` sandbox tier with `danger-full-access`. The old tier doesn't exist — agents using it got spawn failures.
+
 ## [0.3.10] - 2026-05-10
 
 ### Changed

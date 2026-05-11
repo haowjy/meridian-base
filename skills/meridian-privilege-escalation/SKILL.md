@@ -10,7 +10,7 @@ Meridian agents run with constrained permissions by default — sandboxed filesy
 
 ## Escalation Discipline
 
-Prefer the least-privilege escalation that unblocks the task. Try targeted fixes first (`--sandbox full-access`, `--approval auto`) before broad overrides (`--approval yolo`, `--sandbox danger-full-access`). Broad overrides disable safety checks entirely — if you're reaching for `yolo` or `danger-full-access`, surface the situation to the user first and let them approve the escalation. An autonomous agent silently granting itself maximum permissions defeats the purpose of having tiers.
+Prefer the least-privilege escalation that unblocks the task. Try targeted fixes first (`--approval auto`) before broad overrides (`--approval yolo`, `--sandbox danger-full-access`). Broad overrides disable safety checks entirely — if you're reaching for `yolo` or `danger-full-access`, surface the situation to the user first and let them approve the escalation. An autonomous agent silently granting itself maximum permissions defeats the purpose of having tiers.
 
 ## Sandbox Tiers (Codex only)
 
@@ -22,12 +22,11 @@ Tiers from most to least restrictive:
 |---|---|
 | `read-only` | Read files only. No writes, no process execution. |
 | `workspace-write` | Read/write within the workspace. No network listeners, no access outside project. |
-| `full-access` | Full filesystem and process access. |
-| `danger-full-access` | Like full-access with reduced safety checks. |
+| `danger-full-access` | Full filesystem and process access with reduced safety checks. |
 
 Override per-spawn:
 ```bash
-meridian spawn -a coder --sandbox full-access --prompt-file integration-tests.md --bg
+meridian spawn -a coder --sandbox danger-full-access --prompt-file integration-tests.md --bg
 ```
 
 Agent profiles set a default tier (e.g. `sandbox: workspace-write`). The `--sandbox` flag overrides it for that specific spawn only. The tier passes through directly to Codex's `--sandbox` flag.
@@ -65,11 +64,11 @@ Run `meridian mars models list` to see which models route to which harness.
 ## Common Escalation Scenarios
 
 **"Can't bind to a port / start a server"**
-On Codex: sandbox restricts network listeners → `--sandbox full-access` or higher.
+On Codex: sandbox restricts network listeners → `--sandbox danger-full-access`.
 On Claude: not sandbox-restricted → check if the tool is in the allowedTools list, or use `--approval auto`.
 
 **"Can't write files outside workspace"**
-On Codex: sandbox restricts filesystem scope → `--sandbox full-access` for that spawn.
+On Codex: sandbox restricts filesystem scope → `--sandbox danger-full-access` for that spawn.
 On Claude: escalate to the user — they can approve `--approval yolo` for that spawn.
 
 **"Can't access the network / fetch URLs"**
