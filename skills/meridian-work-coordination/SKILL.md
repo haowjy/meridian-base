@@ -28,21 +28,6 @@ cat "$(meridian work current)"/requirements.md     # read work artifacts
 
 Work context is session-scoped. A new session has no active work until you explicitly start or switch. Check `meridian work` to see what's in flight before creating a duplicate.
 
-## Worktrees
-
-Work items can create a git worktree automatically:
-
-```bash
-meridian work start "auth refactor" --worktree   # create work item + feature worktree
-meridian work start "quick fix" --no-worktree     # skip even if configured as default
-```
-
-With `--worktree`, meridian creates a branch and worktree, then launches spawns
-inside it. All implementation happens in the worktree, not on main. Ship by
-pushing the branch and creating a PR back to main.
-
-Worktree cleanup happens automatically on `meridian work done`.
-
 ## Dashboard
 
 ```bash
