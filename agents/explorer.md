@@ -6,13 +6,10 @@ effort: high
 model-policies:
   - match: {alias: gpt-5.4-mini}
     override: {effort: high}
-    fallback-order: 1
   - match: {alias: haiku}
     override: {effort: high}
-    fallback-order: 2
   - match: {alias: gpt-5.3-codex-spark}
     override: {}
-    fallback-order: 3
 skills: []
 tools:
   'bash(meridian qi *)': allow
