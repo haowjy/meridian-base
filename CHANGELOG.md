@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.2] - 2026-05-14
+
 ### Added
 - `grill-with-docs` skill: interactive grilling sessions against plans/proposals. Challenges terminology against KB vocabulary, spawns explorers for evidence, updates work requirements inline as decisions crystallize. Domain-agnostic — works for product plans, prompt systems, operations, architecture, or code.
 - Model aliases: `deepseek` → `opencode-go/deepseek-v4-pro`, `deepseekflash` → `opencode-go/deepseek-v4-flash`, `kimi` → `opencode-go/kimi-k2.6`, `qwen` → `opencode-go/qwen3.6-plus`.
