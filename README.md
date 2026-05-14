@@ -1,6 +1,6 @@
 # meridian-base
 
-Core coordination primitives for [Meridian](https://github.com/meridian-flow/meridian-cli).
+Core coordination primitives for [Meridian](https://github.com/haowjy/meridian-cli).
 This is what turns a bare `meridian` install into an orchestration system —
 the orchestrator agent, the default subagent, and the skills that teach them
 how to spawn work, track state, and coordinate across sessions.
@@ -67,5 +67,5 @@ Meridian discovers these by layout convention — no manifest needed.
 
 ## See Also
 
-- [meridian-cli](https://github.com/meridian-flow/meridian-cli) — the Meridian coordination engine
+- [meridian-cli](https://github.com/haowjy/meridian-cli) — the Meridian coordination engine
 - [meridian-dev-workflow](https://github.com/meridian-flow/meridian-dev-workflow) — opinionated dev team built on top of this base

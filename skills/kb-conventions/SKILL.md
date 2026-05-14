@@ -61,6 +61,34 @@ index.md
 The overview at each level orients the reader: what exists here, how pieces
 relate, where to go deeper.
 
+### Glossary Pages
+
+Shared vocabulary lives in glossary pages within the wiki hierarchy. Place
+terms at the lowest common domain where they're shared:
+
+- **Root glossary** (`glossary.md`) — project-wide terms used across domains
+- **Domain glossary** (`<domain>/glossary.md` or `<domain>/<subdomain>/glossary.md`, etc) — terms specific to that domain
+  or subdomain, created when a domain accumulates enough distinct terms
+
+If the project already uses a different filename convention (e.g.
+`vocabulary.md`, `terms.md`), follow it. Prefer `glossary.md` for new KBs.
+
+Each term entry includes:
+
+- **Canonical name** (heading or bold) — the authoritative form
+- **Definition** — concise, one to three sentences
+- **Aliases** — alternative names or synonyms, if any
+- **Links** — to related wiki pages, decision records, or source locations
+
+When two documents use conflicting terms for the same concept, or the same
+term for different concepts, flag it as a glossary conflict:
+
+> `> [!FLAG] **Needs human review** — glossary conflict: "<term A>" and "<term B>" may refer to the same concept.`
+
+Challenge conflicting terminology instead of silently adding duplicate
+entries. When a new term overlaps with an existing one, check the glossary
+at each level (domain, then root) before creating a new entry.
+
 ### Linking
 
 Link to related docs using relative paths. Cross-reference instead of

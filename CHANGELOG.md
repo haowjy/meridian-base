@@ -4,6 +4,13 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `grill-with-docs` skill: interactive grilling sessions against plans/proposals. Challenges terminology against KB vocabulary, spawns explorers for evidence, updates work requirements inline as decisions crystallize. Domain-agnostic — works for product plans, prompt systems, operations, architecture, or code.
+- Model aliases: `deepseek` → `opencode-go/deepseek-v4-pro`, `deepseekflash` → `opencode-go/deepseek-v4-flash`, `kimi` → `opencode-go/kimi-k2.6`, `qwen` → `opencode-go/qwen3.6-plus`.
+
+### Changed
+- `kb-conventions`: glossary/vocabulary convention — hierarchical glossary pages (`glossary.md` at root and domain levels), term entry format (canonical name, definition, aliases, links), terminology conflict flagging via `[!FLAG]`.
+
 ## [0.4.1] - 2026-05-12
 
 ## [0.4.0] - 2026-05-11

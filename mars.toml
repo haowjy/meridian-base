@@ -18,6 +18,34 @@ default_effort = "low"
 model = "gpt-5.5"
 provider = "openai"
 
+[models.deepseek]
+harness = "opencode"
+description = "DeepSeek V4 Pro via OpenCode Go."
+default_effort = "high"
+model = "opencode-go/deepseek-v4-pro"
+provider = "opencode"
+
+[models.deepseekflash]
+harness = "opencode"
+description = "DeepSeek V4 Flash via OpenCode Go."
+default_effort = "high"
+model = "opencode-go/deepseek-v4-flash"
+provider = "opencode"
+
+[models.kimi]
+harness = "opencode"
+description = "Kimi 2.6 via OpenCode Go."
+default_effort = "high"
+model = "opencode-go/kimi-k2.6"
+provider = "opencode"
+
+[models.qwen]
+harness = "opencode"
+description = "Qwen 3.6 Plus via OpenCode Go."
+default_effort = "high"
+model = "opencode-go/qwen3.6-plus"
+provider = "opencode"
+
 [models.opus46]
 harness = "claude"
 description = "Opus 4.6 — best for orchestration, frontend, UI/UX, and creative work. Strong instruction-following."
