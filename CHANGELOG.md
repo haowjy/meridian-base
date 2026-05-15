@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.3] - 2026-05-15
+
 ### Changed
 - `shared-workspace`: workspace ownership guardrail. Model-invocable again; git/staging discipline removed.
 
