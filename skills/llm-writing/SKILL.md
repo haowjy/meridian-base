@@ -2,6 +2,7 @@
 name: llm-writing
 type: guardrail
 description: Load when producing any written artifact for humans.
+model-invocable: true
 ---
 
 # LLM Writing

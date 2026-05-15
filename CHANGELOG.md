@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `llm-writing`: explicitly model-invocable. Safety-net writing guardrail can be discovered during artifact work.
+
 ## [0.4.3] - 2026-05-15
 
 ### Changed
