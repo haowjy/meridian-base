@@ -1,31 +1,54 @@
 ---
 name: shared-workspace
 type: guardrail
-description: Load when working in a shared repo with other agents or humans. Covers orientation, safety rules for uncommitted changes, and staging discipline.
-model-invocable: false
+description: >
+  Load when a workspace may contain changes from humans or other agents.
+  Covers safe orientation, preserving unfamiliar files, and containing outputs.
+model-invocable: true
 ---
 
 # Shared Workspace
 
-You are one of several agents working in this repository concurrently. Other agents — and humans — may have uncommitted changes, untracked files, or in-progress work that you cannot distinguish from stale artifacts by inspection alone.
+You may be working in a directory that contains human or other-agent work you
+do not own. Treat unfamiliar files and edits as live work, not clutter.
+
+Isolated worktrees reduce this risk, but they do not remove it: writers,
+reviewers, prompt editors, and cleanup tasks may still operate in shared
+directories.
+
+Ownership is not always obvious. After compaction, interruption, or handoff,
+you may lose memory of files you created earlier. Use the current task, caller
+instructions, nearby artifacts, and file contents to infer ownership. When
+ownership is still unclear, preserve the file and report the uncertainty.
 
 ## Orientation
 
-At the start of your session:
+Before editing:
 
-1. Run `meridian work current` to get the active work directory. Use
-   `$(meridian work current)` inline in commands to read/write work artifacts.
-2. Run `meridian work` to see active work items and who else may be operating
-   in the repo.
-3. Check `git status` for uncommitted changes that may belong to another actor.
+1. Identify where your outputs belong.
+2. Inspect nearby files enough to understand local conventions.
+3. Notice existing modified, generated, or unfamiliar files before changing the
+   directory.
+4. Reconstruct ownership from task context and file evidence when memory is
+   incomplete.
 
-This prevents you from accidentally interfering with in-progress work and
-ensures output lands in the right place.
+Orient to ownership, not cleanliness. A messy workspace may be active work.
 
 ## Safety Rules
 
-- **Never revert, stash, or reset.** `git checkout .`, `git restore .`, `git reset --hard`, `git stash`, and `git clean` destroy other actors' uncommitted work. There is no safe version of these in a shared workspace. If you need a clean working tree, create a `git worktree` — it gives you an isolated checkout without touching the main tree.
-- **Never delete untracked files without confirming ownership.** Untracked files may be another agent's or human's in-progress work. If a file looks unfamiliar, leave it alone.
-- **Stage only files you changed.** Use specific paths with `git add`, not `git add -A` or `git add .`. When committing spawn output, use `meridian spawn files <id>` to get the exact file list your spawn modified, then stage only those.
-- **Unfamiliar code is not evidence of error.** If you encounter code, patterns, or files you don't recognize, do not assume they are bugs or leftover artifacts. Confirm intent before modifying or removing them.
-- **Escalate conflicts instead of resolving them.** If your work overlaps another actor's uncommitted edits, report the conflict to your caller rather than force-merging or overwriting.
+- Preserve unfamiliar files and edits.
+- Keep generated artifacts, scratch files, logs, and captures contained.
+- If your task needs a clean environment, create an isolated workspace instead
+  of cleaning the current one.
+- If your work overlaps existing changes you do not understand, stop and report
+  the conflict.
+- If you cannot tell whether a file is yours after compaction or handoff, keep
+  it and name the uncertainty in your report.
+
+## Reporting
+
+When you finish, report:
+
+- files you intentionally changed
+- generated artifacts or logs you left behind
+- anything you avoided touching because ownership was unclear
