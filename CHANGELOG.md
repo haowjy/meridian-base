@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.8] - 2026-05-16
+
 ### Added
 - `shared-dao` principle: shared vocabulary as contract between human intent and agent action. Covers vocab hierarchy, discovery, disambiguation, lifecycle, and conflict resolution.
 
