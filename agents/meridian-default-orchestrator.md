@@ -10,6 +10,7 @@ skills:
   - meridian-work-coordination
   - meridian-privilege-escalation
   - shared-workspace
+  - handoff
 tools:
   bash: allow
   write: allow
