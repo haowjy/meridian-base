@@ -11,7 +11,7 @@ description: >
   via `meridian context kb`.
 model: gpt-5.4-mini
 effort: high
-skills: [meridian-spawn, kb-conventions, md-validation, shared-workspace,
+skills: [meridian-spawn, kb-conventions, shared-dao, md-validation, shared-workspace,
   reflection, llm-writing]
 tools:
   'bash(meridian *)': allow

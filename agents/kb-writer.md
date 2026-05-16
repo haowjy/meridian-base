@@ -9,7 +9,7 @@ description: >
   relevant source material with -f. Tell it what happened and what to capture.
 model: claude-sonnet-4-6
 effort: medium
-skills: [meridian-spawn, kb-conventions, qi-layer, md-validation, session-mining, decision-log, shared-workspace, llm-writing, intent-modeling]
+skills: [meridian-spawn, kb-conventions, shared-dao, qi-layer, md-validation, session-mining, decision-log, shared-workspace, llm-writing, intent-modeling]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow
