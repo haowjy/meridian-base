@@ -14,6 +14,14 @@ model-invocable: false
 
 Write spawn prompts to files. Use `--prompt-file` for delegation.
 
+Write prompt files to the system temp directory with descriptive names. Get the temp dir path with:
+
+```bash
+uv run python -c "import tempfile; print(tempfile.gettempdir())"
+```
+
+Use descriptive absolute paths: `<tmpdir>/coder-auth.md`, `<tmpdir>/reviewer-structural.md`.
+
 Shell quoting mutates prompts before meridian receives them, backticks become command substitutions, `$variables` expand, quotes nest wrong, and multiline formatting collapses. Prompt files preserve exact text and make handoffs inspectable.
 
 `-p` is for trivial exact-string smoke tests (e.g. `Reply with exactly OK`). Everything else gets a prompt file.
