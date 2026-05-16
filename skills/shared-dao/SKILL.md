@@ -60,9 +60,9 @@ Ambiguity is the root failure mode. Resolve it before writing definitions:
   definition, record the other as an alias with its own canonical name.
 - **Different terms, same meaning:** pick one as canonical, record the
   others as aliases.
-- **Unclear meaning:** do not define. Interview domain experts ("When you
-  say X, what specifically do you mean? What is X NOT?"). Probe until
-  meaning converges.
+- **Unclear meaning:** interview domain experts ("When you say X, what
+  specifically do you mean? What is X NOT?"). Probe until meaning
+  converges, then define.
 
 When terminology conflicts with existing KB or codebase usage, flag the
 conflict rather than silently overriding:
@@ -81,8 +81,8 @@ Terms evolve. Track what stage each term is in:
 - **Reserved** — intentionally held for future use. Move to a "Reserved
   terms" section.
 
-When a term's meaning deepens, update the definition rather than keeping
-the old one alongside. One term, one current meaning.
+When a term's meaning deepens, update the definition to reflect the new
+understanding. One term, one current meaning.
 
 ## When to Split
 
@@ -103,3 +103,8 @@ Searchable with `rg '\[!FLAG\]'`.
 
 Before committing to KB: `meridian kg check` (broken links),
 `meridian mermaid check` (diagram validity).
+
+---
+
+Shared vocabulary is the contract between human intent and agent action.
+Ambiguity you leave in vocab propagates into every downstream decision.
