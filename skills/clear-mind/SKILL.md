@@ -50,3 +50,7 @@ not "the user and I discussed." The subagent wasn't there.
 
 A handoff fits in one screen. Every sentence you keep is a sentence the
 subagent can't use for work.
+
+Write the handoff to a prompt file and invoke with `--prompt-file`. Write to the
+system temp directory with a descriptive name: `<tmpdir>/coder-auth.md`. See
+`/meridian-spawn` for full mechanics.

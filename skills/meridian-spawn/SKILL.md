@@ -24,7 +24,7 @@ Use descriptive absolute paths: `<tmpdir>/coder-auth.md`, `<tmpdir>/reviewer-str
 
 Shell quoting mutates prompts before meridian receives them, backticks become command substitutions, `$variables` expand, quotes nest wrong, and multiline formatting collapses. Prompt files preserve exact text and make handoffs inspectable.
 
-`-p` is for trivial exact-string smoke tests (e.g. `Reply with exactly OK`). Everything else gets a prompt file.
+Always use `--prompt-file`. Even trivial inline strings get written to a prompt file first.
 
 ## Core Loop
 

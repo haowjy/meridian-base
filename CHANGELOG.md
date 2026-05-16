@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `meridian-spawn`: always `--prompt-file`, even for trivial inline strings. No inline prompt path.
+- `clear-mind`: added `--prompt-file` mechanics — write handoffs to prompt files, not inline.
+
 ## [0.4.9] - 2026-05-16
 
 ## [0.4.8] - 2026-05-16
