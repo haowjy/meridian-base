@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.11] - 2026-05-17
+
 ### Changed
 - `clear-mind`: choose subagents by installed agent descriptions and most-specific ownership before writing scoped handoffs.
 
