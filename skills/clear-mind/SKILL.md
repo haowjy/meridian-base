@@ -2,9 +2,10 @@
 name: clear-mind
 type: reference
 description: >
-  Load when spawning subagents. Why scoped spawns produce better work,
-  when to spawn versus continue inline, and how to give the subagent
-  exactly what it needs and nothing more.
+  Load before spawning subagents to protect focus and role fit. Make sure to
+  re-read the available agents before spawning a subagent; choose the most
+  specific owner instead of broad defaults, then write a tight handoff with only
+  the context that subagent needs.
 model-invocable: true
 ---
 
@@ -28,6 +29,16 @@ responsibilities belong in one agent, they probably don't.
 
 When in doubt, spawn. A fresh context window costs less than cluttered
 output.
+
+## Choosing the Agent
+
+Before spawning, read the relevant installed agent descriptions and choose the
+most specific owner for the work. Do not route by broad defaults when a
+narrower specialist exists. If ownership is ambiguous, state the distinction,
+then choose the agent whose description best matches the work.
+
+Bigger tasks should usually be delegated, but delegation is not offloading.
+A scoped handoff to the right specialist beats a broad handoff to a generalist.
 
 ## Writing the Handoff
 
