@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `meridian-spawn`: tightened inject guidance — explains mechanism and scope boundary (course-correct current task, not new scope).
+
 ## [0.4.11] - 2026-05-17
 
 ### Changed

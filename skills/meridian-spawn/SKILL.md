@@ -118,7 +118,10 @@ Reattach to spawns from a previous session with `meridian spawn wait` or `meridi
 
 ## Steering a Running Spawn
 
-**Inject before you cancel.** Course-correct a running spawn instead of killing and restarting — cancel destroys built-up context.
+Inject course-corrects a spawn's current task — wrong approach, missed
+constraint, clarified requirement. The message lands as a user turn
+mid-session, so the agent will pivot to it. New scope belongs in a
+separate spawn or issue.
 
 ```bash
 meridian spawn inject p107 --message "Use the existing adapter pattern in src/adapters/"
