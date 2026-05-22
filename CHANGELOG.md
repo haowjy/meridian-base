@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.13] - 2026-05-22
+
 ### Changed
 - `/shared-dao`: sharper and more general. Shared language is now framed as a structural boundary across workflows, records, docs, prompts, and implementation — not just code. Guidance now pushes faster convergence on one name per concept with more positive framing.
 - `/kb-conventions`: added "current truth over history" — live KB should read as the best current understanding, with superseded material moved out of the live tree.
