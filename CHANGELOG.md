@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/shared-dao`, `/intent-modeling`: model-invocable — core principle skills auto-attach in Cursor and other harnesses.
+
 ## [0.4.13] - 2026-05-22
 
 ### Changed

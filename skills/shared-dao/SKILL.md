@@ -7,7 +7,7 @@ description: >
   project's vocab. Shared vocabulary is the contract between human intent
   and agent action — ambiguity is the root failure mode, vocab files are
   the record.
-model-invocable: false
+model-invocable: true
 ---
 
 # Shared Dao

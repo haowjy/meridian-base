@@ -4,6 +4,7 @@ type: principle
 description: >
   Load into any agent that receives human direction. Use before acting on
   instructions, recording decisions, or producing artifacts.
+model-invocable: true
 ---
 
 # Intent Modeling
