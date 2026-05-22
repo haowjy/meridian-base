@@ -65,11 +65,16 @@ Durable knowledge that persists across work items:
 2. **Extract the durable knowledge** — decisions, learnings, domain insights.
    Filter out work-scoped details that won't matter after this work item.
 3. **Integrate into existing pages** — update and extend existing docs when the
-   new knowledge relates to an already-documented concept. Create new pages
-   only for genuinely new topics.
+   new knowledge relates to an already-documented concept. Replace superseded
+   claims instead of layering new text around them. Create new pages only for
+   genuinely new topics.
 4. **Update cross-references** — when new content connects to existing pages,
    add links in both directions.
 5. **Update index.md** — reflect any new pages or major updates.
+
+Keep the live KB current. Remove or move stale material when it no longer
+reflects current understanding. If older material still matters as history,
+move it to `kb/trash/` rather than leaving it in the live page.
 
 ## Decision Mining
 

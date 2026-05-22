@@ -12,10 +12,25 @@ model-invocable: false
 
 # Shared Dao
 
-Shared vocabulary is the interface between human intent and agent action.
-When humans and agents use the same word for different concepts, or different
-words for the same concept, downstream work inherits the ambiguity. Vocab is
-the contract that prevents this.
+Shared vocabulary is a structural boundary between human intent and action.
+Ambiguous, overloaded, drifting, or misleading terms corrupt reasoning early
+and spread confusion through prompts, plans, docs, workflows, records, and
+decisions. Treat vocabulary problems as design problems.
+
+## Core Discipline
+
+Scrutinize important terms aggressively. Reuse existing names when they
+already fit the concept. Converge on one name per concept and one concept per
+name as quickly as the evidence allows.
+
+Resolve terminology early:
+
+- rename when the clearer term is available
+- define when the concept is real but still blurry
+- flag when human judgment is genuinely required
+
+Clear vocabulary compounds through every downstream artifact. Resolve
+terminology while the meaning is still easy to sharpen.
 
 ## Where Vocab Lives
 
@@ -49,23 +64,31 @@ Before defining new terms, mine what already exists:
 2. **Search conversations and artifacts** — scan prior design docs,
    requirements, KB pages, and conversation transcripts for terminology
    in use.
-3. **Check the codebase** — code names things too. When code uses a
-   different name than humans do, flag the drift.
+3. **Check the operational artifacts** — file names, forms, workflows,
+   records, schemas, commands, or code name things too. When these use a
+   different name than people do, treat that as drift to resolve, not trivia
+   to note.
+
+Mint new terms when they mark a real new concept. Let new vocabulary reflect
+clear distinctions rather than uncertainty, local convenience, or
+unexamined drift.
 
 ## Disambiguation
 
-Ambiguity is the root failure mode. Resolve it before writing definitions:
+Ambiguity is the root failure mode. Resolve it before writing definitions or
+carrying the term forward:
 
 - **Same term, different meanings:** pick one meaning for the canonical
-  definition, record the other as an alias with its own canonical name.
+  definition, and give the other meaning its own canonical name.
 - **Different terms, same meaning:** pick one as canonical, record the
   others as aliases.
 - **Unclear meaning:** interview domain experts ("When you say X, what
   specifically do you mean? What is X NOT?"). Probe until meaning
   converges, then define.
 
-When terminology conflicts with existing KB or codebase usage, flag the
-conflict rather than silently overriding:
+When terminology conflicts with existing KB, workflow, or implementation
+usage, resolve the drift if you can. When you cannot, flag it explicitly
+rather than silently carrying two competing names forward:
 
 > `> [!FLAG] **Needs human review** — vocab conflict: "<term A>" and
 > "<term B>" may refer to the same concept.`
@@ -84,18 +107,6 @@ Terms evolve. Track what stage each term is in:
 When a term's meaning deepens, update the definition to reflect the new
 understanding. One term, one current meaning.
 
-## When to Split
-
-Keep terms at the root vocab while they're few and cross-domain. Split into
-a domain vocab when:
-
-- A domain accumulates 10+ terms distinct from the root
-- Root vocab grows past ~40 terms
-- Two domains use the same word differently (each domain gets its own
-  canonical definition in its own vocab)
-
-Domain vocabs should link back to root vocabs for terms they inherit.
-
 ## Operations
 
 Flag content needing human attention with `> [!FLAG] **Needs human review**`.
@@ -108,3 +119,4 @@ Before committing to KB: `meridian kg check` (broken links),
 
 Shared vocabulary is the contract between human intent and agent action.
 Ambiguity you leave in vocab propagates into every downstream decision.
+Resolve terminology early so the structure stays clear.

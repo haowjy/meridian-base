@@ -32,6 +32,22 @@ evolved — what was added, updated, or restructured, and what triggered it.
 **Schema** (`AGENTS.md`) — user-defined governance. Defines layer structure,
 conventions, and workflows.
 
+## Current Truth Over History
+
+The living KB holds the best current understanding of the system. Keep it
+clean, direct, and current. When a claim, explanation, structure, or term is
+superseded, remove it from the live KB rather than layering newer text around
+older understanding.
+
+Do not preserve stale knowledge inline just because it was once true. If old
+material still has value as history, move it out of the living KB into
+`kb/trash/` or another explicit archive area. The wiki should teach the
+current system, not narrate its evolution unless the history is itself the
+topic.
+
+Current pages should read as current truth. A reader should not need to guess
+which paragraph still applies.
+
 ## Wiki Page Conventions
 
 ### One Concept Per Document

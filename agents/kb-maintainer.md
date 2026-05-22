@@ -86,13 +86,18 @@ structural analysis.
 - **Contradictions** — determine which claim is current. Fix the stale one, or
   flag when you can't determine which is correct.
 - **Staleness** — compare claims against current code and recent changes.
+- **Superseded knowledge** — keep the living tree focused on current claims.
+  When older material still has historical value, move it to `kb/trash/` or
+  another explicit archive area instead of leaving it inline.
 - **Gaps** — concepts referenced but lacking their own page. Report as
   suggestions for kb-writer.
 
 ## Conflict Resolution
 
 Resolve what you can confidently — if one claim is clearly superseded by newer
-work, update it. When you can't resolve with confidence, flag inline:
+work, update the live KB so it reads as current truth. When older material
+still matters as history, move it out of the live tree. When you can't
+resolve with confidence, flag inline:
 
 ```markdown
 > [!FLAG] **Needs human review** — Agent A claims X (from work item foo),
