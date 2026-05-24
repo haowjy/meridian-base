@@ -11,16 +11,14 @@ The orchestrator owns work state — subagents should not mutate it unless expli
 
 ## Starting Work
 
-Before spawning, ensure your session is attached to the correct work item. Spawns inherit the attachment and get `$MERIDIAN_ACTIVE_WORK_DIR` set automatically.
+This skill applies when work coordination is warranted — when a task needs work-scoped artifacts, lifecycle tracking, or selected-work semantics. Not every spawn needs a work item; small direct tasks can run without one.
+
+When coordination is warranted, ensure your session is attached to the correct work item before spawning. Spawns inherit the attachment and get `$MERIDIAN_ACTIVE_WORK_DIR` set automatically.
 
 ```bash
-meridian work start "descriptive name" --worktree   # create, attach, and create the feature worktree
+meridian work start "descriptive name"   # create and attach
 meridian work switch descriptive-name    # attach to existing
 ```
-
-For code implementation work, prefer `--worktree` at creation time so design,
-planning, implementation, QA, and KB spawns all inherit the worktree-backed
-context from the start.
 
 After starting, use `meridian work current` to get the work directory path. Env vars set at launch don't update mid-session, so `$MERIDIAN_ACTIVE_WORK_DIR` may be stale or unset if you started work after launch.
 
@@ -58,12 +56,11 @@ meridian work delete old-item --force      # remove even if it has artifacts
 Only mark work done when you own the whole work item lifecycle, not just a task inside it. If your context only covers one phase, file set, review lane, or implementation slice, report your slice as complete and leave the work item active.
 
 The stable lifecycle is:
-1. create work item + worktree
-2. do the work in that worktree
-3. open the PR
-4. wait for human review + merge
-5. prune merged worktrees with `scripts/prune-worktrees.sh`
-6. mark the work item done when merge/cleanup is complete
+1. create work item
+2. do the work
+3. open the PR when applicable
+4. wait for review + merge when applicable
+5. mark the work item done when merge/cleanup is complete
 
 Opening the PR is not the same as finishing the work item. At PR-open time,
 leave the work item active and update status to something explicit like
@@ -76,10 +73,6 @@ meridian work clear                 # detach without archiving (work stays activ
 ```
 
 `work done` archives the work directory and detaches the session. A prose status update does not complete the work item — only `work done` archives it. Use `work clear` to detach from a work item you don't own.
-
-For worktree-based stable flow, post-merge cleanup belongs to
-`scripts/prune-worktrees.sh`. That script removes merged worktrees/branches
-and can best-effort call `meridian work done` for the associated work item.
 
 ## Artifact Placement
 

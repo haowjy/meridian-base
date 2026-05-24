@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `meridian-work-coordination`, `shared-workspace`: removed dev-workflow worktree policy from base coordination guidance.
+- `meridian-work-coordination`: Starting Work now scoped to "when work coordination is warranted" instead of teaching session-attachment as a default precondition for every spawn. Small direct tasks can run without a work item.
+
 ## [0.4.14] - 2026-05-22
 
 ### Changed

@@ -12,7 +12,7 @@ model-invocable: true
 You may be working in a directory that contains human or other-agent work you
 do not own. Treat unfamiliar files and edits as live work, not clutter.
 
-Isolated worktrees reduce this risk, but they do not remove it: writers,
+Isolated workspaces reduce this risk, but they do not remove it: writers,
 reviewers, prompt editors, and cleanup tasks may still operate in shared
 directories.
 
