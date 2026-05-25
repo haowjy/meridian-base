@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `composer` model alias — Cursor's native coding model (composer-2.5). Moved from consumer config to base package.
+
 ### Changed
 - `meridian-spawn`, `session-mining`: session transcript examples now teach safe bare `session log` defaults, entry-based `--tail`, explicit `--full`, `--no-truncate`, and absolute windows instead of removed `--last`/`-n`/`-c` flags.
 - `meridian-spawn`, `session-mining`: session transcript guidance now names entry `0` as the segment prologue/handoff slot and shows `--from 0 --limit 1`.
