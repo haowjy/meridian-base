@@ -61,15 +61,18 @@ Reports are written by the spawned agent itself at the end of its run — there 
 Read what a spawn said and did using `meridian session log` with the spawn ID:
 
 ```bash
-meridian session log p107              # last 5 entries, safe previews
-meridian session log p107 --tail       # last 5 entries explicitly
-meridian session log p107 --tail 20    # recent context, 20 entries
-meridian session log p107 --full       # full current segment, preview-truncated
-meridian session log p107 --full --no-truncate
-meridian session log p107 --from 0 --limit 1
+meridian session log p107                    # last 5 interaction entries, current segment
+meridian session log p107 --tail 20          # last 20 entries
+meridian session log p107 --from 0 --limit 1 # segment setup slot (entry 0)
 meridian session log p107 --around 80 --context 8
-meridian session search "error" p107   # search for specific text
+meridian session log p107 --segment previous # earlier segment after compaction
+meridian session log p107 --full             # full current segment (incl. entry 0)
+meridian session log p107 --full --no-truncate
+meridian session log p107 --global --around 240 --context 8  # flat ordinals across segments
+meridian session search "error" p107         # search; each hit prints an Open: command
 ```
+
+Navigation is segment-local by default; `--global` is explicit opt-in for a single flattened stream and conflicts with `--segment`. Boundary hints (`Previous segment:` / `Next segment:`) appear when a window touches a segment edge. Search results include a deterministic `Open:` command per hit — run it directly.
 
 This reads the spawn's own transcript. Combine with `spawn children` to trace a full spawn tree:
 

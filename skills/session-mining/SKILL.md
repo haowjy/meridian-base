@@ -22,11 +22,29 @@ meridian session log "$MERIDIAN_CHAT_ID" --tail 20
 ```
 
 Bare `meridian session log "$MERIDIAN_CHAT_ID"` reads the last 5 interaction
-entries with safe previews. Entry `0` is the selected segment's
-prologue/handoff slot; read it with `--from 0 --limit 1`. Use `--full` for the
-full current segment, `--no-truncate` for complete content, and
-`--around N --context M` when you need a deterministic window around a known
-entry number.
+entries from the current segment with safe previews. Navigation is
+**segment-local by default**: `--from/--before/--around` are ordinals inside
+the selected segment, defaulting to the current one. Entry `0` of any segment
+is its setup slot (prologue/handoff); reach it with `--from 0 --limit 1`. Use
+`--segment previous|current|N` to switch segments, `--full` for the full
+selected segment (entry 0 included), `--no-truncate` for complete content, and
+`--around N --context M` for a deterministic window around a known entry.
+
+Reach for `--global` only when you need one flat stream across all segments
+(every segment's entry 0 included, with unique global ordinals starting at 0).
+It conflicts with `--segment` and requires `--from/--before/--around`. Prefer
+segment-local navigation — it stays stable across compactions.
+
+Search instead of paging when you know what you're looking for:
+
+```bash
+meridian session search "decision text" "$MERIDIAN_CHAT_ID"
+meridian session search "auth" --work <work-id>     # scope to a work item
+meridian session search "shape" --workspace         # current project + workspace
+```
+
+Each hit prints a deterministic `Open:` command — run it to jump straight to
+the entry instead of recomputing windows.
 
 ## Delegate Bulk Reading, Don't Inline It
 

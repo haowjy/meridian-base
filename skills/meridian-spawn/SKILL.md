@@ -136,25 +136,33 @@ Read the report via `meridian spawn show SPAWN_ID`. For deeper investigation, ru
 Use `meridian session log` to read a session's conversation transcript — spawns, prior sessions, or the current primary session:
 
 ```bash
-meridian session log p107                  # last 5 entries, safe previews
-meridian session log p107 --tail           # last 5 entries explicitly
-meridian session log p107 --tail 20        # recent context, 20 entries
+meridian session log p107                       # last 5 interaction entries, safe previews
+meridian session log p107 --tail 20             # last 20 entries
+meridian session log p107 --from 0 --limit 1    # segment setup slot (entry 0)
 meridian session log p107 --around 120 --context 10
 meridian session log p107 --from 120 --limit 30
-meridian session log p107 --segment previous
-meridian session log p107 --from 0 --limit 1  # current segment prologue/handoff
-meridian session log p107 --full           # full current segment, preview-truncated
-meridian session log p107 --full --no-truncate  # full current segment and full content
-meridian session log $MERIDIAN_CHAT_ID     # primary session transcript
+meridian session log p107 --segment previous    # switch to previous segment
+meridian session log p107 --full                # full current segment incl. entry 0
+meridian session log p107 --full --no-truncate  # plus full content of each entry
+meridian session log p107 --global --around 240 --context 8   # flat ordinals across segments
+meridian session log $MERIDIAN_CHAT_ID          # primary session transcript
 ```
 
-`meridian spawn show` gives the structured report; `meridian session log` gives the transcript. Bare `session log` is a safe recent read: last 5 interaction entries, oldest-to-newest, with oversized content preview-truncated. Entry `0` is the selected segment's prologue/handoff slot; read it with `--from 0 --limit 1`. Use `--full` only when you intentionally need the full current segment, and add `--no-truncate` only when you need the complete content of selected entries.
+`meridian spawn show` gives the structured report; `meridian session log` gives the transcript. Bare `session log REF` is a safe recent read: last 5 interaction entries from the current (last) segment, oldest-to-newest, with oversized content preview-truncated.
 
-Search for specific content without reading the full transcript:
+Navigation is **segment-local by default**: `--from/--before/--around` are ordinals inside the selected segment, and the selected segment is the current one unless `--segment previous|current|N` says otherwise. Entry `0` of any segment is its setup slot (prologue/handoff); reach it with `--from 0 --limit 1`. `--full` expands the selected segment (including entry 0); `--no-truncate` returns full per-entry content. Windows that touch segment edges include `Previous segment:` / `Next segment:` hints with the deterministic command to cross.
+
+Use `--global` only when you need one flat stream across all segments (every segment's entry 0 included, with unique global ordinals starting at 0). `--global` conflicts with `--segment` and requires `--from/--before/--around`. Prefer segment-local commands for stable navigation across compactions.
+
+Search the transcript without reading the whole thing:
 
 ```bash
 meridian session search "auth middleware" p107
+meridian session search "timeout" --workspace          # current project + workspace roots
+meridian session search "report" --work feature/api    # sessions on a work item
 ```
+
+Each match prints a deterministic `Open:` command: entry-0 hits open with `--segment N --from 0 --limit 1`, interaction hits with `--segment N --around K --context 5`. Run the printed command directly instead of guessing flags.
 
 ## Shared Filesystem
 
