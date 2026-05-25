@@ -66,6 +66,7 @@ meridian session log p107 --tail       # last 5 entries explicitly
 meridian session log p107 --tail 20    # recent context, 20 entries
 meridian session log p107 --full       # full current segment, preview-truncated
 meridian session log p107 --full --no-truncate
+meridian session log p107 --from 0 --limit 1
 meridian session log p107 --around 80 --context 8
 meridian session search "error" p107   # search for specific text
 ```

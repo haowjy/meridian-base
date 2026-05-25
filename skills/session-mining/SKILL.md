@@ -22,9 +22,11 @@ meridian session log "$MERIDIAN_CHAT_ID" --tail 20
 ```
 
 Bare `meridian session log "$MERIDIAN_CHAT_ID"` reads the last 5 interaction
-entries with safe previews. Use `--full` for the full current segment,
-`--no-truncate` for complete content, and `--around N --context M` when you
-need a deterministic window around a known entry number.
+entries with safe previews. Entry `0` is the selected segment's
+prologue/handoff slot; read it with `--from 0 --limit 1`. Use `--full` for the
+full current segment, `--no-truncate` for complete content, and
+`--around N --context M` when you need a deterministic window around a known
+entry number.
 
 ## Delegate Bulk Reading, Don't Inline It
 

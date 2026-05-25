@@ -142,12 +142,13 @@ meridian session log p107 --tail 20        # recent context, 20 entries
 meridian session log p107 --around 120 --context 10
 meridian session log p107 --from 120 --limit 30
 meridian session log p107 --segment previous
+meridian session log p107 --from 0 --limit 1  # current segment prologue/handoff
 meridian session log p107 --full           # full current segment, preview-truncated
 meridian session log p107 --full --no-truncate  # full current segment and full content
 meridian session log $MERIDIAN_CHAT_ID     # primary session transcript
 ```
 
-`meridian spawn show` gives the structured report; `meridian session log` gives the transcript. Bare `session log` is a safe recent read: last 5 interaction entries, oldest-to-newest, with oversized content preview-truncated. Use `--full` only when you intentionally need the full current segment, and add `--no-truncate` only when you need the complete content of selected entries.
+`meridian spawn show` gives the structured report; `meridian session log` gives the transcript. Bare `session log` is a safe recent read: last 5 interaction entries, oldest-to-newest, with oversized content preview-truncated. Entry `0` is the selected segment's prologue/handoff slot; read it with `--from 0 --limit 1`. Use `--full` only when you intentionally need the full current segment, and add `--no-truncate` only when you need the complete content of selected entries.
 
 Search for specific content without reading the full transcript:
 
