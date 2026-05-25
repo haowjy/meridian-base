@@ -61,8 +61,12 @@ Reports are written by the spawned agent itself at the end of its run — there 
 Read what a spawn said and did using `meridian session log` with the spawn ID:
 
 ```bash
-meridian session log p107              # last 5 messages
-meridian session log p107 --last 20    # more history
+meridian session log p107              # last 5 entries, safe previews
+meridian session log p107 --tail       # last 5 entries explicitly
+meridian session log p107 --tail 20    # recent context, 20 entries
+meridian session log p107 --full       # full current segment, preview-truncated
+meridian session log p107 --full --no-truncate
+meridian session log p107 --around 80 --context 8
 meridian session search "error" p107   # search for specific text
 ```
 

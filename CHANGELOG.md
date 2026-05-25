@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `meridian-spawn`, `session-mining`: session transcript examples now teach safe bare `session log` defaults, entry-based `--tail`, explicit `--full`, `--no-truncate`, and absolute windows instead of removed `--last`/`-n`/`-c` flags.
+
 ## [0.4.15] - 2026-05-24
 
 ### Changed

@@ -136,14 +136,18 @@ Read the report via `meridian spawn show SPAWN_ID`. For deeper investigation, ru
 Use `meridian session log` to read a session's conversation transcript — spawns, prior sessions, or the current primary session:
 
 ```bash
-meridian session log p107                  # last 5 messages of a spawn
-meridian session log p107 --last 20        # more context
-meridian session log p107 -n 0             # entire segment
-meridian session log p107 -c 1             # earlier compaction segment
+meridian session log p107                  # last 5 entries, safe previews
+meridian session log p107 --tail           # last 5 entries explicitly
+meridian session log p107 --tail 20        # recent context, 20 entries
+meridian session log p107 --around 120 --context 10
+meridian session log p107 --from 120 --limit 30
+meridian session log p107 --segment previous
+meridian session log p107 --full           # full current segment, preview-truncated
+meridian session log p107 --full --no-truncate  # full current segment and full content
 meridian session log $MERIDIAN_CHAT_ID     # primary session transcript
 ```
 
-`meridian spawn show` gives the structured report; `meridian session log` gives the full reasoning. Reach for session log when the report doesn't explain a failure, when you need to understand decisions made in a prior session, or when resuming work across sessions.
+`meridian spawn show` gives the structured report; `meridian session log` gives the transcript. Bare `session log` is a safe recent read: last 5 interaction entries, oldest-to-newest, with oversized content preview-truncated. Use `--full` only when you intentionally need the full current segment, and add `--no-truncate` only when you need the complete content of selected entries.
 
 Search for specific content without reading the full transcript:
 

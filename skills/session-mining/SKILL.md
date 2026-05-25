@@ -15,11 +15,16 @@ Design decisions, rejected alternatives, and discovered constraints often live i
 
 Start from the top-level conversation. `$MERIDIAN_CHAT_ID` points to the primary session at the root of the chat tree, regardless of how deep in the spawn tree you are. That root context holds the primary's decisions and framing — usually the highest-leverage read.
 
-Use a narrow read first, then widen only if needed:
+Use a recent-context read first, then widen or anchor only if needed:
 
 ```bash
-meridian session log "$MERIDIAN_CHAT_ID" --last 20
+meridian session log "$MERIDIAN_CHAT_ID" --tail 20
 ```
+
+Bare `meridian session log "$MERIDIAN_CHAT_ID"` reads the last 5 interaction
+entries with safe previews. Use `--full` for the full current segment,
+`--no-truncate` for complete content, and `--around N --context M` when you
+need a deterministic window around a known entry number.
 
 ## Delegate Bulk Reading, Don't Inline It
 
