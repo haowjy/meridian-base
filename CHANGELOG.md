@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.17] - 2026-05-25
+
 ### Changed
 - `meridian-spawn`, `session-mining`: session log guidance updated for finalized CLI — segment-local default, entry-0 setup slot, `--segment current|previous|N`, `--full`/`--no-truncate` for deliberate expansion, and `--global` as explicit opt-in for one flat stream across segments (conflicts with `--segment`, requires `--from/--before/--around`).
 - `meridian-spawn`, `session-mining`: `session search` guidance now teaches scoped variants (`--work`, `--workspace`) and instructs agents to run the deterministic `Open:` command printed per hit instead of recomputing windows.
