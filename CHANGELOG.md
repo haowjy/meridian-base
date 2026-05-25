@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `meridian-spawn`: `-f` guidance now prefers folder orientation scopes plus at most one source-of-truth file; explains AGENTS.md/QI autoloading and why multiple file refs should be exceptional.
+
 ## [0.4.17] - 2026-05-25
 
 ### Changed

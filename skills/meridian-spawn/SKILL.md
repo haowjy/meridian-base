@@ -62,11 +62,17 @@ meridian spawn -a reviewer --prompt-file review-task.md --bg
 meridian spawn -m MODEL --prompt-file task.md --bg
 ```
 
-Pass reference files or directories with `-f` so the spawned agent starts with context. Scope tightly: 2-4 files is typical, six is heavy, ten means the handoff needs rethinking.
+Pass reference files or directories with `-f` so the spawned agent starts with context. Use `-f` for material that must be available at launch, not for everything that might become relevant.
+
+Prefer folder references over file bundles. A folder reference is an orientation scope: it tells the agent where to work and lets the agent inspect exact files as needed. Folder references should not imply every file belongs in the prompt.
+
+Most harnesses auto-load local instruction files such as `AGENTS.md` or equivalent when an agent works in a directory. Rely on that for directory orientation instead of passing `AGENTS.md` with `-f`. Point the handoff at the target folder; pass `.context/CONTEXT.md` only when contracts or rationale are needed up front.
+
+Normal handoff shape: one folder plus zero or one source-of-truth file, such as requirements, a design note, or an issue brief. Multiple file references need a clear reason because file references may be inlined and drain context. If you need several source files, write a focused note or pass the folder and let the agent read selectively.
 
 ```bash
 meridian spawn -a coder --prompt-file implement-auth.md --bg \
-  -f src/middleware/ -f src/middleware/base.py -f design/phase-2.md
+  -f src/middleware/ -f design/phase-2.md
 ```
 
 Pass prior conversation history with `--from` when the spawn needs reasoning that isn't materialized to files. `--from <spawn-id>` pulls a specific prior spawn's transcript. `--from $MERIDIAN_CHAT_ID` pulls the top-level primary session — available at any depth because `$MERIDIAN_CHAT_ID` is inherited by every descendant.
