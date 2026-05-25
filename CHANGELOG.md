@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.16] - 2026-05-25
+
 ### Added
 - `composer` model alias — Cursor's native coding model (composer-2.5). Moved from consumer config to base package.
 
