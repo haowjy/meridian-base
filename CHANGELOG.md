@@ -4,6 +4,14 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.19] - 2026-05-26
+
+### Added
+- `meridian-spawn`: "While a Spawn Runs" section — launch with a clear goal, use `spawn wait`, stop polling `session log` in a loop.
+
+### Changed
+- `meridian-spawn`: inject guidance scoped to relaying user direction only; self-generated nudges called out as attention waste.
+
 ## [0.4.18] - 2026-05-26
 
 ### Changed

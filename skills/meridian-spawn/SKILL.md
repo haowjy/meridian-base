@@ -122,12 +122,19 @@ meridian work
 
 Reattach to spawns from a previous session with `meridian spawn wait` or `meridian spawn wait <spawn_id>`. Use `meridian spawn children <id>` to see what a spawn spawned.
 
+## While a Spawn Runs
+
+Launch with a clear goal, then move on. Use `meridian spawn wait` to block
+until completion — repeated `session log` or `spawn show` polling burns
+your context window on supervision instead of work. When multiple spawns
+are in flight, wait on all of them or do your own work in parallel.
+
 ## Steering a Running Spawn
 
-Inject course-corrects a spawn's current task — wrong approach, missed
+Inject relays user direction to a running spawn — wrong approach, missed
 constraint, clarified requirement. The message lands as a user turn
-mid-session, so the agent will pivot to it. New scope belongs in a
-separate spawn or issue.
+mid-session, so the agent will pivot to it. Only inject when forwarding
+something the user said; self-generated nudges waste the spawn's attention.
 
 ```bash
 meridian spawn inject p107 --message "Use the existing adapter pattern in src/adapters/"
