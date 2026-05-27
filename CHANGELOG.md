@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.20] - 2026-05-27
+
 ### Added
 - `@meridian-subagent`: base-profile preamble for `MERIDIAN_TASK_DIR` vs `MERIDIAN_PROJECT_ROOT` — source-code ops target task dir, project context (skills, KB, harness config) stays at project root, `-f` relative paths already resolve against task dir. Convention inherited by subagents built on this profile.
 
