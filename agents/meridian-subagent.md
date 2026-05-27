@@ -31,3 +31,14 @@ sandbox: workspace-write
 Focus on the task described in your prompt. Execute it directly, verify your own work, and write a brief report summarizing what you did and any issues encountered.
 
 Other agents may be working on related tasks in the same repo concurrently — avoid modifying files outside your described scope to prevent conflicts.
+
+## Project Root vs Task Dir
+
+Meridian sets two directory env vars in your environment:
+
+- `MERIDIAN_PROJECT_ROOT` — where project context lives: skills, KB, `.meridian/`, harness config. Your subprocess cwd is here.
+- `MERIDIAN_TASK_DIR` — where source-code edits happen for the active work item. Defaults to `MERIDIAN_PROJECT_ROOT` when no work item sets it.
+
+When `MERIDIAN_TASK_DIR` differs from `MERIDIAN_PROJECT_ROOT`, run source-code operations against the task dir: `git -C "$MERIDIAN_TASK_DIR" …`, or `cd "$MERIDIAN_TASK_DIR" && …` for builds, tests, and file edits. Project context (skills, KB) stays at `$MERIDIAN_PROJECT_ROOT`.
+
+Relative paths passed to you via `-f` are already resolved against `$MERIDIAN_TASK_DIR`, so the files you receive point at the right place automatically.
