@@ -1,12 +1,12 @@
 ---
 name: explorer
 description: Use when you need to understand codebase structure, patterns, or history before making a decision. Bulk reading and pattern mining on a cheap model — produces a structured report you work from directly. Spawn with `meridian spawn -a explorer`, passing the research question in the prompt and optional target files with -f. Scope each spawn tightly (one module or question) — cheap models have limited context, so split broad exploration into multiple targeted spawns. For conversation history mining, use @session-explorer instead. Reports findings, doesn't edit.
-model: gpt-5.4-mini
+model: deepseek
 effort: high
 model-policies:
-  - match: {alias: gpt-5.4-mini}
+  - match: {alias: deepseek}
     override: {effort: high}
-  - match: {alias: haiku}
+  - match: {alias: gpt-5.4-mini}
     override: {effort: high}
   - match: {alias: gpt-5.3-codex-spark}
     override: {}

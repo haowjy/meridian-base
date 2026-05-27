@@ -77,7 +77,7 @@ meridian spawn -a coder --prompt-file implement-auth.md --bg \
 
 Pass prior conversation history with `--from` when the spawn needs reasoning that isn't materialized to files. `--from <spawn-id>` pulls a specific prior spawn's transcript. `--from $MERIDIAN_CHAT_ID` pulls the top-level primary session — available at any depth because `$MERIDIAN_CHAT_ID` is inherited by every descendant.
 
-Run `meridian mars models list` for available models. Run `meridian mars list` for agent profiles and skills. Model preferences belong in agent profiles or `meridian config`, not hardcoded in spawn commands.
+Run `meridian mars models list` for the configured model catalog: aliases, descriptions, and static routing hints. Add `--live` when you need to verify local harness availability. Run `meridian mars list` for agent profiles and skills. Model preferences belong in agent profiles or `meridian config`, not hardcoded in spawn commands.
 
 ## Completion Goals
 

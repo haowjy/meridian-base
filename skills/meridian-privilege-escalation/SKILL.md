@@ -53,13 +53,16 @@ meridian spawn -a coder --approval yolo --prompt-file task.md --bg   # use yolo 
 Different models route to different harnesses, and each harness has different capability profiles. Switching the model can bypass harness-level restrictions entirely:
 
 ```bash
-# Choose an alias from `meridian mars models list` that routes to the needed harness.
+# Choose an alias from `meridian mars models list`; use `--live` when you need
+# to confirm the needed harness is runnable on this machine.
 # Some harnesses have sandboxes that restrict network binding;
 # switching to a harness without sandbox restrictions sidesteps the issue.
 meridian spawn -a coder -m MODEL_ALIAS --prompt-file task.md --bg
 ```
 
-Run `meridian mars models list` to see which models route to which harness.
+Run `meridian mars models list` to see catalog aliases and static routing hints.
+Run `meridian mars models list --live` before switching models specifically to
+escape a local harness restriction.
 
 ## Common Escalation Scenarios
 

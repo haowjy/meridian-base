@@ -12,45 +12,40 @@ url = "https://github.com/meridian-flow/meridian-prompter"
 models_cache_ttl_hours = 24
 
 [models.composer]
-harness = "cursor"
 description = "Cursor's native coding model. Fast, strong tool use."
 model = "composer-2.5"
 provider = "cursor"
 
 [models.gpt55]
-harness = "codex"
 description = "GPT-5.5 — action-oriented, fast. Best on low effort; overthinks on high. Good clean code output but weak at nuanced judgment."
 default_effort = "low"
 model = "gpt-5.5"
-provider = "openai"
+# provider = "openai"
 
 [models.deepseek]
-harness = "opencode"
-description = "DeepSeek V4 Pro via OpenCode Go."
+description = "DeepSeek V4 Pro - cheap, all around good text coder for constrained tasks"
 default_effort = "high"
-model = "opencode-go/deepseek-v4-pro"
-provider = "opencode"
+model = "deepseek-v4-pro"
+# provider = "opencode"
 
 [models.deepseekflash]
-harness = "opencode"
-description = "DeepSeek V4 Flash via OpenCode Go."
+description = "DeepSeek V4 Flash - cheap, all around good text coder for constrained tasks"
 default_effort = "high"
-model = "opencode-go/deepseek-v4-flash"
-provider = "opencode"
+model = "deepseek-v4-flash"
+# provider = "opencode"
 
-[models.kimi]
-harness = "opencode"
-description = "Kimi 2.6 via OpenCode Go."
-default_effort = "high"
-model = "opencode-go/kimi-k2.6"
-provider = "opencode"
+# [models.kimi]
+# description = "Kimi 2.6"
+# default_effort = "high"
+# model = "kimi-k2.6"
+# # provider = "opencode"
 
-[models.qwen]
-harness = "opencode"
-description = "Qwen 3.6 Plus via OpenCode Go."
-default_effort = "high"
-model = "opencode-go/qwen3.6-plus"
-provider = "opencode"
+# [models.qwen]
+# harness = "opencode"
+# description = "Qwen 3.6 Plus via OpenCode Go."
+# default_effort = "high"
+# model = "opencode-go/qwen3.6-plus"
+# provider = "opencode"
 
 [models.opus46]
 harness = "claude"
@@ -84,7 +79,7 @@ match = ["*sonnet*"]
 exclude = ["*:*"]
 
 [models.gptmini]
-harness = "codex"
+# harness = "codex"
 description = "Fast and cheap. Good for bulk exploration and simple tasks."
 default_effort = "high"
 provider = "openai"
@@ -92,7 +87,7 @@ match = ["gpt-5*-mini"]
 exclude = ["*-nano"]
 
 [models.codex]
-harness = "codex"
+# harness = "codex"
 description = "Default backend implementer. Fast, token-efficient, faithful to instructions. Weak at frontend."
 default_effort = "high"
 provider = "openai"
@@ -104,7 +99,7 @@ exclude = [
 ]
 
 [models.gpt]
-harness = "codex"
+# harness = "codex"
 description = "Strongest generalist. Best all-around judgment, nuanced review, verification, and architectural reasoning."
 default_effort = "high"
 model = "gpt-5.4"

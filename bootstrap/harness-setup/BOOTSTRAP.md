@@ -42,7 +42,8 @@ meridian spawn -a coder -m sonnet "do the thing"
 The routing logic:
 
 1. Resolve the model alias (e.g. `sonnet` → `claude-sonnet-4-5`)
-2. Look up which harness owns that model
+2. Use alias metadata, provider hints, project settings, or a launch-time
+   harness probe to choose the harness
 3. Launch the agent through that harness
 
 This means **the model choice implicitly selects the harness**. You don't
@@ -56,8 +57,12 @@ codex, gpt55, gptmini, o3    → codex harness
 opencode-go/*, kimi-*         → opencode harness
 ```
 
-Run `meridian mars models list` to see all available aliases and which
-harness they route to.
+Run `meridian mars models list` to see the configured model catalog: aliases,
+descriptions, and static routing hints. This command stays fast and does not
+probe every installed harness.
+
+Run `meridian mars models list --live` when you need runtime availability: which
+installed harnesses can actually launch the models on this machine.
 
 ## Overriding harness selection
 
