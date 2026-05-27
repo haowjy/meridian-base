@@ -4,7 +4,14 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.18] - 2026-05-26
+
 ### Changed
+- `mars.toml`: removed hardcoded `harness =` from most models — harness selection is now dynamic/probe-based.
+- `mars.toml`: updated deepseek descriptions, simplified model names, commented out kimi and qwen.
+- `explorer`: default model switched to `deepseek`.
+- `meridian-default-orchestrator`, `meridian-spawn`, `meridian-privilege-escalation`: `models list` references now document `--live` flag for runtime availability.
+- `bootstrap/harness-setup`: harness routing explanation updated for probe-based selection.
 - `meridian-spawn`: `-f` guidance now prefers folder orientation scopes plus at most one source-of-truth file; explains AGENTS.md/QI autoloading and why multiple file refs should be exceptional.
 
 ## [0.4.17] - 2026-05-25
