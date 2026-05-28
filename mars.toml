@@ -1,6 +1,6 @@
 [package]
 name = "meridian-base"
-version = "0.4.20"
+version = "0.4.21"
 description = "Core coordination primitives for Meridian — orchestrator, subagent, and skills for spawning, state tracking, and session context."
 
 [dependencies]
@@ -54,21 +54,21 @@ exclude = ["*:*"]
 harness = "claude"
 description = "Balanced Claude model - good reasoning at lower cost than Opus. Good writing/documentation style."
 default_effort = "high"
-provider = "anthropic" # TODO: remove this
+provider = "anthropic"
 match = ["*sonnet*"]
 exclude = ["*:*"]
 
 [models.gptmini]
 description = "Fast and cheap. Good for bulk exploration and simple tasks."
 default_effort = "high"
-provider = "openai" # TODO: remove this
+provider = "openai"
 match = ["gpt-5*-mini"]
 exclude = ["*-nano"]
 
 [models.codex]
 description = "Default backend implementer. Fast, token-efficient, faithful to instructions. Weak at frontend."
 default_effort = "high"
-provider = "openai" # TODO: remove this
+provider = "openai"
 match = ["gpt-*-codex"]
 exclude = [
     "*-mini",
