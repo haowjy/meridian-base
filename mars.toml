@@ -12,8 +12,10 @@ url = "https://github.com/meridian-flow/meridian-prompter"
 models_cache_ttl_hours = 24
 
 [models.composer]
+harness = "cursor"
 description = "Cursor's native coding model. Fast, strong tool use."
 model = "composer-2.5"
+provider = "cursor"
 
 [models.gpt55]
 description = "GPT-5.5 — action-oriented, fast. Best on low effort; overthinks on high. Good clean code output but weak at nuanced judgment."
