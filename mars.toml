@@ -14,7 +14,6 @@ models_cache_ttl_hours = 24
 [models.composer]
 description = "Cursor's native coding model. Fast, strong tool use."
 model = "composer-2.5"
-provider = "cursor"
 
 [models.gpt55]
 description = "GPT-5.5 — action-oriented, fast. Best on low effort; overthinks on high. Good clean code output but weak at nuanced judgment."
@@ -36,14 +35,12 @@ harness = "claude"
 description = "Opus 4.6 — best for orchestration, frontend, UI/UX, and creative work. Strong instruction-following."
 default_effort = "high"
 model = "claude-opus-4-6"
-provider = "anthropic"
 
 [models.opus47]
 harness = "claude"
 description = "Opus 4.7 — strongest benchmarks, best agentic coding. Literal instruction-following breaks complex prompts. Long-context degrades above 100k. 35% more expensive via tokenizer. Needs prompt migration from 4.6."
 default_effort = "high"
 model = "claude-opus-4-7"
-provider = "anthropic"
 
 [models.opus]
 harness = "claude"
@@ -51,28 +48,27 @@ description = "Best for orchestration, frontend, UI/UX, and creative work. Stron
 default_effort = "high"
 model = "claude-opus-4-6"
 match = ["*opus*"]
-provider = "anthropic"
 exclude = ["*:*"]
 
 [models.sonnet]
 harness = "claude"
 description = "Balanced Claude model - good reasoning at lower cost than Opus. Good writing/documentation style."
 default_effort = "high"
-provider = "anthropic"
+provider = "anthropic" # TODO: remove this
 match = ["*sonnet*"]
 exclude = ["*:*"]
 
 [models.gptmini]
 description = "Fast and cheap. Good for bulk exploration and simple tasks."
 default_effort = "high"
-provider = "openai"
+provider = "openai" # TODO: remove this
 match = ["gpt-5*-mini"]
 exclude = ["*-nano"]
 
 [models.codex]
 description = "Default backend implementer. Fast, token-efficient, faithful to instructions. Weak at frontend."
 default_effort = "high"
-provider = "openai"
+provider = "openai" # TODO: remove this
 match = ["gpt-*-codex"]
 exclude = [
     "*-mini",
@@ -85,7 +81,6 @@ description = "Strongest generalist. Best all-around judgment, nuanced review, v
 default_effort = "high"
 model = "gpt-5.4"
 match = ["gpt-5*"]
-provider = "openai"
 exclude = [
     "*codex*",
     "*-pro",
