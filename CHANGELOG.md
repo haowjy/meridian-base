@@ -4,6 +4,11 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.4.23] - 2026-05-28
+
+### Fixed
+- Composer alias now declares `harness = "cursor"` and `provider = "cursor"`, fixing routing to cursor instead of falling through to Pi.
+
 ## [0.4.22] - 2026-05-28
 
 ## [0.4.21] - 2026-05-28
