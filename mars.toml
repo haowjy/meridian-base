@@ -34,15 +34,21 @@ model = "deepseek-v4-flash"
 
 [models.opus46]
 harness = "claude"
-description = "Opus 4.6 — best for orchestration, frontend, UI/UX, and creative work. Strong instruction-following."
+description = "Opus 4.6 — best generic model for infering human intent and generically very good at everything."
 default_effort = "high"
 model = "claude-opus-4-6"
 
 [models.opus47]
 harness = "claude"
-description = "Opus 4.7 — strongest benchmarks, best agentic coding. Literal instruction-following breaks complex prompts. Long-context degrades above 100k. 35% more expensive via tokenizer. Needs prompt migration from 4.6."
+description = "Opus 4.7 — Best agentic coding. Literal instruction-following breaks complex prompts. Best at UI/UX design work."
 default_effort = "high"
 model = "claude-opus-4-7"
+
+[models.opus48]
+harness = "claude"
+description = "Opus 4.8 — Long horizon tasks and best orchestration model."
+default_effort = "high"
+model = "claude-opus-4-8"
 
 [models.opus]
 harness = "claude"
