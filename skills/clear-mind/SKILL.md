@@ -6,6 +6,7 @@ description: >
   re-read the available agents before spawning a subagent; choose the most
   specific owner instead of broad defaults, then write a tight handoff with only
   the context that subagent needs.
+detail: Context hygiene — when to spawn fresh vs continue inline.
 model-invocable: true
 ---
 

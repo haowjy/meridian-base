@@ -4,6 +4,7 @@ description: >
   Minimal default subagent profile for repo-local Meridian work. Spawn with
   `meridian spawn -a meridian-subagent`, passing task files with -f.
   Executes the described task directly and reports results.
+mode: subagent
 model: gpt-5.3-codex
 skills: [shared-workspace]
 tools:

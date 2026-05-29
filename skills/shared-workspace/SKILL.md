@@ -4,6 +4,7 @@ type: guardrail
 description: >
   Load when a workspace may contain changes from humans or other agents.
   Covers safe orientation, preserving unfamiliar files, and containing outputs.
+detail: Workspace coordination — file ownership, edit boundaries, conflict avoidance.
 model-invocable: true
 ---
 

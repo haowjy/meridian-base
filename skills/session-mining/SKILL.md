@@ -2,6 +2,7 @@
 name: session-mining
 type: reference
 description: "Use when mining conversation history during dev work — recovering decisions from the top-level primary session, delegating bulk transcript reading to an explorer, or discovering all sessions tied to a work item across interruptions."
+detail: Conversation history mining for decisions and rejected alternatives.
 model-invocable: true
 ---
 

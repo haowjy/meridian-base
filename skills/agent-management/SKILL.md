@@ -5,6 +5,7 @@ description: >
   Load when you coordinate work across multiple spawns rather than
   implementing directly. Delegation discipline, convergence loops,
   escalation, artifact persistence.
+detail: Spawn coordination — when and how to delegate to subagents.
 model-invocable: false
 ---
 

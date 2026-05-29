@@ -7,6 +7,7 @@ description: >
   `meridian spawn -a session-explorer`, passing the research question
   in the prompt. Use --from to pass specific session context, or let
   it discover sessions via work item.
+mode: subagent
 model: sonnet
 skills: [session-mining, intent-modeling, llm-writing]
 tools:

@@ -9,6 +9,7 @@ description: >
   human review. Spawn with `meridian spawn -a kb-maintainer`, passing the
   target tree with -f for an explicit target, or let it default to the KB
   via `meridian context kb`.
+mode: subagent
 model: gpt-5.4-mini
 effort: high
 skills: [meridian-spawn, kb-conventions, shared-dao, md-validation, shared-workspace,

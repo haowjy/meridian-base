@@ -7,6 +7,7 @@ description: >
   domain model, sharpens terminology, and updates durable documentation as
   decisions crystallize. Works for any project domain — product plans,
   workflow designs, prompt systems, operations, architecture, or code.
+detail: Documentation-grounded questioning methodology.
 model-invocable: false
 ---
 

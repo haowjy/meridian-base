@@ -11,6 +11,7 @@ description: >
 # qi-layer
 
 Inline knowledge is a hierarchical intent system. It gives agents
+detail: Quality and information layer conventions.
 working understanding through fractal compression — each level summarizes
 the level below, not the raw content.
 

@@ -4,6 +4,7 @@ description: >
   Minimal orchestrator that plans, delegates, and evaluates subagent work.
   Spawn with `meridian spawn -a meridian-default-orchestrator`, passing task
   context with -f or --from. Produces assembled results from subagent work.
+mode: subagent
 harness: claude
 skills:
   - meridian-spawn
