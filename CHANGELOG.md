@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-05-29
+
 ### Changed
 - All agents: add `mode: subagent` for progressive loading
 - 16 skills: add `detail` field for inventory summaries
