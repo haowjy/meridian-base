@@ -1,12 +1,6 @@
 ---
 name: kb-writer
-description: >
-  Use when durable knowledge needs capturing in the KB — after work ships,
-  after research produces findings, after decisions are made, or when
-  conversation context contains understanding that will be lost to compaction.
-  The KB is the project's persistent, compounding knowledge base. Spawn with
-  `meridian spawn -a kb-writer`, passing conversation context with --from and
-  relevant source material with -f. Tell it what happened and what to capture.
+description: Capture durable knowledge in the project KB from implementation and research.
 mode: subagent
 model: claude-sonnet-4-6
 effort: medium

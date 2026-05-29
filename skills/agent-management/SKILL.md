@@ -6,7 +6,7 @@ description: >
   implementing directly. Delegation discipline, convergence loops,
   escalation, artifact persistence.
 detail: Spawn coordination — when and how to delegate to subagents.
-model-invocable: false
+model-invocable: true
 ---
 
 # Agent Management

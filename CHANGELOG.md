@@ -4,6 +4,14 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- 4 principle shims: `delegation`, `decision-logging`, `work-tracking`, `knowledge-capture` — thin WHY principles pointing to reference skills for HOW.
+
+### Changed
+- All agent descriptions papered to one-liners — portable, no spawn syntax.
+- `clear-mind`: reclassified `type: reference` → `type: guardrail`.
+- 10 reference skills flipped to `model-invocable: true`.
+
 ## [0.5.0] - 2026-05-29
 
 ### Changed

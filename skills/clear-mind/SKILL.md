@@ -1,6 +1,6 @@
 ---
 name: clear-mind
-type: reference
+type: guardrail
 description: >
   Load before spawning subagents to protect focus and role fit. Make sure to
   re-read the available agents before spawning a subagent; choose the most

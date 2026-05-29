@@ -6,7 +6,7 @@ description: >
   parallel, coordinate multiple agents, or inspect spawn outputs. Also
   use when routing work to a specific model or provider.
 detail: Meridian spawn mechanics — flags, context passing, session management.
-model-invocable: false
+model-invocable: true
 ---
 
 # meridian-spawn

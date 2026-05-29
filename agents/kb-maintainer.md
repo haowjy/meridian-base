@@ -1,14 +1,6 @@
 ---
 name: kb-maintainer
-description: >
-  Use when a document tree needs structural health checks, refactoring, or
-  reorganization — the durable KB, a work-item design/ directory, or any
-  explicitly passed artifact tree. Treats docs like code: enforces single
-  responsibility, splits oversized docs, creates folder structure, fixes
-  cross-references, resolves merge conflicts, and flags content needing
-  human review. Spawn with `meridian spawn -a kb-maintainer`, passing the
-  target tree with -f for an explicit target, or let it default to the KB
-  via `meridian context kb`.
+description: Document tree health — refactoring, reorganization, cross-reference fixes.
 mode: subagent
 model: gpt-5.4-mini
 effort: high

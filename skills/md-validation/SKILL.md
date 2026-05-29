@@ -21,6 +21,7 @@ Meridian's markdown validation commands work on any markdown file or directory.
 - **`meridian kg [path]`** — quick stats (file count, link count, broken count).
 
 Context aliases work as path: `kb`, `strategy`, `work` resolve to their
+model-invocable: true
 detail: Markdown formatting and structure validation rules.
 context directories (e.g. `meridian kg check kb`, `meridian kg graph strategy`).
 - **`meridian mermaid check [path]`** — Mermaid diagram validation (syntax +

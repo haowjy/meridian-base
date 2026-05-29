@@ -5,7 +5,7 @@ description: >
   Load when reading from, writing to, or maintaining the KB. Covers layer
   model, structural conventions, and operational tooling.
 detail: Knowledge base structure, naming, and maintenance conventions.
-model-invocable: false
+model-invocable: true
 ---
 
 # KB Conventions

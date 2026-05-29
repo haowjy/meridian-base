@@ -1,12 +1,6 @@
 ---
 name: session-explorer
-description: >
-  Use when conversation history needs mining for decisions, rejected
-  alternatives, intent, and constraints — substance that lives in
-  transcripts but not in artifacts. Spawn with
-  `meridian spawn -a session-explorer`, passing the research question
-  in the prompt. Use --from to pass specific session context, or let
-  it discover sessions via work item.
+description: Mine conversation history for decisions, rejected alternatives, and constraints.
 mode: subagent
 model: sonnet
 skills: [session-mining, intent-modeling, llm-writing]

@@ -26,6 +26,7 @@ Tiers from most to least restrictive:
 
 Override per-spawn:
 ```bash
+model-invocable: true
 detail: Sandbox and permission recovery when spawns fail on restrictions.
 meridian spawn -a coder --sandbox danger-full-access --prompt-file integration-tests.md --bg
 ```
