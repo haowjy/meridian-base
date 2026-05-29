@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-05-29
+
 ### Added
 - 4 principle shims: `delegation`, `decision-logging`, `work-tracking`, `knowledge-capture` — thin WHY principles pointing to reference skills for HOW.
 
