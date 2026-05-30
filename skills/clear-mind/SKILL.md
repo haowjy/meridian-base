@@ -2,7 +2,7 @@
 name: clear-mind
 type: guardrail
 description: Use before spawning — role fit, context scoping, handoff discipline.
-model-invocable: true
+model-invocable: false
 ---
 
 # Clear Mind
