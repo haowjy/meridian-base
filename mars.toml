@@ -1,6 +1,6 @@
 [package]
 name = "meridian-base"
-version = "0.6.0"
+version = "0.7.0"
 description = "Core coordination primitives for Meridian — orchestrator, subagent, and skills for spawning, state tracking, and session context."
 
 [dependencies]
@@ -68,10 +68,10 @@ match = ["gpt-5*-mini"]
 exclude = ["*-nano"]
 
 [models.gpt55]
+harness = "codex"
 description = "Strongest executor. Executes instructions faithfully; doesn't interpret or read between the lines though."
 default_effort = "low"
 model = "gpt-5.5"
-harness = "codex"
 
 [models.gpt54]
 description = "Good all-around model. Especially good at being a thorough reviewer and finding subtle issues."

@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-05-30
+
 ### Added
 - `/handoff` skill — conversation compaction into handoff doc, spawn command for the next agent. `user-invocable: true`, `model-invocable: true`.
 - `/explore-and-engage` skill — orientation pattern for cold-start agents.
