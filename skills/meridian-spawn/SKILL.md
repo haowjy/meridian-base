@@ -77,7 +77,7 @@ Launch with a clear goal, then move on — don't poll with repeated `session log
 ## Status, Work Items, Shared State
 
 - `meridian work` — situational dashboard. Reattach to earlier spawns with `meridian spawn wait [<id>]`; `meridian spawn children <id>` shows what a spawn spawned.
-- Attach spawns to a work item with `--work` so they're grouped and traceable — see `/meridian-work-coordination`.
+- Attach spawns to a work item with `--work` so they're grouped and traceable — see `/work-coordination`.
 - Spawns share filesystem context dirs (`$MERIDIAN_CONTEXT_*_DIR`), injected into every agent's prompt at launch.
 
 ## Beyond the Core Loop

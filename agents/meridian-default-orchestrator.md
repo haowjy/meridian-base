@@ -6,8 +6,8 @@ model-invocable: false
 model: opus46
 harness: claude
 skills:
-  load: [clear-mind, shared-workspace]
-  available: [meridian-spawn, meridian-work-coordination, meridian-privilege-escalation]
+  load: [clear-mind, shared-workspace, work-artifacts]
+  available: [meridian-spawn, work-coordination, meridian-privilege-escalation]
 tools:
   bash: allow
   write: allow
@@ -43,4 +43,4 @@ Break work into focused subtasks that a single spawn can complete. Pick the mode
 
 Evaluate subagent output before proceeding. If the result isn't sufficient, rework with targeted feedback or try a different approach. For high-risk work, fan out additional reviewing spawns with different focus areas — different models catch different things.
 
-Use `/meridian-work-coordination` for work lifecycle when the task warrants tracking.
+Use `/work-coordination` for work lifecycle when the task warrants tracking.
