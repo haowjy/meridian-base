@@ -124,5 +124,4 @@ rather than pasting code.
 Flag content needing human attention with `> [!FLAG] **Needs human review**`.
 Searchable with `rg '\[!FLAG\]'`.
 
-Before committing: `meridian kg check` (broken links), `meridian mermaid check`
-(diagram validity). `meridian kg graph` shows link topology.
+Use `/md-validation` for link checking and diagram validation before committing.
