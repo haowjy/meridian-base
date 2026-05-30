@@ -8,21 +8,30 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 - `/handoff` skill — conversation compaction into handoff doc, spawn command for the next agent. `user-invocable: true`, `model-invocable: true`.
 - `/explore-and-engage` skill — orientation pattern for cold-start agents.
 - `/zoom-out` skill — 4-angle orientation (code, KB, decisions, vocabulary).
+- `/work-artifacts` skill — anchors work in work items, artifact placement, decision recording. Combined from `work-tracking` + `meridian-work-coordination`. Progressive: `resources/lifecycle.md` for detailed status management.
 
 ### Changed
 - All skill descriptions trimmed to one-line "when + what" format. Removed `detail` field from all skills.
-- `clear-mind`: added "Own the outcome" from merged `delegation`.
+- `clear-mind`: added "Own the outcome" from merged `delegation`. `model-invocable: false` (loaded on 6 agents, never available).
 - `shared-dao`: trimmed from 123 → 43 lines. Cut vocab file hierarchy, lifecycle stages, operations.
-- `decision-log`: merged `decision-logging` principle into it.
-- `llm-writing`: description now explains what it catches.
+- `llm-writing`: description now explains what it catches. Trimmed 40 → 28 lines; renamed "Conversational Mode Leaking" → "Conversational Bleed".
+- `intent-modeling`: trimmed 27 → 17 lines. Cut illustrative examples, kept core instruction.
+- `kb-conventions`: replaced inline validation commands with `/md-validation` reference.
+- `handoff`: `user-invocable: true` (body shows `/handoff` syntax). Softened `pre-*` checkpoint reference to "if installed."
+- `@kb-writer`: added `read` and `rg` tools (was missing read access). Moved `kb-conventions` from available → load.
+- `@kb-maintainer`: moved `kb-conventions` from available → load.
+- `@session-miner`: moved `session-mining` from available → load.
 - Fixed corrupted body content in `meridian-privilege-escalation`, `qi-layer`, `md-validation` (stale `detail:` lines leaked into body text).
 - mars.toml model descriptions: fixed conversational bleed, typos, and missing personality differentiation across opus46/47/48, deepseek/deepseekflash. Descriptions now capture model strengths positively.
-- `work-tracking`: removed stale `/dev-artifacts` reference.
 
 ### Removed
 - `agent-management` — unreferenced by any agent. Covered by `clear-mind` guardrail.
 - `delegation` — merged into `clear-mind`. Same content, `clear-mind` had more depth.
 - `decision-logging` — merged into `decision-log`.
+- `decision-log` — folded into `work-artifacts`.
+- `knowledge-capture` — 21-line shim pointing at other skills.
+- `work-tracking` — renamed and expanded into `work-artifacts`.
+- `meridian-work-coordination` — folded into `work-artifacts`.
 
 ## [0.6.0] - 2026-05-29
 

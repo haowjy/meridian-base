@@ -1,4 +1,5 @@
 .DS_Store
+mars.lock
 .mars
 .agents/
 .meridian/
