@@ -16,11 +16,13 @@ model-policies:
   - match: {alias: sonnet}
     override: {effort: high}
 skills:
-  load: [shared-dao, shared-workspace, llm-writing, intent-modeling]
-  available: [meridian-spawn, kb-conventions, qi-layer, md-validation, session-mining]
+  load: [shared-dao, shared-workspace, llm-writing, intent-modeling, kb-conventions]
+  available: [meridian-spawn, qi-layer, md-validation, session-mining]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow
+  'bash(rg *)': allow
+  read: allow
   write: allow
   edit: allow
   agent: deny

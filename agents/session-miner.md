@@ -16,8 +16,8 @@ model-policies:
   - match: {alias: sonnet}
     override: {effort: high}
 skills:
-  load: [intent-modeling]
-  available: [session-mining, llm-writing]
+  load: [intent-modeling, session-mining]
+  available: [llm-writing]
 tools:
   'bash(meridian session *)': allow
   'bash(meridian work *)': allow

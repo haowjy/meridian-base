@@ -16,8 +16,8 @@ model-policies:
   - match: {alias: sonnet}
     override: {effort: high}
 skills:
-  load: [shared-dao, shared-workspace, reflection, llm-writing]
-  available: [meridian-spawn, kb-conventions, md-validation]
+  load: [shared-dao, shared-workspace, reflection, llm-writing, kb-conventions]
+  available: [meridian-spawn, md-validation]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow

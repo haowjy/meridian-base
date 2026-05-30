@@ -3,7 +3,7 @@ name: handoff
 type: mode-shift
 description: End this session and produce a launch command for the user's next interactive primary.
 argument-hint: "What will the next session focus on?"
-user-invocable: false
+user-invocable: true
 model-invocable: true
 ---
 
@@ -36,13 +36,10 @@ Write to the active work directory (`meridian work current`). No work item
 
 ## Run Pre-* Checks
 
-Before completing the handoff, load and execute any `pre-*` skills
-relevant to the next phase. These are checkpoint skills that gate the
-boundary — ensuring workspace, branches, and prerequisites are ready
-for the next agent.
-
-Example: handing off to an implementation agent → load `pre-dev` to
-verify worktree isolation, branch readiness, workspace state.
+Before completing the handoff, check if any `pre-*` checkpoint skills are
+installed for the next phase (e.g., `pre-dev` for implementation handoffs).
+If present, load and run them to verify workspace, branches, and
+prerequisites are ready for the next agent. Skip if none are installed.
 
 ## Choose the Next Agent
 
