@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `meridian-spawn`: warn that `MERIDIAN_PROJECT_DIR` anchors Meridian commands inside managed sessions; use `meridian -C "$MERIDIAN_TASK_DIR" ...` for task checkouts.
+
 ## [0.7.0] - 2026-05-30
 
 ### Added
