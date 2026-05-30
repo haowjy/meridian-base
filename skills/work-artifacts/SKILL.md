@@ -54,3 +54,7 @@ or `awaiting-merge` and leave it active until merge and cleanup.
 **kb** (`$MERIDIAN_CONTEXT_KB_DIR`) — project-wide reference material.
 
 Rule of thumb: *this* work item → work dir. Project-wide → kb.
+
+See [`resources/lifecycle.md`](resources/lifecycle.md) for detailed lifecycle
+management — dashboard commands, status transitions, completion rules,
+archival.
