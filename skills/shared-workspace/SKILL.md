@@ -1,10 +1,7 @@
 ---
 name: shared-workspace
 type: guardrail
-description: >
-  Load when a workspace may contain changes from humans or other agents.
-  Covers safe orientation, preserving unfamiliar files, and containing outputs.
-detail: Workspace coordination — file ownership, edit boundaries, conflict avoidance.
+description: Use when a workspace has changes from other agents — safe orientation, preserving unfamiliar files.
 model-invocable: true
 ---
 

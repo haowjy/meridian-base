@@ -1,14 +1,13 @@
 ---
 name: meridian-default-orchestrator
 description: Minimal orchestrator that plans, delegates, and evaluates subagent work.
-mode: subagent
+mode: primary
+model-invocable: false
+model: opus46
 harness: claude
 skills:
-  - meridian-spawn
-  - meridian-work-coordination
-  - meridian-privilege-escalation
-  - shared-workspace
-  - clear-mind
+  load: [clear-mind, shared-workspace]
+  available: [meridian-spawn, meridian-work-coordination, meridian-privilege-escalation]
 tools:
   bash: allow
   write: allow

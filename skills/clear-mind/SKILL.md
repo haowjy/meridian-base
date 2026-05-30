@@ -1,12 +1,7 @@
 ---
 name: clear-mind
 type: guardrail
-description: >
-  Load before spawning subagents to protect focus and role fit. Make sure to
-  re-read the available agents before spawning a subagent; choose the most
-  specific owner instead of broad defaults, then write a tight handoff with only
-  the context that subagent needs.
-detail: Context hygiene — when to spawn fresh vs continue inline.
+description: Use before spawning — role fit, context scoping, handoff discipline.
 model-invocable: true
 ---
 
@@ -56,6 +51,7 @@ Front-load the task. Purpose first, specifics second, file references last.
 The subagent should know its job by line 3.
 
 Include one way to verify. The subagent checks itself before reporting.
+Own the outcome — evaluate the report, not just acknowledge it.
 
 Write the outcome, not the conversation. "The user needs X because Y" —
 not "the user and I discussed." The subagent wasn't there.

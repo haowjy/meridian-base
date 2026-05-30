@@ -107,14 +107,14 @@ target_root = ".mars"
 dest_path = "agents/python-tool-writer.md"
 installed_checksum = "sha256:5c05cce4f8f2bbf5e6dcbbcbfff1c3e47f69be2dd29f22908bac22e9339c2b37"
 
-[items."agent/session-explorer"]
+[items."agent/session-miner"]
 source = "_self"
 kind = "agent"
 source_checksum = "sha256:a047dc707ebeccf37d36ea92b6a454d6d11e6765a89d8b416f06d8b3f2826925"
 
-[[items."agent/session-explorer".outputs]]
+[[items."agent/session-miner".outputs]]
 target_root = ".mars"
-dest_path = "agents/session-explorer.md"
+dest_path = "agents/session-miner.md"
 installed_checksum = "sha256:a047dc707ebeccf37d36ea92b6a454d6d11e6765a89d8b416f06d8b3f2826925"
 
 [items."agent/web-prompt-researcher"]

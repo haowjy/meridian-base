@@ -1,8 +1,7 @@
 ---
 name: llm-writing
 type: guardrail
-description: Load when producing any written artifact for humans.
-detail: Writing quality guardrails for human-facing artifacts.
+description: Use when producing written artifacts for humans — catches default LLM writing patterns.
 model-invocable: true
 ---
 

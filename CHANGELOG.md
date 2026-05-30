@@ -4,6 +4,26 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `/handoff` skill — conversation compaction into handoff doc, spawn command for the next agent. `user-invocable: true`, `model-invocable: true`.
+- `/explore-and-engage` skill — orientation pattern for cold-start agents.
+- `/zoom-out` skill — 4-angle orientation (code, KB, decisions, vocabulary).
+
+### Changed
+- All skill descriptions trimmed to one-line "when + what" format. Removed `detail` field from all skills.
+- `clear-mind`: added "Own the outcome" from merged `delegation`.
+- `shared-dao`: trimmed from 123 → 43 lines. Cut vocab file hierarchy, lifecycle stages, operations.
+- `decision-log`: merged `decision-logging` principle into it.
+- `llm-writing`: description now explains what it catches.
+- Fixed corrupted body content in `meridian-privilege-escalation`, `qi-layer`, `md-validation` (stale `detail:` lines leaked into body text).
+- mars.toml model descriptions: fixed conversational bleed, typos, and missing personality differentiation across opus46/47/48, deepseek/deepseekflash. Descriptions now capture model strengths positively.
+- `work-tracking`: removed stale `/dev-artifacts` reference.
+
+### Removed
+- `agent-management` — unreferenced by any agent. Covered by `clear-mind` guardrail.
+- `delegation` — merged into `clear-mind`. Same content, `clear-mind` had more depth.
+- `decision-logging` — merged into `decision-log`.
+
 ## [0.6.0] - 2026-05-29
 
 ### Added
@@ -280,15 +300,15 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ## [0.2.0] - 2026-05-02
 
 ### Added
-- `@session-explorer` agent: interpretive conversation mining — decisions, rejected alternatives, intent, constraints. Sonnet model for pragmatic interpretation. Splits from `@explorer`, which stays cheap/codebase-only.
+- `@session-miner` agent: interpretive conversation mining — decisions, rejected alternatives, intent, constraints. Sonnet model for pragmatic interpretation. Splits from `@explorer`, which stays cheap/codebase-only.
 
 ### Changed
-- `@explorer`: narrowed to codebase-only. Dropped `meridian session *`, `meridian work show *`, `meridian spawn show *` tools. Description routes to `@session-explorer` for conversation history.
+- `@explorer`: narrowed to codebase-only. Dropped `meridian session *`, `meridian work show *`, `meridian spawn show *` tools. Description routes to `@session-miner` for conversation history.
 - `@kb-writer`: added `llm-writing` and `intent-modeling` — writes prose for humans, mines conversation for decisions.
 - `@kb-writer`: trimmed body. Structural conventions (SRP, hierarchy, linking, readability) moved to `kb-conventions` skill.
 - `@kb-maintainer`: trimmed body. Same structural conventions consolidated into `kb-conventions`.
 - `kb-conventions`: expanded with wiki page conventions — SRP, hierarchical organization, linking discipline, readability, style. Single source of truth for structural standards; both kb-writer and kb-maintainer reference it.
-- `session-mining`: delegation target `@explorer` → `@session-explorer` for transcript mining.
+- `session-mining`: delegation target `@explorer` → `@session-miner` for transcript mining.
 
 ## [0.1.3] - 2026-05-02
 

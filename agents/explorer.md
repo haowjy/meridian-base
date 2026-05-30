@@ -12,7 +12,9 @@ model-policies:
   - match: {alias: gpt-5.4-mini}
     override: {effort: high}
   - match: {alias: gpt-5.3-codex-spark}
-    override: {}
+    override: {effort: high}
+  - match: {alias: sonnet}
+    override: {effort: high}
 skills: []
 tools:
   'bash(meridian qi *)': allow

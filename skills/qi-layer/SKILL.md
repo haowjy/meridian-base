@@ -1,18 +1,12 @@
 ---
 name: qi-layer
 type: reference
-description: >
-  Use when writing, reading, or deciding where to place inline knowledge —
-  AGENTS.md and .context/CONTEXT.md files colocated with the content they
-  describe. Covers what belongs in each, how they relate, and what goes
-  elsewhere.
+description: Use when placing or reading inline knowledge — AGENTS.md and .context/CONTEXT.md conventions.
 ---
 
 # qi-layer
 
 Inline knowledge is a hierarchical intent system. It gives agents
-model-invocable: true
-detail: Quality and information layer conventions.
 working understanding through fractal compression — each level summarizes
 the level below, not the raw content.
 

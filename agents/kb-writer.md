@@ -2,9 +2,22 @@
 name: kb-writer
 description: Capture durable knowledge in the project KB from implementation and research.
 mode: subagent
-model: claude-sonnet-4-6
-effort: medium
-skills: [meridian-spawn, kb-conventions, shared-dao, qi-layer, md-validation, session-mining, decision-log, shared-workspace, llm-writing, intent-modeling]
+model: deepseekflash
+effort: high
+model-policies:
+  - match: {alias: deepseekflash}
+    override: {effort: high}
+  - match: {alias: deepseek}
+    override: {effort: high}
+  - match: {alias: gpt-5.4-mini}
+    override: {effort: high}
+  - match: {alias: gpt-5.3-codex-spark}
+    override: {effort: high}
+  - match: {alias: sonnet}
+    override: {effort: high}
+skills:
+  load: [shared-dao, shared-workspace, llm-writing, intent-modeling]
+  available: [meridian-spawn, kb-conventions, qi-layer, md-validation, session-mining, decision-log]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow

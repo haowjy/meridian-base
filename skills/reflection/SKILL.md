@@ -1,11 +1,7 @@
 ---
 name: reflection
 type: guardrail
-description: >
-  Use before reporting results. Step back, review your own output as if
-  evaluating someone else's work, fix what you find. Catches issues while
-  context is still loaded, without a separate reviewer spawn.
-detail: Self-check guardrail — verify assumptions before committing.
+description: Use before reporting results — self-check your output as if reviewing someone else's work.
 model-invocable: true
 ---
 

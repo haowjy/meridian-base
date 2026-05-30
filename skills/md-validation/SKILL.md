@@ -1,11 +1,7 @@
 ---
 name: md-validation
 type: reference
-description: >
-  Use when writing, reviewing, or refactoring markdown docs and you need
-  fast validation of links or Mermaid diagrams. Trigger on phrases like
-  "check docs", "find broken links", "validate mermaid", "map doc
-  structure", or before committing documentation changes.
+description: Use when validating markdown links or Mermaid diagrams.
 ---
 
 # md-validation
@@ -21,8 +17,6 @@ Meridian's markdown validation commands work on any markdown file or directory.
 - **`meridian kg [path]`** — quick stats (file count, link count, broken count).
 
 Context aliases work as path: `kb`, `strategy`, `work` resolve to their
-model-invocable: true
-detail: Markdown formatting and structure validation rules.
 context directories (e.g. `meridian kg check kb`, `meridian kg graph strategy`).
 - **`meridian mermaid check [path]`** — Mermaid diagram validation (syntax +
   style warnings). Run after diagram edits.

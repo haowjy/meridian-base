@@ -2,10 +2,22 @@
 name: kb-maintainer
 description: Document tree health — refactoring, reorganization, cross-reference fixes.
 mode: subagent
-model: gpt-5.4-mini
+model: deepseekflash
 effort: high
-skills: [meridian-spawn, kb-conventions, shared-dao, md-validation, shared-workspace,
-  reflection, llm-writing]
+model-policies:
+  - match: {alias: deepseekflash}
+    override: {effort: high}
+  - match: {alias: deepseek}
+    override: {effort: high}
+  - match: {alias: gpt-5.4-mini}
+    override: {effort: high}
+  - match: {alias: gpt-5.3-codex-spark}
+    override: {effort: high}
+  - match: {alias: sonnet}
+    override: {effort: high}
+skills:
+  load: [shared-dao, shared-workspace, reflection, llm-writing]
+  available: [meridian-spawn, kb-conventions, md-validation]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow

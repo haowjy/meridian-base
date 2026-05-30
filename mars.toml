@@ -13,57 +13,51 @@ models_cache_ttl_hours = 24
 
 [models.composer]
 harness = "cursor"
-description = "Cursor's native coding model. Fast, strong tool use."
+description = "Strong and cheap coding model, but only for coding."
 model = "composer-2.5"
 provider = "cursor"
 
-[models.gpt55]
-description = "GPT-5.5 — action-oriented, fast. Best on low effort; overthinks on high. Good clean code output but weak at nuanced judgment."
-default_effort = "low"
-model = "gpt-5.5"
-
 [models.deepseek]
-description = "DeepSeek V4 Pro - cheap, all around good text coder for constrained tasks"
+description = "Cheap, good text coder for constrained tasks. Stronger reasoning than flash."
 default_effort = "high"
 model = "deepseek-v4-pro"
 
 [models.deepseekflash]
-description = "DeepSeek V4 Flash - cheap, all around good text coder for constrained tasks"
+description = "Cheapest option for mechanical tasks. Fast, low cost, good enough for bulk reading and simple edits."
 default_effort = "high"
 model = "deepseek-v4-flash"
 
 [models.opus46]
 harness = "claude"
-description = "Opus 4.6 — best generic model for infering human intent and generically very good at everything."
+description = "Best at inferring human intent. Strong conversational model — preferred for interactive primaries."
 default_effort = "high"
 model = "claude-opus-4-6"
 
 [models.opus47]
 harness = "claude"
-description = "Opus 4.7 — Best agentic coding. Literal instruction-following breaks complex prompts. Best at UI/UX design work."
+description = "Strong agentic coder and UI/UX design. Literal instruction-following — breaks with complex multi-skill prompts."
 default_effort = "high"
 model = "claude-opus-4-7"
 
 [models.opus48]
 harness = "claude"
-description = "Opus 4.8 — Long horizon tasks and best orchestration model."
+description = "Best at long-horizon orchestration and managing large numbers of subagents."
 default_effort = "high"
 model = "claude-opus-4-8"
 
-[models.opus]
-harness = "claude"
-description = "Best for orchestration, frontend, UI/UX, and creative work. Strong instruction-following."
-default_effort = "high"
-model = "claude-opus-4-6"
-match = ["*opus*"]
-exclude = ["*:*"]
-
 [models.sonnet]
 harness = "claude"
-description = "Balanced Claude model - good reasoning at lower cost than Opus. Good writing/documentation style."
+description = "Balanced model - good reasoning at lower cost than Opus. Good writing/documentation style."
 default_effort = "high"
 provider = "anthropic"
 match = ["*sonnet*"]
+exclude = ["*:*"]
+
+[models.opus]
+harness = "claude"
+description = "Latest opus family catch-all. Prefer pinned versions (opus46, opus47, opus48) — each has distinct strengths."
+default_effort = "high"
+match = ["*opus*"]
 exclude = ["*:*"]
 
 [models.gptmini]
@@ -73,21 +67,20 @@ provider = "openai"
 match = ["gpt-5*-mini"]
 exclude = ["*-nano"]
 
-[models.codex]
-description = "Default backend implementer. Fast, token-efficient, faithful to instructions. Weak at frontend."
-default_effort = "high"
-provider = "openai"
-match = ["gpt-*-codex"]
-exclude = [
-    "*-mini",
-    "*-spark",
-    "*-max",
-]
+[models.gpt55]
+description = "Strongest executor. Executes instructions faithfully; doesn't interpret or read between the lines though."
+default_effort = "low"
+model = "gpt-5.5"
+harness = "codex"
 
-[models.gpt]
-description = "Strongest generalist. Best all-around judgment, nuanced review, verification, and architectural reasoning."
+[models.gpt54]
+description = "Good all-around model. Especially good at being a thorough reviewer and finding subtle issues."
 default_effort = "high"
 model = "gpt-5.4"
+
+[models.gpt]
+description = "Strong coding model family. Prefer to use as extremely strong leaf models that do not orchestrate."
+default_effort = "high"
 match = ["gpt-5*"]
 exclude = [
     "*codex*",

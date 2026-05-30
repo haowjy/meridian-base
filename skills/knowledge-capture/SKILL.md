@@ -2,7 +2,6 @@
 name: knowledge-capture
 type: principle
 description: Write structural insight down before context compacts.
-detail: Durable understanding — .context/, KB, docs — written while context is fresh.
 model-invocable: true
 ---
 

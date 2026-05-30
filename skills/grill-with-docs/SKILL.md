@@ -1,13 +1,7 @@
 ---
 name: grill-with-docs
 type: reference
-description: >
-  Use when running an interactive grilling session against a plan or
-  proposed direction. Challenges the plan against the project's documented
-  domain model, sharpens terminology, and updates durable documentation as
-  decisions crystallize. Works for any project domain — product plans,
-  workflow designs, prompt systems, operations, architecture, or code.
-detail: Documentation-grounded questioning methodology.
+description: Use when challenging a plan — grills against documented decisions, sharpens terminology.
 model-invocable: true
 ---
 
@@ -67,7 +61,7 @@ conversation.
   materials: docs, KB entries, requirements, strategy notes, context files,
   decision logs, implementation files. Scope each spawn to one question and
   target specific files or directories.
-- **`meridian spawn -a session-explorer`** — only when the missing context
+- **`meridian spawn -a session-miner`** — only when the missing context
   lives in conversation transcripts, not artifacts.
 
 Frame explorer prompts as evidence-seeking questions with file/path targets.

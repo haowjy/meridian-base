@@ -2,8 +2,19 @@
 name: meridian-subagent
 description: Minimal default subagent profile for repo-local Meridian work.
 mode: subagent
-model: gpt-5.3-codex
-skills: [shared-workspace]
+model: deepseek
+effort: high
+model-policies:
+  - match: {alias: deepseek}
+    override: {effort: high}
+  - match: {alias: sonnet}
+    override: {effort: high}
+  - match: {alias: gpt-5.4-mini}
+    override: {effort: high}
+  - match: {alias: gpt-5.3-codex}
+    override: {effort: high}
+skills:
+  load: [shared-workspace]
 tools:
   bash: allow
   write: allow

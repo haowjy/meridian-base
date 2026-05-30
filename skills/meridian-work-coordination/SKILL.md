@@ -1,8 +1,7 @@
 ---
 name: meridian-work-coordination
 type: reference
-description: Use whenever you need to create, switch, update, or complete a work item, or decide where work-scoped notes versus broader shared docs belong.
-detail: Work item lifecycle — create, switch, update, complete.
+description: Use when managing work items — create, switch, update, complete, and decide where artifacts belong.
 model-invocable: true
 ---
 

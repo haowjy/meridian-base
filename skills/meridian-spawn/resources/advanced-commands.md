@@ -81,6 +81,35 @@ meridian spawn children p107           # discover child IDs
 meridian session log p108              # read a child's conversation
 ```
 
+## Steering a Running Spawn
+
+`inject` relays user direction to a running spawn — wrong approach, missed constraint, clarified requirement. The message lands as a user turn mid-session, so the agent pivots to it. Only inject when forwarding something the user said; self-generated nudges waste the spawn's attention.
+
+```bash
+meridian spawn inject p107 --message "Use the existing adapter pattern in src/adapters/"
+```
+
+## Committing Spawn Changes
+
+Use `meridian spawn files` to stage exactly what a spawn changed:
+
+```bash
+meridian spawn files p107 | xargs git add
+meridian spawn files p107 -0 | xargs -0 git add   # paths with spaces
+```
+
+## Template Variables
+
+Use `{{KEY}}` placeholders in prompt files, replaced at launch time with `--prompt-var`:
+
+```bash
+meridian spawn -a coder --prompt-file task.md --bg \
+  --prompt-var TASK=auth-refactor \
+  --prompt-var CONSTRAINT="no direct DB access"
+```
+
+Where `task.md` contains `{{TASK}}` and `{{CONSTRAINT}}` placeholders.
+
 ## Dry Run
 
 ```bash

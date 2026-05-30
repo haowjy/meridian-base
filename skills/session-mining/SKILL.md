@@ -1,8 +1,7 @@
 ---
 name: session-mining
 type: reference
-description: "Use when mining conversation history during dev work — recovering decisions from the top-level primary session, delegating bulk transcript reading to an explorer, or discovering all sessions tied to a work item across interruptions."
-detail: Conversation history mining for decisions and rejected alternatives.
+description: Use when recovering decisions or context from conversation history — session log navigation, transcript delegation.
 model-invocable: true
 ---
 
@@ -49,14 +48,14 @@ the entry instead of recomputing windows.
 
 ## Delegate Bulk Reading, Don't Inline It
 
-When the question spans long histories or multiple sessions, spawn @session-explorer for transcript mining and synthesis. That keeps your context window focused on decisions instead of raw transcript paging.
+When the question spans long histories or multiple sessions, spawn @session-miner for transcript mining and synthesis. That keeps your context window focused on decisions instead of raw transcript paging.
 
 ```bash
-meridian spawn -a session-explorer \
+meridian spawn -a session-miner \
   --prompt-file session-mine.md
 ```
 
-If you are the @session-explorer, mine directly rather than spawning recursively.
+If you are the @session-miner, mine directly rather than spawning recursively.
 
 ## Discover Sessions Per Work Item
 

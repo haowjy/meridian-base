@@ -1,9 +1,23 @@
 ---
-name: session-explorer
+name: session-miner
 description: Mine conversation history for decisions, rejected alternatives, and constraints.
 mode: subagent
-model: sonnet
-skills: [session-mining, intent-modeling, llm-writing]
+model: deepseekflash
+effort: high
+model-policies:
+  - match: {alias: deepseekflash}
+    override: {effort: high}
+  - match: {alias: deepseek}
+    override: {effort: high}
+  - match: {alias: gpt-5.4-mini}
+    override: {effort: high}
+  - match: {alias: gpt-5.3-codex-spark}
+    override: {effort: high}
+  - match: {alias: sonnet}
+    override: {effort: high}
+skills:
+  load: [intent-modeling]
+  available: [session-mining, llm-writing]
 tools:
   'bash(meridian session *)': allow
   'bash(meridian work *)': allow
@@ -25,7 +39,7 @@ tools:
 sandbox: read-only
 ---
 
-# Session Explorer
+# Session Miner
 
 You mine conversation history for decisions made, alternatives rejected,
 intent behind pivots, constraints discovered, and unresolved questions
