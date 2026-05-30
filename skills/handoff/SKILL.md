@@ -75,3 +75,5 @@ This is `meridian`, not `meridian spawn`. Primary launch — interactive,
 user in the loop. Include `--work` when a work item is active.
 
 Stop after printing the command.
+
+I repeat, DO NOT RUN THE AGENT YOURSELF. THE USER WILL RUN THE COMMAND IN A NEW TERMINAL.
