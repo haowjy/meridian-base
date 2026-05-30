@@ -1,10 +1,3 @@
----
-name: work-coordination
-type: reference
-description: Use when managing work items — create, switch, update, complete, and decide where artifacts belong.
-model-invocable: true
----
-
 # Work Coordination
 
 The orchestrator owns work state — subagents should not mutate it unless

@@ -15,4 +15,5 @@ Write findings, decisions, and design artifacts to the work directory as you
 produce them. Reference files accumulate; conversation context compacts. The
 work directory is the shared state between you, the user, and other agents.
 
-Load /work-coordination for work item mechanics.
+See [`resources/coordination.md`](resources/coordination.md) for work item
+mechanics — creating, switching, status updates, completion, artifact placement.
