@@ -55,6 +55,11 @@ or `awaiting-merge` and leave it active until merge and cleanup.
 
 Rule of thumb: *this* work item → work dir. Project-wide → kb.
 
+Design decisions go in design docs. Implementation decisions go in commit
+messages or inline comments. Structural decisions go in the work directory.
+Record rejected alternatives — they prevent re-proposing what was already
+considered.
+
 See [`resources/lifecycle.md`](resources/lifecycle.md) for detailed lifecycle
 management — dashboard commands, status transitions, completion rules,
 archival.

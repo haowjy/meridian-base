@@ -17,7 +17,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [shared-dao, shared-workspace, llm-writing, intent-modeling]
-  available: [meridian-spawn, kb-conventions, qi-layer, md-validation, session-mining, decision-log]
+  available: [meridian-spawn, kb-conventions, qi-layer, md-validation, session-mining]
 tools:
   'bash(meridian *)': allow
   'bash(git *)': allow

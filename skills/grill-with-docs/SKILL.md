@@ -101,7 +101,7 @@ Create durable decision records sparingly — only when the choice is hard to
 reverse, surprising without context, and involves a real tradeoff. Use the
 project's chosen decision surface (KB decision log, ADR directory, or
 equivalent). Keep provisional decisions in `requirements.md` until they
-prove durable. Follow `/decision-log` conventions where applicable.
+prove durable.
 
 ## Session Rhythm
 
