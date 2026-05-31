@@ -3,6 +3,8 @@
 Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/). Versions before 0.0.13 in git history only.
 
 ## [Unreleased]
+
+## [0.7.3] - 2026-05-31
 ### Added
 - `@kb-lead` — generic documentation-capture agent (moved from meridian-dev-workflow). Mines the work via `@explorer`/`@session-miner` read-only investigators, reconciles against the human's canonical decisions, writes `.context/` + KB + `docs/` inline, and hands structure to `@kb-maintainer`. Dev-specific behavior layers on via `--skills` (e.g. `post-impl-capture`).
 
