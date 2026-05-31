@@ -3,8 +3,15 @@
 Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/). Versions before 0.0.13 in git history only.
 
 ## [Unreleased]
+### Added
+- `@kb-lead` — generic documentation-capture agent (moved from meridian-dev-workflow). Mines the work via `@explorer`/`@session-miner` read-only investigators, reconciles against the human's canonical decisions, writes `.context/` + KB + `docs/` inline, and hands structure to `@kb-maintainer`. Dev-specific behavior layers on via `--skills` (e.g. `post-impl-capture`).
 
-## [0.7.2] - 2026-05-30
+### Changed
+- `@kb-maintainer`: scope broadened to any documentation tree (KB, `.context/`, `docs/`, work-item `design/`), not just the KB — generic structural health (split/merge/rename/folders/cross-refs). qi-layer semantic placement (AGENTS.md ↔ `.context/`) stays the writer's job; kb-maintainer flags layer-misplaced content for the caller. Added `/llm-writing` reminder for the prose it rewrites. Content authority fully removed — detects and flags contradictions/staleness/superseded knowledge but never resolves which claim is true or moves history out of the live tree (that needs the canonical context `@kb-lead` holds). git merge handling reconciles non-semantic structure only; contradictory claims get flagged, not won on recency. Description states: pass exactly one writable tree. git perms narrowed from `bash(git *)` to read-only + structural (`status`/`diff`/`log`/`show`/`mv`/`rm`) — no commit/push/merge/rebase, since it doesn't own commits.
+- `@kb-lead`: investigator widening hard-capped at three waves (widen only when an area can change a doc target, then report uncovered). Commits each repo it touched — KB is a separate repo from the code tree's `.context/`/`docs/` — never destructive git, pushing left to the caller. Spawns one `@kb-maintainer` per writable tree (it takes one target per spawn) and resolves the content contradictions it flags. Description teaches the launch contract: pass the originating conversation or source artifacts, `/post-impl-capture` for shipped work. Concrete validation commands (`meridian kg check kb`, `meridian kg graph kb`, `meridian mermaid check <path>`). Keeps the house-default destructive-git denylist (branch-switch + uncommitted-work destruction); commits via `bash`/`git` under the broad posture it owns.
+
+### Removed
+- `@kb-writer` agent — KB writing folded into `@kb-lead`, which now writes the KB inline.
 
 ## [0.7.1] - 2026-05-30
 
