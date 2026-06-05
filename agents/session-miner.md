@@ -11,8 +11,6 @@ model-policies:
     override: {effort: high}
   - match: {alias: gpt-5.4-mini}
     override: {effort: high}
-  - match: {alias: gpt-5.3-codex-spark}
-    override: {effort: high}
   - match: {alias: sonnet}
     override: {effort: high}
 skills:
@@ -23,12 +21,10 @@ tools:
   'bash(meridian work *)': allow
   'bash(meridian spawn show *)': allow
   'bash(rg *)': allow
-  agent: deny
   edit: deny
   write: deny
   notebook: deny
   cron: deny
-  task: deny
   ask_user: deny
   notifications: deny
   plan_mode: deny

@@ -25,7 +25,6 @@ tools:
   'bash(git log *)': allow
   agent: deny
   edit: deny
-  write: deny
   notebook: deny
   cron: deny
   task: deny

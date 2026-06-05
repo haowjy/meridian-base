@@ -13,7 +13,6 @@ tools:
   write: allow
   edit: allow
   web: allow
-  agent: deny
   notebook: deny
   cron: deny
   notifications: deny
