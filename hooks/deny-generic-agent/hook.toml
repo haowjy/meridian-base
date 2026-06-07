@@ -1,0 +1,6 @@
+name = "deny-generic-agent"
+event = "tool.pre"
+
+[action]
+kind = "script"
+path = "run.sh"
