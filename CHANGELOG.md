@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.9] - 2026-06-07
+
 ### Added
 - `deny-generic-agent` PreToolUse hook: blocks generic `Agent(subagent_type: "claude")` spawns, forcing use of named agents or meridian spawn.
 
