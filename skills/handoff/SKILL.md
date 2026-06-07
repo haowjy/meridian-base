@@ -20,9 +20,14 @@ If arguments were passed, treat them as the focus for the next session.
 
 ## Write the Transition Brief
 
-Compact the conversation into a file the next agent reads as its opening
-prompt:
+Start with `/intent-modeling` — separate what the human said from what
+they actually want to be true when this work is done. The modeled intent
+shapes everything in the brief.
 
+Then compact the conversation into a file the next agent reads as its
+opening prompt:
+
+- Human intent — the end goal in their terms, not implementation steps
 - Current state — what was accomplished, where things stand
 - Key decisions and why
 - Open questions or blockers
@@ -74,6 +79,5 @@ meridian -a [agent] \
 This is `meridian`, not `meridian spawn`. Primary launch — interactive,
 user in the loop. Include `--work` when a work item is active.
 
-Stop after printing the command.
-
-I repeat, DO NOT RUN THE AGENT YOURSELF. THE USER WILL RUN THE COMMAND IN A NEW TERMINAL.
+Stop after printing the command. The user runs it in a new terminal —
+this session's job is done once the command is on screen.
