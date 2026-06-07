@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.13] - 2026-06-07
+
 ### Changed
 - Handoff skill: lead with `/intent-modeling` before writing the transition brief — capture what the human actually wants, not just implementation details.
 - Handoff skill: human intent is now the first item in the brief, not buried in the middle.
