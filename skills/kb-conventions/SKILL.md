@@ -1,7 +1,7 @@
 ---
 name: kb-conventions
 type: reference
-description: Use when reading or writing KB entries — layer model, naming conventions, tooling.
+description: Use when reading or writing KB entries — what the KB is, what belongs in it, page conventions.
 model-invocable: true
 ---
 
@@ -9,26 +9,27 @@ model-invocable: true
 
 Load `/llm-writing` if it isn't already loaded.
 
-## Five Layers
+## What the KB Is
 
-The KB (`meridian context kb`) has five layers:
+The KB is the project's durable memory — cross-cutting knowledge that no
+single directory owns and that outlives any individual session. It holds
+decisions, domain concepts, architectural rationale, and patterns. It is
+read and written by both humans and agents; it is the shared understanding
+they maintain together.
 
-**Sources** — raw material: articles, research, transcripts, data. Immutable.
-The LLM reads from sources but never modifies them.
+### Where the KB Sits
 
-**Decisions** — the reasoning layer. Why a source matters, why the wiki is
-shaped the way it is, what was chosen and rejected. Decisions connect sources
-to knowledge by explaining the interpretation and judgment applied.
+Each documentation layer serves a different audience and lifecycle:
 
-**Wiki** — synthesized knowledge pages. How things work, concepts,
-architecture. The LLM owns this layer: creates pages, updates them, maintains
-cross-references, keeps everything consistent. Shaped by the decisions.
+| Layer | What it holds | Why it's separate |
+|---|---|---|
+| `.context/` + `AGENTS.md` | Module-local contracts, intent, working knowledge | Co-located; agents load it on directory entry |
+| KB | Decisions, domain concepts, patterns, architectural rationale | Spans components; outlives sessions |
+| `docs/` | User-facing documentation | Different audience, different update cadence |
 
-**Log** — what changed in the wiki and why. The audit trail of how the KB
-evolved — what was added, updated, or restructured, and what triggered it.
-
-**Schema** (`AGENTS.md`) — user-defined governance. Defines layer structure,
-conventions, and workflows.
+If knowledge is scoped to one directory, it belongs in `.context/`. If it
+spans directories or isn't anchored to a specific location in the code, it
+belongs in the KB. If it's for end users, it belongs in `docs/`.
 
 ## Current Truth Over History
 
@@ -43,8 +44,12 @@ material still has value as history, move it out of the living KB into
 current system, not narrate its evolution unless the history is itself the
 topic.
 
-Current pages should read as current truth. A reader should not need to guess
-which paragraph still applies.
+Current pages should read as current truth.
+
+## Structure
+
+Each project's KB `AGENTS.md` defines its own layer structure and governance.
+See `resources/bootstrap.md` for a suggested starting layout.
 
 ## Wiki Page Conventions
 
@@ -78,7 +83,6 @@ relate, where to go deeper.
 ### Vocab Pages
 
 Load `/shared-dao` for vocab methodology, lifecycle, and conflict resolution.
-This section covers the structural conventions.
 
 Vocab files sit in a hierarchy matching the domain:
 
