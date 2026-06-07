@@ -72,12 +72,15 @@ new terminal where the env var no longer exists.
 ```
 meridian -a [agent] \
   --work [work-id] \
+  --task-dir [path] \
   --prompt-file [path-to-brief] \
   --from [resolved-chat-id]
 ```
 
 This is `meridian`, not `meridian spawn`. Primary launch — interactive,
-user in the loop. Include `--work` when a work item is active.
+user in the loop. Include `--work` when a work item is active. Include
+`--task-dir` when the work is happening in a different directory (e.g. a
+worktree or sibling repo).
 
 Stop after printing the command. The user runs it in a new terminal —
 this session's job is done once the command is on screen.

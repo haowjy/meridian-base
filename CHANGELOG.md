@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- Handoff skill: add `--task-dir` to primary launch command template for worktree/sibling-repo handoffs.
+
 ## [0.7.13] - 2026-06-07
 
 ### Changed
