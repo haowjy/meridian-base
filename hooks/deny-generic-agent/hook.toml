@@ -1,5 +1,6 @@
 name = "deny-generic-agent"
 event = "tool.pre"
+visibility = "exported"
 
 [action]
 kind = "script"
