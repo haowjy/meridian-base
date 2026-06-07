@@ -11,11 +11,9 @@ Load `/llm-writing` if it isn't already loaded.
 
 ## What the KB Is
 
-The KB is the project's durable memory — cross-cutting knowledge that no
-single directory owns and that outlives any individual session. It holds
-decisions, domain concepts, architectural rationale, and patterns. It is
-read and written by both humans and agents; it is the shared understanding
-they maintain together.
+The KB holds cross-cutting knowledge that no single directory owns and that
+outlives any individual session — decisions, domain concepts, architectural
+rationale, and patterns.
 
 ### Where the KB Sits
 
@@ -125,7 +123,18 @@ rather than pasting code.
 
 ## Operations
 
+**Ingest** — new information enters the KB. Read the source, extract key
+knowledge, write or update wiki pages, update the index, log the change.
+A single source may touch many pages.
+
+**Maintain** — keep the wiki current. When a claim is superseded, remove it.
+When new information contradicts existing pages, resolve the contradiction.
+Current truth over history.
+
+**Lint** — health-check the wiki. Look for contradictions between pages,
+stale claims, orphan pages with no inbound links, important concepts
+mentioned but lacking their own page, missing cross-references. Use
+`/md-validation` for link checking and diagram validation.
+
 Flag content needing human attention with `> [!FLAG] **Needs human review**`.
 Searchable with `rg '\[!FLAG\]'`.
-
-Use `/md-validation` for link checking and diagram validation before committing.
