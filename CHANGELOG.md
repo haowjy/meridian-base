@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `meridian-spawn` skill: replace incorrect `-C "$MERIDIAN_TASK_DIR"` / `mars sync` guidance with `--task-dir` flag usage — spawned agents don't run mars sync, and `-C` changes project root, not task dir.
+
 ## [0.7.4] - 2026-06-05
 
 ## [0.7.3] - 2026-05-31

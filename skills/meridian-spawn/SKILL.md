@@ -51,25 +51,17 @@ Pass prior reasoning that isn't materialized to files with `--from`: `--from <sp
 
 Run `meridian mars list` for profiles and skills, `meridian mars models list` for the model catalog. Model preferences belong in profiles or `meridian config`, not hardcoded in spawn commands.
 
-## Meridian Command Roots
+## Working in Other Directories
 
-Meridian resolves a logical task dir for spawns: `MERIDIAN_TASK_DIR` points at
-the checkout where source-code work happens, and relative `-f` references are
-anchored there. Project authority stays separate: `MERIDIAN_PROJECT_DIR` /
-`MERIDIAN_PROJECT_ROOT` remain the session's control root for state, profiles,
-and context.
-
-Nested `meridian ...` commands use project-root resolution, where
-`MERIDIAN_PROJECT_DIR` wins over CWD. When a Meridian command should operate on
-the task checkout, pass the root explicitly:
+`--task-dir <path>` sets `MERIDIAN_TASK_DIR` for the spawn and anchors
+relative `-f` paths against it. Agent profiles, skills, and state still
+resolve from the current project.
 
 ```bash
-meridian -C "$MERIDIAN_TASK_DIR" mars sync
-meridian -C "$MERIDIAN_TASK_DIR" spawn list
+meridian spawn -a coder --prompt-file fix.md --bg \
+  --task-dir ~/gitrepos/other-repo.worktrees/my-branch \
+  -f src/lock/mod.rs
 ```
-
-Use `-C <path>` for sibling repos, worktrees, package checkouts, and any task
-dir that differs from the inherited project root.
 
 ## Completion Goals
 
