@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.7] - 2026-06-07
+
 ### Changed
 - `kb-conventions` skill: replace five-layer taxonomy with clear "what the KB is" framing and `.context/` vs KB vs `docs/` placement table. Layer structure now project-defined via KB AGENTS.md. Add `resources/bootstrap.md` starter template.
 
