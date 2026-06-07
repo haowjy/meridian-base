@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.8] - 2026-06-07
+
 ### Changed
 - `kb-conventions`: add lifecycle operations (Ingest, Maintain, Lint) to SKILL.md and bootstrap. Reframe five layers as four content types (wiki pages, decision records, sources, log). Add starter AGENTS.md template. Cut LLM writing patterns (labeled conclusions, escape hatches).
 
