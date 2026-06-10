@@ -57,7 +57,14 @@ exclude = ["*:*"]
 harness = "claude"
 description = "Latest opus family catch-all. Prefer pinned versions (opus46, opus47, opus48) — each has distinct strengths."
 default_effort = "high"
-match = ["*opus*"]
+match = ["claude*opus*"]
+exclude = ["*:*"]
+
+[models.fable]
+harness = "claude"
+description = "Most capable model for complex tasks."
+default_effort = "high"
+match = ["claude*fable*"]
 exclude = ["*:*"]
 
 [models.gptmini]
