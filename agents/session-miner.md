@@ -9,6 +9,7 @@ model-policies:
     override: {effort: high}
   - match: {alias: deepseek}
     override: {effort: high}
+  - match: {alias: composer}
   - match: {alias: gpt-5.4-mini}
     override: {effort: high}
   - match: {alias: sonnet}
@@ -33,6 +34,7 @@ tools:
   'bash(git switch:*)': deny
   'bash(git stash:*)': deny
 sandbox: read-only
+approval: never
 ---
 
 # Session Miner
