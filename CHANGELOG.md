@@ -4,6 +4,14 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.16] - 2026-06-12
+
+### Changed
+- explorer, kb-maintainer, session-miner: add composer model alias for cursor-based harnesses
+- session-miner: add approval: never (read-only operations need explicit approval mode)
+- intent-modeling: refine body for clarity, replace dash in description with colon
+- llm-writing: positive reframing of Behavioral Pulls introduction
+
 ## [0.7.15] - 2026-06-10
 
 ## [0.7.14] - 2026-06-07
