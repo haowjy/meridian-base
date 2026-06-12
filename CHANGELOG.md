@@ -4,6 +4,11 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.17] - 2026-06-12
+
+### Fixed
+- intent-modeling: quote description to fix YAML colon parsing error
+
 ## [0.7.16] - 2026-06-12
 
 ### Changed

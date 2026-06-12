@@ -1,7 +1,7 @@
 ---
 name: intent-modeling
 type: principle
-description: Use before acting on human instructions: separate what they said from what they meant.
+description: "Use before acting on human instructions: separate what they said from what they meant."
 model-invocable: true
 ---
 
