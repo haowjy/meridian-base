@@ -25,11 +25,7 @@ tools:
   edit: deny
   write: deny
   notebook: deny
-  cron: deny
   ask_user: deny
-  notifications: deny
-  plan_mode: deny
-  worktree: deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
   'bash(git stash:*)': deny

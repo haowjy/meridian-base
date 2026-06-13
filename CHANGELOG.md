@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Fixed
+- All agents: remove invalid `tools:` deny rules (`cron`, `notifications`, `plan_mode`, `worktree`) — no matching tools in harness.
+
 ## [0.7.18] - 2026-06-12
 
 ## [0.7.17] - 2026-06-12

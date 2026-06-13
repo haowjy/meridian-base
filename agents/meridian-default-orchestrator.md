@@ -14,10 +14,6 @@ tools:
   edit: allow
   web: allow
   notebook: deny
-  cron: deny
-  notifications: deny
-  plan_mode: deny
-  worktree: deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
