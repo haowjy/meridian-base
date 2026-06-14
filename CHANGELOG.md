@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Removed
+- `meridian-default-orchestrator` and `meridian-subagent`: the generic "default" orchestrator and subagent profiles are removed. Real work routes through specialized agents (tech-lead, product-lead, design-lead, etc.); the minimal generic defaults were unused and the orchestrator carried no `subagents` roster, so under capability-gated spawn injection it would ship without an agent inventory anyway.
+
 ## [0.7.19] - 2026-06-13
 
 ### Fixed

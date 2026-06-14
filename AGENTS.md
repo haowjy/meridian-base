@@ -1,6 +1,6 @@
 # meridian-base
 
-Core coordination primitives for Meridian — default orchestrator, subagent, and skills for spawning, work tracking, and session context.
+Core coordination primitives for Meridian — agent profiles and skills for spawning, work tracking, and session context.
 
 ## Releasing
 
