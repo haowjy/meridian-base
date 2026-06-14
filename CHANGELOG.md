@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.21] - 2026-06-14
+
 ### Changed
 - Renamed `kb-conventions` skill to `knowledge-layers`. Scope expanded to cover all documentation layers (`AGENTS.md`, `.context/`, KB, `docs/`, work directories); KB page conventions and operations remain. `knowledge-layers` loads `/qi-layer`.
 - `qi-layer`: description and tone sharpened — AGENTS.md must be read first, must not duplicate `.context/`, must stay 50–200 lines; points to `/knowledge-layers` for the full layer map.
