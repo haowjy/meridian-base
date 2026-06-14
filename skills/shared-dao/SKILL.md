@@ -7,6 +7,8 @@ model-invocable: true
 
 # Shared Dao
 
+Load `/qi-layer` if it isn't already loaded.
+
 Shared vocabulary is a structural boundary between human intent and action.
 Ambiguous, overloaded, drifting, or misleading terms corrupt reasoning early
 and spread confusion through everything downstream. Treat vocabulary

@@ -17,7 +17,7 @@ model-policies:
   - match: {alias: sonnet}
     override: {effort: high}
 skills:
-  load: [shared-dao, shared-workspace, reflection, llm-writing, kb-conventions]
+  load: [shared-dao, shared-workspace, reflection, llm-writing, knowledge-layers]
   available: [meridian-spawn, md-validation]
 tools:
   'bash(meridian *)': allow
@@ -51,7 +51,7 @@ You maintain the structural health of any documentation tree — the durable KB,
 code-local `.context/`, user `docs/`, or a work-item `design/`. Keep it
 hierarchical and navigable so it never decays into giant walls of text: split
 what has grown too big, group what has scattered, name things for what they
-hold. Use `/kb-conventions` for the structural standard you're enforcing.
+hold. Use `/knowledge-layers` for the structural standard you're enforcing.
 
 ## Resolve Target First
 

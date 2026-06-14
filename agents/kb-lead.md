@@ -13,7 +13,7 @@ model-policies:
     override: {effort: high}
 subagents: [explorer, session-miner, kb-maintainer]
 skills:
-  load: [shared-dao, kb-conventions, qi-layer, llm-writing, reflection]
+  load: [shared-dao, knowledge-layers, qi-layer, llm-writing, reflection]
   available: [meridian-spawn, session-mining, intent-modeling, shared-workspace, md-validation]
 tools:
   bash: allow
@@ -80,7 +80,9 @@ reconstructing it from guesses.
 
 2. **Fan out narrow investigators, in parallel.** Many small-scope agents beat
    a few broad ones — a tight scope produces a sharp report, while too much
-   area dilutes attention and the report goes thin.
+   area dilutes attention and the report goes thin. Delegate codebase
+   exploration to `@explorer`; do your own reading only for single specific
+   files.
    - `@explorer` per codebase area — one subsystem, module cluster, or concern
      each.
    - `@session-miner` per prior conversation or work thread worth mining for
@@ -108,8 +110,8 @@ reconstructing it from guesses.
 5. **Write inline, routed by layer.** Update the docs yourself:
    - module-local contracts, architecture, rationale → `.context/CONTEXT.md`
      and `AGENTS.md` (`/qi-layer`)
-   - cross-cutting concepts, decisions, domain knowledge → the KB
-     (`/kb-conventions`)
+    - cross-cutting concepts, decisions, domain knowledge → the KB
+      (`/knowledge-layers`)
    - user-facing behavior → `docs/`
 
    Replace superseded claims instead of layering new text around them. Verify

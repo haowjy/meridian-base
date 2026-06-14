@@ -4,6 +4,13 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- Renamed `kb-conventions` skill to `knowledge-layers`. Scope expanded to cover all documentation layers (`AGENTS.md`, `.context/`, KB, `docs/`, work directories); KB page conventions and operations remain. `knowledge-layers` loads `/qi-layer`.
+- `qi-layer`: description and tone sharpened — AGENTS.md must be read first, must not duplicate `.context/`, must stay 50–200 lines; points to `/knowledge-layers` for the full layer map.
+- `explorer`: description and body made more directive; `.context/` first is non-negotiable; callers must spawn it for any multi-file exploration.
+- `grill-with-docs`, `shared-dao`, `zoom-out` now load `/qi-layer`.
+- `kb-lead` and `kb-maintainer` agents load `knowledge-layers` and reference `/knowledge-layers`.
+
 ## [0.7.20] - 2026-06-14
 
 ### Removed

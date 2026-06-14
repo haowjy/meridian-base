@@ -8,6 +8,7 @@ model-invocable: true
 # Grill With Docs
 
 Load `/intent-modeling` if it isn't already loaded.
+Load `/qi-layer` if it isn't already loaded.
 
 Interview the human relentlessly about every aspect of their plan until you
 reach a shared understanding. Walk down each branch of the decision tree,
@@ -84,7 +85,7 @@ reasoning, and any constraints that emerged. Keep open questions visible.
 When the session produces a new canonical term or refines an existing one,
 update the appropriate KB vocabulary page. Root vocabulary for cross-cutting
 terms; domain vocabulary pages for subsystem-specific terms. Follow
-`/kb-conventions` for page structure.
+`/knowledge-layers` for page structure.
 
 ### Colocated context docs
 

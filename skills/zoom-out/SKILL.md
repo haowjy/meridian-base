@@ -8,6 +8,8 @@ model-invocable: true
 
 # Zoom Out
 
+Load `/qi-layer` if it isn't already loaded.
+
 Orient in an unfamiliar area by fanning out parallel explorers — each covering a different angle — then synthesizing their reports into one orientation map. A single explorer sees one slice; zoom-out covers code *and* knowledge *and* history at once, so the picture isn't skewed by one lens.
 
 Use when starting in an unfamiliar subsystem, picking up someone else's work, or when the user says "orient me" / "what's the lay of the land here."
