@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Removed
+- `meridian-spawn` skill deleted. Spawn doctrine now lives in meridian itself — system prompt injects a spawn contract + discovery pointers, and `meridian spawn -h` is the on-demand reference. Removed `meridian-spawn` from `@kb-lead` and `@kb-maintainer` `available:` lists, from the `/clear-mind` cross-reference (now points at `meridian spawn -h`), and from the README skills table.
+- `@kb-lead`: dropped "Run `meridian -h` for CLI reference" prose line.
+
 ## [0.7.21] - 2026-06-14
 
 ### Changed

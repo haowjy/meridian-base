@@ -61,4 +61,4 @@ subagent can't use for work.
 
 Write the handoff to a prompt file and invoke with `--prompt-file`. Write to the
 system temp directory with a descriptive name: `<tmpdir>/coder-auth.md`. See
-`/meridian-spawn` for full mechanics.
+`meridian spawn -h` for full mechanics.

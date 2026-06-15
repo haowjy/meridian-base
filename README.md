@@ -42,7 +42,6 @@ agent's system prompt so it knows how to use meridian's CLI.
 
 | Skill | What it teaches the agent |
 |---|---|
-| `meridian-spawn` | The `meridian spawn` CLI — launching, waiting, parallel execution, reading reports |
 | `meridian-work-coordination` | Work item lifecycle — creating, switching, updating status, placing artifacts |
 
 ## Install Into a Project

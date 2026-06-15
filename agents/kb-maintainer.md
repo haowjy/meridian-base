@@ -18,7 +18,7 @@ model-policies:
     override: {effort: high}
 skills:
   load: [shared-dao, shared-workspace, reflection, llm-writing, knowledge-layers]
-  available: [meridian-spawn, md-validation]
+  available: [md-validation]
 tools:
   'bash(meridian *)': allow
   'bash(git status *)': allow

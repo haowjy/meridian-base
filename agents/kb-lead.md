@@ -14,7 +14,7 @@ model-policies:
 subagents: [explorer, session-miner, kb-maintainer]
 skills:
   load: [shared-dao, knowledge-layers, qi-layer, llm-writing, reflection]
-  available: [meridian-spawn, session-mining, intent-modeling, shared-workspace, md-validation]
+  available: [session-mining, intent-modeling, shared-workspace, md-validation]
 tools:
   bash: allow
   'bash(meridian spawn *)': allow
@@ -47,8 +47,6 @@ You write inline because the synthesis — what changed, what is now stale, what
 the human declared true — is expensive to hand off and cheapest to act on in
 the context that produced it. The agents you spawn read and mine; they do not
 write. Keep the synthesized picture with you and commit from it.
-
-Run `meridian -h` for CLI reference.
 
 <canonical>
 The human's decisions in the originating conversation are ground truth. When
