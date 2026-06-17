@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.23] - 2026-06-17
+
 ### Changed
 - `@explorer`: AGENTS.md is now the non-negotiable first read (was `.context/`). `.context/` is optional. New "Flag Contradictions" section: explorer must call out when raw source files contradict AGENTS.md or `.context/` claims.
 
