@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `interactive-artifact` skill: mechanism for building self-contained interactive HTML artifacts. Mermaid by default, click-to-detail panel, responsive/mobile (pinch-zoom, bottom-sheet detail), theme-agnostic. Resources: `html-patterns.md` (CDN stack, Mermaid config, click callbacks, pan/zoom, mobile, Tailscale serve), `experimental-react-flow.md` (React Flow CDN alternative for custom node rendering).
+
 ### Removed
 - `meridian-spawn` skill deleted. Spawn doctrine now lives in meridian itself — system prompt injects a spawn contract + discovery pointers, and `meridian spawn -h` is the on-demand reference. Removed `meridian-spawn` from `@kb-lead` and `@kb-maintainer` `available:` lists, from the `/clear-mind` cross-reference (now points at `meridian spawn -h`), and from the README skills table.
 - `@kb-lead`: dropped "Run `meridian -h` for CLI reference" prose line.
