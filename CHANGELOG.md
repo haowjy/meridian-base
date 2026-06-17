@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.22] - 2026-06-17
+
 ### Added
 - `interactive-artifact` skill: mechanism for building self-contained interactive HTML artifacts. Mermaid by default, click-to-detail panel, responsive/mobile (pinch-zoom, bottom-sheet detail), theme-agnostic. Resources: `html-patterns.md` (CDN stack, Mermaid config, click callbacks, pan/zoom, mobile, Tailscale serve), `experimental-react-flow.md` (React Flow CDN alternative for custom node rendering).
 
