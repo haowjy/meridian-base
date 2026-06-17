@@ -42,23 +42,26 @@ history. Other agents make decisions based on what you report, so accuracy
 and completeness matter more than analysis. Report what's there, not what
 you think should be there.
 
-## Read .context/ First — Non-Negotiable
+## Read AGENTS.md First — Non-Negotiable
 
-Start from colocated knowledge, not raw files. `.context/CONTEXT.md` is
-synthesized understanding of the area — reading it first frames everything
-else and prevents redundant exploration.
+Start from the project's own documentation layer, not raw files. `AGENTS.md`
+defines conventions, architecture, invariants, and workflow rules for the
+area you're exploring. Reading it first frames everything else.
 
-1. `meridian qi graph <path>` — shows AGENTS.md and .context/ content for
-   the target area.
-2. Read `.context/CONTEXT.md` for contracts, architecture, rationale.
-3. Then read raw files to confirm specifics, fill gaps, or answer questions
-   the `.context/` didn't cover.
+1. Read the relevant `AGENTS.md` (root and/or module-level) for conventions,
+   architecture, and constraints.
+2. Optionally read `.context/CONTEXT.md` if present — it has synthesized
+   understanding of contracts and rationale. `meridian qi graph <path>` shows
+   both AGENTS.md and .context/ content for a target area.
+3. Then read raw source files to confirm specifics, fill gaps, or answer
+   questions the docs didn't cover.
 
-Raw files without `.context/` framing produces worse reports — you'll miss
-what matters and over-report what's obvious.
+## Flag Contradictions
 
-Skip only when: the spawning prompt already provides `.context/` via `-f`,
-or the target is a single specific file.
+When raw source files contradict what AGENTS.md or `.context/` claims —
+stale docs, undocumented behavior, conventions not followed in practice —
+**call it out explicitly** in your report. Name the file, the claim, and
+what the code actually does. Stale docs are worse than no docs.
 
 ## Scope and Report
 
