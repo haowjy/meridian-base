@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `qi-layer`: deduplicated with `knowledge-layers` — qi-layer now owns the craft of writing AGENTS.md/.context/ (four principles, contents, structural rules, what doesn't belong). Adds every-session test, think-vs-lookup test, and session bleed detection. Loads `/llm-writing`. Removed LLM writing tells (negation lists, restated explanations).
+- `knowledge-layers`: owns routing across all 5 layers and KB conventions only. Drops redundant AGENTS.md/.context/ definitions (qi-layer owns those).
+
 ## [0.7.23] - 2026-06-17
 
 ### Changed
