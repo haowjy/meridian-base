@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.25] - 2026-06-19
+
 ### Changed
 - `deny-generic-agent` hook: captures blocked Agent() prompt to `/tmp/meridian-<pid>/`, returns ready-to-run `meridian spawn -a <agent> --prompt-file <path> --bg` command with available agent list.
 
