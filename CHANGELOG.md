@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.26] - 2026-06-19
+
 ### Changed
 - `intent-modeling`: positively reframed — direct guidance ("Read for the outcome", "Match depth and shape") replaces contrastive negatives.
 - `@kb-lead`: description reworded to natural sentence (drops `/post-impl-capture` reference). Body trimmed: shorter intro, tighter capture loop, Orient step gains "after shipped work" diff-intent-against-outcome guidance. Dropped `reflection` from load.
