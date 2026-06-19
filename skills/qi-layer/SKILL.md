@@ -6,26 +6,11 @@ description: Use when exploring or changing the codebase — read AGENTS.md firs
 
 # qi-layer
 
-Inline knowledge is a hierarchical intent system. It gives agents
-working understanding through fractal compression — each level summarizes
-the level below, not the raw content.
+Load `/knowledge-layers` for where each layer lives and what it holds. This
+skill is about **how to write and maintain** the code-local pair: AGENTS.md
+and `.context/CONTEXT.md`.
 
-## AGENTS.md — The Intent Layer
-
-**Read AGENTS.md before opening code files.**
-
-AGENTS.md is the first thing agents read on entry. Keep it **succinct**:
-purpose, mental model, key rules, anti-patterns, entry points. Put detail in
-`.context/CONTEXT.md`; AGENTS.md stays high-level.
-
-AGENTS.md is the intent layer — the mental model, constraints, invariants,
-and "how to think about this area" that an agent needs BEFORE touching any
-file. It is not a routing table or table of contents.
-
-Ask: **what must someone understand before working here?** That's what
-AGENTS.md captures.
-
-### The Four Principles
+## The Four Principles
 
 1. **Fractal Compression** — leaf AGENTS.md summarizes its directory's
    content; parent AGENTS.md summarizes its children. Each level is a
@@ -38,72 +23,67 @@ AGENTS.md captures.
 4. **Progressive Disclosure** — give just enough to work correctly at this
    level. Link to `.context/CONTEXT.md` for depth.
 
-### Contents
+## Writing AGENTS.md
+
+**Read AGENTS.md before opening code files.**
+
+Ask: **what must someone understand before working here?** That's what
+AGENTS.md captures. It is the intent layer — not a routing table, file
+index, or reference card.
 
 Keep AGENTS.md **50–200 lines**. Include only what has substance:
 
 - **Purpose** — what this area IS and what it ISN'T (1–3 sentences)
-- **Mental model** — how to think about this area, key abstractions, the
-  shape of the design
-- **Key rules** — constraints, invariants, what breaks if you get it wrong
-- **Anti-patterns** — what NOT to do here, common mistakes
-- **Entry points** — where to start reading, key files
-- **Downlinks** — to `.context/` for reference depth, to related areas
-
-AGENTS.md provides the frame; `.context/` provides the reference material.
-Keep `.context/` content in `.context/`.
-
-## .context/CONTEXT.md — Reference Depth
-
-Detailed documentation that lives physically next to what it describes.
-Co-location is the point — `.context/` stays in sync with adjacent files
-because it's visible, discoverable, and maintained alongside them.
-
-Where an agent goes when it needs to understand contracts, architecture,
-or rationale in detail — the specifics behind the AGENTS.md frame.
-
-Sections (use only those with substance):
-
-- **Contracts** — interfaces, invariants, obligations between producers
-  and consumers. What breaks if violated.
-- **Architecture** — component relationships, data flow, dependency
-  direction. Mermaid for anything spatial.
-- **Rationale** — why X over Y, rejected alternatives, constraints that
-  drove the shape. What's invisible from the content itself.
-- **Patterns** — how to work here, anti-patterns, concrete pitfalls.
-
-The `.context/` directory is extensible — additional files alongside
-CONTEXT.md for specialized concerns.
-
-## Why Two Layers
-
-Progressive disclosure. AGENTS.md gives the frame; .context/ gives depth
-when needed. Information layered by need, not dumped all at once.
-
-| | AGENTS.md | .context/ |
-|---|---|---|
-| **Loading** | Auto-loaded on entry | On demand |
-| **Purpose** | Orient — mental model, rules | Document — contracts, rationale |
-| **Token budget** | 50–200 lines | Unlimited |
-| **Proximity** | Points to what matters | Lives next to what it describes |
+- **Mental model** — how to think about this area, key abstractions
+- **Key rules** — constraints, what breaks if you get it wrong
+- **Anti-patterns** — what NOT to do here
+- **Downlinks** — to `.context/` for depth, to related areas
 
 An agent that only reads AGENTS.md should be able to work correctly here.
 An agent that also reads .context/ should be able to change things safely.
 
-## What Does NOT Belong
+## Writing .context/CONTEXT.md
 
-- What the files already show — agents read content directly
-- Exhaustive documentation — this is compression, not coverage
-- Content that belongs elsewhere (see placement rules below)
+Reference depth, co-located with the code it describes. Where an agent
+goes when it needs contracts, architecture, or rationale in detail.
 
-The failure mode: AGENTS.md that lists files without providing
-understanding, or .context/ that restates what the content makes obvious.
+Sections (use only those with substance):
 
-## Where the Other Layers Live
+- **Contracts** — interfaces, invariants, what breaks if violated
+- **Architecture** — component relationships, data flow, dependency direction
+- **Rationale** — why X over Y, rejected alternatives
+- **Patterns** — how to work here, concrete pitfalls
 
-`AGENTS.md` and `.context/` are the code-local inline-knowledge pair. For the
-full map — KB, `docs/`, work directories, and when to use each — load
-`/knowledge-layers`.
+The `.context/` directory is extensible — additional files alongside
+CONTEXT.md for specialized concerns.
+
+## What Does NOT Belong in AGENTS.md
+
+Apply the **every-session test**: root AGENTS.md loads on every session.
+If knowledge is only relevant when working in a specific domain, it belongs
+in that domain's AGENTS.md or .context/, not root.
+
+Apply the **think-vs-lookup test**: if removing a piece of text would cause
+an agent to make a *wrong decision*, it belongs. If it would just mean the
+agent has to *look it up*, it belongs in .context/ instead.
+
+Specific failure modes:
+
+- **Session bleed** — LLM working notes that calcified into the instruction
+  file. Tells: status-update language ("**deleted**", "shipped", "deferred"),
+  implementation terms packed without framing, history narration. These are
+  artifacts of the session that *produced* the change, not understanding about
+  the codebase *as it stands now*.
+- **Reference material posing as intent** — tables, command blocks, full
+  scheme vocabularies, implementation specifics. These are lookup material,
+  not mental model.
+- **Redundant guards** — prose warnings for invariants already enforced by
+  tests or types. The code is the real guard; prose rots faster.
+- **Duplicated knowledge** — restating what lives in a skill, a domain
+  .context/, or a KB page. Point, don't duplicate.
+- **Domain-specific detail at root** — URI scheme tables, gateway pricing
+  internals, auth implementation details. These belong in their domain's
+  AGENTS.md, not root.
 
 ## Structural Rules
 
@@ -112,3 +92,9 @@ full map — KB, `docs/`, work directories, and when to use each — load
 - Link to files, not headings (headings change more often)
 - Lateral links between `.context/` directories with contracts between them
 - LCA deduplication: if two siblings share context, put it in the parent
+
+## Maintenance
+
+Keep knowledge layers current as you work. When your changes shift the
+mental model, contracts, or decisions — update AGENTS.md, .context/, and KB
+in the same pass, not as a deferred follow-up.
