@@ -30,8 +30,7 @@ AGENTS.md and `.context/CONTEXT.md`.
 **Read AGENTS.md before opening code files.**
 
 Ask: **what must someone understand before working here?** That's what
-AGENTS.md captures. It is the intent layer — not a routing table, file
-index, or reference card.
+AGENTS.md captures.
 
 Keep AGENTS.md **50–200 lines**. Include only what has substance:
 
@@ -73,12 +72,9 @@ Specific failure modes:
 
 - **Session bleed** — LLM working notes that calcified into the instruction
   file. Tells: status-update language ("**deleted**", "shipped", "deferred"),
-  implementation terms packed without framing, history narration. These are
-  artifacts of the session that *produced* the change, not understanding about
-  the codebase *as it stands now*.
+  implementation terms packed without framing, history narration.
 - **Reference material posing as intent** — tables, command blocks, full
-  scheme vocabularies, implementation specifics. These are lookup material,
-  not mental model.
+  scheme vocabularies, implementation specifics.
 - **Redundant guards** — prose warnings for invariants already enforced by
   tests or types. The code is the real guard; prose rots faster.
 - **Duplicated knowledge** — restating what lives in a skill, a domain
