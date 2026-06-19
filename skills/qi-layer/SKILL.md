@@ -6,9 +6,11 @@ description: Use when exploring or changing the codebase — read AGENTS.md firs
 
 # qi-layer
 
-Load `/knowledge-layers` for where each layer lives and what it holds. This
-skill is about **how to write and maintain** the code-local pair: AGENTS.md
-and `.context/CONTEXT.md`.
+Load `/knowledge-layers` for where each layer lives and what it holds.
+Load `/llm-writing` if it isn't already loaded.
+
+This skill is about **how to write and maintain** the code-local pair:
+AGENTS.md and `.context/CONTEXT.md`.
 
 ## The Four Principles
 
