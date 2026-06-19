@@ -61,13 +61,10 @@ Before printing the launch command, show the user the handoff trail for the acti
 meridian work sessions --primary
 ```
 
-This lists the primary sessions on the work item — current and historical — the chain the user actually navigated through. It's for the user's awareness only; the launch command's `--from` always points at the current session, not at anything in this list.
-
 ## Print the Launch Command
 
-Resolve `$MERIDIAN_CHAT_ID` to the concrete chat ID (e.g., `c102`) and
-print the command with the resolved value — the user will run this in a
-new terminal where the env var no longer exists.
+Resolve `$MERIDIAN_CHAT_ID` to the concrete chat ID (e.g., `c102`) — the
+user runs this in a new terminal where the env var no longer exists.
 
 ```
 meridian -a [agent] \
@@ -77,10 +74,7 @@ meridian -a [agent] \
   --from [resolved-chat-id]
 ```
 
-This is `meridian`, not `meridian spawn`. Primary launch — interactive,
-user in the loop. Include `--work` when a work item is active. Include
-`--task-dir` when the work is happening in a different directory (e.g. a
-worktree or sibling repo).
+Use `meridian`, not `meridian spawn` (primary launch, interactive). Include
+`--work` when active, `--task-dir` when in a worktree or sibling repo.
 
-Stop after printing the command. The user runs it in a new terminal —
-this session's job is done once the command is on screen.
+Stop after printing the command.

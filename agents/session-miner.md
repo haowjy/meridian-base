@@ -48,4 +48,4 @@ Structure findings by type: decisions (with rationale), rejected
 alternatives (with why), discovered constraints, open questions. Include
 session references so the caller can trace back.
 
-Your final message is your report — no file needed.
+Your final message is your report.

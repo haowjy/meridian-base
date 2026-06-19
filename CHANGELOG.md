@@ -4,6 +4,21 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `intent-modeling`: positively reframed — direct guidance ("Read for the outcome", "Match depth and shape") replaces contrastive negatives.
+- `@kb-lead`: description reworded to natural sentence (drops `/post-impl-capture` reference). Body trimmed: shorter intro, tighter capture loop, Orient step gains "after shipped work" diff-intent-against-outcome guidance. Dropped `reflection` from load.
+- `@kb-maintainer`: body trimmed — structural refactoring and content health sections rewritten shorter. Dropped `reflection` from load.
+- `@explorer`: body trimmed — shorter Flag Contradictions, shorter Scope and Report. Description reworded to natural sentence.
+- `@session-miner`: trimmed report convention line.
+- `handoff` skill: removed over-explanation in launch command section.
+
+### Added
+- `reflect` skill: user-invoked pause before reporting (`model-invocable: false`). Loads `/intent-modeling`, points to `/knowledge-layers` and `/qi-layer` for carry-forward. Replaces always-loaded `reflection`.
+
+### Removed
+- `clear-mind` skill deleted. Handoff doctrine (agent selection, handoff craft) moves to `meridian spawn -h` in meridian-cli.
+- `reflection` skill deleted. Zero invocations observed globally; always-loaded generic checklist added tokens without changing outcomes. Optional user pause via new `/reflect`.
+
 ## [0.7.25] - 2026-06-19
 
 ### Changed
