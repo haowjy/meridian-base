@@ -5,7 +5,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ## [Unreleased]
 
 ### Changed
-- Model prompting metadata trimmed to actionable guidance; `gpt55` now emphasizes complete technical plans for its literal execution style.
+- Model prompting metadata trimmed to actionable guidance; `gpt55` now emphasizes outcome-first briefs with success criteria, high-level context, and concrete verification evidence.
 
 ### Removed
 - `sonnet` model alias and low-value prompting notes that repeated model descriptions or capability tiers.

@@ -71,7 +71,7 @@ harness = "codex"
 description = "Strongest executor. Executes instructions faithfully; doesn't interpret or read between the lines though."
 default_effort = "low"
 model = "gpt-5.5"
-prompting = "Very literal executor. Before handing off, step back and write the complete technical plan: goal, relevant files, constraints, acceptance criteria, desired style/shape, and verification. Specify the exact outcome; sparse context will be followed literally."
+prompting = "Outcome-first executor. Brief it with the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report. Avoid process-heavy step lists unless the path itself matters."
 
 [models.gpt54]
 description = "Good all-around model. Especially good at being a thorough reviewer and finding subtle issues."
