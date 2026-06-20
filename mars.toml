@@ -45,14 +45,6 @@ description = "Best at long-horizon orchestration and managing large numbers of 
 default_effort = "high"
 model = "claude-opus-4-8"
 
-[models.sonnet]
-harness = "claude"
-description = "Balanced model - good reasoning at lower cost than Opus. Good writing/documentation style."
-default_effort = "high"
-provider = "anthropic"
-match = ["*sonnet*"]
-exclude = ["*:*"]
-
 [models.opus]
 harness = "claude"
 description = "Latest opus family catch-all. Prefer pinned versions (opus46, opus47, opus48) — each has distinct strengths."
@@ -79,6 +71,7 @@ harness = "codex"
 description = "Strongest executor. Executes instructions faithfully; doesn't interpret or read between the lines though."
 default_effort = "low"
 model = "gpt-5.5"
+prompting = "Very literal executor. Before handing off, step back and write the complete technical plan: goal, relevant files, constraints, acceptance criteria, desired style/shape, and verification. Specify the exact outcome; sparse context will be followed literally."
 
 [models.gpt54]
 description = "Good all-around model. Especially good at being a thorough reviewer and finding subtle issues."
