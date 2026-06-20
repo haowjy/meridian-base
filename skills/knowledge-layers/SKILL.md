@@ -37,15 +37,21 @@ doc needs updating.
 
 ### Current Truth Over History
 
-The living KB holds the best current understanding. When a claim is
-superseded, remove it rather than layering newer text around older
-understanding. Move superseded content to `kb/trash/` if it has historical
-value. Pages should read as current truth.
+The living KB holds the best current understanding. When a claim in a concept,
+architecture, or operations page is superseded, remove or rewrite the stale
+claim rather than layering newer text around older understanding. Pages should
+read as current truth.
+
+Decision records are the exception: preserve superseded decisions when they
+explain why the system changed. Mark the old decision as superseded and link to
+the replacement, following the KB's decision conventions.
 
 ### Structure
 
-Each project's KB `AGENTS.md` defines its own layer structure and
-governance. See `resources/bootstrap.md` for a suggested starting layout.
+Read the KB's own `AGENTS.md` before writing. Each KB defines its local
+structure, naming, validation commands, and governance. Treat this skill as the
+cross-project default; the local KB guide wins for that KB. See
+`resources/bootstrap.md` for a suggested starting layout.
 
 ### Wiki Page Conventions
 
@@ -58,10 +64,13 @@ files by what they describe (`token-validation.md`), not when
 with links and one-line summaries. Directories emerge organically as a
 domain accumulates enough distinct concepts.
 
-**Vocab pages.** Load `/shared-dao` for vocab methodology. Vocab files sit
-in a hierarchy matching the domain: root vocab (`vocab.md`), domain vocab
-(`<domain>/vocab.md`), subdomain vocab. Each term entry includes canonical
-name, definition, aliases, and links.
+**Vocabulary pages.** Load `/shared-dao` for vocabulary methodology. Follow
+the KB's established filename (`vocabulary.md` or `vocab.md`) and index
+structure; do not rename pages just to match a generic convention. Vocabulary
+pages sit in a hierarchy matching the domain: root vocabulary page, domain
+vocabulary pages, and subdomain vocabulary pages. Each term entry includes the
+canonical name, definition, aliases when useful, and links to the owning concept
+or decision.
 
 **Linking.** Relative paths. Cross-reference instead of re-explaining —
 each doc stays focused with one source of truth per concept. When a fact
@@ -78,7 +87,9 @@ Tables for comparisons. Reference source locations rather than pasting code.
 ## Operations
 
 **Ingest** — new information enters the KB. Read the source, extract key
-knowledge, write or update wiki pages, update the index, log the change.
+knowledge, write or update wiki pages, and update indexes/cross-links touched by
+the change. Update the KB log only for structural reorganizations or major
+additions when the local KB guide asks for it.
 
 **Maintain** — keep the wiki current. When a claim is superseded, remove it.
 Current truth over history.
