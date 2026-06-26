@@ -1,7 +1,7 @@
 ---
 name: llm-writing
 type: guardrail
-description: Use when producing written artifacts for humans. Recognize and replace default LLM writing patterns.
+description: Load before writing any artifact. Every sentence you produce defaults toward LLM patterns; this skill catches them.
 model-invocable: true
 ---
 
@@ -9,20 +9,23 @@ model-invocable: true
 
 Load `/intent-modeling` if it isn't already loaded.
 
-Default LLM writing has recognizable patterns. Spot them, then decide whether each serves your purpose:
+## Write Intentionally
 
-## Behavioral Pulls
+Before producing a written artifact:
 
-Filling structure without anchoring to purpose. Summarizing with labels instead of explaining how things work. Stating conclusions without evidence. Smoothing over uncertainty. Encoding corrections as prohibitions. Defining by negation. Restating what was just said as a transition.
+1. **Scope.** What does the reader know when they start, and what should they know when they finish? What do they not need to know? Name each beat and its idea before writing.
+2. **Ground.** Check any relevant source material, references, or notes before writing.
+3. **Draft.** Write a full draft to disk.
+4. **Cut.** Scrutinize every word, every sentence, every section: what is the point of this? Is it correct? Is it consistent with what you already wrote? Does it tell the reader something they don't already know? If there is no point, delete it. Then reread for flow: does each idea connect to the one before it, and does the rhythm vary?
 
-Not always wrong; the failure is when they happen by default.
+## What to Cut
 
-## Conversational Bleed
-
-Writing as if responding to a user when producing a document for a reader
-who wasn't in the conversation. "It's not X — it's Y" corrects a
-misconception nobody has. "Let's break this down" addresses a question
-nobody asked.
-
-Write for the reader. They have no context from the conversation that
-prompted the document.
+- Writing to fill a section because it exists. Delete it or merge its content where it belongs.
+- Labeling concepts without explaining how they work. Explain the mechanism or cut the label.
+- Stating conclusions without evidence. Show the evidence or drop the claim.
+- Hiding uncertainty behind confident language. Say what you don't know.
+- Softening every claim with qualifiers ("it's worth noting," "it's important to consider"). Say it or don't.
+- Repeating what you already said in different words, or summarizing the body as a conclusion ("In summary," "Overall"). Delete it.
+- Connecting ideas with transition words instead of meaning ("Moreover," "Furthermore," "Additionally"). If the relationship isn't clear without the word, restructure.
+- Pairing clauses where one half already carries the meaning ("It's not X, it's Y"). Keep the half that carries it.
+- Writing for the person who asked for the document instead of the person who will read it. Write for the reader.
