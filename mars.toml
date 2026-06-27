@@ -1,6 +1,6 @@
 [package]
 name = "meridian-base"
-version = "0.7.26"
+version = "0.7.27"
 description = "Core coordination primitives for Meridian — agent profiles and skills for spawning, state tracking, and session context."
 
 [dependencies]
@@ -69,9 +69,9 @@ exclude = ["*-nano"]
 [models.gpt55]
 harness = "codex"
 description = "Strongest executor. Executes instructions faithfully; doesn't interpret or read between the lines though."
+prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
 default_effort = "low"
 model = "gpt-5.5"
-prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
 
 [models.gpt54]
 description = "Good all-around model. Especially good at being a thorough reviewer and finding subtle issues."

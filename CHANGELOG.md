@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.27] - 2026-06-27
+
 ### Changed
 - `knowledge-layers`: align KB guidance with project-local KB `AGENTS.md`, current-truth exceptions for decision records, established vocabulary filenames, and log-only-for-major-changes convention.
 - Model prompting metadata trimmed to actionable guidance; `gpt55` now emphasizes outcome-first handoffs with success criteria, high-level context, and concrete verification evidence.
