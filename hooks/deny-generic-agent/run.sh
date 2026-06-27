@@ -22,21 +22,6 @@ fi
 prompt=$(echo "$input" | jq -r '.tool_input.prompt // ""')
 description=$(echo "$input" | jq -r '.tool_input.description // ""')
 
-# Find project root (walk up to .meridian/ or mars.toml)
-find_project_root() {
-  local dir="$PWD"
-  while [ "$dir" != "/" ]; do
-    if [ -d "$dir/.meridian" ] || [ -f "$dir/mars.toml" ]; then
-      echo "$dir"
-      return 0
-    fi
-    dir=$(dirname "$dir")
-  done
-  return 1
-}
-
-project_root=$(find_project_root)
-
 # Build the error message
 msg="Blocked: generic Agent() spawn. This project uses meridian subagents."
 
@@ -57,10 +42,10 @@ if [ -n "$prompt" ]; then
   echo "$prompt" > "$prompt_file"
 fi
 
-# List available agents
+# List available agents via meridian (dynamic mars inventory)
 agents=""
-if [ -n "$project_root" ] && [ -d "$project_root/.mars/agents" ]; then
-  agents=$(ls "$project_root/.mars/agents/" 2>/dev/null | sed 's/\.md$//' | tr '\n' ', ' | sed 's/,$//')
+if command -v meridian >/dev/null 2>&1; then
+  agents=$(meridian spawn subagents 2>/dev/null | tr '\n' ', ' | sed 's/,$//')
 fi
 
 {
