@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `grill-with-evidence`: when external grounding is needed, search the web directly instead of assuming a separate `@web-researcher` agent exists.
+
 ## [0.7.29] - 2026-06-28
 
 ### Added

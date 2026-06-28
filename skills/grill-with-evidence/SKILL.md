@@ -35,7 +35,7 @@ When the answer should come from project artifacts beyond what is already in
 context, spawn a `@explorer`.
 
 When the answer should come from primary sources beyond what is already in
-context, spawn a `@web-researcher` rather than hand-waving from memory.
+context, search the web directly rather than hand-waving from memory.
 
 When the missing context lives in prior conversation rather than artifacts,
 spawn a `@session-miner`.
