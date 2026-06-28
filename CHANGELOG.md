@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.29] - 2026-06-28
+
 ### Added
 - `grill`: compact interactive grilling skill for stress-testing a plan or direction branch by branch with the human.
 - `grill-with-evidence`: grounding overlay for `/grill` that routes evidence gathering across project artifacts, code in the wild, official docs, research, articles, first-hand accounts, and bounded `@explorer` / `@web-researcher` / `@session-miner` spawns.
