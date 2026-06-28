@@ -1,7 +1,7 @@
 ---
 name: llm-writing
 type: guardrail
-description: Load before writing any artifact. Every sentence you produce defaults toward LLM patterns; this skill catches them.
+description: Load before writing or revising human-facing text. Choose words deliberately, ground the piece in the reader's context, and remove default LLM phrasing before the final draft.
 model-invocable: true
 ---
 
@@ -13,12 +13,12 @@ Load `/intent-modeling` if it isn't already loaded.
 
 Before producing a written artifact:
 
-1. **Scope.** What does the reader know when they start, and what should they know when they finish? What do they not need to know? Name each beat and its idea before writing.
-2. **Ground.** Check any relevant source material, references, or notes before writing.
-3. **Draft.** Write a full draft to disk.
-4. **Cut.** Scrutinize every word, every sentence, every section: what is the point of this? Is it correct? Is it consistent with what you already wrote? Does it tell the reader something they don't already know? If there is no point, delete it. Then reread for flow: does each idea connect to the one before it, and does the rhythm vary?
+1. **Scope.** What does the reader know when they start, and what should they know when they finish? What do they not need to know? Before writing, break the piece into beats: each beat is one move in the reader's journey, carrying one idea, purpose, or turn.
+2. **Ground.** Check any relevant source material, references, or notes before writing, and make sure they align.
+3. **Draft.** Write a full draft to disk so you can edit it piece by piece.
+4. **Revise.** Start with the whole artifact, then move inward: structure, beats, paragraphs, sentences, words. At each scale, ask what the writing is doing: is it correct, does it follow from what came before, and does the reader need it? Delete or rewrite anything that does not serve a purpose or give the reader something they need to understand or know. Move back and forth between scales: after a local change, zoom back out through the surrounding beat, larger structure, and full artifact; the change should still connect, and the rhythm should still vary.
 
-## What to Cut
+## What to Delete
 
 - Writing to fill a section because it exists. Delete it or merge its content where it belongs.
 - Labeling concepts without explaining how they work. Explain the mechanism or cut the label.

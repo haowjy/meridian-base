@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `llm-writing`: tightened as a generic writing guardrail for human-facing text, focused on reader context, deliberate wording, and removing default LLM phrasing.
+
 ## [0.7.27] - 2026-06-27
 
 ### Changed
