@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.34] - 2026-06-29
+
 - Add `goal-writing` skill for writing executable agent goals with evidence, anti-goals, stop conditions, and reviewer gates.
 
 ## [0.7.33] - 2026-06-29
