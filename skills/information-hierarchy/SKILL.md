@@ -2,8 +2,9 @@
 name: information-hierarchy
 type: principle
 description: |
-  Load before producing human-facing output. Pick modality and disclosure tier
-  per beat; place what matters first.
+  Load when output grows beyond a short answer — reports, docs, multi-section
+  explanations, artifacts. Choose the right form for each part (prose, diagram,
+  table, mockup) and put the answer first, depth behind it.
 model-invocable: true
 ---
 

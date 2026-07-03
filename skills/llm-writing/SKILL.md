@@ -8,7 +8,7 @@ model-invocable: true
 # LLM Writing
 
 Load `/intent-modeling` if it isn't already loaded.
-Load `/information-hierarchy` for how to structure and present the output.
+Load `/information-hierarchy` when the piece grows beyond a short answer.
 
 ## Write Intentionally
 
