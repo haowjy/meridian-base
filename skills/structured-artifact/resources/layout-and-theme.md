@@ -21,15 +21,17 @@ base layout; sidebars and multi-column arrangements are `md:`-and-up additions.
 ## CDN Base Stack
 
 ```html
-<script src="https://cdn.tailwindcss.com"></script>
-<script type="module">
-  import { codeToHtml } from 'https://esm.sh/shiki@1';
-  window.codeToHtml = codeToHtml;
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.2/dist/index.global.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css">
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
 ```
 
-Tailwind's CDN build warns in console; ignore for static artifacts. Shiki is
-only needed if the artifact shows syntax-highlighted code in detail panels.
+Tailwind's browser build (v4) is a single IIFE — configure via
+`<style type="text/tailwindcss">` with `@theme { ... }` blocks; the old
+`tailwind.config = {}` object is gone. highlight.js is only needed if the
+artifact shows syntax-highlighted code in detail panels: call
+`hljs.highlightAll()` (or `hljs.highlight(code, { language })` for dynamic
+content), and swap `github.min.css` / `github-dark.min.css` on theme toggle.
 
 ### Vendoring for offline use
 
@@ -38,19 +40,21 @@ folder and reference it relatively:
 
 ```bash
 mkdir -p vendor
-curl -fsSL https://cdn.tailwindcss.com -o vendor/tailwind.js
-curl -fsSL https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js -o vendor/mermaid.min.js
+curl -fsSL https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.2/dist/index.global.js -o vendor/tailwind.js
+curl -fsSL https://cdn.jsdelivr.net/npm/mermaid@11.16.0/dist/mermaid.min.js -o vendor/mermaid.min.js
+curl -fsSL https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js -o vendor/highlight.min.js
 ```
 
 ```html
 <script src="vendor/tailwind.js"></script>
 <script src="vendor/mermaid.min.js"></script>
+<script src="vendor/highlight.min.js"></script>
 ```
 
 Use each library's single-file browser build (UMD/IIFE, like
 `dist/*.min.js` on jsDelivr) — ESM URLs such as `esm.sh` fetch further
-imports at runtime and fail offline. Libraries without a single-file build
-(Shiki) stay CDN-only; drop them if offline matters more.
+imports at runtime and fail offline. The whole base stack above vendors
+cleanly; each file is self-contained with no runtime fetches.
 
 ## Wide-Screen Enhancement
 

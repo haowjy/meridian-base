@@ -11,8 +11,12 @@ layouts or network graphs, see Cytoscape below.
 ### CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.16.0/dist/mermaid.min.js"></script>
 ```
+
+Mermaid 11 is current; the `dist/mermaid.min.js` IIFE still ships and vendors
+cleanly for offline use (the ESM-only move affects the npm entry, this file
+exposes the `mermaid` global).
 
 ### Config
 
@@ -75,13 +79,13 @@ const DETAIL = {
   },
 };
 
-async function showDetail(key) {
+function showDetail(key) {
   const d = DETAIL[key]; if (!d) return;
   document.getElementById('detail-title').textContent = d.title;
   document.getElementById('detail-desc').textContent = d.desc;
-  if (d.code && window.codeToHtml) {
+  if (d.code && window.hljs) {
     document.getElementById('detail-code').innerHTML =
-      await codeToHtml(d.code, { lang: d.lang, theme: 'vitesse-light' });
+      `<pre><code>${hljs.highlight(d.code, { language: d.lang }).value}</code></pre>`;
   }
   document.getElementById('detail-panel').classList.remove('collapsed');
 }
