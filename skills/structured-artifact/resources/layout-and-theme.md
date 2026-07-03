@@ -31,6 +31,27 @@ base layout; sidebars and multi-column arrangements are `md:`-and-up additions.
 Tailwind's CDN build warns in console; ignore for static artifacts. Shiki is
 only needed if the artifact shows syntax-highlighted code in detail panels.
 
+### Vendoring for offline use
+
+When the artifact must open without a network, download each library into the
+folder and reference it relatively:
+
+```bash
+mkdir -p vendor
+curl -fsSL https://cdn.tailwindcss.com -o vendor/tailwind.js
+curl -fsSL https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js -o vendor/mermaid.min.js
+```
+
+```html
+<script src="vendor/tailwind.js"></script>
+<script src="vendor/mermaid.min.js"></script>
+```
+
+Use each library's single-file browser build (UMD/IIFE, like
+`dist/*.min.js` on jsDelivr) — ESM URLs such as `esm.sh` fetch further
+imports at runtime and fail offline. Libraries without a single-file build
+(Shiki) stay CDN-only; drop them if offline matters more.
+
 ## Wide-Screen Enhancement
 
 On `md:` and up, the artifact may fill the browser window with a flex column:

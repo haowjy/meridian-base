@@ -24,8 +24,10 @@ folder mechanics.
 
 ## Build so it keeps working
 
-Everything ships static — CDN `<script>` tags, zero build step — so the
-artifact opens anywhere, years later, with nothing installed. Design for a
+Everything ships static — plain `<script>` tags, zero build step — so the
+artifact opens anywhere, years later, with nothing installed. CDN tags are
+the default; vendor the scripts into the folder when the artifact must work
+offline (`resources/layout-and-theme.md`). Design for a
 narrow viewport and let wider layouts be enhancements; touch targets stay
 ≥ 44px and diagrams pan and pinch. Drive colors from CSS custom properties on
 `:root`, default light, with a ☀/🌙 toggle that adds `.dark` to `<html>` —
