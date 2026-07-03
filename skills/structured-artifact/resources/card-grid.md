@@ -36,5 +36,14 @@ renderCards();
 </script>
 ```
 
-For true masonry (variable-height packing), use `column-count` CSS or the Masonry
-library (~7 KB gzip), but equal-height grid is usually sufficient.
+Equal-height grid is usually sufficient. For variable-height packing, layer
+native masonry as a progressive enhancement — as of mid-2026 only Safari 26
+ships it (Chrome/Firefox behind flags), so the grid fallback carries most
+readers:
+
+```css
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+         gap: 12px; align-items: start; }
+@supports (grid-template-rows: masonry) { .cards { grid-template-rows: masonry; } }
+@supports (display: grid-lanes)         { .cards { display: grid-lanes; } }
+```
