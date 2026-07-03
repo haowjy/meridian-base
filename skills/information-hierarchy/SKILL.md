@@ -15,7 +15,7 @@ only when they reach for it. Everything else here follows from that: each beat
 of the piece takes the form that carries it best, what matters most comes
 first, and the medium stays as simple as the content allows.
 
-## The answer leads
+## Lead with the answer/conclusion
 
 Readers scan. Open with the finding itself, and the piece works in thirty
 seconds. The same logic repeats at every scale: a section's first sentence is
@@ -26,7 +26,7 @@ Behind the answer sits depth — reasoning, evidence, edge cases — and behind
 that, sources. Keep depth that most readers will skip, and *move* it: a later
 section, a linked page, a footnote. Sources belong at the end.
 
-## Each beat, its best form
+## Pick the form that fits the idea
 
 Prose is the default; break from it when another form genuinely carries the
 idea better. An example grounds an abstract claim faster than more
