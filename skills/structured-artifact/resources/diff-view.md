@@ -13,9 +13,9 @@ JSON…) — the full bundle is ~335 KB for every highlight.js language and rare
 earns it. jsdiff is ~10 KB gzipped.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3.4.56/bundles/css/diff2html.min.css">
-<script src="https://cdn.jsdelivr.net/npm/diff@9.0.0/dist/diff.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/diff2html@3.4.56/bundles/js/diff2html-ui-slim.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/diff2html@3/bundles/css/diff2html.min.css">
+<script src="https://cdn.jsdelivr.net/npm/diff@9/dist/diff.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/diff2html@3/bundles/js/diff2html-ui-slim.min.js"></script>
 ```
 
 If you already have a unified diff string, omit jsdiff.

@@ -21,9 +21,9 @@ base layout; sidebars and multi-column arrangements are `md:`-and-up additions.
 ## CDN Base Stack
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.2/dist/index.global.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/styles/github.min.css">
-<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4/dist/index.global.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/styles/github.min.css">
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highlight.min.js"></script>
 ```
 
 Tailwind's browser build (v4) is a single IIFE — configure via
@@ -40,9 +40,9 @@ folder and reference it relatively:
 
 ```bash
 mkdir -p vendor
-curl -fsSL https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.2/dist/index.global.js -o vendor/tailwind.js
-curl -fsSL https://cdn.jsdelivr.net/npm/mermaid@11.16.0/dist/mermaid.min.js -o vendor/mermaid.min.js
-curl -fsSL https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.11.1/build/highlight.min.js -o vendor/highlight.min.js
+curl -fsSL https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4/dist/index.global.js -o vendor/tailwind.js
+curl -fsSL https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js -o vendor/mermaid.min.js
+curl -fsSL https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highlight.min.js -o vendor/highlight.min.js
 ```
 
 ```html

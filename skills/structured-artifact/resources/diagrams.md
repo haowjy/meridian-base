@@ -11,12 +11,12 @@ layouts or network graphs, see Cytoscape below.
 ### CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11.16.0/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 ```
 
-Mermaid 11 is current; the `dist/mermaid.min.js` IIFE still ships and vendors
-cleanly for offline use (the ESM-only move affects the npm entry, this file
-exposes the `mermaid` global).
+Use the `dist/mermaid.min.js` IIFE — it exposes the `mermaid` global and
+vendors cleanly for offline use (the ESM entry pulls further imports at
+runtime).
 
 ### Config
 
@@ -158,7 +158,7 @@ Use Cytoscape.js when you need force-directed layout, network visualization, or
 richer interaction than Mermaid supports. ~136 KB gzipped.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/cytoscape@3.34.0/dist/cytoscape.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cytoscape@3/dist/cytoscape.min.js"></script>
 ```
 
 ```js

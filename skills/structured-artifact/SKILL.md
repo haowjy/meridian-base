@@ -27,18 +27,31 @@ folder mechanics.
 Everything ships static — plain `<script>` tags, zero build step — so the
 artifact opens anywhere, years later, with nothing installed. CDN tags are
 the default; vendor the scripts into the folder when the artifact must work
-offline (`resources/layout-and-theme.md`). Design for a
+offline (`resources/layout-and-theme.md`). Resource snippets show the shape
+of each library's use, pinned only to a major version — before building,
+web-search the library's current version and syntax when anything looks
+dated, rather than trusting the snippet as frozen truth. Design for a
 narrow viewport and let wider layouts be enhancements; touch targets stay
 ≥ 44px and diagrams pan and pinch. Drive colors from CSS custom properties on
 `:root`, default light, with a ☀/🌙 toggle that adds `.dark` to `<html>` —
-readers get a readable page in daylight and a choice at night. Run Mermaid
-through `meridian mermaid check` (`/md-validation`) before calling the
-artifact done, so every diagram a reader meets actually renders.
+readers get a readable page in daylight and a choice at night.
 
 `resources/layout-and-theme.md` has the concrete layout, theme, and mobile
 patterns shared across everything below.
 
+## Verify the end state
+
+Open the artifact in a browser before calling it done — a snippet that
+looked right in the editor still fails at runtime (a CDN URL 404s, a library
+changed its API, a diagram overflows). Check what a reader meets: the first
+viewport carries the answer, every page renders at ~375px width, the theme
+toggle flips both text and embedded content, links between pages resolve,
+and Mermaid passes `meridian mermaid check` (`/md-validation`).
+
 ## Enrichments
+
+Mix and match resources and patterns as needed, starting with the simplest
+pattern and adding complexity only when information hierarchy calls for it.
 
 Load a resource when a beat calls for its pattern:
 

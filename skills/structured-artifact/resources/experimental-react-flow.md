@@ -14,7 +14,7 @@ React Flow needs React, ReactDOM, and the library as UMD globals, plus its CSS.
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/reactflow@11/dist/umd/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.2/dist/index.global.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4/dist/index.global.js"></script>
 ```
 
 ## Minimal Graph
@@ -51,8 +51,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(h(App));
 `layout-and-theme.md` works unchanged. Custom nodes go through React Flow's `nodeTypes` map
 when you need richer rendering than a label.
 
-The current major is v12, published as `@xyflow/react` (UMD at
-`https://cdn.jsdelivr.net/npm/@xyflow/react@12/dist/umd/index.js`). Its UMD
+Newer majors publish as `@xyflow/react` (UMD at
+`https://cdn.jsdelivr.net/npm/@xyflow/react@12/dist/umd/index.js`). That UMD
 expects a `jsxRuntime` global that React 18's UMD build never defines, so it
 needs a small shim before the library script:
 
@@ -63,6 +63,6 @@ needs a small shim before the library script:
   Fragment: React.Fragment };</script>
 ```
 
-Pin React to `react@18.3.1` / `react-dom@18.3.1` UMD either way — React 19
+Pin React to the `react@18` / `react-dom@18` UMD builds either way — React 19
 ships no UMD build, so 18 remains the no-build baseline. The v11 snippet
 above works as-is; prefer it until you need a v12-only feature.

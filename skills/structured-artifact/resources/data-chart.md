@@ -9,7 +9,7 @@ small table — reach for a chart when the *shape* of the data carries the point
 **Chart.js** — ~70 KB gzipped.
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
 ```
 
 ## Minimal Example

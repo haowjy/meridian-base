@@ -37,9 +37,9 @@ renderCards();
 ```
 
 Equal-height grid is usually sufficient. For variable-height packing, layer
-native masonry as a progressive enhancement — as of mid-2026 only Safari 26
-ships it (Chrome/Firefox behind flags), so the grid fallback carries most
-readers:
+native CSS masonry as a progressive enhancement — browser support is still
+uneven (check current support if packing matters), so the grid fallback
+carries most readers:
 
 ```css
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
