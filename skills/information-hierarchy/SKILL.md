@@ -48,7 +48,10 @@ carrier wins.
 **Flat vs rich carriers.** Chat, email, and most docs cannot hide content —
 earn density: every sentence in T1 must pay for itself, and T2 becomes a link,
 not a section. HTML and apps may disclose in place (collapse, popover, child
-page) when it genuinely helps the reader, not to decorate.
+page) when it genuinely helps the reader, not to decorate. Two extremes for
+calibration: a slide title carries the takeaway, not a topic label ("Cache
+misses double p99", not "Performance"); a UI string is T1 alone — if it needs
+a paragraph, the design is wrong, not the copy.
 
 ## Layout mechanisms
 
@@ -81,7 +84,9 @@ These make T1 scannable; they are not disclosure tiers.
 - Unverifiable output — broken links, invalid Mermaid, claims without sources.
 - Dark-only desktop layouts.
 
-## Resources
+## Sources
 
-`resources/carriers.md` — how tiers and modalities land on each carrier (chat,
-markdown doc, HTML, slides, UI strings), with examples and sources.
+- [How Users Read on the Web (NN/g)](https://www.nngroup.com/articles/how-users-read-on-the-web/) —
+  scanning, why the lede must come first.
+- [Progressive Disclosure (NN/g)](https://www.nngroup.com/articles/progressive-disclosure/) —
+  defer secondary content to secondary screens.
