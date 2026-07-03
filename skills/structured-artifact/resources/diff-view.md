@@ -1,7 +1,9 @@
 # Diff / Comparison
 
 Side-by-side or unified diff view with syntax highlighting. Use for before/after
-comparisons, version diffs, or change review.
+comparisons, version diffs, or change review. For a short comparison without
+syntax highlighting, two `<pre>` elements side by side with highlighted lines
+beat loading a 335 KB library.
 
 ## Library
 
@@ -45,8 +47,3 @@ function renderDiff(mode) {
 renderDiff("side-by-side");
 </script>
 ```
-
-## Plain DOM Alternative
-
-For a simple two-column text comparison without syntax highlighting, two `<pre>`
-elements side by side with highlighted lines is less code than loading Diff2Html.

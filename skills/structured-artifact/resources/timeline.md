@@ -1,7 +1,9 @@
 # Timeline
 
 Chronological events on a zoomable, pannable axis with click-to-detail. Use for
-event histories, release timelines, or project milestones.
+event histories, release timelines, or project milestones. For ≤10 static
+events, a styled `<ol>` with click handlers is simpler — reach for vis-timeline
+when the reader needs to pan and zoom through time.
 
 ## Library
 
@@ -37,7 +39,3 @@ timeline.on("select", e => {
 ```
 
 Drag to pan, scroll to zoom. Group events by category with the `group` property.
-
-## Plain DOM Alternative
-
-For ≤10 static events, a styled `<ol>` with click handlers is simpler.

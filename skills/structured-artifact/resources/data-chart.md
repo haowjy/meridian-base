@@ -1,7 +1,8 @@
 # Data Chart
 
 Interactive chart with hover tooltips and click callbacks. Use for quantities,
-trends, or distributions.
+trends, or distributions. A handful of values reads faster as a sentence or
+small table — reach for a chart when the *shape* of the data carries the point.
 
 ## Library
 

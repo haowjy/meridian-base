@@ -1,5 +1,10 @@
 # Experimental: React Flow
 
+Node graphs with drag, custom node rendering, and live filtering — the step up
+when Mermaid's static layout stops being enough. Costs three CDN scripts
+(React, ReactDOM, the library); stay with Mermaid or Cytoscape until a beat
+needs per-node interactivity.
+
 ## CDN Stack
 
 React Flow needs React, ReactDOM, and the library as UMD globals, plus its CSS.
@@ -43,5 +48,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(h(App));
 ```
 
 `onNodeClick` replaces Mermaid's click directives; the detail-panel pattern from
-`html-patterns.md` works unchanged. Custom nodes go through React Flow's `nodeTypes` map
+`layout-and-theme.md` works unchanged. Custom nodes go through React Flow's `nodeTypes` map
 when you need richer rendering than a label.
+
+The current major is v12, published as `@xyflow/react` (UMD at
+`https://cdn.jsdelivr.net/npm/@xyflow/react@12/dist/umd/index.js`); the v11
+snippet above is the battle-tested UMD setup — prefer it until you need a
+v12-only feature.
