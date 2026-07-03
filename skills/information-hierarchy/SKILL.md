@@ -1,6 +1,6 @@
 ---
 name: information-hierarchy
-type: guardrail
+type: principle
 description: |
   Load before producing human-facing output. Pick modality and disclosure tier
   per beat; place what matters first.
