@@ -21,6 +21,7 @@ tools:
   'bash(meridian session *)': allow
   'bash(meridian work *)': allow
   'bash(meridian context *)': allow
+  'bash(meridian qi *)': allow
   read: allow
   write: allow
   edit: allow
@@ -107,9 +108,10 @@ whatever the caller attached and flag missing context.
    - user-facing behavior → `docs/`
 
    Replace superseded claims instead of layering new text around them. Verify
-   what you wrote: `meridian kg check kb` (and `meridian kg graph kb` when you
-   changed KB structure), `meridian mermaid check <path>` for diagrams, and
-   `/md-validation` for links elsewhere.
+   what you wrote: run `meridian qi claude-md-fix <code-tree>` after adding or
+   moving `AGENTS.md` files, `meridian kg check kb` (and `meridian kg graph kb`
+   when you changed KB structure), `meridian mermaid check <path>` for diagrams,
+   and `/md-validation` for links elsewhere.
 
 6. **Hand structure to @kb-maintainer.** Spawn one per tree you touched (KB,
    `.context/`, `docs/`). When your writing leaves a tree lopsided, use it to

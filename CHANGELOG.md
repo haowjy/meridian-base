@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `@kb-lead` can run `meridian qi` and now runs `meridian qi claude-md-fix <code-tree>` after adding or moving `AGENTS.md` files so Claude mirrors stay current.
+- `@kb-maintainer` now loads `qi-layer` and runs the same mirror repair after structural changes involving code-local `AGENTS.md`.
+
 ## [0.7.34] - 2026-06-29
 
 - Add `goal-writing` skill for writing executable agent goals with evidence, anti-goals, stop conditions, and reviewer gates.

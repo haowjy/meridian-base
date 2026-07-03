@@ -17,7 +17,7 @@ model-policies:
   - match: {alias: sonnet}
     override: {effort: high}
 skills:
-  load: [shared-dao, shared-workspace, llm-writing, knowledge-layers]
+  load: [shared-dao, shared-workspace, llm-writing, knowledge-layers, qi-layer]
   available: [md-validation]
 tools:
   'bash(meridian *)': allow
@@ -88,6 +88,8 @@ structural analysis.
 - **Any target:** When splitting or moving docs, `rg 'old-filename'` to find
   all references. Fix broken links, remove stale references, add links to new
   pages.
+- **Code-local AGENTS.md:** after creates/moves, run
+  `meridian qi claude-md-fix <target-root>`.
 
 ## Content Health: Detect and Flag, Never Resolve
 
