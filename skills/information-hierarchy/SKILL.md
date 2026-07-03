@@ -2,88 +2,66 @@
 name: information-hierarchy
 type: principle
 description: |
-  Load when output grows beyond a short answer — reports, docs, multi-section
-  explanations, artifacts. Choose the right form for each part (prose, diagram,
-  table, mockup) and put the answer first, depth behind it.
+  Load for large human-facing outputs: reports, docs, multi-section
+  explanations, artifacts. Choose the right form for each beat (prose, diagram,
+  table, mockup) and put the answer first, depth behind it. If the medium allows, use progressive disclosure.
 model-invocable: true
 ---
 
 # Information Hierarchy
 
-Present information well — words, examples, diagrams, charts, mockups, as each
-beat needs. The reader should get the answer in the first thing they see; depth
-should be there when they reach for it and invisible when they don't. Simplest
-carrier wins.
+The reader should get the answer in the first thing they see, and find depth
+only when they reach for it. Everything else here follows from that: each beat
+of the piece takes the form that carries it best, what matters most comes
+first, and the medium stays as simple as the content allows.
 
-## Workflow
+## The answer leads
 
-1. **Scope beats.** Break the output into beats — each carries one idea the
-   reader needs (see `/llm-writing`).
-2. **Pick a modality per beat.** Prose is the default; switch only when another
-   form carries the beat better.
-3. **Place by disclosure tier.** Answer first, depth behind it, sources last.
-4. **Pick the carrier.** The simplest medium that presents every beat well.
-5. **Apply layout mechanisms** so tier 1 is scannable.
+Readers scan; they don't read top to bottom. A lede that states the finding —
+not the setup — is the difference between a piece that works in thirty seconds
+and one that gets skimmed and abandoned. The same logic repeats at every
+scale: a section's first sentence is its answer, a slide's title is its
+takeaway ("Cache misses double p99", not "Performance"), a UI label carries
+its whole meaning alone.
 
-## Modalities
+Behind the answer sits depth — reasoning, evidence, edge cases — and behind
+that, sources. Depth that most readers won't need doesn't have to be deleted;
+it has to be *moved*: a later section, a linked page, a footnote. Sources
+belong at the end, never woven through the opening.
 
-- **Prose** — default. One idea per paragraph.
-- **Example** — when the general claim is abstract; one concrete case beats a
-  second paragraph of explanation.
-- **Diagram** — when the *relationship* is the hard part. ~5–12 nodes, placed
-  after the prose it illustrates, never instead of it. Validate with
-  `meridian mermaid check` (`/md-validation`).
-- **Chart** — quantities, trends, distributions.
-- **Table** — short enumerable facts; explanation goes in surrounding prose.
-- **Mockup** — when the reader must *see* a layout or plan, not read about it.
-- **Link / child page** — depth that most readers won't need.
+## Each beat, its best form
 
-## Disclosure tiers
+Prose is the default; break from it when another form genuinely carries the
+idea better. An example grounds an abstract claim faster than more
+explanation. A table holds enumerable facts that prose would bury. A chart
+shows a trend that a sentence can only assert. A diagram earns its place when
+the *relationship* is the hard part — a handful of nodes, set after the prose
+it illustrates, validated (`meridian mermaid check`, see `/md-validation`). A
+mockup shows a layout the reader would otherwise have to imagine.
 
-- **T1 Answer** — what the reader came for. First screen, first paragraph.
-- **T2 Depth** — reasoning, evidence, examples, sub-structure. Flat carriers:
-  omit and link out. Rich carriers: expand, hover, or tap.
-- **T3 Sources** — citations and further reading. Footer or link list, never
-  inline in T1.
+The failure mode runs both directions: a diagram standing in for an
+explanation teaches less than a paragraph, and a wall of prose describing a
+table wastes the reader's time. Ask what the beat is trying to do, then give
+it the form that does that.
 
-**Flat vs rich carriers.** Chat, email, and most docs cannot hide content —
-earn density: every sentence in T1 must pay for itself, and T2 becomes a link,
-not a section. HTML and apps may disclose in place (collapse, popover, child
-page) when it genuinely helps the reader, not to decorate. Two extremes for
-calibration: a slide title carries the takeaway, not a topic label ("Cache
-misses double p99", not "Performance"); a UI string is T1 alone — if it needs
-a paragraph, the design is wrong, not the copy.
+## The medium can hide; most can't
 
-## Layout mechanisms
+Chat, email, and plain documents show everything at once, so hierarchy there
+means density and order — every early sentence pays for itself, and depth
+lives behind a link rather than in the reader's way. Richer media (HTML,
+apps) can genuinely hide things: collapsed sections, popovers, child pages.
+Use that when it serves the reader, not to decorate — interaction that demos
+itself is noise wearing a costume.
 
-These make T1 scannable; they are not disclosure tiers.
+Structure helps the scanner either way: headers that carry the argument on
+their own, asides for context off the main thread, a table of contents when
+the piece is long enough to need a map. These make the surface scannable;
+they don't hide anything, and don't substitute for putting the answer first.
 
-- **Headers** — one idea each; a reader skimming only headers should follow the
-  argument.
-- **Table of contents** — long documents only.
-- **Asides** — callouts for context the main thread doesn't need.
-- **Footers** — sources, next steps.
-- **Hover/tap popovers** — rich carriers only, for T2 depth.
-
-## Constraints
-
-- **Mobile-first.** Design for a narrow viewport; wider layouts are
-  enhancements.
-- **Light mode default** with dark toggle on HTML (`:root` variables, `.dark`
-  class).
-- **Agent-agnostic.** No assumptions about which model or agent pack renders
-  the output.
-
-## Anti-patterns
-
-- Diagram replaces prose — the reader learns less than from a paragraph.
-- No lede — the answer is buried under setup.
-- Conflating layout with disclosure — headers and asides don't hide anything.
-- Widget theater — interaction that demos features instead of presenting
-  information.
-- Carrier overbuild — an HTML site where a tight reply would have done.
-- Unverifiable output — broken links, invalid Mermaid, claims without sources.
-- Dark-only desktop layouts.
+Choose the simplest medium that presents every beat well. An HTML site where
+a tight reply would do costs the reader more than it gives. When HTML is
+earned, it should work on a phone first and default to light mode
+(`/structured-artifact` has the mechanics).
 
 ## Sources
 
