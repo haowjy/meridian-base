@@ -43,11 +43,13 @@ less than the paragraph would.
 
 ## Match hierarchy to the medium
 
-Chat, email, and plain documents show everything at once, so hierarchy there
-means density and order — every early sentence pays for itself, and depth
-lives behind a link. Richer media (HTML, apps) can genuinely hide things:
-collapsed sections, popovers, child pages. Reserve each interaction for
-depth a reader will actually reach for.
+For any medium, ask one question: can it hide content until the reader asks
+for it? Chat, email, and plain documents show everything at once, so
+hierarchy there means density and order — every early sentence pays for
+itself, and depth lives behind a link. Media that can hide (HTML, apps,
+anything with expand or navigate) may fold depth into collapsed sections,
+popovers, or child pages. Reserve each interaction for depth a reader will
+actually reach for.
 
 Structure helps the scanner in every medium: headers that carry the argument
 on their own, asides for context off the main thread, a table of contents
