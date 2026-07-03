@@ -9,34 +9,36 @@ model-invocable: false
 
 # Structured Artifact
 
-Load `/information-hierarchy` first — it decides what each page shows and in
-what order; this skill is the build mechanism.
+A structured artifact is plain HTML that opens from `file://` and works on a
+phone. Load `/information-hierarchy` first — it decides what each page shows
+and in what order; this skill builds it.
 
-## Shape
+## One page or several
 
-- **Single page** — one `index.html` when the content fits one map: first
-  viewport carries the answer, depth discloses in place (`<details>`, popovers,
-  collapsible detail panel).
-- **Multi-page** — a folder (`index.html` + child pages + `shared.css`) when
-  the structure earns navigation: the index is a map with links, each child
-  page owns one cluster of beats. See `resources/multi-page-site.md`.
+Start from one `index.html`. Its first viewport carries the answer, and depth
+discloses in place — `<details>`, popovers, a collapsible detail panel. Grow
+into a folder (`index.html` + child pages + `shared.css`) when readers need
+whole pages per branch: the index becomes a map with links, and each child
+page stands alone with its own lede. `resources/multi-page-site.md` has the
+folder mechanics.
 
-## Ground rules
+## Build so it keeps working
 
-- **Static, no build step.** CDN `<script>` tags. No npm, no bundler.
-- **Mobile-first.** Narrow viewport is the design target; wider layouts are
-  enhancements. Touch targets ≥ 44px, pan/pinch on diagrams.
-- **Light mode default with toggle.** Colors from CSS custom properties on
-  `:root`; dark mode adds `.dark` to `<html>`. ☀/🌙 button in the toolbar.
-- **Validate diagrams.** Mermaid goes through `meridian mermaid check`
-  (`/md-validation`) before you call the artifact done.
+Everything ships static — CDN `<script>` tags, zero build step — so the
+artifact opens anywhere, years later, with nothing installed. Design for a
+narrow viewport and let wider layouts be enhancements; touch targets stay
+≥ 44px and diagrams pan and pinch. Drive colors from CSS custom properties on
+`:root`, default light, with a ☀/🌙 toggle that adds `.dark` to `<html>` —
+readers get a readable page in daylight and a choice at night. Run Mermaid
+through `meridian mermaid check` (`/md-validation`) before calling the
+artifact done, so every diagram a reader meets actually renders.
 
 `resources/layout-and-theme.md` has the concrete layout, theme, and mobile
 patterns shared across everything below.
 
 ## Enrichments
 
-Load a resource only when a beat calls for its pattern:
+Load a resource when a beat calls for its pattern:
 
 | Pattern | When a beat needs | Resource |
 |---|---|---|
