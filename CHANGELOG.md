@@ -5,10 +5,11 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ## [Unreleased]
 
 ### Added
-- `information-hierarchy` skill (principle, model-invocable): pick modality and disclosure tier (answer / depth / sources) per beat for any human-facing output.
+- `information-hierarchy` skill (principle, model-invocable): pick modality and disclosure tier (answer / depth / sources) per beat for large human-facing output.
 
 ### Changed
-- `interactive-artifact` renamed to `structured-artifact` and reframed as the static-HTML build mechanism (single or multi-page); loads `/information-hierarchy` first. New `resources/multi-page-site.md` and `resources/mockups.md`; `explorable-diagram.md` renamed to `diagrams.md`; `layout-and-theme.md` rewritten mobile-first.
+- `interactive-artifact` renamed to `structured-artifact` and reframed as the static-HTML build mechanism (single or multi-page); loads `/information-hierarchy` first. New `resources/multi-page-site.md` and `resources/mockups.md`; `explorable-diagram.md` renamed to `diagrams.md`; `layout-and-theme.md` rewritten mobile-first with Tailwind v4 browser build, highlight.js, and vendoring guidance for offline use.
+- `structured-artifact` enrichment resources lead with plain-DOM thresholds before libraries; CDN snippets pinned to major versions only — skill body owns freshness checks and browser verification at build time.
 - `llm-writing` loads `/information-hierarchy` and checks disclosure tiers during revision.
 
 ## [0.7.35] - 2026-07-03
