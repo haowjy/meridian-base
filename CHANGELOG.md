@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.36] - 2026-07-03
+
 ### Added
 - `information-hierarchy` skill (principle, model-invocable): pick modality and disclosure tier (answer / depth / sources) per beat for large human-facing output.
 
