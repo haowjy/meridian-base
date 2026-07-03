@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.35] - 2026-07-03
+
 ### Changed
 - `@kb-lead` can run `meridian qi` and now runs `meridian qi claude-md-fix <code-tree>` after adding or moving `AGENTS.md` files so Claude mirrors stay current.
 - `@kb-maintainer` now loads `qi-layer` and runs the same mirror repair after structural changes involving code-local `AGENTS.md`.
