@@ -1,7 +1,22 @@
 # Layout and Theme
 
-Shared patterns for all interactive artifacts. Load this alongside the pattern-specific
-resource.
+Shared patterns for all structured artifacts. Load this alongside the
+pattern-specific resource.
+
+## Mobile-First Layout
+
+Design for a narrow viewport, then enhance. A single scrolling column is the
+base layout; sidebars and multi-column arrangements are `md:`-and-up additions.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
+
+- Content flows top to bottom on mobile: toolbar, content, detail.
+- Detail views are bottom sheets on narrow screens, sidebars on wide screens —
+  one Tailwind breakpoint (`md:`) covers both.
+- Tap targets ≥ 44px. Diagrams get touch pan/pinch-zoom.
+- Test by narrowing the window to ~375px before calling it done.
 
 ## CDN Base Stack
 
@@ -13,31 +28,30 @@ resource.
 </script>
 ```
 
-Tailwind's CDN build warns in console; ignore for static artifacts. Shiki is only
-needed if the artifact shows syntax-highlighted code in detail panels.
+Tailwind's CDN build warns in console; ignore for static artifacts. Shiki is
+only needed if the artifact shows syntax-highlighted code in detail panels.
 
-## Viewport-Filling Layout
+## Wide-Screen Enhancement
 
-The artifact fills the browser window. The content area gets all space not used by
-a toolbar.
+On `md:` and up, the artifact may fill the browser window with a flex column:
 
 ```html
 <body style="display:flex;flex-direction:column;height:100vh;overflow:hidden;margin:0">
   <header><!-- toolbar: title, theme toggle, nav buttons --></header>
   <main style="display:flex;flex:1;min-height:0;gap:1rem;padding:1rem">
-    <!-- optional left sidebar -->
+    <!-- optional left sidebar (nav, ~300px) -->
     <section style="flex:1;min-width:0;overflow:hidden">
       <!-- primary content area -->
     </section>
-    <!-- optional right sidebar -->
+    <!-- optional right sidebar (detail, ~360px) -->
   </main>
 </body>
 ```
 
-`min-height: 0` on `<main>` prevents flex children from overflowing. The content
-section takes all remaining space.
+`min-height: 0` on `<main>` prevents flex children from overflowing. The
+content section takes all remaining space.
 
-## Collapsible Sidebars
+### Collapsible sidebars
 
 Sidebars are flex children with a width transition. Collapsing sets width to 0;
 a fixed-width inner wrapper prevents content reflow during animation.
@@ -67,13 +81,13 @@ function toggleDetail() {
 }
 ```
 
-Use a left sidebar for navigation (~300px) and a right sidebar for detail (~360px).
-Both start collapsed. Open the detail sidebar when the viewer clicks an element.
+Both sidebars start collapsed. Open the detail sidebar when the viewer taps or
+clicks an element.
 
 ## Theme
 
-Drive all colors from CSS custom properties. Default to light; toggle with a class
-on `<html>`.
+Drive all colors from CSS custom properties. Default to light; toggle with a
+class on `<html>`.
 
 ```css
 :root {
@@ -99,16 +113,10 @@ if (localStorage.getItem('theme') === 'dark') {
 ```
 
 When using Mermaid, re-initialize with the matching theme after toggle — see
-`explorable-diagram.md`.
+`diagrams.md`.
 
-## Mobile
-
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
-```
-
-Render the detail panel as a bottom sheet on narrow screens. A Tailwind breakpoint
-(`md:`) on the sidebar covers both layouts. Keep tap targets ≥ 44px.
+For multi-page sites, put the variables and toggle in `shared.css` /
+`shared.js` so every page stays consistent — see `multi-page-site.md`.
 
 ## Serve Over Tailscale (optional)
 

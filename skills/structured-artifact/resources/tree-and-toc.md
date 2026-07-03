@@ -1,7 +1,9 @@
 # Tree and TOC
 
 Expandable hierarchy or document outline. No library needed — native HTML handles
-both patterns.
+both patterns. These are single-page navigation aids; when the hierarchy is big
+enough that readers need whole pages per branch, use `multi-page-site.md`
+instead of a deeper tree.
 
 ## Tree (File Explorer Style)
 

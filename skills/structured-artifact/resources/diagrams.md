@@ -1,7 +1,7 @@
-# Explorable Diagram
+# Diagrams
 
-The default interaction pattern. Use when information has relationships, dependencies,
-or flow.
+Use when information has relationships, dependencies, or flow — after the prose
+it illustrates, never instead of it. Validate with `meridian mermaid check`.
 
 ## Mermaid (default)
 
@@ -142,7 +142,7 @@ window.addEventListener('pointerup', e => { pts.delete(e.pointerId); pinchDist =
 Default to renderer theme colors. Use stroke-only `classDef` for emphasis so nodes
 adapt to any background:
 
-```mermaid
+```text
 classDef highlight stroke:#f59e0b,stroke-width:2px
 ```
 
