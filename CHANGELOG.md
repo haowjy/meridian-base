@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.37] - 2026-07-04
+
 ### Added
 - `@subagent` agent: general-purpose subagent for any task. Supports all catalog models, ranked by subagent usefulness (gpt55 default, opus46, gpt54, glm, deepseek, composer, deepseekflash, gptmini).
 
