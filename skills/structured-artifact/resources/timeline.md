@@ -2,12 +2,12 @@
 
 Chronological events on a zoomable, pannable axis with click-to-detail. Use for
 event histories, release timelines, or project milestones. For ≤10 static
-events, a styled `<ol>` with click handlers is simpler — reach for vis-timeline
+events, a styled `<ol>` with click handlers is simpler: reach for vis-timeline
 when the reader needs to pan and zoom through time.
 
 ## Library
 
-**vis-timeline** — ~154 KB gzipped JS, ~4 KB CSS.
+**vis-timeline**: ~154 KB gzipped JS, ~4 KB CSS.
 
 ```html
 <link href="https://cdn.jsdelivr.net/npm/vis-timeline@8/styles/vis-timeline-graph2d.min.css" rel="stylesheet">

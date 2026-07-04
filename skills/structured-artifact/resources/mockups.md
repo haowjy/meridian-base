@@ -6,7 +6,7 @@ answers "what will this look like?" faster than paragraphs.
 ## Wireframe style
 
 Grayscale boxes, real proportions, placeholder content. The point is layout and
-flow, not visual design — resist styling it.
+flow, not visual design: resist styling it.
 
 ```html
 <style>
@@ -18,10 +18,10 @@ flow, not visual design — resist styling it.
               letter-spacing: 0.05em; }
 </style>
 
-<div class="wf"><span class="wf-label">Toolbar</span> — search, filters, new-item button</div>
+<div class="wf"><span class="wf-label">Toolbar</span>: search, filters, new-item button</div>
 <div class="wf-row">
-  <div class="wf" style="max-width:240px"><span class="wf-label">Nav</span> — workbench list</div>
-  <div class="wf"><span class="wf-label">Content</span> — thread view, newest at bottom</div>
+  <div class="wf" style="max-width:240px"><span class="wf-label">Nav</span>: workbench list</div>
+  <div class="wf"><span class="wf-label">Content</span>: thread view, newest at bottom</div>
 </div>
 ```
 
@@ -31,7 +31,7 @@ switches to column under `md:`).
 ## Annotations
 
 Number the regions and explain each in a list next to (or below) the
-wireframe — don't scatter prose inside the boxes:
+wireframe: don't scatter prose inside the boxes:
 
 ```html
 <div class="wf"><span class="wf-label">③ Detail panel</span></div>
@@ -44,6 +44,6 @@ wireframe — don't scatter prose inside the boxes:
 
 ## States and variants
 
-Show the states that drive the design decision — empty, loading, error, and the
-mobile variant — as separate labeled wireframes on the same page. A mockup that
+Show the states that drive the design decision: empty, loading, error, and the
+mobile variant: as separate labeled wireframes on the same page. A mockup that
 only shows the happy path on desktop hides the hard questions.

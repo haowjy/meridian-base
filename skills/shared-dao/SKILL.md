@@ -1,7 +1,7 @@
 ---
 name: shared-dao
 type: principle
-description: Use when establishing shared vocabulary — resolve terminology early, one name per concept, vocab files as record.
+description: Use when establishing shared vocabulary: resolve terminology early, one name per concept, vocab files as record.
 model-invocable: true
 ---
 
@@ -28,7 +28,7 @@ Resolve terminology early:
 
 ## Discovery
 
-Before defining new terms, check what already exists — vocab files, KB
+Before defining new terms, check what already exists: vocab files, KB
 pages, code, prior decisions. A term defined elsewhere under a different
 name is a conflict, not a new concept.
 

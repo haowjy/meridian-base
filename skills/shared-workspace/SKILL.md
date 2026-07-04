@@ -1,7 +1,7 @@
 ---
 name: shared-workspace
 type: guardrail
-description: Use when a workspace has changes from other agents — safe orientation, preserving unfamiliar files.
+description: Use when a workspace has changes from other agents: safe orientation, preserving unfamiliar files.
 model-invocable: true
 ---
 

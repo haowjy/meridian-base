@@ -13,7 +13,7 @@ artifact/
   <topic>.html    # one child page per beat cluster
 ```
 
-Flat folder, relative links (`href="topic.html"`). No server required — it must
+Flat folder, relative links (`href="topic.html"`). No server required: it must
 work from `file://`.
 
 ## The index is a map
@@ -34,7 +34,7 @@ link states what the reader will learn there, not just a title:
 </nav>
 ```
 
-If the index needs its own scroll to list the pages, there are too many pages —
+If the index needs its own scroll to list the pages, there are too many pages;
 merge clusters.
 
 ## Child pages
@@ -60,5 +60,5 @@ forcing a round-trip through the index.
   `layout-and-theme.md`; pages must not redefine colors locally.
 - `shared.js` holds the theme toggle and persistence so the choice follows the
   reader across pages.
-- Repeat the CDN `<script>` tags per page — there is no bundler; each page is
+- Repeat the CDN `<script>` tags per page: there is no bundler; each page is
   self-sufficient.

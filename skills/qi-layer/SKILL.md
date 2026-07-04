@@ -1,7 +1,7 @@
 ---
 name: qi-layer
 type: reference
-description: Use when exploring or changing the codebase — read AGENTS.md first, use .context/CONTEXT.md for detail, keep intent docs succinct.
+description: Use when exploring or changing the codebase: read AGENTS.md first, use .context/CONTEXT.md for detail, keep intent docs succinct.
 ---
 
 # qi-layer
@@ -14,15 +14,15 @@ AGENTS.md and `.context/CONTEXT.md`.
 
 ## The Four Principles
 
-1. **Fractal Compression** — leaf AGENTS.md summarizes its directory's
+1. **Fractal Compression**: leaf AGENTS.md summarizes its directory's
    content; parent AGENTS.md summarizes its children. Each level is a
    compression of the level below.
-2. **Hierarchical Summarization** — root provides broad architectural
+2. **Hierarchical Summarization**: root provides broad architectural
    frame. Leaves provide local working knowledge. Agents accumulate
    understanding as they descend.
-3. **LCA Deduplication** — shared knowledge appears once at the shallowest
+3. **LCA Deduplication**: shared knowledge appears once at the shallowest
    node covering all relevant paths. Never duplicate between siblings.
-4. **Progressive Disclosure** — give just enough to work correctly at this
+4. **Progressive Disclosure**: give just enough to work correctly at this
    level. Link to `.context/CONTEXT.md` for depth.
 
 ## Writing AGENTS.md
@@ -34,11 +34,11 @@ AGENTS.md captures.
 
 Keep AGENTS.md **50–200 lines**. Include only what has substance:
 
-- **Purpose** — what this area IS and what it ISN'T (1–3 sentences)
-- **Mental model** — how to think about this area, key abstractions
-- **Key rules** — constraints, what breaks if you get it wrong
-- **Anti-patterns** — what NOT to do here
-- **Downlinks** — to `.context/` for depth, to related areas
+- **Purpose**: what this area IS and what it ISN'T (1–3 sentences)
+- **Mental model**: how to think about this area, key abstractions
+- **Key rules**: constraints, what breaks if you get it wrong
+- **Anti-patterns**: what NOT to do here
+- **Downlinks**: to `.context/` for depth, to related areas
 
 An agent that only reads AGENTS.md should be able to work correctly here.
 An agent that also reads .context/ should be able to change things safely.
@@ -50,12 +50,12 @@ goes when it needs contracts, architecture, or rationale in detail.
 
 Sections (use only those with substance):
 
-- **Contracts** — interfaces, invariants, what breaks if violated
-- **Architecture** — component relationships, data flow, dependency direction
-- **Rationale** — why X over Y, rejected alternatives
-- **Patterns** — how to work here, concrete pitfalls
+- **Contracts**: interfaces, invariants, what breaks if violated
+- **Architecture**: component relationships, data flow, dependency direction
+- **Rationale**: why X over Y, rejected alternatives
+- **Patterns**: how to work here, concrete pitfalls
 
-The `.context/` directory is extensible — additional files alongside
+The `.context/` directory is extensible: additional files alongside
 CONTEXT.md for specialized concerns.
 
 ## What Does NOT Belong in AGENTS.md
@@ -70,16 +70,16 @@ agent has to *look it up*, it belongs in .context/ instead.
 
 Specific failure modes:
 
-- **Session bleed** — LLM working notes that calcified into the instruction
+- **Session bleed**: LLM working notes that calcified into the instruction
   file. Tells: status-update language ("**deleted**", "shipped", "deferred"),
   implementation terms packed without framing, history narration.
-- **Reference material posing as intent** — tables, command blocks, full
+- **Reference material posing as intent**: tables, command blocks, full
   scheme vocabularies, implementation specifics.
-- **Redundant guards** — prose warnings for invariants already enforced by
+- **Redundant guards**: prose warnings for invariants already enforced by
   tests or types. The code is the real guard; prose rots faster.
-- **Duplicated knowledge** — restating what lives in a skill, a domain
+- **Duplicated knowledge**: restating what lives in a skill, a domain
   .context/, or a KB page. Point, don't duplicate.
-- **Domain-specific detail at root** — URI scheme tables, gateway pricing
+- **Domain-specific detail at root**: URI scheme tables, gateway pricing
   internals, auth implementation details. These belong in their domain's
   AGENTS.md, not root.
 
@@ -94,5 +94,5 @@ Specific failure modes:
 ## Maintenance
 
 Keep knowledge layers current as you work. When your changes shift the
-mental model, contracts, or decisions — update AGENTS.md, .context/, and KB
+mental model, contracts, or decisions: update AGENTS.md, .context/, and KB
 in the same pass, not as a deferred follow-up.

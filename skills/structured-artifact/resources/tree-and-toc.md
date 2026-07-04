@@ -1,6 +1,6 @@
 # Tree and TOC
 
-Expandable hierarchy or document outline. No library needed — native HTML handles
+Expandable hierarchy or document outline. No library needed: native HTML handles
 both patterns. These are single-page navigation aids; when the hierarchy is big
 enough that readers need whole pages per branch, use `multi-page-site.md`
 instead of a deeper tree.
@@ -38,7 +38,7 @@ document.getElementById("treeSearch").oninput = e => {
 </script>
 ```
 
-Click a leaf to show detail — add a click handler on `.leaf` elements.
+Click a leaf to show detail: add a click handler on `.leaf` elements.
 
 ## TOC (Document Outline)
 

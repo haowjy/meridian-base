@@ -1,7 +1,7 @@
 # Card Grid
 
 Items displayed as cards with summary info, filterable and sortable, click to
-expand detail. No library needed — CSS Grid handles layout.
+expand detail. No library needed: CSS Grid handles layout.
 
 ## Minimal Example
 
@@ -37,7 +37,7 @@ renderCards();
 ```
 
 Equal-height grid is usually sufficient. For variable-height packing, layer
-native CSS masonry as a progressive enhancement — browser support is still
+native CSS masonry as a progressive enhancement: browser support is still
 uneven (check current support if packing matters), so the grid fallback
 carries most readers:
 

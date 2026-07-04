@@ -2,11 +2,11 @@
 
 Interactive chart with hover tooltips and click callbacks. Use for quantities,
 trends, or distributions. A handful of values reads faster as a sentence or
-small table — reach for a chart when the *shape* of the data carries the point.
+small table: reach for a chart when the *shape* of the data carries the point.
 
 ## Library
 
-**Chart.js** — ~70 KB gzipped.
+**Chart.js**: ~70 KB gzipped.
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>

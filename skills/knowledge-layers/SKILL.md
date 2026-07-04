@@ -1,13 +1,13 @@
 ---
 name: knowledge-layers
 type: reference
-description: Use when deciding where knowledge goes or reading/writing durable docs — AGENTS.md, .context/, KB, docs/, and work directories.
+description: Use when deciding where knowledge goes or reading/writing durable docs: AGENTS.md, .context/, KB, docs/, and work directories.
 model-invocable: true
 ---
 
 # Knowledge Layers
 
-Load `/qi-layer` when writing or editing AGENTS.md or .context/ files — it
+Load `/qi-layer` when writing or editing AGENTS.md or .context/ files: it
 owns the craft (four principles, contents guidelines, what doesn't belong).
 Load `/information-hierarchy` if not already loaded for disclosure tiers.
 Load `/llm-writing` if not already loaded.
@@ -31,7 +31,7 @@ If it's for end users → `docs/`.
 If it's a temporary work artifact → work directory.
 
 When in doubt, colocate. Knowledge that lives far from what it describes
-rots faster — changes to the code don't trigger awareness that a distant
+rots faster: changes to the code don't trigger awareness that a distant
 doc needs updating.
 
 ## KB Conventions
@@ -65,14 +65,14 @@ easily tell you.
 
 ## Operations
 
-**Ingest** — new information enters the KB. Read the source, extract key
+**Ingest**: new information enters the KB. Read the source, extract key
 knowledge, write or update wiki pages, and update indexes/cross-links touched
 by the change.
 
-**Maintain** — keep the wiki current. When content is superseded, delete it
+**Maintain**: keep the wiki current. When content is superseded, delete it
 or archive it. Live content never references archived content.
 
-**Lint** — health-check the wiki. Look for contradictions, stale claims,
+**Lint**: health-check the wiki. Look for contradictions, stale claims,
 orphan pages, missing cross-references. Use `/md-validation` for link
 checking and diagram validation.
 

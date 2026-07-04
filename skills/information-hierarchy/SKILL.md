@@ -22,7 +22,7 @@ seconds. The same logic repeats at every scale: a section's first sentence is
 its answer, a slide's title is its takeaway ("Cache misses double p99" rather
 than "Performance"), a UI label carries its whole meaning alone.
 
-Behind the answer sits depth — reasoning, evidence, edge cases — and behind
+Behind the answer sits depth (reasoning, evidence, edge cases), and behind
 that, sources. Keep depth that most readers will skip, and *move* it: a later
 section, a linked page, a footnote. Sources belong at the end.
 
@@ -32,20 +32,20 @@ Prose is the default; break from it when another form genuinely carries the
 idea better. An example grounds an abstract claim faster than more
 explanation. A table holds enumerable facts that prose would bury. A chart
 shows a trend that a sentence can only assert. A diagram earns its place when
-the *relationship* is the hard part — a handful of nodes, set after the prose
+the *relationship* is the hard part: a handful of nodes, set after the prose
 it illustrates, validated (`meridian mermaid check`, see `/md-validation`). A
 mockup shows a layout the reader would otherwise have to imagine.
 
 Ask what the beat is trying to do, then give it the form that does that: an
 explanation gets a paragraph, a comparison gets a table. Each form teaches
-best inside its own job — a diagram standing in for an explanation teaches
+best inside its own job: a diagram standing in for an explanation teaches
 less than the paragraph would.
 
 ## Match hierarchy to the medium
 
 For any medium, ask one question: can it hide content until the reader asks
 for it? Chat, email, and plain documents show everything at once, so
-hierarchy there means density and order — every early sentence pays for
+hierarchy there means density and order: every early sentence pays for
 itself, and depth lives behind a link. Media that can hide (HTML, apps,
 anything with expand or navigate) may fold depth into collapsed sections,
 popovers, or child pages. Reserve each interaction for depth a reader will
@@ -56,14 +56,14 @@ on their own, asides for context off the main thread, a table of contents
 when the piece is long enough to need a map. These organize the surface;
 putting the answer first remains the job of the writing itself.
 
-Choose the simplest medium that presents every beat well — a tight reply
+Choose the simplest medium that presents every beat well: a tight reply
 beats an HTML site whenever both would teach the same thing. When HTML is
 earned, build it phone-first and default to light mode
 (`/structured-artifact` has the mechanics).
 
 ## Sources
 
-- [How Users Read on the Web (NN/g)](https://www.nngroup.com/articles/how-users-read-on-the-web/) —
+- [How Users Read on the Web (NN/g)](https://www.nngroup.com/articles/how-users-read-on-the-web/):
   scanning, why the lede must come first.
-- [Progressive Disclosure (NN/g)](https://www.nngroup.com/articles/progressive-disclosure/) —
+- [Progressive Disclosure (NN/g)](https://www.nngroup.com/articles/progressive-disclosure/):
   defer secondary content to secondary screens.

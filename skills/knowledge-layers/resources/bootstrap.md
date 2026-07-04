@@ -6,29 +6,29 @@ Starter layout for a new project KB.
 
 ```
 kb/
-  AGENTS.md          # governance — writing rules, content types, validation
+  AGENTS.md          # governance: writing rules, content types, validation
   index.md           # catalog of pages with one-line summaries
   vocab.md           # project-wide terminology
 ```
 
-Add directories as the KB grows — a topic earns a directory when it has
+Add directories as the KB grows: a topic earns a directory when it has
 multiple related pages.
 
 ## Content Types
 
 A KB holds four kinds of content.
 
-**Wiki pages** — synthesized knowledge. How things work, concepts,
+**Wiki pages**: synthesized knowledge. How things work, concepts,
 architecture, patterns. Agents create pages, update them, and maintain
 cross-references.
 
-**Decision records** — what was chosen, what was rejected, and why. Wiki
+**Decision records**: what was chosen, what was rejected, and why. Wiki
 pages link to decisions for rationale; decisions link to wiki pages for
 context. Separate from wiki pages because the reasoning behind a choice
-outlives the description of the current system — when the system changes,
+outlives the description of the current system: when the system changes,
 the old decision record still explains why it was built that way.
 
-**Sources** — raw material: articles, research, transcripts, data. Immutable.
+**Sources**: raw material: articles, research, transcripts, data. Immutable.
 Agents read from sources but never modify them.
 
 ## Starter AGENTS.md
@@ -41,7 +41,7 @@ Agents read from sources but never modify them.
 Cross-cutting knowledge that spans components and outlives sessions.
 Decisions, domain concepts, architectural rationale, and patterns.
 
-Raw research dumps and conversation transcripts don't belong here —
+Raw research dumps and conversation transcripts don't belong here;
 synthesize them first. Active task plans live in work directories, not the KB.
 
 ## Current Truth Over History
@@ -63,7 +63,7 @@ content. Pages read as current truth, never narrate their own evolution.
 
 ## Structure
 
-- `index.md` — catalog. Update when you create or modify a page.
+- `index.md`: catalog. Update when you create or modify a page.
 - Directories emerge organically as topics accumulate related pages.
 
 ## Validation

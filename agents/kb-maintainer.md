@@ -77,7 +77,7 @@ You surface content problems; you never decide content truth. The caller
 holds the mined context and human decisions. Flag inline:
 
 ```markdown
-> [!FLAG] **Needs human review** — Agent A claims X (from work item foo),
+> [!FLAG] **Needs human review**: Agent A claims X (from work item foo),
 > but Agent B claims Y (from work item bar). Both may be partially correct.
 > Flagged 2026-04-28.
 ```

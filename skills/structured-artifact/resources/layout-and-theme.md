@@ -13,7 +13,7 @@ base layout; sidebars and multi-column arrangements are `md:`-and-up additions.
 ```
 
 - Content flows top to bottom on mobile: toolbar, content, detail.
-- Detail views are bottom sheets on narrow screens, sidebars on wide screens —
+- Detail views are bottom sheets on narrow screens, sidebars on wide screens;
   one Tailwind breakpoint (`md:`) covers both.
 - Tap targets ≥ 44px. Diagrams get touch pan/pinch-zoom.
 - Test by narrowing the window to ~375px before calling it done.
@@ -26,7 +26,7 @@ base layout; sidebars and multi-column arrangements are `md:`-and-up additions.
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highlight.min.js"></script>
 ```
 
-Tailwind's browser build (v4) is a single IIFE — configure via
+Tailwind's browser build (v4) is a single IIFE: configure via
 `<style type="text/tailwindcss">` with `@theme { ... }` blocks; the old
 `tailwind.config = {}` object is gone. highlight.js is only needed if the
 artifact shows syntax-highlighted code in detail panels: call
@@ -52,7 +52,7 @@ curl -fsSL https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11/build/highligh
 ```
 
 Use each library's single-file browser build (UMD/IIFE, like
-`dist/*.min.js` on jsDelivr) — ESM URLs such as `esm.sh` fetch further
+`dist/*.min.js` on jsDelivr): ESM URLs such as `esm.sh` fetch further
 imports at runtime and fail offline. The whole base stack above vendors
 cleanly; each file is self-contained with no runtime fetches.
 
@@ -137,11 +137,11 @@ if (localStorage.getItem('theme') === 'dark') {
 }
 ```
 
-When using Mermaid, re-initialize with the matching theme after toggle — see
+When using Mermaid, re-initialize with the matching theme after toggle: see
 `diagrams.md`.
 
 For multi-page sites, put the variables and toggle in `shared.css` /
-`shared.js` so every page stays consistent — see `multi-page-site.md`.
+`shared.js` so every page stays consistent: see `multi-page-site.md`.
 
 ## Serve Over Tailscale (optional)
 

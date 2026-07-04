@@ -1,6 +1,6 @@
 # Diagrams
 
-Use when information has relationships, dependencies, or flow — after the prose
+Use when information has relationships, dependencies, or flow: after the prose
 it illustrates, never instead of it. Validate with `meridian mermaid check`.
 
 ## Mermaid (default)
@@ -14,7 +14,7 @@ layouts or network graphs, see Cytoscape below.
 <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 ```
 
-Use the `dist/mermaid.min.js` IIFE — it exposes the `mermaid` global and
+Use the `dist/mermaid.min.js` IIFE: it exposes the `mermaid` global and
 vendors cleanly for offline use (the ESM entry pulls further imports at
 runtime).
 
@@ -40,7 +40,7 @@ the diagram.
 
 ### Click Callbacks
 
-Two approaches — use whichever fits your graph:
+Two approaches: use whichever fits your graph:
 
 **Mermaid `click` directives** (simpler, requires valid JS identifiers as node IDs):
 

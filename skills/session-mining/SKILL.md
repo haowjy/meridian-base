@@ -1,7 +1,7 @@
 ---
 name: session-mining
 type: reference
-description: Use when recovering decisions or context from conversation history — session log navigation, transcript delegation.
+description: Use when recovering decisions or context from conversation history: session log navigation, transcript delegation.
 model-invocable: true
 ---
 
@@ -13,7 +13,7 @@ Design decisions, rejected alternatives, and discovered constraints often live i
 
 ## Recover From the Top-Level Session First
 
-Start from the top-level conversation. `$MERIDIAN_CHAT_ID` points to the primary session at the root of the chat tree, regardless of how deep in the spawn tree you are. That root context holds the primary's decisions and framing — usually the highest-leverage read.
+Start from the top-level conversation. `$MERIDIAN_CHAT_ID` points to the primary session at the root of the chat tree, regardless of how deep in the spawn tree you are. That root context holds the primary's decisions and framing: usually the highest-leverage read.
 
 Use a recent-context read first, then widen or anchor only if needed:
 
@@ -33,7 +33,7 @@ selected segment (entry 0 included), `--no-truncate` for complete content, and
 Reach for `--global` only when you need one flat stream across all segments
 (every segment's entry 0 included, with unique global ordinals starting at 0).
 It conflicts with `--segment` and requires `--from/--before/--around`. Prefer
-segment-local navigation — it stays stable across compactions.
+segment-local navigation: it stays stable across compactions.
 
 Search instead of paging when you know what you're looking for:
 
@@ -43,7 +43,7 @@ meridian session search "auth" --work <work-id>     # scope to a work item
 meridian session search "shape" --workspace         # current project + workspace
 ```
 
-Each hit prints a deterministic `Open:` command — run it to jump straight to
+Each hit prints a deterministic `Open:` command: run it to jump straight to
 the entry instead of recomputing windows.
 
 ## Delegate Bulk Reading, Don't Inline It

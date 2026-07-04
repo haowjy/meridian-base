@@ -1,6 +1,6 @@
 # Experimental: React Flow
 
-Node graphs with drag, custom node rendering, and live filtering — the step up
+Node graphs with drag, custom node rendering, and live filtering: the step up
 when Mermaid's static layout stops being enough. Costs three CDN scripts
 (React, ReactDOM, the library); stay with Mermaid or Cytoscape until a beat
 needs per-node interactivity.
@@ -63,6 +63,6 @@ needs a small shim before the library script:
   Fragment: React.Fragment };</script>
 ```
 
-Pin React to the `react@18` / `react-dom@18` UMD builds either way — React 19
+Pin React to the `react@18` / `react-dom@18` UMD builds either way: React 19
 ships no UMD build, so 18 remains the no-build baseline. The v11 snippet
 above works as-is; prefer it until you need a v12-only feature.

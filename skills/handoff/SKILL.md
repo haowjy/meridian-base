@@ -20,18 +20,18 @@ If arguments were passed, treat them as the focus for the next session.
 
 ## Write the Transition Brief
 
-Start with `/intent-modeling` — separate what the human said from what
+Start with `/intent-modeling`: separate what the human said from what
 they actually want to be true when this work is done. The modeled intent
 shapes everything in the brief.
 
 Then compact the conversation into a file the next agent reads as its
 opening prompt:
 
-- Human intent — the end goal in their terms, not implementation steps
-- Current state — what was accomplished, where things stand
+- Human intent: the end goal in their terms, not implementation steps
+- Current state: what was accomplished, where things stand
 - Key decisions and why
 - Open questions or blockers
-- Artifact paths — exact file paths to read first
+- Artifact paths: exact file paths to read first
 - Suggested skills to invoke
 
 Reference artifacts by path; don't duplicate their content.
@@ -63,7 +63,7 @@ meridian work sessions --primary
 
 ## Print the Launch Command
 
-Resolve `$MERIDIAN_CHAT_ID` to the concrete chat ID (e.g., `c102`) — the
+Resolve `$MERIDIAN_CHAT_ID` to the concrete chat ID (e.g., `c102`): the
 user runs this in a new terminal where the env var no longer exists.
 
 ```

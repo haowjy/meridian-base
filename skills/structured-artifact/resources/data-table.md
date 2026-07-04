@@ -2,12 +2,12 @@
 
 Filterable, sortable, searchable table. Use when the information is records with
 columns. For ≤20 rows, a plain `<table>` with click-to-sort headers is less code
-than any library — reach for Tabulator when the reader needs live filtering or
+than any library: reach for Tabulator when the reader needs live filtering or
 the rows outgrow a screen.
 
 ## Library
 
-**Tabulator** — ~101 KB gzipped JS, ~4 KB CSS. Mature, zero dependencies,
+**Tabulator**: ~101 KB gzipped JS, ~4 KB CSS. Mature, zero dependencies,
 virtual DOM rendering for large datasets.
 
 ```html

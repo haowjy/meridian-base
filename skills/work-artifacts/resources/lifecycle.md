@@ -3,7 +3,7 @@
 ## Dashboard and Discovery
 
 ```bash
-meridian work                    # dashboard — what's in flight
+meridian work                    # dashboard: what's in flight
 meridian work list               # list active work items
 meridian work list --done        # list done/archived items
 meridian work show auth-refactor # drill into one work item
@@ -41,5 +41,5 @@ meridian work clear                 # detach without archiving (work stays activ
 ```
 
 `work done` archives the work directory and detaches the session. A prose
-status update does not complete the work item — only `work done` archives
+status update does not complete the work item: only `work done` archives
 it. Use `work clear` to detach from a work item you don't own.

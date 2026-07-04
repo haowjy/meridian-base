@@ -9,7 +9,7 @@ beat loading a library.
 
 **Diff2Html** for rendering + **jsdiff** for computing diffs from strings. Use
 the `-slim` bundle (~97 KB gzipped, common languages: JS, TS, Python, CSS,
-JSON…) — the full bundle is ~335 KB for every highlight.js language and rarely
+JSON…): the full bundle is ~335 KB for every highlight.js language and rarely
 earns it. jsdiff is ~10 KB gzipped.
 
 ```html
