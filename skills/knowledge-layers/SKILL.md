@@ -37,14 +37,15 @@ doc needs updating.
 
 ### Current Truth Over History
 
-The living KB holds the best current understanding. When a claim in a concept,
-architecture, or operations page is superseded, remove or rewrite the stale
-claim rather than layering newer text around older understanding. Pages should
-read as current truth.
+The living KB holds the best current understanding. When content is
+superseded, delete it or move it to `archive/` (`.kgignore`'d, excluded
+from the knowledge graph). Use judgment. Live content never references
+archived content. Pages read as current truth, never narrate their own
+evolution.
 
-Decision records are the exception: preserve superseded decisions when they
-explain why the system changed. Mark the old decision as superseded and link to
-the replacement, following the KB's decision conventions.
+Decision records are the exception: preserve superseded decisions in place
+when they explain why the system changed. Mark the old decision as
+superseded and link to the replacement.
 
 ### Structure
 
@@ -91,8 +92,8 @@ knowledge, write or update wiki pages, and update indexes/cross-links touched by
 the change. Update the KB log only for structural reorganizations or major
 additions when the local KB guide asks for it.
 
-**Maintain** — keep the wiki current. When a claim is superseded, remove it.
-Current truth over history.
+**Maintain** — keep the wiki current. When content is superseded, delete it
+or archive it. Live content never references archived content.
 
 **Lint** — health-check the wiki. Look for contradictions, stale claims,
 orphan pages, missing cross-references. Use `/md-validation` for link

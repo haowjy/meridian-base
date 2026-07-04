@@ -9,7 +9,6 @@ kb/
   AGENTS.md          # governance — writing rules, content types, validation
   index.md           # catalog of pages with one-line summaries
   vocab.md           # project-wide terminology
-  trash/             # superseded content, not maintained
 ```
 
 Add directories as the KB grows — a topic earns a directory when it has
@@ -42,9 +41,9 @@ reasoning.
 knowledge, write or update wiki pages, update index, log the change. A
 single source may touch many pages.
 
-**Maintain** — keep the wiki current. When a claim is superseded, remove it.
-When new information contradicts existing pages, resolve the contradiction.
-Current truth over history.
+**Maintain** — keep the wiki current. When content is superseded, delete it
+or archive it. Live content never references archived content. When new
+information contradicts existing pages, resolve the contradiction.
 
 **Lint** — health-check the wiki. Look for contradictions between pages,
 stale claims, orphan pages with no inbound links, important concepts
@@ -65,12 +64,9 @@ synthesize them first. Active task plans live in work directories, not the KB.
 
 ## Current Truth Over History
 
-The KB holds the best current understanding. When a claim, explanation, or
-term is superseded, remove it from the live KB rather than layering newer
-text around older understanding. Move superseded content to `trash/` if it
-has historical value.
-
-Pages should read as current truth, not narrate evolution.
+The KB holds the best current understanding. When content is superseded,
+delete it or move it to `archive/`. Live content never references archived
+content. Pages read as current truth, never narrate their own evolution.
 
 ## Writing
 
