@@ -13,54 +13,54 @@ models_cache_ttl_hours = 24
 
 [models.composer]
 harness = "cursor"
-description = "Strong and cheap coding model, but only for coding."
+description = "Strong and cheap coding model, but only for coding. Value 10, intelligence 6, taste 3."
 model = "composer-2.5"
 provider = "cursor"
 
 [models.deepseek]
-description = "Cheap, good text coder for constrained tasks. Stronger reasoning than flash."
+description = "Cheap, good text coder for constrained tasks. Stronger reasoning than flash. Value 9, intelligence 6, taste 3."
 default_effort = "high"
 model = "deepseek-v4-pro"
 
 [models.deepseekflash]
-description = "Cheapest option for mechanical tasks. Fast, low cost, good enough for bulk reading and simple edits."
+description = "Cheapest option for mechanical tasks. Fast, low cost, good enough for bulk reading and simple edits. Value 10, intelligence 5, taste 2."
 default_effort = "high"
 model = "deepseek-v4-flash"
 
 [models.opus46]
 harness = "claude"
-description = "Best at inferring human intent. Strong conversational model — preferred for interactive primaries."
+description = "Best at inferring human intent. Strong conversational model; preferred for interactive primaries. Value 4, intelligence 8, taste 9."
 default_effort = "high"
 model = "claude-opus-4-6"
 
-[models.opus47]
-harness = "claude"
-description = "Strong agentic coder and UI/UX design. Literal instruction-following — breaks with complex multi-skill prompts."
-default_effort = "high"
-model = "claude-opus-4-7"
-
 [models.opus48]
 harness = "claude"
-description = "Best at long-horizon orchestration and managing large numbers of subagents."
+description = "Best at long-horizon orchestration and managing large numbers of subagents. Value 3, intelligence 8, taste 8."
 default_effort = "high"
 model = "claude-opus-4-8"
 
 [models.opus]
 harness = "claude"
-description = "Latest opus family catch-all. Prefer pinned versions (opus46, opus47, opus48) — each has distinct strengths."
+description = "Opus family catch-all. Prefer pinned versions (opus46, opus48); each has distinct strengths."
 default_effort = "high"
 match = ["claude*opus*"]
 exclude = ["*:*"]
 
 [models.fable]
 harness = "claude"
-description = "Most capable model for complex tasks."
+description = "Most capable model for complex tasks. Value 1, intelligence 9, taste 9."
 default_effort = "high"
 match = ["claude*fable*"]
 exclude = ["*:*"]
 
+[models.glm]
+harness = "opencode"
+description = "Strong coder. Codes well but lacks writing taste. Value 7, intelligence 7, taste 3."
+default_effort = "high"
+match = ["glm-5*"]
+
 [models.gptmini]
-description = "Fast and cheap. Good for bulk exploration and simple tasks."
+description = "Fast and cheap. Good for bulk exploration and simple tasks. Value 9, intelligence 5, taste 3."
 default_effort = "high"
 provider = "openai"
 match = ["gpt-5*-mini"]
@@ -68,18 +68,18 @@ exclude = ["*-nano"]
 
 [models.gpt55]
 harness = "codex"
-description = "Strongest executor. Executes instructions faithfully; doesn't interpret or read between the lines though."
+description = "Strongest executor. Executes instructions faithfully; doesn't interpret or read between the lines though. Value 6, intelligence 8, taste 5."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
 default_effort = "low"
 model = "gpt-5.5"
 
 [models.gpt54]
-description = "Good all-around model. Especially good at being a thorough reviewer and finding subtle issues."
+description = "Good all-around model. Especially good at being a thorough reviewer and finding subtle issues. Value 7, intelligence 7, taste 4."
 default_effort = "high"
 model = "gpt-5.4"
 
 [models.gpt]
-description = "Strong coding model family. Prefer to use as extremely strong leaf models that do not orchestrate."
+description = "Strong coding model family. Prefer as leaf models that do not orchestrate."
 default_effort = "high"
 match = ["gpt-5*"]
 exclude = [
