@@ -9,8 +9,8 @@ model-invocable: true
 
 Load `/qi-layer` when writing or editing AGENTS.md or .context/ files — it
 owns the craft (four principles, contents guidelines, what doesn't belong).
-Load `/information-hierarchy` for disclosure tiers and structure.
-Load `/llm-writing` if it isn't already loaded.
+Load `/information-hierarchy` if not already loaded for disclosure tiers.
+Load `/llm-writing` if not already loaded.
 
 ## The Five Layers
 
@@ -57,41 +57,17 @@ cross-project default; the local KB guide wins for that KB. See
 
 ### Wiki Page Conventions
 
-**One concept per document.** Split when a doc covers two unrelated topics.
-Merge when two docs explain the same concept from different angles. Name
-files by what they describe (`token-validation.md`), not when
-(`auth-redesign-notes.md`).
-
-**Hierarchical organization.** `index.md` is the entry point — a catalog
-with links and one-line summaries. Directories emerge organically as a
-domain accumulates enough distinct concepts.
-
-**Vocabulary pages.** Load `/shared-dao` for vocabulary methodology. Follow
-the KB's established filename (`vocabulary.md` or `vocab.md`) and index
-structure; do not rename pages just to match a generic convention. Vocabulary
-pages sit in a hierarchy matching the domain: root vocabulary page, domain
-vocabulary pages, and subdomain vocabulary pages. Each term entry includes the
-canonical name, definition, aliases when useful, and links to the owning concept
-or decision.
-
-**Linking.** Relative paths. Cross-reference instead of re-explaining —
-each doc stays focused with one source of truth per concept. When a fact
-results from a decision, link to the decision record.
-
-**Readability.** Self-contained (enough inline context to read standalone),
-scannable (headers, bullets, tables), concrete (file paths, function names
-over vague references).
-
-**Style.** Wiki pages teach how things work — mechanism, flows, edge cases.
-Capture what code can't easily tell you. Use mermaid for anything spatial.
-Tables for comparisons. Reference source locations rather than pasting code.
+Follow `/information-hierarchy`. One concept per document; name files by
+what they describe (`token-validation.md`), not when (`auth-redesign-notes.md`).
+Cross-reference instead of re-explaining. Load `/shared-dao` for vocabulary
+methodology. Use mermaid for anything spatial; capture what code can't
+easily tell you.
 
 ## Operations
 
 **Ingest** — new information enters the KB. Read the source, extract key
-knowledge, write or update wiki pages, and update indexes/cross-links touched by
-the change. Update the KB log only for structural reorganizations or major
-additions when the local KB guide asks for it.
+knowledge, write or update wiki pages, and update indexes/cross-links touched
+by the change.
 
 **Maintain** — keep the wiki current. When content is superseded, delete it
 or archive it. Live content never references archived content.

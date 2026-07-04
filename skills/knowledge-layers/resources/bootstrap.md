@@ -31,24 +31,6 @@ the old decision record still explains why it was built that way.
 **Sources** — raw material: articles, research, transcripts, data. Immutable.
 Agents read from sources but never modify them.
 
-**Log** — what changed in the wiki and why. Append-only audit trail. Each
-entry records what was ingested or updated, what pages were touched, and the
-reasoning.
-
-## Operations
-
-**Ingest** — new information enters the KB. Read the source, extract key
-knowledge, write or update wiki pages, update index, log the change. A
-single source may touch many pages.
-
-**Maintain** — keep the wiki current. When content is superseded, delete it
-or archive it. Live content never references archived content. When new
-information contradicts existing pages, resolve the contradiction.
-
-**Lint** — health-check the wiki. Look for contradictions between pages,
-stale claims, orphan pages with no inbound links, important concepts
-mentioned but lacking their own page, missing cross-references.
-
 ## Starter AGENTS.md
 
 ```markdown
