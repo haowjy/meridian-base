@@ -12,8 +12,6 @@ model-policies:
   - match: {alias: composer}
   - match: {alias: gpt-5.4-mini}
     override: {effort: high}
-  - match: {alias: gpt-5.3-codex-spark}
-    override: {effort: high}
   - match: {alias: sonnet}
     override: {effort: high}
 skills:
