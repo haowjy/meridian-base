@@ -14,8 +14,6 @@ model-policies:
     override: {effort: high}
   - match: {alias: gpt-5.3-codex-spark}
     override: {effort: high}
-  - match: {alias: glm}
-    override: {effort: high}
   - match: {alias: sonnet}
     override: {effort: high}
 skills:
