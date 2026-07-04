@@ -1,7 +1,7 @@
 ---
 name: qi-layer
 type: reference
-description: Use when exploring or changing the codebase: read AGENTS.md first, use .context/CONTEXT.md for detail, keep intent docs succinct.
+description: "Use when exploring or changing the codebase: read AGENTS.md first, use .context/CONTEXT.md for detail, keep intent docs succinct."
 ---
 
 # qi-layer

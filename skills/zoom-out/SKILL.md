@@ -1,7 +1,7 @@
 ---
 name: zoom-out
 type: mode-shift
-description: Use when orienting in an unfamiliar area: fans out parallel explorers across code, knowledge, and history, then synthesizes one orientation map.
+description: "Use when orienting in an unfamiliar area: fans out parallel explorers across code, knowledge, and history, then synthesizes one orientation map."
 user-invocable: true
 model-invocable: true
 ---

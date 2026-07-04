@@ -1,7 +1,7 @@
 ---
 name: session-mining
 type: reference
-description: Use when recovering decisions or context from conversation history: session log navigation, transcript delegation.
+description: "Use when recovering decisions or context from conversation history: session log navigation, transcript delegation."
 model-invocable: true
 ---
 

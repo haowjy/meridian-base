@@ -1,7 +1,7 @@
 ---
 name: knowledge-layers
 type: reference
-description: Use when deciding where knowledge goes or reading/writing durable docs: AGENTS.md, .context/, KB, docs/, and work directories.
+description: "Use when deciding where knowledge goes or reading/writing durable docs: AGENTS.md, .context/, KB, docs/, and work directories."
 model-invocable: true
 ---
 

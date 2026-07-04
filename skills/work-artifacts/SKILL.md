@@ -1,7 +1,7 @@
 ---
 name: work-artifacts
 type: principle
-description: Anchor work in a work item: artifacts on disk, not in context.
+description: "Anchor work in a work item: artifacts on disk, not in context."
 model-invocable: true
 ---
 

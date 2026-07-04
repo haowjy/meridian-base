@@ -1,7 +1,7 @@
 ---
 name: shared-dao
 type: principle
-description: Use when establishing shared vocabulary: resolve terminology early, one name per concept, vocab files as record.
+description: "Use when establishing shared vocabulary: resolve terminology early, one name per concept, vocab files as record."
 model-invocable: true
 ---
 
