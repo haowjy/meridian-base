@@ -9,6 +9,7 @@ model-invocable: true
 
 Load `/qi-layer` when writing or editing AGENTS.md or .context/ files — it
 owns the craft (four principles, contents guidelines, what doesn't belong).
+Load `/information-hierarchy` for disclosure tiers and structure.
 Load `/llm-writing` if it isn't already loaded.
 
 ## The Five Layers
