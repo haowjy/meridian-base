@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.39] - 2026-07-04
+
 ### Changed
 - Remove em dashes across all skills and agents.
 
