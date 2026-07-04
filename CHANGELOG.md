@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.7.38] - 2026-07-04
+
 ### Changed
 - `@kb-lead`: merge redundant canonical/write-inline blocks, add information-hierarchy, add composer/gpt-5.4-mini/deepseekflash to model-policies, trim capture loop. Enforce delete-or-archive; live content never references archived content.
 - `@kb-maintainer`: add information-hierarchy, trim body from ~100 to ~40 lines. Remove gpt-5.3-codex-spark and glm from model-policies.
