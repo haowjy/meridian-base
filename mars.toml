@@ -57,7 +57,8 @@ exclude = ["*:*"]
 harness = "opencode"
 description = "Strong coder. Codes well but lacks writing taste. Value 7, intelligence 7, taste 3."
 default_effort = "high"
-match = ["glm-5*"]
+model = "opencode-go/glm-5.2"
+provider = "opencode-go"
 
 [models.gptmini]
 description = "Fast and cheap. Good for bulk exploration and simple tasks. Value 9, intelligence 5, taste 3."
@@ -72,11 +73,6 @@ description = "Strongest executor. Executes instructions faithfully; doesn't int
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
 default_effort = "low"
 model = "gpt-5.5"
-
-[models.gpt54]
-description = "Good all-around model. Especially good at being a thorough reviewer and finding subtle issues. Value 7, intelligence 7, taste 4."
-default_effort = "high"
-model = "gpt-5.4"
 
 [models.gpt]
 description = "Strong coding model family. Prefer as leaf models that do not orchestrate."

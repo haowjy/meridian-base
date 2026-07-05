@@ -9,8 +9,6 @@ model-policies:
     override: {effort: high}
   - match: {alias: opus46}
     override: {effort: high}
-  - match: {alias: gpt54}
-    override: {effort: high}
   - match: {alias: glm}
     override: {effort: high}
   - match: {alias: deepseek}
