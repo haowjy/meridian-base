@@ -1,0 +1,8 @@
+name = "deny-interactive-prompts"
+event = "tool.pre"
+visibility = "exported"
+targets = [".codex"]
+
+[action]
+kind = "script"
+path = "run.sh"

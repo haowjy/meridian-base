@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- Codex hook that denies interactive-prone auth commands unless they include a noninteractive fail-fast guard.
+
 ## [0.7.40] - 2026-07-05
 
 ### Changed
