@@ -34,13 +34,21 @@ Write goals with the parts that change behavior:
    observation proves the outcome?
 8. **Anti-goals.** What would be a bad way to achieve the metric or an invalid
    shortcut?
-9. **Stop / ask conditions.** When should the agent stop, ask, defer, or declare
+9. **Redesign protocol.** What core invariant is frozen, which mechanisms are
+   negotiable, and what numeric trigger makes repeated failure a design verdict?
+10. **Stop / ask conditions.** When should the agent stop, ask, defer, or declare
    the goal blocked?
-10. **Report shape.** What should come back: changes, findings, decision,
+11. **Report shape.** What should come back: changes, findings, decision,
    validation evidence, open risks, or next step?
 
 Do not fill every slot with boilerplate. Name only the information that would
 change what the agent does.
+
+Name the frozen core separately from the negotiable mechanisms. If a mechanism
+can change while preserving the outcome, say so up front. Give the agent a
+numeric redesign trigger, e.g. "N failed rounds on one mechanism means
+redesign through the divergence protocol, not another patch." Require a brief
+DIVERGE note or equivalent audit trail so pivots are protocol, not crisis.
 
 ## Optimization Goals
 
@@ -142,6 +150,9 @@ Evidence of success:
 
 Stop / ask if:
 - <ambiguity, risk, budget, blocker, or cheating concern>
+
+Redesign trigger:
+- <frozen core, negotiable mechanisms, N failed rounds, DIVERGE/audit note>
 
 Report back with:
 - <summary shape and evidence>
