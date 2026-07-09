@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-07-09
+
 ### Added
 - `mars.toml`: pinned `sonnet46` and `sonnet5` model aliases alongside the catch-all.
 - `/work-artifacts`: `DIVERGENCE/` convention (orchestrator logs plan shifts; reviewers and knowledge capture consume) and task_dir check/rebind mechanics.
