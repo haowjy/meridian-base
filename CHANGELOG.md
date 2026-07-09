@@ -4,6 +4,18 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `mars.toml`: pinned `sonnet46` and `sonnet5` model aliases alongside the catch-all.
+- `/work-artifacts`: `DIVERGENCE/` convention (orchestrator logs plan shifts; reviewers and knowledge capture consume) and task_dir check/rebind mechanics.
+
+### Changed
+- `kb-lead`: source-generic orient step (caller-passed sources, work directory logs, conversations behind them), mid-work invocation (capture what settled, leave what is moving), verification deferred to `/md-validation`, and Current Truth Over History named as its core discipline.
+- `/knowledge-layers`: Current Truth Over History promoted to a layer-wide section — deletion needs no replacement, git history is the archive (commit untracked files before deleting).
+- `kb-maintainer`: prunes structural dead weight (empty stubs, orphaned pages, empty indexes); content staleness stays flagged for the caller.
+- `/grill-with-docs` is model-invocable so agents instructed to use it can self-load it.
+- `/information-hierarchy`: diagram-first guidance defers validation mechanics to `/md-validation`.
+- Subagent profile retunes (explorer, session-miner, subagent).
+
 ## [0.7.41] - 2026-07-06
 
 ### Added

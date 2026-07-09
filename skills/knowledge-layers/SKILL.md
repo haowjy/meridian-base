@@ -34,19 +34,29 @@ When in doubt, colocate. Knowledge that lives far from what it describes
 rots faster: changes to the code don't trigger awareness that a distant
 doc needs updating.
 
-## KB Conventions
+## Current Truth Over History
 
-### Current Truth Over History
+Every layer holds the best current understanding. When content is
+superseded, delete it or (for KB pages) move it to `archive/`
+(`.kgignore`'d, excluded from the knowledge graph). Live content never
+references archived content. Pages read as current truth, never narrate
+their own evolution.
 
-The living KB holds the best current understanding. When content is
-superseded, delete it or move it to `archive/` (`.kgignore`'d, excluded
-from the knowledge graph). Use judgment. Live content never references
-archived content. Pages read as current truth, never narrate their own
-evolution.
+**Deletion needs no replacement.** A page whose subject is gone, or that
+describes behavior the system no longer has, gets deleted on sight — even
+with nothing new to write in its place. Stale knowledge is worse than a
+gap: agents load it and reason from it.
+
+**Git history is the archive.** Commit untracked files before deleting them
+so the removal lands in history, and say what was removed and why in the
+commit message. Deletion is cheap because nothing tracked is ever truly
+lost.
 
 Decision records are the exception: preserve superseded decisions in place
 when they explain why the system changed. Mark the old decision as
 superseded and link to the replacement.
+
+## KB Conventions
 
 ### Structure
 
@@ -69,8 +79,7 @@ easily tell you.
 knowledge, write or update wiki pages, and update indexes/cross-links touched
 by the change.
 
-**Maintain**: keep the wiki current. When content is superseded, delete it
-or archive it. Live content never references archived content.
+**Maintain**: keep the wiki current per Current Truth Over History above.
 
 **Lint**: health-check the wiki. Look for contradictions, stale claims,
 orphan pages, missing cross-references. Use `/md-validation` for link

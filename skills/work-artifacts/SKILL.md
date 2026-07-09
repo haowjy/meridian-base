@@ -18,6 +18,10 @@ Spawns get `$MERIDIAN_ACTIVE_WORK_DIR` automatically. Use `meridian work
 current` if the env var is stale or unset (env vars don't update
 mid-session).
 
+The work item also carries `task_dir` — the checkout where source edits,
+builds, and tests run, distinct from the work directory. Rebind with
+`meridian work task-dir <path>`.
+
 ## Starting Work
 
 Not every spawn needs a work item: small direct tasks can run without one.
@@ -59,6 +63,10 @@ Design decisions go in design docs. Implementation decisions go in commit
 messages or inline comments. Structural decisions go in the work directory.
 Record rejected alternatives: they prevent re-proposing what was already
 considered.
+
+**`DIVERGENCE/`**: when the design or plan shifts during execution, the
+orchestrator logs the shift in this folder. Reviewers check alignment
+against it; knowledge capture mines it after the phase settles.
 
 See [`resources/lifecycle.md`](resources/lifecycle.md) for detailed lifecycle
 management: dashboard commands, status transitions, completion rules,

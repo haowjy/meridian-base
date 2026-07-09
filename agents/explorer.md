@@ -3,19 +3,19 @@ name: explorer
 description: Required delegate for multi-file codebase exploration; spawn @explorer instead of reading broadly yourself.
 mode: subagent
 model: deepseekflash
-effort: high
+effort: low
 model-policies:
   - match: {alias: deepseekflash}
-    override: {effort: high}
+    override: {effort: low}
   - match: {alias: deepseek}
-    override: {effort: high}
+    override: {effort: low}
   - match: {alias: composer}
   - match: {alias: gpt-5.4-mini}
-    override: {effort: high}
+    override: {effort: low}
   - match: {alias: gpt-5.3-codex-spark}
-    override: {effort: high}
+    override: {effort: low}
   - match: {alias: sonnet}
-    override: {effort: high}
+    override: {effort: low}
 skills: []
 tools:
   'bash(meridian qi *)': allow

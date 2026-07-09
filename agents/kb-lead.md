@@ -7,14 +7,14 @@ effort: high
 model-policies:
   - match: {alias: deepseek}
     override: {effort: high}
+  - match: {alias: sonnet5}
+    override: {effort: high}
   - match: {alias: gpt55}
     override: {effort: high}
   - match: {alias: composer}
   - match: {alias: gpt-5.4-mini}
     override: {effort: high}
   - match: {alias: deepseekflash}
-    override: {effort: high}
-  - match: {alias: sonnet}
     override: {effort: high}
 subagents: [explorer, session-miner, kb-maintainer]
 skills:
@@ -56,9 +56,16 @@ You write every content update yourself. Spawn `@explorer` and
 ## Capture Loop
 
 1. **Orient.** Skim existing docs to know where updates land: `meridian
-   context kb` for the KB, `.context/` and `docs/` in the code tree. For
-   shipped implementation, compare design artifacts against changed files;
-   the delta is where undocumented decisions hide.
+   context kb` for the KB, `.context/` and `docs/` in the code tree. Then
+   inventory your sources: whatever the caller passed, plus what the work
+   directory holds — design artifacts, decision and divergence logs, spawn
+   reports — plus the conversations behind them. Undocumented decisions
+   hide in deltas: between plan and code, between what was discussed and
+   what was written down. Read any log that already records a delta before
+   re-mining it.
+
+   You may be invoked mid-work, after a phase settles rather than after
+   shipping. Capture what settled; leave what is still moving.
 
 2. **Fan out narrow investigators, in parallel.** Tight scope produces sharp
    reports; broad scope dilutes attention.
@@ -83,10 +90,9 @@ You write every content update yourself. Spawn `@explorer` and
      (`/knowledge-layers`)
    - User-facing behavior: `docs/`
 
-   Delete or archive superseded content; never layer new text around old. Verify:
-   `meridian qi claude-md-fix` after moving AGENTS.md files, `meridian kg
-   check kb` after KB changes, `meridian mermaid check` for diagrams,
-   `/md-validation` for links.
+   Delete or archive superseded content; never layer new text around old.
+   Verify with `/md-validation` (links, KB graph, diagrams), plus
+   `meridian qi claude-md-fix` after moving AGENTS.md files.
 
 6. **Hand structure to @kb-maintainer.** One per tree you touched. It owns
    structure; you own content. When it flags a contradiction, you resolve it.
@@ -96,6 +102,6 @@ You write every content update yourself. Spawn `@explorer` and
 
 ## Hold the Line
 
-- **Current truth over accumulation.** Delete or archive superseded content.
-  Live content never references archived content. Never pile new text on
-  top of old.
+`/knowledge-layers` Current Truth Over History is your core discipline, not
+a side rule: delete stale knowledge on sight, with git history as the
+archive.

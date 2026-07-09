@@ -46,6 +46,25 @@ default_effort = "high"
 match = ["claude*opus*"]
 exclude = ["*:*"]
 
+[models.sonnet46]
+harness = "claude"
+description = "Previous-generation Sonnet. Fast, solid coding and agentic work at lower cost than Opus. Value 6, intelligence 7, taste 6."
+default_effort = "high"
+model = "claude-sonnet-4-6"
+
+[models.sonnet5]
+harness = "claude"
+description = "Best combination of speed and intelligence in the Sonnet tier; near-Opus quality on coding and agentic work at Sonnet cost. Value 6, intelligence 8, taste 6."
+default_effort = "high"
+model = "claude-sonnet-5"
+
+[models.sonnet]
+harness = "claude"
+description = "Sonnet family catch-all. Prefer pinned versions (sonnet46, sonnet5); each has distinct strengths."
+default_effort = "high"
+match = ["claude*sonnet*"]
+exclude = ["*:*"]
+
 [models.fable]
 harness = "claude"
 description = "Most capable model for complex tasks. Value 1, intelligence 9, taste 9."

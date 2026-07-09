@@ -3,17 +3,17 @@ name: kb-maintainer
 description: Structural health of a documentation tree. Splits oversized docs, groups scattered ones, fixes cross-references, flags content issues.
 mode: subagent
 model: deepseekflash
-effort: high
+effort: medium
 model-policies:
   - match: {alias: deepseekflash}
-    override: {effort: high}
+    override: {effort: medium}
   - match: {alias: deepseek}
-    override: {effort: high}
+    override: {effort: medium}
   - match: {alias: composer}
   - match: {alias: gpt-5.4-mini}
-    override: {effort: high}
+    override: {effort: medium}
   - match: {alias: sonnet}
-    override: {effort: high}
+    override: {effort: medium}
 skills:
   load: [shared-dao, shared-workspace, llm-writing, information-hierarchy, knowledge-layers, qi-layer]
   available: [md-validation]
@@ -60,6 +60,9 @@ for disclosure tiers. If no target is specified, fall back to `meridian context 
 - **Merge thin docs.** Two pages explaining fragments of the same concept
   become one.
 - **Improve naming.** Rename when names drift from content.
+- **Prune structural dead weight.** Empty stubs, pages orphaned by a move or
+  merge, indexes listing nothing: delete them. Content that merely looks
+  stale is not yours to delete; flag it for the caller.
 
 ## Cross-Reference Integrity
 

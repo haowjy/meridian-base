@@ -31,10 +31,15 @@ section, a linked page, a footnote. Sources belong at the end.
 Prose is the default; break from it when another form genuinely carries the
 idea better. An example grounds an abstract claim faster than more
 explanation. A table holds enumerable facts that prose would bury. A chart
-shows a trend that a sentence can only assert. A diagram earns its place when
-the *relationship* is the hard part: a handful of nodes, set after the prose
-it illustrates, validated (`meridian mermaid check`, see `/md-validation`). A
-mockup shows a layout the reader would otherwise have to imagine.
+shows a trend that a sentence can only assert. A mockup shows a layout the
+reader would otherwise have to imagine.
+
+**Diagram-first for pipelines and relationships.** When the content is a
+pipeline, a dependency graph, a state machine, or any structure where the
+*relationship between parts* is the hard idea, put the diagram early — a
+one-sentence takeaway, then the diagram, then detailed prose. The diagram
+leads, the prose still explains; prose alone buries the shape. Keep
+diagrams to a handful of nodes and validate them (see `/md-validation`).
 
 Ask what the beat is trying to do, then give it the form that does that: an
 explanation gets a paragraph, a comparison gets a table. Each form teaches
