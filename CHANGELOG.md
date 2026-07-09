@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.8.1] - 2026-07-09
+
 ### Added
 - Pinned `sol`, `terra`, and `luna` aliases for GPT-5.6.
 
