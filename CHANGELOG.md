@@ -4,6 +4,18 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- Pinned `sol`, `terra`, and `luna` aliases for GPT-5.6.
+
+### Changed
+- Removed the obsolete `sonnet46` alias.
+- The pinned GPT-5.6 aliases and temporary `gpt55` redirect share the same outcome-first prompting guidance.
+- `gpt55` temporarily redirects to `gpt-5.6-sol` while remaining references migrate to `sol`.
+- `explorer` now defaults to `luna`; its existing fallback set remains available while Luna quality is evaluated.
+- `subagent` now defaults to `sol` at `xhigh`, adds `terra` and `luna` at `xhigh` as its first fallbacks, and removes GPT Mini.
+- KB Lead replaces its GPT-5.5 fallback with `sol` at `xhigh`; Explorer drops its GPT-5.3 Codex Spark fallback while retaining GPT-5.4 Mini.
+- KB Maintainer and Session Miner now default to `terra` at `medium` and remove their GPT-5.4 Mini fallbacks.
+
 ## [0.8.0] - 2026-07-09
 
 ### Added

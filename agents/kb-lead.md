@@ -9,8 +9,8 @@ model-policies:
     override: {effort: high}
   - match: {alias: sonnet5}
     override: {effort: high}
-  - match: {alias: gpt55}
-    override: {effort: high}
+  - match: {alias: sol}
+    override: {effort: xhigh}
   - match: {alias: composer}
   - match: {alias: gpt-5.4-mini}
     override: {effort: high}

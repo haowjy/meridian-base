@@ -2,10 +2,14 @@
 name: subagent
 description: General-purpose subagent
 mode: subagent
-model: gpt55
+model: sol
 effort: xhigh
 model-policies:
-  - match: {alias: gpt55}
+  - match: {alias: sol}
+    override: {effort: xhigh}
+  - match: {alias: terra}
+    override: {effort: xhigh}
+  - match: {alias: luna}
     override: {effort: xhigh}
   - match: {alias: sonnet}
     override: {effort: high}
@@ -16,8 +20,6 @@ model-policies:
   - match: {alias: composer}
     override: {}
   - match: {alias: deepseekflash}
-    override: {effort: high}
-  - match: {alias: gptmini}
     override: {effort: high}
 tools:
   'bash(meridian spawn *)': allow

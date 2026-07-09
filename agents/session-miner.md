@@ -2,16 +2,16 @@
 name: session-miner
 description: Mine conversation history for decisions, rejected alternatives, and constraints.
 mode: subagent
-model: deepseekflash
+model: terra
 effort: medium
 model-policies:
+  - match: {alias: terra}
+    override: {effort: medium}
   - match: {alias: deepseekflash}
     override: {effort: medium}
   - match: {alias: deepseek}
     override: {effort: medium}
   - match: {alias: composer}
-  - match: {alias: gpt-5.4-mini}
-    override: {effort: medium}
   - match: {alias: sonnet}
     override: {effort: medium}
 skills:

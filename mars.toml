@@ -46,12 +46,6 @@ default_effort = "high"
 match = ["claude*opus*"]
 exclude = ["*:*"]
 
-[models.sonnet46]
-harness = "claude"
-description = "Previous-generation Sonnet. Fast, solid coding and agentic work at lower cost than Opus. Value 6, intelligence 7, taste 6."
-default_effort = "high"
-model = "claude-sonnet-4-6"
-
 [models.sonnet5]
 harness = "claude"
 description = "Best combination of speed and intelligence in the Sonnet tier; near-Opus quality on coding and agentic work at Sonnet cost. Value 6, intelligence 8, taste 6."
@@ -60,7 +54,7 @@ model = "claude-sonnet-5"
 
 [models.sonnet]
 harness = "claude"
-description = "Sonnet family catch-all. Prefer pinned versions (sonnet46, sonnet5); each has distinct strengths."
+description = "Sonnet family catch-all. Prefer the pinned sonnet5 alias."
 default_effort = "high"
 match = ["claude*sonnet*"]
 exclude = ["*:*"]
@@ -86,12 +80,30 @@ provider = "openai"
 match = ["gpt-5*-mini"]
 exclude = ["*-nano"]
 
+[models.sol]
+harness = "codex"
+description = "Strongest raw coder. Follows instructions, catches edge cases, and handles difficult technical work, but can miss unstated intent. Value 7, intelligence 9, taste 5."
+prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
+model = "gpt-5.6-sol"
+
+[models.terra]
+harness = "codex"
+description = "Best daily-driver coding value. Strong on bounded, verifiable work, but less reliable when ambiguity or taste matters. Value 9, intelligence 8, taste 4."
+prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
+model = "gpt-5.6-terra"
+
+[models.luna]
+harness = "codex"
+description = "Cheapest capable coder. Good for bulk and background work, but longer trajectories and weaker judgment make it a poor lead. Value 10, intelligence 8, taste 3."
+prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
+model = "gpt-5.6-luna"
+
 [models.gpt55]
 harness = "codex"
-description = "Strongest executor. Executes instructions faithfully; doesn't interpret or read between the lines though. Value 6, intelligence 8, taste 5."
+description = "Temporary compatibility alias for Sol. Use sol in new model policies."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
 default_effort = "low"
-model = "gpt-5.5"
+model = "gpt-5.6-sol"
 
 [models.gpt]
 description = "Strong coding model family. Prefer as leaf models that do not orchestrate."

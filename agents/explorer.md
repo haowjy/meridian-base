@@ -2,17 +2,17 @@
 name: explorer
 description: Required delegate for multi-file codebase exploration; spawn @explorer instead of reading broadly yourself.
 mode: subagent
-model: deepseekflash
+model: luna
 effort: low
 model-policies:
+  - match: {alias: luna}
+    override: {effort: low}
   - match: {alias: deepseekflash}
     override: {effort: low}
   - match: {alias: deepseek}
     override: {effort: low}
   - match: {alias: composer}
   - match: {alias: gpt-5.4-mini}
-    override: {effort: low}
-  - match: {alias: gpt-5.3-codex-spark}
     override: {effort: low}
   - match: {alias: sonnet}
     override: {effort: low}
