@@ -141,6 +141,74 @@ stage.parentElement.addEventListener('pointermove', e => {
 window.addEventListener('pointerup', e => { pts.delete(e.pointerId); pinchDist = 0; });
 ```
 
+### Entity-Relationship Diagrams
+
+Use Mermaid's `erDiagram` type for database schema visualization in design docs.
+Entities show typed attributes with PK/FK markers; relationships use cardinality
+notation.
+
+```mermaid
+erDiagram
+    projects ||--o{ sessions : ""
+    sessions ||--o{ threads : ""
+    threads ||--o{ spawns : ""
+    spawns ||--o{ events : ""
+
+    projects {
+        text id PK
+        text name
+        text root_path
+        int created_at
+    }
+    sessions {
+        text id PK
+        text project_id FK
+        text status
+        int started_at
+        int ended_at
+    }
+    threads {
+        text id PK
+        text session_id FK
+        int depth
+        text model
+    }
+    spawns {
+        text id PK
+        text thread_id FK
+        text harness_type
+        text status
+    }
+    events {
+        text id PK
+        text spawn_id FK
+        text type
+        blob payload
+        int ts
+    }
+```
+
+**Cardinality notation:**
+
+| Syntax | Meaning |
+|--------|---------|
+| `\|\|--o{` | one to zero-or-many |
+| `\|\|--\|\|` | one to one |
+| `}o--o{` | zero-or-many to zero-or-many |
+| `\|\|--\|{` | one to one-or-many |
+
+**Tips:**
+- Empty string `""` as the relationship label hides the label text
+- Attribute lines: `type name [PK|FK|UK]` — constraint keyword is optional
+- Keep entity count under ~12 per diagram; split into domain subgraphs for larger schemas
+- Works with the same theme toggle and re-render pattern as flowcharts
+
+For interactive schema exploration at scale (pan/zoom on individual columns,
+expand/collapse attribute lists), consider GoJS via CDN
+(`https://cdn.jsdelivr.net/npm/gojs@2/release/go.js`) which has a purpose-built
+ERD sample. Use Mermaid first; upgrade only when the diagram exceeds ~15 entities
+or needs column-level click interaction.
+
 ### Diagram Styling
 
 Default to renderer theme colors. Use stroke-only `classDef` for emphasis so nodes
