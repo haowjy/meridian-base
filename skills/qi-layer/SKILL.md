@@ -1,7 +1,7 @@
 ---
 name: qi-layer
 type: reference
-description: "Use when exploring or changing the codebase: read AGENTS.md first, use .context/CONTEXT.md for detail, keep intent docs succinct."
+description: "Use when writing or maintaining AGENTS.md, .context/CONTEXT.md, or CLAUDE.md mirrors: keep intent docs minimal and load-bearing."
 ---
 
 # qi-layer
@@ -9,8 +9,11 @@ description: "Use when exploring or changing the codebase: read AGENTS.md first,
 Load `/knowledge-layers` for where each layer lives and what it holds.
 Load `/llm-writing` if it isn't already loaded.
 
-This skill is about **how to write and maintain** the code-local pair:
-AGENTS.md and `.context/CONTEXT.md`.
+This skill is about **how to write and maintain** the directory-local pair:
+AGENTS.md and `.context/CONTEXT.md`. The pair governs any tree agents work
+in — code, the KB, docs, work directories. AGENTS.md loads into an agent's
+bounded context as standing instructions: write it like a prompt, minimal,
+every line load-bearing.
 
 ## The Four Principles
 
@@ -27,12 +30,12 @@ AGENTS.md and `.context/CONTEXT.md`.
 
 ## Writing AGENTS.md
 
-**Read AGENTS.md before opening code files.**
+Agents read AGENTS.md before opening anything else in the tree — write for
+that moment. Ask: **what must someone understand before working here?**
+That's what AGENTS.md captures.
 
-Ask: **what must someone understand before working here?** That's what
-AGENTS.md captures.
-
-Keep AGENTS.md **50–200 lines**. Include only what has substance:
+Keep AGENTS.md as short as the directory allows, rarely past 200 lines.
+Include only what has substance:
 
 - **Purpose**: what this area IS and what it ISN'T (1–3 sentences)
 - **Mental model**: how to think about this area, key abstractions
@@ -64,9 +67,10 @@ Apply the **every-session test**: root AGENTS.md loads on every session.
 If knowledge is only relevant when working in a specific domain, it belongs
 in that domain's AGENTS.md or .context/, not root.
 
-Apply the **think-vs-lookup test**: if removing a piece of text would cause
-an agent to make a *wrong decision*, it belongs. If it would just mean the
-agent has to *look it up*, it belongs in .context/ instead.
+Apply the **think-vs-lookup test**: text whose removal would cause a
+*wrong decision* belongs in AGENTS.md. Text an agent would merely have to
+*look up* belongs in .context/. Text that changes no behavior gets
+deleted — agents already know how to code and follow common conventions.
 
 Specific failure modes:
 
@@ -91,8 +95,28 @@ Specific failure modes:
 - Lateral links between `.context/` directories with contracts between them
 - LCA deduplication: if two siblings share context, put it in the parent
 
+## CLAUDE.md Mirrors
+
+Claude harnesses read CLAUDE.md, not AGENTS.md. Give every AGENTS.md a
+sibling CLAUDE.md whose first line is `@AGENTS.md` — normally the whole
+file. Run `meridian qi claude-md-fix <target-root>` on the containing tree
+after creating or moving AGENTS.md files: it creates missing mirrors, skips
+exact ones, and reports anything else as a conflict.
+
+Never write shared instructions into CLAUDE.md. Claude-only knowledge is
+rare; when it exists, put it below the `@AGENTS.md` import and expect
+`claude-md-fix` to keep flagging the file, so the divergence stays visible.
+
+Loading differs by level. At the root, each harness auto-loads its own
+file every session: Claude reads CLAUDE.md, others read AGENTS.md. In
+subdirectories, Claude auto-injects CLAUDE.md when it touches files there;
+other agents see nested AGENTS.md only by reading it on entry. Don't lean
+on Claude's auto-injection: a nested AGENTS.md carries the local additions
+an agent needs on entry, with everything else inherited from ancestors.
+
 ## Maintenance
 
 Keep knowledge layers current as you work. When your changes shift the
-mental model, contracts, or decisions: update AGENTS.md, .context/, and KB
-in the same pass, not as a deferred follow-up.
+mental model, contracts, or decisions: update each affected layer in the
+same pass, not as a deferred follow-up. One home per fact; other layers
+link to it (`/knowledge-layers`).

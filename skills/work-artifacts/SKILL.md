@@ -68,6 +68,11 @@ considered.
 orchestrator logs the shift in this folder. Reviewers check alignment
 against it; knowledge capture mines it after the phase settles.
 
+**`AGENTS.md`**: the work directory follows `/qi-layer` like any tree
+agents enter cold. Its AGENTS.md orients an arriving spawn: the goal, the
+artifact layout, what's settled versus still moving. Keep it current as
+the work shifts; add `.context/` only if depth accumulates.
+
 See [`resources/lifecycle.md`](resources/lifecycle.md) for detailed lifecycle
 management: dashboard commands, status transitions, completion rules,
 archival.

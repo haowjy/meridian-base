@@ -1,12 +1,15 @@
 # KB Bootstrap
 
-Starter layout for a new project KB.
+Starter layout for a new project KB. The KB tree follows `/qi-layer`:
+intent in `AGENTS.md`, governance depth in `.context/`.
 
 ## Directory Layout
 
 ```
 kb/
-  AGENTS.md          # governance: writing rules, content types, validation
+  AGENTS.md          # intent: what belongs here, key rules
+  .context/
+    CONTEXT.md       # governance depth: writing conventions, structure, validation
   index.md           # catalog of pages with one-line summaries
   vocab.md           # project-wide terminology
 ```
@@ -36,19 +39,26 @@ Agents read from sources but never modify them.
 ```markdown
 # KB Guide
 
-## What the KB Is
-
-Cross-cutting knowledge that spans components and outlives sessions.
-Decisions, domain concepts, architectural rationale, and patterns.
+Big-picture knowledge that spans components and outlives sessions:
+decisions, domain concepts, architectural rationale, patterns. Pages
+record the system's current settled intent — what it should be —
+independent of any checkout.
 
 Raw research dumps and conversation transcripts don't belong here;
-synthesize them first. Active task plans live in work directories, not the KB.
+synthesize them first. Active task plans live in work directories.
+Knowledge that depends on one subsystem stays colocated with it.
 
-## Current Truth Over History
+When content is superseded, delete it or move it to `archive/`. Pages
+read as current truth, never narrate their own evolution.
 
-The KB holds the best current understanding. When content is superseded,
-delete it or move it to `archive/`. Live content never references archived
-content. Pages read as current truth, never narrate their own evolution.
+- `index.md`: catalog. Update when you create or modify a page.
+- `.context/CONTEXT.md`: writing conventions, structure, validation.
+```
+
+## Starter .context/CONTEXT.md
+
+```markdown
+# KB Working Conventions
 
 ## Writing
 
@@ -63,7 +73,6 @@ content. Pages read as current truth, never narrate their own evolution.
 
 ## Structure
 
-- `index.md`: catalog. Update when you create or modify a page.
 - Directories emerge organically as topics accumulate related pages.
 
 ## Validation

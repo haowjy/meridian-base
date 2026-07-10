@@ -4,6 +4,13 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/qi-layer`: AGENTS.md framed as a prompt — minimal, every line load-bearing; think-vs-lookup test gains a delete branch; pair scope widened to any tree agents work in (code, KB, docs, work dirs); description retargeted to writing/maintaining intent docs; line floor dropped; nested AGENTS.md composes with ancestors. New CLAUDE.md Mirrors section owns `meridian qi claude-md-fix`: mirrors are `@AGENTS.md`, divergence is a deliberate visible conflict, root vs nested loading spelled out.
+- `/knowledge-layers`: placement sharpened — intent test precedes the `.context/` scope test, subsystem-dependent knowledge stays colocated even when conceptual, KB takes big-picture code-agnostic knowledge. Truth anchored per layer: colocated docs describe their checkout and ride its branch; KB records settled intent (what the system should be) merged or not; `docs/` describes shipped behavior. Current Truth scoped to durable layers; deletion is the content-truth owner's call. KB tree itself follows `/qi-layer`; bootstrap template split into intent AGENTS.md + `.context/CONTEXT.md`.
+- `/work-artifacts`: work directories carry an AGENTS.md per `/qi-layer` to orient arriving spawns (goal, artifact layout, settled vs moving); `.context/` only if depth accumulates.
+- `kb-lead`: human decisions are authoritative intent, not implementation — anchor per `/knowledge-layers`, flag unconverged code; caller-facing description (when to spawn, what to pass, what comes back); `composer` fallback replaced with `terra` at high.
+- `kb-maintainer`: caller-facing description (target, operations, result shape); duplicated `claude-md-fix` instruction removed — `/qi-layer`, loaded by both KB agents, owns the mirror workflow; no-target default (project KB) must be named in the report; `composer` fallback removed.
+
 ## [0.8.1] - 2026-07-09
 
 ### Added

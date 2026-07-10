@@ -24,19 +24,25 @@ Load `/llm-writing` if not already loaded.
 
 ## Placement Rules
 
-If knowledge is scoped to one directory → `.context/`.
 If it's intent/mental-model for a directory → `AGENTS.md`.
-If it spans directories or isn't anchored to code → KB.
+If it's directory-scoped depth an agent looks up → `.context/`.
+If it's big picture — cross-cutting decisions, domain concepts,
+higher-level system architecture → KB.
 If it's for end users → `docs/`.
 If it's a temporary work artifact → work directory.
 
-When in doubt, colocate. Knowledge that lives far from what it describes
-rots faster: changes to the code don't trigger awareness that a distant
-doc needs updating.
+When in doubt, colocate. Knowledge that depends on one subsystem belongs
+in that subsystem's AGENTS.md or .context/ even when it reads like a
+concept; the KB stays code-agnostic, holding what survives implementation
+change. Knowledge that lives far from what it describes rots faster:
+changes to the code don't trigger awareness that a distant doc needs
+updating.
 
 ## Current Truth Over History
 
-Every layer holds the best current understanding. When content is
+Every durable layer — AGENTS.md, `.context/`, KB, `docs/` — holds the best
+current understanding; work directories may keep intermediate reasoning
+while their work item is active. When durable content is
 superseded, delete it or (for KB pages) move it to `archive/`
 (`.kgignore`'d, excluded from the knowledge graph). Live content never
 references archived content. Pages read as current truth, never narrate
@@ -45,12 +51,22 @@ their own evolution.
 **Deletion needs no replacement.** A page whose subject is gone, or that
 describes behavior the system no longer has, gets deleted on sight — even
 with nothing new to write in its place. Stale knowledge is worse than a
-gap: agents load it and reason from it.
+gap: agents load it and reason from it. Deletion is the content-truth
+owner's call; structural roles flag instead.
 
 **Git history is the archive.** Commit untracked files before deleting them
 so the removal lands in history, and say what was removed and why in the
 commit message. Deletion is cheap because nothing tracked is ever truly
 lost.
+
+**Truth is anchored per layer.** AGENTS.md and `.context/` describe the
+checkout that contains them: update them in the same branch as the code
+change and let the merge carry both — with parallel PRs in flight, each
+branch documents itself. The KB is code-agnostic: it records the current
+settled intent — what the system *should be* — and a settled decision is KB
+truth the moment it's made, merged or not. Unsettled intent isn't KB
+material; it stays in the work directory. `docs/` describes shipped
+behavior.
 
 Decision records are the exception: preserve superseded decisions in place
 when they explain why the system changed. Mark the old decision as
@@ -60,10 +76,12 @@ superseded and link to the replacement.
 
 ### Structure
 
-Read the KB's own `AGENTS.md` before writing. Each KB defines its local
-structure, naming, validation commands, and governance. Treat this skill as the
-cross-project default; the local KB guide wins for that KB. See
-`resources/bootstrap.md` for a suggested starting layout.
+The KB is a directory tree like any other: it carries its own AGENTS.md
+and `.context/` pair, written per `/qi-layer` — intent in AGENTS.md,
+governance depth (writing conventions, structure, validation) in
+`.context/`. Read the KB's own `AGENTS.md` before writing. Treat this
+skill as the cross-project default; the local KB guide wins for that KB.
+See `resources/bootstrap.md` for a suggested starting layout.
 
 ### Wiki Page Conventions
 

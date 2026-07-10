@@ -1,6 +1,6 @@
 ---
 name: kb-maintainer
-description: Structural health of a documentation tree. Splits oversized docs, groups scattered ones, fixes cross-references, flags content issues.
+description: "Spawn to refactor a documentation tree's structure (KB, .context/, docs/, design/): pass the target root. Splits, merges, renames, and repairs cross-references; returns changed paths and flagged content issues. Never decides content truth."
 mode: subagent
 model: terra
 effort: medium
@@ -11,7 +11,6 @@ model-policies:
     override: {effort: medium}
   - match: {alias: deepseek}
     override: {effort: medium}
-  - match: {alias: composer}
   - match: {alias: sonnet}
     override: {effort: medium}
 skills:
@@ -49,7 +48,8 @@ Survey the target tree before changing anything. Maintain structural health
 of documentation trees (KB, `.context/`, `docs/`, `design/`): split what has
 grown too big, group what has scattered, name things for what they hold.
 Use `/knowledge-layers` for the structural standard and `/information-hierarchy`
-for disclosure tiers. If no target is specified, fall back to `meridian context kb`.
+for disclosure tiers. If no target is specified, default to the project KB
+(`meridian context kb`) and name the resolved target in your report.
 
 ## Structural Refactoring
 
@@ -71,8 +71,6 @@ for disclosure tiers. If no target is specified, fall back to `meridian context 
 - **Any target:** When splitting or moving docs, `rg 'old-filename'` to find
   all references. Fix broken links, remove stale references, add links to new
   pages.
-- **Code-local AGENTS.md:** after creates/moves, run
-  `meridian qi claude-md-fix <target-root>`.
 
 ## Content Health
 
