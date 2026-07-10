@@ -50,9 +50,9 @@ adds `.dark` to `<html>`.
 
 ## Serve it
 
-Serve the artifact so the team can browse it live. Use whichever is
-available: `meridian artifact serve .`, `tailscale serve`, or a local
-HTTP server (`python -m http.server`).
+`meridian artifact serve .`, `tailscale serve`, `python -m http.server`,
+etc. Pick a random or incremented high port — don't claim 443 or other
+well-known ports.
 
 ## Verify
 

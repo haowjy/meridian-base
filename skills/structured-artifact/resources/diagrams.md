@@ -96,7 +96,9 @@ loose-mode callback can reach it.
 
 ### Pan and Zoom
 
-Wrap the diagram in a transform layer for larger graphs.
+Default for any diagram with 6+ nodes. Wrap the Mermaid container in a
+transform layer with pointer-drag panning, scroll-wheel zoom, and a
+fullscreen toggle button. Without this, larger diagrams are unreadable.
 
 ```js
 let scale = 1, tx = 0, ty = 0, dragging = false, sx, sy;
@@ -119,7 +121,9 @@ window.addEventListener('pointermove', e => {
 window.addEventListener('pointerup', () => dragging = false);
 ```
 
-Add pinch-zoom for mobile:
+Add a controls bar (zoom +/−, reset, fullscreen) positioned absolute top-right
+of the container. Fullscreen toggles `position: fixed; inset: 0` on the
+container; Escape exits. Add pinch-zoom for mobile:
 
 ```js
 const pts = new Map();
