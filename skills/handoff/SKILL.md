@@ -1,7 +1,7 @@
 ---
 name: handoff
 type: mode-shift
-description: End this session and produce a launch command for the user's next interactive primary.
+description: Produce a transition brief and launch command for the user's next interactive primary.
 argument-hint: "What will the next session focus on?"
 user-invocable: true
 model-invocable: true
@@ -9,18 +9,15 @@ model-invocable: true
 
 # Handoff
 
-End this session. Write a transition brief, print a primary launch command,
-and stop. The user runs the command to start a new interactive session with
-a different agent lead.
-
-Use at phase boundaries: requirements approved, design approved, scope
-problem, implementation complete.
+Write a transition brief and print a primary launch command. The user
+runs the command to start a new interactive session with a different
+agent lead.
 
 If arguments were passed, treat them as the focus for the next session.
 
 ## Write the Transition Brief
 
-Start with `/intent-modeling`: separate what the human said from what
+Start with `/intent-modeling`: separate what the human has said from what
 they actually want to be true when this work is done. The modeled intent
 shapes everything in the brief.
 
@@ -76,5 +73,3 @@ meridian -a [agent] \
 
 Use `meridian`, not `meridian spawn` (primary launch, interactive). Include
 `--work` when active, `--task-dir` when in a worktree or sibling repo.
-
-Stop after printing the command.
