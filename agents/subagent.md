@@ -2,15 +2,15 @@
 name: subagent
 description: General-purpose subagent
 mode: subagent
-model: sol
-effort: xhigh
+model: sonnet
+effort: high
 model-policies:
   - match: {alias: sol}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: terra}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: luna}
-    override: {effort: xhigh}
+    override: {effort: high}
   - match: {alias: sonnet}
     override: {effort: high}
   - match: {alias: glm}

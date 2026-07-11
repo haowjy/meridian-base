@@ -10,10 +10,8 @@ model-policies:
   - match: {alias: sonnet5}
     override: {effort: high}
   - match: {alias: sol}
-    override: {effort: xhigh}
-  - match: {alias: terra}
     override: {effort: high}
-  - match: {alias: gpt-5.4-mini}
+  - match: {alias: terra}
     override: {effort: high}
   - match: {alias: deepseekflash}
     override: {effort: high}
