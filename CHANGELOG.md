@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.8.7] - 2026-07-14
+
 ### Added
 - `/qi-maintenance`: compact guardrail for durable source editors — keep colocated current-truth docs synchronized in the same branch, update only when a cold agent would otherwise be misled, and defer substantial writing craft to `/qi-layer`.
 
