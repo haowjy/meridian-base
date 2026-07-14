@@ -17,7 +17,7 @@ Load `/llm-writing` if not already loaded.
 | Layer | What it holds | When to use it |
 |---|---|---|
 | `AGENTS.md` | Intent and mental model for a directory | First thing agents read on entry; what to understand *before* working here |
-| `.context/CONTEXT.md` | Contracts, architecture, rationale | Reference depth, co-located with the code it describes |
+| `.context/` | Contracts, architecture, rationale (`CONTEXT.md`); deferred work (`TODO`, `FUTURE`) | Reference depth and tracked deferrals, co-located with the code they describe |
 | KB | Cross-cutting decisions, domain concepts, patterns | Spans directories; outlives sessions; no single directory owns it |
 | `docs/` | User-facing documentation | Different audience, different update cadence |
 | Work directory | Temporary design decisions and scratch | Not colocated with durable content; scoped to an active work item |
@@ -26,6 +26,10 @@ Load `/llm-writing` if not already loaded.
 
 If it's intent/mental-model for a directory → `AGENTS.md`.
 If it's directory-scoped depth an agent looks up → `.context/`.
+If it's deferred work scoped to this directory → `.context/TODO` (must-do)
+or `.context/FUTURE` (nice-to-have). Flat markdown lists — each entry names
+the affected path and concrete follow-up. Cross-cutting items or items needing
+external visibility get filed in the project's issue tracker instead.
 If it's big picture — cross-cutting decisions, domain concepts,
 higher-level system architecture → KB.
 If it's for end users → `docs/`.

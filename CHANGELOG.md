@@ -4,6 +4,14 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `/qi-maintenance`: compact guardrail for durable source editors — keep colocated current-truth docs synchronized in the same branch, update only when a cold agent would otherwise be misled, and defer substantial writing craft to `/qi-layer`.
+
+### Changed
+- `kb-lead`: every settled-phase capture now reconciles changed source areas against their nearest `AGENTS.md` and current-truth `.context/` docs, repairing omissions left by implementation before cross-cutting KB capture.
+- `/knowledge-layers`: directory-scoped must-do and nice-to-have deferrals route to colocated `.context/TODO` and `.context/FUTURE`; cross-cutting or externally visible work routes to the project issue tracker.
+- `/qi-layer`: ambient synchronization responsibility moved to `/qi-maintenance`; this skill remains the detailed writing and structure reference.
+
 ## [0.8.6] - 2026-07-11
 
 ## [0.8.5] - 2026-07-11

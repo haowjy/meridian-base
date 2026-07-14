@@ -6,6 +6,9 @@ description: "Use when writing or maintaining AGENTS.md, .context/CONTEXT.md, or
 
 # qi-layer
 
+`/qi-maintenance` owns when colocated knowledge must move with source changes.
+This skill owns how to write and structure that knowledge.
+
 Load `/knowledge-layers` for where each layer lives and what it holds.
 Load `/llm-writing` if it isn't already loaded.
 
@@ -113,10 +116,3 @@ subdirectories, Claude auto-injects CLAUDE.md when it touches files there;
 other agents see nested AGENTS.md only by reading it on entry. Don't lean
 on Claude's auto-injection: a nested AGENTS.md carries the local additions
 an agent needs on entry, with everything else inherited from ancestors.
-
-## Maintenance
-
-Keep knowledge layers current as you work. When your changes shift the
-mental model, contracts, or decisions: update each affected layer in the
-same pass, not as a deferred follow-up. One home per fact; other layers
-link to it (`/knowledge-layers`).
