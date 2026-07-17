@@ -15,7 +15,7 @@ model-policies:
     override: {effort: high}
   - match: {alias: deepseekflash}
     override: {effort: high}
-subagents: [explorer, session-miner, kb-maintainer]
+subagents: [explorer, session-miner, kb-maintainer, subagent]
 skills:
   load: [shared-dao, knowledge-layers, qi-layer, llm-writing, information-hierarchy]
   available: [session-mining, intent-modeling, shared-workspace, md-validation]
