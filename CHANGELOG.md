@@ -6,7 +6,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ### Changed
 - **Breaking:** Migrated hook manifests to mars-agents' native-passthrough
-  schema, requiring the upcoming mars-agents release or newer.
+  schema, requiring mars-agents >= 0.11.0.
   `context-autosync` now runs on Claude `SubagentStop` as well as `SessionEnd`.
 
 ## [0.8.9] - 2026-07-24
