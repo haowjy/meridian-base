@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.8.9] - 2026-07-24
+
 ### Added
 - `context-autosync` hook (`.claude`, session end): pushes stranded context-repo
   commits (work docs, KB) when a Claude session ends. Closes the gap where
