@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-07-24
+
 ### Changed
 - **Breaking:** Migrated hook manifests to mars-agents' native-passthrough
   schema, requiring mars-agents >= 0.11.0.
