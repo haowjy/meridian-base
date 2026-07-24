@@ -1,0 +1,8 @@
+name = "context-autosync"
+event = "session.end"
+visibility = "exported"
+targets = [".claude"]
+
+[action]
+kind = "script"
+path = "run.sh"

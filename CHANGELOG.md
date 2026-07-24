@@ -4,6 +4,15 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `context-autosync` hook (`.claude`, session end): pushes stranded context-repo
+  commits (work docs, KB) when a Claude session ends. Closes the gap where
+  commits made after the last meridian lifecycle event — e.g. kb-lead knowledge
+  capture as a session's final act — sat unpushed until the next spawn. No-op
+  unless the project configures `git-autosync` in meridian.toml; `meridian hooks
+  list` is the runtime authority. Requires mars-agents ≥ the session.end→
+  SessionEnd fix (mars-agents#129) to compile to a live event.
+
 ## [0.8.8] - 2026-07-17
 
 ## [0.8.7] - 2026-07-14
