@@ -1,7 +1,9 @@
 name = "deny-interactive-prompts"
-event = "tool.pre"
 visibility = "exported"
-targets = [".codex"]
+
+[targets.".codex"]
+events = ["PreToolUse"]
+matcher = "Bash"
 
 [action]
 kind = "script"

@@ -1,7 +1,8 @@
 name = "context-autosync"
-event = "session.end"
 visibility = "exported"
-targets = [".claude"]
+
+[targets.".claude"]
+events = ["SubagentStop", "SessionEnd"]
 
 [action]
 kind = "script"

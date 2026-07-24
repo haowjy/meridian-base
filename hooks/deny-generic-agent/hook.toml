@@ -1,7 +1,9 @@
 name = "deny-generic-agent"
-event = "tool.pre"
 visibility = "exported"
-targets = [".claude"]
+
+[targets.".claude"]
+events = ["PreToolUse"]
+matcher = "Agent"
 
 [action]
 kind = "script"
