@@ -4,6 +4,20 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- **Breaking:** Migrated hook manifests to the mars-agents fragment schema
+  (per-target native JSON fragments), requiring the upcoming mars-agents
+  fragment release (feature `feat/hook-fragments`). `hook.toml` now declares
+  only identity, visibility, order, and target routing; each target ships a
+  harness-native event-keyed JSON fragment (`claude.json` / `codex.json`),
+  authored verbatim as the harness documents, with `${MARS_HOOK_DIR}`
+  substituted at sync time. Removes the v0.11.0 `events` / `matcher` /
+  `[action]` table.
+- `context-autosync`: the `SessionEnd` hook now declares `"timeout": 30`. The
+  previous schema could not express a timeout, and Claude's 1.5s default
+  `SessionEnd` budget was plausibly killing this hook mid-run. Fragments
+  unlock per-event capabilities the flat `events` array flattened.
+
 ## [0.9.0] - 2026-07-24
 
 ### Changed

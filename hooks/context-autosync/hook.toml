@@ -1,9 +1,3 @@
-name = "context-autosync"
 visibility = "exported"
 
 [targets.".claude"]
-events = ["SubagentStop", "SessionEnd"]
-
-[action]
-kind = "script"
-path = "run.sh"
