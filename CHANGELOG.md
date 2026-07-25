@@ -6,8 +6,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ### Changed
 - **Breaking:** Migrated hook manifests to the mars-agents fragment schema
-  (per-target native JSON fragments), requiring the upcoming mars-agents
-  fragment release (feature `feat/hook-fragments`). `hook.toml` now declares
+  (per-target native JSON fragments), requiring mars-agents >= 0.12.0.
+  `hook.toml` now declares
   only identity, visibility, order, and target routing; each target ships a
   harness-native event-keyed JSON fragment (`claude.json` / `codex.json`),
   authored verbatim as the harness documents, with `${MARS_HOOK_DIR}`
