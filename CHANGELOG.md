@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-07-25
+
 ### Changed
 - **Breaking:** Migrated hook manifests to the mars-agents fragment schema
   (per-target native JSON fragments), requiring mars-agents >= 0.12.0.
