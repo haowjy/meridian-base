@@ -33,6 +33,12 @@ description = "Best at inferring human intent. Strong conversational model; pref
 default_effort = "high"
 model = "claude-opus-4-6"
 
+[models."opus46[1m]"]
+harness = "claude"
+description = "Opus 4.6 with 1M context window. Same taste and intent inference as opus46 with five times the context for manuscript-scale work. Value 3, intelligence 8, taste 9."
+default_effort = "high"
+model = "claude-opus-4-6[1m]"
+
 [models.opus48]
 harness = "claude"
 description = "Best at long-horizon orchestration and managing large numbers of subagents. Value 3, intelligence 8, taste 8."
