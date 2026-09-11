@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.10.7] - 2026-09-11
+
 ### Added
 - `grok46` model alias for Grok 4.6 via OpenCode/xAI.
 
