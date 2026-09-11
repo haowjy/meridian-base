@@ -85,11 +85,19 @@ description = "Strong at long-running coding and research over large inputs. Slo
 default_effort = "high"
 model = "kimi-k3"
 
+[models.grok46]
+harness = "opencode"
+description = "Grok 4.6 through OpenCode/xAI. Long-horizon coding and agent work."
+default_effort = "high"
+model = "grok-4.6"
+provider = "xai"
+
 [models.grok]
 harness = "opencode"
-description = "General-purpose reasoning and coding model available through OpenCode."
+description = "Grok 4 line through OpenCode/xAI. Prefer the pinned grok46 alias."
 default_effort = "high"
-model = "grok-4.5"
+model = "grok-4.6"
+provider = "xai"
 
 [models.gptmini]
 description = "Fast and cheap. Good for bulk exploration and simple tasks. Value 9, intelligence 5, taste 3."

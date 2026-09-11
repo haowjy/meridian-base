@@ -4,6 +4,12 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `grok46` model alias for Grok 4.6 via OpenCode/xAI.
+
+### Changed
+- `grok` now pins Grok 4.6 via OpenCode/xAI instead of Grok 4.5. Prefer `grok46`.
+
 ## [0.10.6] - 2026-09-07
 
 ### Added
