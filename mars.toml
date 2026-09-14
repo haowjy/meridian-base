@@ -138,9 +138,9 @@ default_effort = "high"
 model = "gpt-6-astra"
 
 [models.gpt]
-description = "Default GPT-6 model family."
+description = "Default GPT model family."
 default_effort = "high"
-match = ["gpt-6*"]
+match = ["gpt-*"]
 exclude = [
     "*codex*",
     "*-pro",
