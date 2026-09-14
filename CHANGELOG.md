@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.10.8] - 2026-09-14
+
 ### Changed
 - `gpt` now matches `gpt-*` so it auto-resolves to the newest GPT in the cache, not a pinned generation.
 
