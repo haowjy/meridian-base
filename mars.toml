@@ -1,6 +1,6 @@
 [package]
 name = "meridian-base"
-version = "0.10.8"
+version = "0.10.9"
 description = "Core coordination primitives for Meridian — agent profiles and skills for spawning, state tracking, and session context."
 
 [dependencies]
@@ -21,19 +21,33 @@ provider = "cursor"
 description = "Cheapest option for mechanical tasks. Fast, low cost, good enough for bulk reading and simple edits. Value 10, intelligence 5, taste 2."
 default_effort = "high"
 match = ["deepseek*flash*"]
-exclude = ["*/*", "*:*", "*vision*", "*exp*"]
+exclude = [
+    "*/*",
+    "*:*",
+    "*vision*",
+    "*exp*",
+]
 
 [models.deepseekflash]
 description = "Same as deepseek (Flash family). Prefer `deepseek`."
 default_effort = "high"
 match = ["deepseek*flash*"]
-exclude = ["*/*", "*:*", "*vision*", "*exp*"]
+exclude = [
+    "*/*",
+    "*:*",
+    "*vision*",
+    "*exp*",
+]
 
 [models.deepseekpro]
 description = "Cheap, good text coder for constrained tasks. Stronger reasoning than flash. Value 9, intelligence 6, taste 3."
 default_effort = "high"
 match = ["deepseek*pro*"]
-exclude = ["*/*", "*:*", "*flash*"]
+exclude = [
+    "*/*",
+    "*:*",
+    "*flash*",
+]
 
 [models.opus46]
 harness = "claude"

@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.10.9] - 2026-09-16
+
 ### Changed
 - **Breaking:** `deepseek` now resolves to V4 Flash. Pro is `deepseekpro`. `deepseekflash` stays a Flash synonym.
 - Agent model-policies: `deepseek` → `deepseekpro`, `deepseekflash` → `deepseek`.
