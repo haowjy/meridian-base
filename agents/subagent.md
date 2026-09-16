@@ -15,11 +15,11 @@ model-policies:
     override: {effort: high}
   - match: {alias: glm}
     override: {effort: high}
-  - match: {alias: deepseek}
+  - match: {alias: deepseekpro}
     override: {effort: high}
   - match: {alias: composer}
     override: {}
-  - match: {alias: deepseekflash}
+  - match: {alias: deepseek}
     override: {effort: high}
 tools:
   'bash(meridian spawn *)': allow

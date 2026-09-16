@@ -7,9 +7,9 @@ effort: medium
 model-policies:
   - match: {alias: terra}
     override: {effort: medium}
-  - match: {alias: deepseekflash}
-    override: {effort: medium}
   - match: {alias: deepseek}
+    override: {effort: medium}
+  - match: {alias: deepseekpro}
     override: {effort: medium}
   - match: {alias: sonnet}
     override: {effort: medium}

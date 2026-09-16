@@ -7,13 +7,13 @@ effort: high
 model-policies:
   - match: {alias: sonnet5}
     override: {effort: high}
-  - match: {alias: sol}
-    override: {effort: medium}
+  - match: {alias: astra}
+    override: {effort: low}
   - match: {alias: terra}
     override: {effort: high}
-  - match: {alias: deepseek}
+  - match: {alias: deepseekpro}
     override: {effort: high}
-  - match: {alias: deepseekflash}
+  - match: {alias: deepseek}
     override: {effort: high}
 subagents: [explorer, session-miner, kb-maintainer, subagent]
 skills:

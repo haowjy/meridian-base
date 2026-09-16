@@ -18,14 +18,22 @@ model = "composer-2.5"
 provider = "cursor"
 
 [models.deepseek]
-description = "Cheap, good text coder for constrained tasks. Stronger reasoning than flash. Value 9, intelligence 6, taste 3."
-default_effort = "high"
-model = "deepseek-v4-pro"
-
-[models.deepseekflash]
 description = "Cheapest option for mechanical tasks. Fast, low cost, good enough for bulk reading and simple edits. Value 10, intelligence 5, taste 2."
 default_effort = "high"
-model = "deepseek-v4-flash"
+match = ["deepseek*flash*"]
+exclude = ["*/*", "*:*", "*vision*", "*exp*"]
+
+[models.deepseekflash]
+description = "Same as deepseek (Flash family). Prefer `deepseek`."
+default_effort = "high"
+match = ["deepseek*flash*"]
+exclude = ["*/*", "*:*", "*vision*", "*exp*"]
+
+[models.deepseekpro]
+description = "Cheap, good text coder for constrained tasks. Stronger reasoning than flash. Value 9, intelligence 6, taste 3."
+default_effort = "high"
+match = ["deepseek*pro*"]
+exclude = ["*/*", "*:*", "*flash*"]
 
 [models.opus46]
 harness = "claude"
