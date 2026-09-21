@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `grok` now matches `grok-*` so it auto-resolves to the newest Grok in the cache, not a pinned generation. Excludes the non-LLM `grok-imagine-*` / `grok-*-image*` / `grok-*-video*` and `grok-build-*` families.
+- Dropped the `grok46` alias; `grok` covers the Grok 4.x line.
+
 ## [0.10.9] - 2026-09-16
 
 ### Changed

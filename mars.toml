@@ -107,18 +107,17 @@ description = "Strong at long-running coding and research over large inputs. Slo
 default_effort = "high"
 model = "kimi-k3"
 
-[models.grok46]
-harness = "opencode"
-description = "Grok 4.6 through OpenCode/xAI. Long-horizon coding and agent work."
-default_effort = "high"
-model = "grok-4.6"
-provider = "xai"
-
 [models.grok]
 harness = "opencode"
-description = "Grok 4 line through OpenCode/xAI. Prefer the pinned grok46 alias."
+description = "Grok family through OpenCode/xAI. Auto-resolves the newest Grok in the cache."
 default_effort = "high"
-model = "grok-4.6"
+match = ["grok-*"]
+exclude = [
+    "*-imagine-*",
+    "*-image*",
+    "*-video*",
+    "grok-build-*",
+]
 provider = "xai"
 
 [models.gptmini]
