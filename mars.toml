@@ -1,6 +1,6 @@
 [package]
 name = "meridian-base"
-version = "0.10.9"
+version = "0.10.10"
 description = "Core coordination primitives for Meridian — agent profiles and skills for spawning, state tracking, and session context."
 
 [dependencies]
@@ -111,6 +111,7 @@ model = "kimi-k3"
 harness = "opencode"
 description = "Grok family through OpenCode/xAI. Auto-resolves the newest Grok in the cache."
 default_effort = "high"
+provider = "xai"
 match = ["grok-*"]
 exclude = [
     "*-imagine-*",
@@ -118,7 +119,6 @@ exclude = [
     "*-video*",
     "grok-build-*",
 ]
-provider = "xai"
 
 [models.gptmini]
 description = "Fast and cheap. Good for bulk exploration and simple tasks. Value 9, intelligence 5, taste 3."
