@@ -1,14 +1,14 @@
 ---
 name: session-miner
-description: Mine conversation history for decisions, rejected alternatives, and constraints.
+description: Mine conversation history to understand what we discussed before.
 mode: subagent
 model: luna
-effort: medium
+effort: high
 model-policies:
   - match: {alias: luna}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: deepseek}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: sonnet}
     override: {effort: medium}
   - match: {alias: grok}

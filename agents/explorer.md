@@ -1,6 +1,6 @@
 ---
 name: explorer
-description: Required delegate for multi-file codebase exploration; spawn @explorer instead of reading broadly yourself.
+description: Delegate for multi-file codebase exploration; spawn @explorer instead of reading broadly yourself.
 mode: subagent
 model: luna
 effort: low

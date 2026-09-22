@@ -3,14 +3,14 @@ name: kb-maintainer
 description: "Spawn to refactor a documentation tree's structure (KB, .context/, docs/, design/): pass the target root. Splits, merges, renames, and repairs cross-references; returns changed paths and flagged content issues. Never decides content truth."
 mode: subagent
 model: luna
-effort: medium
+effort: high
 model-policies:
   - match: {alias: luna}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: deepseek}
-    override: {effort: medium}
+    override: {effort: high}
   - match: {alias: astra}
-    override: {effort: medium}
+    override: {effort: low}
   - match: {alias: sonnet}
     override: {effort: medium}
 skills:
