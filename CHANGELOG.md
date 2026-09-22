@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.10.11] - 2026-09-22
+
 ### Added
 - `muse` for Muse Spark 1.3 Standard and `muse-contributor` for its Contributor variant, currently pinned to OpenCode Zen's limited-time free endpoint. Contributor permits training on submitted prompts/completions and does not support max reasoning.
 

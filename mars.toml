@@ -1,6 +1,6 @@
 [package]
 name = "meridian-base"
-version = "0.10.10"
+version = "0.10.11"
 description = "Core coordination primitives for Meridian — agent profiles and skills for spawning, state tracking, and session context."
 
 [dependencies]
