@@ -1,28 +1,26 @@
 # meridian-base
 
 Core coordination primitives for [Meridian](https://github.com/haowjy/meridian-cli).
-This is what turns a bare `meridian` install into an orchestration system —
-the orchestrator agent, the default subagent, and the skills that teach them
-how to spawn work, track state, and coordinate across sessions.
-
-Use this package to populate `.agents/` in projects that run Meridian.
+Shared execution, exploration, and knowledge-maintenance agents, plus the
+skills that teach them how to spawn work, track state, and coordinate across
+sessions.
 
 ## What You Get
 
-An orchestrator that can do this out of the box:
+Shared workers and coordination skills for workflows like these:
 
 ```bash
 # Break work into subtasks and delegate
-meridian spawn -m codex --prompt-file implement-model.md -f plan/phase-1.md --bg
+meridian spawn -a subagent --prompt-file implement-model.md -f plan/phase-1.md --bg
 
 # Run tasks in parallel
-meridian spawn -m codex --prompt-file phase-2a.md --bg
-meridian spawn -m codex --prompt-file phase-2b.md --bg
+meridian spawn -a subagent --prompt-file phase-2a.md --bg
+meridian spawn -a subagent --prompt-file phase-2b.md --bg
 meridian spawn wait
 
 # Track work items across sessions
 meridian work start "auth-refactor"
-meridian work update --status implementing
+meridian work show auth-refactor
 
 # Search past context
 meridian session search "auth design decision"
@@ -35,8 +33,15 @@ agent's system prompt so it knows how to use meridian's CLI.
 
 | Agent | Model | Purpose |
 |---|---|---|
-| `meridian-default-orchestrator` | (configured default) | Plans, delegates, and evaluates subagent work. Loaded with coordination skills. |
-| `meridian-subagent` | gpt-5.3-codex | Default execution agent for scoped tasks. Receives a prompt, does the work, reports back. |
+| `subagent` | luna | General-purpose execution worker for scoped tasks. |
+| `explorer` | luna | Read-only codebase facts and git-history exploration. |
+| `session-miner` | luna | Decisions, rejected alternatives, constraints, and intent from conversations. |
+| `kb-maintainer` | luna | Documentation structure and cross-reference maintenance; flags content questions. |
+| `kb-lead` | sol | Reconciles evidence and human decisions, then writes durable knowledge. |
+
+These are profile defaults. Ordered alternatives and effort settings live in
+`agents/*.md`. Model aliases live in `mars.toml`; Composer is retained there for
+compatibility while its fallback references are retired.
 
 ## Skills
 
@@ -50,7 +55,6 @@ agent's system prompt so it knows how to use meridian's CLI.
 meridian mars init
 meridian mars add @meridian-flow/meridian-base
 meridian mars sync
-meridian config set primary.agent meridian-default-orchestrator
 ```
 
 If `mars.toml` already exists, you can skip `meridian mars init`.

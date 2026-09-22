@@ -9,11 +9,6 @@ model-policies:
     override: {effort: low}
   - match: {alias: deepseek}
     override: {effort: low}
-  - match: {alias: deepseekpro}
-    override: {effort: low}
-  - match: {alias: composer}
-  - match: {alias: gpt-5.4-mini}
-    override: {effort: low}
   - match: {alias: sonnet}
     override: {effort: low}
 skills: []

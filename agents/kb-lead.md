@@ -2,18 +2,18 @@
 name: kb-lead
 description: "Spawn after a work phase settles or when knowledge needs maintenance: pass work refs, changed files, and target repos. Mines decisions, maintains existing docs (delete stale, reorganize misplaced), writes updates into the right knowledge layers, commits each touched repo without pushing, and reports contradictions and gaps."
 mode: subagent
-model: sonnet5
+model: sol
 effort: high
 model-policies:
-  - match: {alias: sonnet5}
+  - match: {alias: sol}
     override: {effort: high}
   - match: {alias: astra}
-    override: {effort: low}
-  - match: {alias: terra}
+    override: {effort: high}
+  - match: {alias: sonnet}
+    override: {effort: high}
+  - match: {alias: opus}
     override: {effort: high}
   - match: {alias: deepseekpro}
-    override: {effort: high}
-  - match: {alias: deepseek}
     override: {effort: high}
 subagents: [explorer, session-miner, kb-maintainer, subagent]
 skills:

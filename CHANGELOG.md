@@ -4,6 +4,18 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `muse` for Muse Spark 1.3 Standard and `muse-contributor` for its Contributor variant, currently pinned to OpenCode Zen's limited-time free endpoint. Contributor permits training on submitted prompts/completions and does not support max reasoning.
+
+### Changed
+- `kb-maintainer` defaults to Luna, with DeepSeek, Astra, and Sonnet as ordered alternatives.
+- General-purpose `subagent` defaults to Luna, with DeepSeek, Sol, and Sonnet as ordered alternatives.
+- Explorer keeps Luna at low effort; alternatives normalized to DeepSeek, Sonnet.
+- Session miner defaults to Luna; alternatives ordered DeepSeek, Sonnet, Grok at medium effort.
+- KB lead defaults to Sol; alternatives ordered Astra, Sonnet, Opus, DeepSeek Pro at high effort. Removed Astra's low-effort override.
+- Model descriptions now distinguish capable cheap implementation, technical depth, consequential decisions, communication, and writing quality. DeepSeek includes detailed-brief guidance.
+- README agent roster now reflects the five current base workers.
+
 ## [0.10.10] - 2026-09-21
 
 ### Changed
