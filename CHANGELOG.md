@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.10.13] - 2026-09-22
+
 ## [0.10.12] - 2026-09-22
 
 ## [0.10.11] - 2026-09-22
