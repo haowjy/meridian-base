@@ -1,6 +1,6 @@
 [package]
 name = "meridian-base"
-version = "0.10.12"
+version = "0.10.11"
 description = "Core coordination primitives for Meridian — agent profiles and skills for spawning, state tracking, and session context."
 
 [dependencies]
@@ -142,32 +142,25 @@ exclude = ["*-nano"]
 harness = "codex"
 description = "Preferred for difficult technical analysis and technically demanding implementation when cheaper workers need more depth."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
-model = "gpt-5.6-sol"
+model = "gpt-*-sol"
 
 [models.terra]
 harness = "codex"
 description = "Best daily-driver coding value. Strong on bounded, verifiable work, but less reliable when ambiguity or taste matters. Value 9, intelligence 8, taste 4."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
-model = "gpt-5.6-terra"
+model = "gpt-*-terra"
 
 [models.luna]
 harness = "codex"
 description = "Preferred inexpensive general worker for implementation, exploration, and bounded execution. Can own substantial coherent objectives with clear context and verification criteria."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
-model = "gpt-5.6-luna"
-
-[models.gpt55]
-harness = "codex"
-description = "Temporary compatibility alias for Sol. Use sol in new model policies."
-prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
-default_effort = "low"
-model = "gpt-5.6-sol"
+model = "gpt-*-luna"
 
 [models.astra]
 harness = "codex"
 description = "GPT-6 Astra for consequential decisions, cross-system judgment, and important communication."
 default_effort = "high"
-model = "gpt-6-astra"
+model = "gpt-*-astra"
 
 [models.gpt]
 description = "Default GPT model family."
