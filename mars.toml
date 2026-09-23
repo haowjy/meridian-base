@@ -29,17 +29,6 @@ exclude = [
     "*exp*",
 ]
 
-[models.deepseekflash]
-description = "Same as deepseek (Flash family). Prefer `deepseek`."
-default_effort = "high"
-match = ["deepseek*flash*"]
-exclude = [
-    "*/*",
-    "*:*",
-    "*vision*",
-    "*exp*",
-]
-
 [models.deepseekpro]
 description = "DeepSeek Pro family. Late alternative for technical judgment and implementation; verify the resolved model and provider because retired endpoints may be remapped."
 default_effort = "high"
@@ -62,24 +51,12 @@ description = "Opus 4.6 with 1M context window. Same taste and intent inference 
 default_effort = "high"
 model = "claude-opus-4-6[1m]"
 
-[models.opus48]
-harness = "claude"
-description = "Best at long-horizon orchestration and managing large numbers of subagents. Value 3, intelligence 8, taste 8."
-default_effort = "high"
-model = "claude-opus-4-8"
-
 [models.opus]
 harness = "claude"
 description = "Generic Opus family for deep, sustained implementation work. Use a pinned version when the task calls for that version's specific strengths."
 default_effort = "high"
 match = ["claude*opus*"]
 exclude = ["*:*"]
-
-[models.sonnet5]
-harness = "claude"
-description = "Best combination of speed and intelligence in the Sonnet tier; near-Opus quality on coding and agentic work at Sonnet cost. Value 6, intelligence 8, taste 6."
-default_effort = "high"
-model = "claude-sonnet-5"
 
 [models.sonnet]
 harness = "claude"
@@ -142,25 +119,25 @@ exclude = ["*-nano"]
 harness = "codex"
 description = "Preferred for difficult technical analysis and technically demanding implementation when cheaper workers need more depth."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
-model = "gpt-*-sol"
+match = ["gpt-*-sol"]
 
 [models.terra]
 harness = "codex"
 description = "Best daily-driver coding value. Strong on bounded, verifiable work, but less reliable when ambiguity or taste matters. Value 9, intelligence 8, taste 4."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
-model = "gpt-*-terra"
+match = ["gpt-*-terra"]
 
 [models.luna]
 harness = "codex"
 description = "Preferred inexpensive general worker for implementation, exploration, and bounded execution. Can own substantial coherent objectives with clear context and verification criteria."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
-model = "gpt-*-luna"
+match = ["gpt-*-luna"]
 
 [models.astra]
 harness = "codex"
 description = "GPT-6 Astra for consequential decisions, cross-system judgment, and important communication."
 default_effort = "high"
-model = "gpt-*-astra"
+match = ["gpt-*-astra"]
 
 [models.gpt]
 description = "Default GPT model family."

@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `sol`, `terra`, `luna`, and `astra` match the current GPT generation instead of treating a wildcard as a pinned model ID.
+- Removed the `deepseekflash`, `opus48`, and `sonnet5` model aliases.
+
 ## [0.10.13] - 2026-09-22
 
 ## [0.10.12] - 2026-09-22
