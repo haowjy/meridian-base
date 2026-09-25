@@ -3,10 +3,10 @@ name: explorer
 description: Delegate for multi-file codebase exploration; spawn @explorer instead of reading broadly yourself.
 mode: subagent
 model: luna
-effort: low
+effort: medium
 model-policies:
   - match: {alias: luna}
-    override: {effort: low}
+    override: {effort: medium}
   - match: {alias: deepseek}
     override: {effort: low}
   - match: {alias: sonnet}
