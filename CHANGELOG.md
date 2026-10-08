@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.10.16] - 2026-10-08
+
 ### Changed
 - `structured-artifact` focuses on explaining and presenting information, with resources for delivery, diagrams, images/mockups, and React Flow. Component tutorials, scenario examples, and fixed theme defaults are removed. It is now model-invocable, and verification checks fidelity to the source material.
 - `information-hierarchy` no longer defaults HTML to light mode, and limits the handful-of-nodes rule to inline diagrams.
