@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `work-artifacts` now tells agents when a deliberate `meridian notify` is warranted and how to keep the notice actionable.
+
 ## [0.10.16] - 2026-10-08
 
 ### Changed

@@ -24,6 +24,9 @@ meridian work show auth-refactor
 
 # Search past context
 meridian session search "auth design decision"
+
+# Ask the human to come look
+meridian notify "<msg>" [--title T] [--no-email] [--priority 1..5] [--json]
 ```
 
 These capabilities come from the skills below — they're injected into the

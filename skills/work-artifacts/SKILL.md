@@ -35,6 +35,16 @@ meridian work                            # dashboard: what's in flight
 
 Spawns inherit the attachment automatically.
 
+## Human Attention
+
+Any agent, including a spawn, may call `meridian notify "<one line>"` when the
+human needs to come look: you are blocked on a decision only they can make, a
+long piece of work is ready for them, or a failure stops the work. Put what they
+need to decide or see in the message, not a status. Do not notify for routine
+progress, every spawn return, or the same thing twice. Use `--no-email` when it
+can wait until they next look at their phone. Meridian already includes the
+tmux session, project, and work item; do not repeat them.
+
 ## Status and Completion
 
 The orchestrator owns work state: subagents should not mutate it unless
