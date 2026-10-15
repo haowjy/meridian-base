@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-10-15
+
 ### Changed
 - meridian-base no longer assumes a code project: `@explorer`, `@kb-lead`, `knowledge-layers`, `qi-layer`, `qi-maintenance`, `work-artifacts`, `zoom-out`, and `handoff` speak of the project's files, the same change, and review or acceptance. Branch, merge, shipped-code, and code-is-ground-truth rules move to `knowledge-layers/resources/code.md`, which `@kb-lead` loads in a code project. Git steps apply where a tree is version-controlled; `zoom-out` resolves conflicts by what each source governs (current state vs settled intent).
 - `intent-modeling`: fix other instances of a corrected mistake inside your task and role; report the rest with a proposed follow-up.
