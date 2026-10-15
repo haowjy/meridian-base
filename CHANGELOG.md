@@ -6,6 +6,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ### Changed
 - `work-artifacts`: notify for low-confidence calls the agent made and kept building on, so the human can overturn them before they harden. Logged in the decision log first, batched at natural pauses, `--no-email`.
+- `qi-maintenance`: read the nearest `AGENTS.md`/`.context/` before changing the code they cover; KB synthesis once per change, not per phase.
 - Removed `opus46` and `opus46[1m]` aliases. `opus` resolves to Opus 5.5; description now says what it is for.
 
 ## [0.10.17] - 2026-10-09

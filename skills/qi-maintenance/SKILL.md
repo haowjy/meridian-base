@@ -8,7 +8,8 @@ model-invocable: false
 # Qi Maintenance
 
 Treat the nearest `AGENTS.md` and current-truth `.context/` documents like
-comments attached to the source.
+comments attached to the source: read them before changing the code they
+cover.
 
 As you make a coherent source change, keep those documents accurate in the
 same branch. If a cold agent could still work correctly from them, leave them
@@ -25,4 +26,4 @@ Track deferred work separately: directory-local must-do work goes in the
 nearest `.context/TODO`, directory-local nice-to-have work in
 `.context/FUTURE`, and cross-cutting or externally visible work in the project
 issue tracker. Load `/knowledge-layers` when placement is unclear.
-Cross-cutting KB synthesis belongs to `@kb-lead` after the phase settles.
+Cross-cutting KB synthesis belongs to `@kb-lead`, once per change after it settles.
