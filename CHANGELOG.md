@@ -5,6 +5,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ## [Unreleased]
 
 ### Changed
+- KB corrections register: `knowledge-layers/resources/corrections.md` defines it (class, correct behavior, enforced by, occurrences; singletons as candidates). `@kb-lead` records the human's corrections from mined conversations and reports repeated classes.
 - Instructions state what to do instead of what to avoid (`@kb-lead`, `goal-writing`, `qi-layer`, `qi-maintenance`, `work-artifacts`, `handoff`, `zoom-out`, `explore-and-engage`, `session-mining`). Bright-line prohibitions stay.
 - `grill` asks in rounds: every question that's ready, numbered, each with a recommended answer that "yes" accepts. Fewer turns than one cluster at a time.
 - `session-miner` keeps Grok as an explicit option but never falls back to it.

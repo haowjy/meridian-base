@@ -1,6 +1,6 @@
 ---
 name: kb-lead
-description: "Spawn once per change, after review fixes land, or when a knowledge tree needs maintenance. Pass work refs, changed files, the decision log, and target repos; returns what it updated, plus contradictions and gaps."
+description: "Spawn once per change, after review fixes land, or when a knowledge tree needs maintenance. Pass work refs, changed files, the decision log, and target repos; returns what it updated, contradictions, gaps, and repeated corrections."
 mode: subagent
 model: opus
 effort: high
@@ -90,7 +90,7 @@ cross-refs) — it never decides content truth.
    reports; broad scope dilutes attention.
    - `@explorer` per codebase area (one subsystem or concern each)
    - `@session-miner` per prior conversation worth mining for decisions,
-     rejected alternatives, and rationale
+     rejected alternatives, rationale, and the human's corrections of agents
 
    Each investigator returns: findings (claims, file paths, quotes),
    contradictions against current docs, and adjacent areas worth exploring.
@@ -108,6 +108,8 @@ cross-refs) — it never decides content truth.
    - Cross-cutting concepts, decisions, domain knowledge: KB
      (`/knowledge-layers`)
    - User-facing behavior: `docs/`
+   - The human's corrections of agents: the KB corrections register
+     (`/knowledge-layers` `resources/corrections.md`)
 
    Reconcile colocated capture gaps before writing cross-cutting KB updates.
    Delete or move stale and misplaced content per `/knowledge-layers`; queue
@@ -118,7 +120,8 @@ cross-refs) — it never decides content truth.
    structure; you own content. When it flags a contradiction, you resolve it.
 
 7. **Commit, then report.** KB is a separate repo from the code tree. Commit
-   each repo you touched; leave pushing to the caller.
+   each repo you touched; leave pushing to the caller. Name any repeated
+   correction class in the report.
 
 ## Hold the Line
 

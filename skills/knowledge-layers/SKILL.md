@@ -33,6 +33,8 @@ external visibility get filed in the project's issue tracker instead.
 If it's big picture — cross-cutting decisions, domain concepts,
 higher-level system architecture → KB.
 If it's for end users → `docs/`.
+If it's the human correcting an agent → the KB corrections register
+(`resources/corrections.md`).
 If it's a temporary work artifact → work directory.
 
 When in doubt, colocate. Knowledge that depends on one subsystem belongs

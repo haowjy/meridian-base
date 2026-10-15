@@ -1,0 +1,39 @@
+# Corrections Register
+
+The register records each time the human corrects an agent, grouped by the
+mistake behind it, so a mistake that recurs gets fixed where the next agent
+can't repeat it. It lives at the KB root as `corrections.md`; create it on
+first use. The local KB guide wins on format.
+
+## What Counts
+
+A correction is the human saying an agent's work or behavior was wrong:
+pushing back, repeating an instruction the agent ignored, undoing or
+redirecting its work, or stating a rule because an agent broke it. The human
+choosing between sound options is a decision, and goes in the decision index.
+
+## Classes
+
+Group by the underlying mistake, not the wording. "Edited `.claude/agents/`"
+and "changed a generated skill file" are one class: editing generated output
+instead of its source. Write the correct behavior with the calibration the
+human gave it: "lean toward X" stays a lean, not a ban on everything else.
+
+## Format
+
+One table, then a candidates list:
+
+| Class | Correct behavior | Enforced by | Occurrences |
+|---|---|---|---|
+| What the agent did, one line | What the human wanted, one line | The level and the artifact: `architecture: …`, `type: …`, `lint: <rule>`, `test: <path>`, `permission: <agent> <rule>`, `doc: <file>`, or `none` | `chat:c123` or `spawn:p123`, date, a short quote; one per line |
+
+A class seen once goes under **Candidates** with its occurrence and moves into
+the table on its second. Delete a row once its mistake can no longer happen;
+git history keeps it.
+
+## Recording
+
+When you mine a conversation, record each correction in it: a new occurrence
+on its class, or a new candidate. A class whose second occurrence lands while
+it is enforced only by `doc` or `none` is a repeat. Report repeats to the
+caller so the class gets a structural fix.
