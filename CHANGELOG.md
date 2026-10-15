@@ -5,6 +5,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ## [Unreleased]
 
 ### Changed
+- `llm-writing`: restores "conversational bleed" by name (dropped in the positive-framing rewrite), merged with the write-for-the-reader item and extended to coined terms, triggering incidents, and "the old version".
 - Skill descriptions for `explore-and-engage`, `handoff`, `qi-maintenance`, `reflect`, `work-artifacts` say when and why to load.
 - Agent descriptions for `kb-lead`, `session-miner`, `subagent` say when to spawn (kb-lead: once per change, from `/post-dev`); summaries move to the README.
 - `llm-writing`: state instructions flat; keep a condition only when the instruction is wrong on the other side.

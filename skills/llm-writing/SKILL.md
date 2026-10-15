@@ -30,4 +30,4 @@ Before producing a written artifact:
 - Repeating what you already said in different words, or summarizing the body as a conclusion ("In summary," "Overall"). Delete it.
 - Connecting ideas with transition words instead of meaning ("Moreover," "Furthermore," "Additionally"). If the relationship isn't clear without the word, restructure.
 - Pairing clauses where one half already carries the meaning ("It's not X, it's Y"). Keep the half that carries it.
-- Writing for the person who asked for the document instead of the person who will read it. Write for the reader.
+- Conversational bleed: writing as if replying inside the conversation that produced the text. Terms coined there, the incident behind a rule, "the old version," "as discussed," answers to questions the reader never asked. The reader wasn't there. Write for the reader, with reasons they can check without the conversation.
