@@ -85,7 +85,7 @@ Specific failure modes:
 - **Redundant guards**: prose warnings for invariants already enforced by
   tests or types. The code is the real guard; prose rots faster.
 - **Duplicated knowledge**: restating what lives in a skill, a domain
-  .context/, or a KB page. Point, don't duplicate.
+  .context/, or a KB page. Link to where it lives.
 - **Domain-specific detail at root**: URI scheme tables, gateway pricing
   internals, auth implementation details. These belong in their domain's
   AGENTS.md, not root.

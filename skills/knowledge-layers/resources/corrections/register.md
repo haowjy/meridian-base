@@ -37,7 +37,10 @@ In a code project, record **Enforced by** with the kinds in `code.md`.
 ## Recording
 
 When you mine a conversation, record each correction in it: a new occurrence
-on its class, or a new candidate. A class whose second occurrence lands while
-only a written rule or nothing enforces it is a repeat. Report repeats to the
-caller for `/correct`, which fixes a class with something stronger than another
-rule.
+on its class, or a new candidate. Identify an occurrence by its session and
+message; a correction already recorded is not a new one.
+
+A correction that gives a class its second occurrence, or any later one, is a
+repeat. Report repeats
+to the caller for `/correct`, and flag any that recurred despite a check or
+permission: that enforcement failed.

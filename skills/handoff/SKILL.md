@@ -31,7 +31,7 @@ opening prompt:
 - Artifact paths: exact file paths to read first
 - Suggested skills to invoke
 
-Reference artifacts by path; the reader opens them.
+Keep artifact content in its files and give their paths in the brief.
 
 Write to the active work directory (`meridian work current`). No work item
 → write to a temp file.

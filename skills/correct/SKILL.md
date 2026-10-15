@@ -33,7 +33,7 @@ has happened twice; record a single occurrence as a candidate.
    one supported way. Replace hand-synced copies with one source of truth.
    Delete the old way and the examples an agent would copy.
 2. **An automated check** that fails and names what to do instead: a
-   validator, a schema, a linter, a CI step. Where the pattern is already
+   validator, a schema, a check script. Where the pattern is already
    common, fail only on additions.
 3. **A tool permission** in the agent profile, for agent behavior a tool rule
    can block: a denied command, a read-only tool set.
@@ -44,7 +44,7 @@ has happened twice; record a single occurrence as a candidate.
 
 ## Fix and Prove
 
-Fix the most frequent classes first, one commit each. Prove each new check
+Fix the most frequent classes first, one change each. Prove each new check
 fails on a real past mistake: replay the change that made it and show the
 failure. An exception goes where the check fires, with a reason and the
 human's approval.
@@ -52,8 +52,9 @@ human's approval.
 ## Update the Register
 
 Set each class's **Enforced by** to what now catches it. Delete a row once
-its mistake can no longer happen. A class enforced only by a written rule that
-recurs moves up a level in the same change.
+its mistake can no longer happen. When a class recurs under a written rule, look again for a stronger level. If
+none holds, sharpen the rule, move it closer to the moment of choice, and
+report the class as a judgment risk that remains.
 
 ## Report
 
