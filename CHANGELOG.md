@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- Removed `opus46` and `opus46[1m]` aliases. `opus` resolves to Opus 5.5; description now says what it is for.
+
 ## [0.10.17] - 2026-10-09
 
 ### Added

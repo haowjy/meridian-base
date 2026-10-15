@@ -39,21 +39,9 @@ exclude = [
     "*flash*",
 ]
 
-[models.opus46]
-harness = "claude"
-description = "Best at inferring human intent. Strong conversational model; preferred for interactive primaries. Value 4, intelligence 8, taste 9."
-default_effort = "high"
-model = "claude-opus-4-6"
-
-[models."opus46[1m]"]
-harness = "claude"
-description = "Opus 4.6 with 1M context window. Same taste and intent inference as opus46 with five times the context for manuscript-scale work. Value 3, intelligence 8, taste 9."
-default_effort = "high"
-model = "claude-opus-4-6[1m]"
-
 [models.opus]
 harness = "claude"
-description = "Generic Opus family for deep, sustained implementation work. Use a pinned version when the task calls for that version's specific strengths."
+description = "Current Opus (5.5). Strong writing taste and intent inference; preferred for interactive primaries, prompt and prose writing, and deep sustained work."
 default_effort = "high"
 match = ["claude*opus*"]
 exclude = ["*:*"]
