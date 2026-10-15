@@ -6,7 +6,7 @@ description: "Use when writing or maintaining AGENTS.md, .context/CONTEXT.md, or
 
 # qi-layer
 
-`/qi-maintenance` owns when colocated knowledge must move with source changes.
+`/qi-maintenance` owns when colocated knowledge must move with the changes it describes.
 This skill owns how to write and structure that knowledge.
 
 Load `/knowledge-layers` for where each layer lives and what it holds.
@@ -51,7 +51,7 @@ An agent that also reads .context/ should be able to change things safely.
 
 ## Writing .context/CONTEXT.md
 
-Reference depth, co-located with the code it describes. Where an agent
+Reference depth, co-located with what it describes. Where an agent
 goes when it needs contracts, architecture, or rationale in detail.
 
 Sections (use only those with substance):
@@ -73,7 +73,7 @@ in that domain's AGENTS.md or .context/, not root.
 Apply the **think-vs-lookup test**: text whose removal would cause a
 *wrong decision* belongs in AGENTS.md. Text an agent would merely have to
 *look up* belongs in .context/. Text that changes no behavior gets
-deleted — agents already know how to code and follow common conventions.
+deleted — agents already know their craft and common conventions.
 
 Specific failure modes:
 
@@ -83,7 +83,8 @@ Specific failure modes:
 - **Reference material posing as intent**: tables, command blocks, full
   scheme vocabularies, implementation specifics.
 - **Redundant guards**: prose warnings for invariants already enforced by
-  tests or types. The code is the real guard; prose rots faster.
+  a check (tests, types, validators). The check is the real guard; prose
+  rots faster.
 - **Duplicated knowledge**: restating what lives in a skill, a domain
   .context/, or a KB page. Link to where it lives.
 - **Domain-specific detail at root**: URI scheme tables, gateway pricing

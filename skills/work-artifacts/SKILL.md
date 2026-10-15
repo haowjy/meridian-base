@@ -18,8 +18,8 @@ Spawns get `$MERIDIAN_ACTIVE_WORK_DIR` automatically. Use `meridian work
 current` if the env var is stale or unset (env vars don't update
 mid-session).
 
-The work item also carries `task_dir` — the checkout where source edits,
-builds, and tests run, distinct from the work directory. Rebind with
+The work item also carries `task_dir` — the checkout where the work's
+files are edited and checked, distinct from the work directory. Rebind with
 `meridian work task-dir <path>`.
 
 ## Starting Work
@@ -67,8 +67,9 @@ meridian work clear                 # detach without archiving
 ```
 
 Only `work done` when you own the whole lifecycle, not just a slice.
-Opening a PR is not finishing the work item: update status to `pr-open`
-or `awaiting-merge` and leave it active until merge and cleanup.
+Handing work off for review is not finishing the work item: set a status
+like `awaiting-review` or `pr-open` and leave it active until the work is
+accepted and cleaned up.
 
 ## Artifact Placement
 
@@ -77,8 +78,8 @@ or `awaiting-merge` and leave it active until merge and cleanup.
 
 Rule of thumb: *this* work item → work dir. Project-wide → kb.
 
-Design decisions go in design docs. Implementation decisions go in commit
-messages or inline comments. Structural decisions go in the work directory.
+Design decisions go in design docs. Decisions scoped to one change go with
+it: its commit message, or a note beside what it explains. Structural decisions go in the work directory.
 Record rejected alternatives: they prevent re-proposing what was already
 considered.
 

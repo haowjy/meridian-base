@@ -40,7 +40,7 @@ Write to the active work directory (`meridian work current`). No work item
 
 Before completing the handoff, check if any `pre-*` checkpoint skills are
 installed for the next phase (e.g., `pre-dev` for implementation handoffs).
-If present, load and run them to verify workspace, branches, and
+If present, load and run them to verify the next phase's
 prerequisites are ready for the next agent. Skip if none are installed.
 
 ## Choose the Next Agent

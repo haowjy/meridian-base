@@ -1,21 +1,20 @@
 ---
 name: qi-maintenance
 type: guardrail
-description: "Load on agents that make durable source changes, so the colocated AGENTS.md and .context/ docs stay true for the next cold agent."
+description: "Load on agents that make durable changes to a project's files, so the colocated AGENTS.md and .context/ docs stay true for the next cold agent."
 model-invocable: false
 ---
 
 # Qi Maintenance
 
 Treat the nearest `AGENTS.md` and current-truth `.context/` documents like
-comments attached to the source: read them before changing the code they
-cover.
+comments attached to what they cover: read them before changing it.
 
-As you make a coherent source change, keep those documents accurate in the
-same branch. If a cold agent could still work correctly from them, leave them
+As you make a coherent change, keep those documents accurate in the same
+change. If a cold agent could still work correctly from them, leave them
 alone. If they would mislead the next agent, update them before finishing.
 
-Write what a cold agent needs and can't read from source. When the
+Write what a cold agent needs and can't read from the files themselves. When the
 implementation diverged from the settled plan, record the divergence and leave
 the intent as settled.
 

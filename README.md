@@ -39,7 +39,7 @@ Each agent's `description` says when to spawn it, what to pass, and what comes b
 | Agent | Model | Purpose |
 |---|---|---|
 | `subagent` | luna | General-purpose worker for a bounded task no specialist fits |
-| `explorer` | luna | Read-only codebase facts and git history |
+| `explorer` | luna | Read-only facts from a project's files and git history |
 | `session-miner` | luna | Decisions, rejected alternatives, constraints, and intent from past conversations |
 | `kb-lead` | opus | Writes durable knowledge to `.context/`, the KB, and `docs/` from the work and the human's decisions; deletes stale and misplaced docs; commits each repo it touches without pushing |
 | `kb-maintainer` | luna | Restructures documentation trees and repairs cross-references; flags content questions instead of deciding them |

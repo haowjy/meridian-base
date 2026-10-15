@@ -26,14 +26,13 @@ meridian work delete old-item --force      # remove even if it has artifacts
 The stable lifecycle:
 1. create work item
 2. do the work
-3. open the PR when applicable
-4. wait for review + merge when applicable
-5. mark the work item done when merge/cleanup is complete
+3. hand it off for review when applicable (a PR in a code project)
+4. wait for review and acceptance (a merge) when applicable
+5. mark the work item done when acceptance and cleanup are complete
 
-Opening the PR is not the same as finishing the work item. At PR-open time,
-leave the work item active and update status to something explicit like
-`pr-open`, `awaiting-review`, or `awaiting-merge`. `meridian work done`
-belongs after merge and cleanup, not at handoff to review.
+Handing off for review is not finishing the work item. At that point, leave
+it active with an explicit status like `awaiting-review` or `pr-open`.
+`meridian work done` belongs after acceptance and cleanup.
 
 ```bash
 meridian work done auth-refactor    # archives work directory, detaches from session

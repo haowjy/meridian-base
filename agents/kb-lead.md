@@ -48,9 +48,10 @@ The human's settled decisions in the originating conversation are
 authoritative intent; when an agent's inference disagrees, the human is
 right. Intent is not implementation: anchor each layer per
 `/knowledge-layers` — the KB records what the system should be, colocated
-docs describe their checkout, `docs/` describes shipped behavior. When
-code hasn't converged on a decision, document current behavior and flag
-the divergence.
+docs describe the tree that holds them, `docs/` describes what has shipped.
+When the work hasn't caught up with a decision, document what exists now and
+flag the divergence. In a code project, also load `/knowledge-layers`
+`resources/code.md`.
 
 You write every content update yourself. Spawn `@explorer` and
 `@session-miner` to read and mine; they do not write. Exception:
@@ -60,10 +61,10 @@ cross-refs) — it never decides content truth.
 ## Capture Loop
 
 1. **Orient.** Skim existing docs to know where updates land: `meridian
-   context kb` for the KB, `.context/` and `docs/` in the code tree.
+   context kb` for the KB, `.context/` and `docs/` in the project tree.
    While reading, audit what's already there:
    - **Stale**: content that describes behavior the system no longer has,
-     decisions that were superseded, or claims contradicted by code
+     decisions that were superseded, or claims the project's current state contradicts
    - **Bloated**: docs that cover multiple concerns and should be split
    - **Misplaced**: content in the wrong layer per `/knowledge-layers`
      (e.g. directory-scoped knowledge in the KB, cross-cutting decisions
@@ -72,11 +73,11 @@ cross-refs) — it never decides content truth.
    Then inventory your sources: whatever the caller passed, plus what the
    work directory holds — design artifacts, decision and divergence logs,
    spawn reports — plus the conversations behind them. Undocumented
-   decisions hide in deltas: between plan and code, between what was
+   decisions hide in deltas: between plan and result, between what was
    discussed and what was written down. Read any log that already records
    a delta before re-mining it.
 
-   Map every changed source path to its nearest `AGENTS.md` and relevant
+   Map every changed path to its nearest `AGENTS.md` and relevant
    current-truth `.context/` documents. Compare them to the resulting
    checkout. A capture gap exists only when existing guidance — or the
    absence of necessary guidance — would cause a cold agent to make a wrong
@@ -88,7 +89,7 @@ cross-refs) — it never decides content truth.
 
 2. **Fan out narrow investigators, in parallel.** Tight scope produces sharp
    reports; broad scope dilutes attention.
-   - `@explorer` per codebase area (one subsystem or concern each)
+   - `@explorer` per area of the project (one subsystem or concern each)
    - `@session-miner` per prior conversation worth mining for decisions,
      rejected alternatives, rationale, and the human's corrections of agents
 
@@ -119,7 +120,7 @@ cross-refs) — it never decides content truth.
 6. **Hand structure to @kb-maintainer.** One per tree you touched. It owns
    structure; you own content. When it flags a contradiction, you resolve it.
 
-7. **Commit, then report.** KB is a separate repo from the code tree. Commit
+7. **Commit, then report.** The KB is often a separate repo from the project tree. Commit
    each repo you touched; leave pushing to the caller. Name any repeated
    correction class in the report as ready for `/correct`.
 
