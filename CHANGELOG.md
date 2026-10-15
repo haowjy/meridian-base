@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.10.18] - 2026-10-15
+
 ### Changed
 - `work-artifacts`: notify for low-confidence calls the agent made and kept building on, so the human can overturn them before they harden. Logged in the decision log first, batched at natural pauses, `--no-email`.
 - `qi-maintenance`: read the nearest `AGENTS.md`/`.context/` before changing the code they cover; KB synthesis once per change, not per phase.
