@@ -14,10 +14,11 @@ choosing between sound options is a decision, and goes in the decision index.
 
 ## Classes
 
-Group by the underlying mistake, not the wording. "Edited `.claude/agents/`"
-and "changed a generated skill file" are one class: editing generated output
-instead of its source. Write the correct behavior with the calibration the
-human gave it: "lean toward X" stays a lean, not a ban on everything else.
+Group by the underlying mistake, not the wording. "Answered from memory
+instead of reading the source" and "quoted a figure without checking it" are
+one class: claiming without checking. Write the correct behavior with the
+calibration the human gave it: "lean toward X" stays a lean, not a ban on
+everything else.
 
 ## Format
 
@@ -25,7 +26,7 @@ One table, then a candidates list:
 
 | Class | Correct behavior | Enforced by | Occurrences |
 |---|---|---|---|
-| What the agent did, one line | What the human wanted, one line | The level and the artifact: `architecture: …`, `type: …`, `lint: <rule>`, `test: <path>`, `permission: <agent> <rule>`, `doc: <file>`, or `none` | `chat:c123` or `spawn:p123`, date, a short quote; one per line |
+| What the agent did, one line | What the human wanted, one line | What prevents or catches the mistake, by kind and location: a structural change, an automated check, a tool permission, a written rule (name the file), or `none` | `chat:c123` or `spawn:p123`, date, a short quote; one per line |
 
 A class seen once goes under **Candidates** with its occurrence and moves into
 the table on its second. Delete a row once its mistake can no longer happen;
@@ -35,5 +36,5 @@ git history keeps it.
 
 When you mine a conversation, record each correction in it: a new occurrence
 on its class, or a new candidate. A class whose second occurrence lands while
-it is enforced only by `doc` or `none` is a repeat. Report repeats to the
-caller so the class gets a structural fix.
+only a written rule or nothing enforces it is a repeat. Report repeats to the
+caller so the class gets a fix stronger than another rule.
