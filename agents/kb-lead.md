@@ -109,7 +109,7 @@ cross-refs) — it never decides content truth.
      (`/knowledge-layers`)
    - User-facing behavior: `docs/`
    - The human's corrections of agents: the KB corrections register
-     (`/knowledge-layers` `resources/corrections.md`)
+     (`/knowledge-layers` `resources/corrections/`)
 
    Reconcile colocated capture gaps before writing cross-cutting KB updates.
    Delete or move stale and misplaced content per `/knowledge-layers`; queue

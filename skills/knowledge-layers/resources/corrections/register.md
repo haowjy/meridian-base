@@ -32,6 +32,8 @@ A class seen once goes under **Candidates** with its occurrence and moves into
 the table on its second. Delete a row once its mistake can no longer happen;
 git history keeps it.
 
+In a code project, record **Enforced by** with the kinds in `code.md`.
+
 ## Recording
 
 When you mine a conversation, record each correction in it: a new occurrence
