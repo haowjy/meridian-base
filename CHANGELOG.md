@@ -5,6 +5,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ## [Unreleased]
 
 ### Changed
+- `llm-writing`: Scope starts by naming the reader; text that outlives the conversation is written for someone without it, including the person who asked, later.
 - `llm-writing`: names conversational bleed (terms coined in the conversation, the incident behind a rule, "the old version", answers to unasked questions) as something to delete; it replaces the write-for-the-reader item.
 - Skill descriptions for `explore-and-engage`, `handoff`, `qi-maintenance`, `reflect`, `work-artifacts` say when and why to load.
 - Agent descriptions for `kb-lead`, `session-miner`, `subagent` say when to spawn (kb-lead: once per change, after review fixes land); summaries move to the README.

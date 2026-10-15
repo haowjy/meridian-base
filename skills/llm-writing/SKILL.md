@@ -14,7 +14,7 @@ Load `/information-hierarchy` when the piece grows beyond a short answer.
 
 Before producing a written artifact:
 
-1. **Scope.** What does the reader know when they start, and what should they know when they finish? What do they not need to know? Before writing, break the piece into beats: each beat is one move in the reader's journey, carrying one idea, purpose, or turn.
+1. **Scope.** Who reads this, and when? Text that outlives the conversation (files, prompts, docs, commit messages, PRs) is read by someone without it: a cold agent, a teammate, or the person who asked, after they've forgotten it. Write for that reader. What do they know when they start, and what should they know when they finish? What do they not need to know? Before writing, break the piece into beats: each beat is one move in the reader's journey, carrying one idea, purpose, or turn.
 2. **Ground.** Check any relevant source material, references, or notes before writing, and make sure they align.
 3. **Draft.** Write a full draft to disk so you can edit it piece by piece.
 4. **Revise.** Start with the whole artifact, then move inward: structure, beats, paragraphs, sentences, words. At each scale, ask what the writing is doing: is it correct, does it follow from what came before, and does the reader need it? Delete or rewrite anything that does not serve a purpose or give the reader something they need to understand or know. Move back and forth between scales: after a local change, zoom back out through the surrounding beat, larger structure, and full artifact; the change should still connect, and the rhythm should still vary. Check disclosure tiers: the answer still leads, depth hasn't crept forward, sources sit at the end.
