@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `work-artifacts`: keep large raw files (traces, HARs, profiles, dumps, build output) out of the work directory; record the excerpt that carries the finding.
+
 ## [0.11.0] - 2026-10-15
 
 ### Changed
