@@ -84,7 +84,7 @@ considered.
 
 **`DIVERGENCE/`**: when the design or plan shifts during execution, the
 orchestrator logs the shift in this folder. Reviewers check alignment
-against it; knowledge capture mines it after the phase settles.
+against it; knowledge capture mines it once the change ships.
 
 **`AGENTS.md`**: the work directory follows `/qi-layer` like any tree
 agents enter cold. Its AGENTS.md orients an arriving spawn: the goal, the

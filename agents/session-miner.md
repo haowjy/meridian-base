@@ -1,6 +1,6 @@
 ---
 name: session-miner
-description: Mine conversation history to understand what we discussed before.
+description: "Spawn when you need what was discussed or decided in earlier sessions. Pass the question and any session or spawn refs."
 mode: subagent
 model: luna
 effort: high

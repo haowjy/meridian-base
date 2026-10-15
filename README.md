@@ -34,13 +34,15 @@ agent's system prompt so it knows how to use meridian's CLI.
 
 ## Agents
 
+Each agent's `description` says when to spawn it, what to pass, and what comes back. What it does lives in its body and in this table.
+
 | Agent | Model | Purpose |
 |---|---|---|
 | `subagent` | luna | General-purpose execution worker for scoped tasks. |
 | `explorer` | luna | Read-only codebase facts and git-history exploration. |
 | `session-miner` | luna | Decisions, rejected alternatives, constraints, and intent from conversations. |
 | `kb-maintainer` | luna | Documentation structure and cross-reference maintenance; flags content questions. |
-| `kb-lead` | sol | Reconciles evidence and human decisions, then writes durable knowledge. |
+| `kb-lead` | opus | Reconciles evidence and human decisions, then writes durable knowledge: mines decisions, deletes stale docs, reorganizes misplaced ones, commits each touched repo without pushing. |
 
 These are profile defaults. Ordered alternatives and effort settings live in
 `agents/*.md`. Model aliases live in `mars.toml`; Composer is retained there for

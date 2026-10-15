@@ -1,6 +1,6 @@
 ---
 name: kb-lead
-description: "Spawn after a work phase settles or when knowledge needs maintenance: pass work refs, changed files, and target repos. Mines decisions, maintains existing docs (delete stale, reorganize misplaced), writes updates into the right knowledge layers, commits each touched repo without pushing, and reports contradictions and gaps."
+description: "Spawn once per change after review fixes land (`/post-dev` does this), or when a knowledge tree needs maintenance. Pass work refs, changed files, the decision log, and target repos; returns what it updated, plus contradictions and gaps."
 mode: subagent
 model: opus
 effort: high
