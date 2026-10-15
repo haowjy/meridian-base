@@ -1,6 +1,6 @@
 ---
 name: kb-lead
-description: "Spawn once per change after review fixes land (`/post-dev` does this), or when a knowledge tree needs maintenance. Pass work refs, changed files, the decision log, and target repos; returns what it updated, plus contradictions and gaps."
+description: "Spawn once per change, after review fixes land, or when a knowledge tree needs maintenance. Pass work refs, changed files, the decision log, and target repos; returns what it updated, plus contradictions and gaps."
 mode: subagent
 model: opus
 effort: high
