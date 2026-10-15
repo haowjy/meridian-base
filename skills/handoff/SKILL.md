@@ -1,7 +1,7 @@
 ---
 name: handoff
 type: mode-shift
-description: Produce a transition brief and launch command for the user's next interactive primary.
+description: "Use when the next phase belongs to a different interactive lead: writes the transition brief and prints the command the user runs to start it."
 argument-hint: "What will the next session focus on?"
 user-invocable: true
 model-invocable: true

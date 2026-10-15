@@ -1,7 +1,7 @@
 ---
 name: reflect
 type: guardrail
-description: User-invoked pause before reporting to check intent vs literal completion, surface adjacent wins, and route knowledge capture.
+description: "Use when the user invokes it before you report: checks you delivered what they needed, not only what they literally asked, and routes knowledge capture."
 model-invocable: false
 user-invocable: true
 argument-hint: "Optional focus for the check"

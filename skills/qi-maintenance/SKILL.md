@@ -1,7 +1,7 @@
 ---
 name: qi-maintenance
 type: guardrail
-description: "Always load on agents that make durable source changes: keep colocated agent-facing knowledge synchronized with the source."
+description: "Load on agents that make durable source changes, so the colocated AGENTS.md and .context/ docs stay true for the next cold agent."
 model-invocable: false
 ---
 

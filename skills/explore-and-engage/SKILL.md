@@ -1,7 +1,7 @@
 ---
 name: explore-and-engage
 type: principle
-description: "Investigate and engage concurrently: don't block on evidence before surfacing your read."
+description: "Load on interactive leads, so you share your read while investigating instead of going silent until the evidence is complete."
 user-invocable: true
 ---
 
