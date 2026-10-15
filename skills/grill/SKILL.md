@@ -3,8 +3,8 @@ name: grill
 type: mode-shift
 description: >
   Use in conversation to stress-test a plan or direction. Interviews the
-  human branch by branch, sharpens terminology, challenges assumptions, and
-  asks the next high-leverage question with a recommended answer.
+  human in rounds, asking every question that is ready with a recommended
+  answer, until no decision is left open.
 model-invocable: true
 ---
 
@@ -13,11 +13,14 @@ model-invocable: true
 Load `/intent-modeling` if it isn't already loaded.
 
 Interview the human relentlessly about the plan or direction until you reach
-a shared understanding. Work branch by branch through the decision tree,
-resolving each path down to a leaf and then walking back up to what that leaf
-changes.
+a shared understanding. Map it as a decision tree: each decision branches
+into the decisions that hang off it.
 
-Ask at most a small cluster of related questions to resolve the current edge,
-then wait for the answer(s) before continuing. Give your recommended answer
-with each question. If a question can be answered by exploring artifacts or
-source material, read those first instead.
+Work in rounds. Each round, ask every question whose prerequisites are
+already settled, numbered, each with your recommended answer, worded so
+"yes" accepts the recommendation. A question that depends on another one
+still open waits for a later round. After the answers, recompute what is
+now askable and run the next round. Finish when no question is left open.
+
+Facts are yours to find: read artifacts and source material instead of
+asking. Decisions are the human's.

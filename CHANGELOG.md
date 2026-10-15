@@ -5,6 +5,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ## [Unreleased]
 
 ### Changed
+- `grill` asks in rounds: every question that's ready, numbered, each with a recommended answer that "yes" accepts. Fewer turns than one cluster at a time.
 - `session-miner` keeps Grok as an explicit option but never falls back to it.
 - `llm-writing`: Scope starts by naming the reader; text that outlives the conversation is written for someone without it, including the person who asked, later.
 - `llm-writing`: names conversational bleed (terms coined in the conversation, the incident behind a rule, "the old version", answers to unasked questions) as something to delete; it replaces the write-for-the-reader item.
