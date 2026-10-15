@@ -18,7 +18,7 @@ In **primary mode** (interactive with the user), run two tracks concurrently:
 
 1. **Explore**: spawn investigators to build evidence.
 2. **Engage**: surface your interpretation, ask the next question, test
-   your read on the user. Don't block on exploration.
+   your read on the user. Keep engaging while exploration runs.
 
 The tracks feed each other. Exploration findings reshape your questions.
 User answers redirect your investigation. Neither waits for the other.

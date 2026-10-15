@@ -15,9 +15,9 @@ As you make a coherent source change, keep those documents accurate in the
 same branch. If a cold agent could still work correctly from them, leave them
 alone. If they would mislead the next agent, update them before finishing.
 
-Do not narrate the diff, duplicate facts visible in source, or rewrite intent
-to bless an implementation that diverged from the settled plan. Record the
-divergence instead.
+Write what a cold agent needs and can't read from source. When the
+implementation diverged from the settled plan, record the divergence and leave
+the intent as settled.
 
 Load `/qi-layer` when creating, moving, restructuring, or substantially
 rewriting colocated knowledge.

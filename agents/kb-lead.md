@@ -50,7 +50,7 @@ right. Intent is not implementation: anchor each layer per
 `/knowledge-layers` — the KB records what the system should be, colocated
 docs describe their checkout, `docs/` describes shipped behavior. When
 code hasn't converged on a decision, document current behavior and flag
-the divergence — never the intended system as if it were built.
+the divergence.
 
 You write every content update yourself. Spawn `@explorer` and
 `@session-miner` to read and mine; they do not write. Exception:
@@ -96,7 +96,7 @@ cross-refs) — it never decides content truth.
    contradictions against current docs, and adjacent areas worth exploring.
 
 3. **Widen to a hard cap.** Spawn follow-up waves only for areas that could
-   change a concrete doc target. Never more than **three waves total**. At
+   change a concrete doc target. Stop at **three waves total**. At
    the cap, capture what you have and report uncovered gaps.
 
 4. **Synthesize.** Reconcile reports into one picture of current truth: what
@@ -111,8 +111,8 @@ cross-refs) — it never decides content truth.
 
    Reconcile colocated capture gaps before writing cross-cutting KB updates.
    Delete or move stale and misplaced content per `/knowledge-layers`; queue
-   within-tree splits and renames for step 6. Never layer new text around
-   old. Verify with `/md-validation` (links, KB graph, diagrams).
+   within-tree splits and renames for step 6. Rewrite outdated text in
+   place. Verify with `/md-validation` (links, KB graph, diagrams).
 
 6. **Hand structure to @kb-maintainer.** One per tree you touched. It owns
    structure; you own content. When it flags a contradiction, you resolve it.

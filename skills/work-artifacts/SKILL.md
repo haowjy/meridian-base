@@ -37,13 +37,13 @@ Spawns inherit the attachment automatically.
 
 ## Human Attention
 
-Any agent, including a spawn, may call `meridian notify "<one line>"` when the
-human needs to come look: you are blocked on a decision only they can make, a
-long piece of work is ready for them, or a failure stops the work. Put what they
-need to decide or see in the message, not a status. Do not notify for routine
-progress, every spawn return, or the same thing twice. Use `--no-email` when it
-can wait until they next look at their phone. Meridian already includes the
-tmux session, project, and work item; do not repeat them.
+Any agent, including a spawn, may call `meridian notify "<one line>"` only
+when the human needs to come look: you are blocked on a decision only they can
+make, a long piece of work is ready for them, or a failure stops the work. Put
+what they need to decide or see in the message, not a status. Notify each thing
+once; routine progress and spawn returns are not reasons. Use `--no-email` when
+it can wait until they next look at their phone. Meridian already adds the tmux
+session, project, and work item to the message.
 
 Also notify when you made a call you are unsure of and kept going, and it
 gets costly to reverse once more work builds on it. Record it in the work

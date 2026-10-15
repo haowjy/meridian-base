@@ -27,7 +27,7 @@ every line load-bearing.
    frame. Leaves provide local working knowledge. Agents accumulate
    understanding as they descend.
 3. **LCA Deduplication**: shared knowledge appears once at the shallowest
-   node covering all relevant paths. Never duplicate between siblings.
+   node covering all relevant paths.
 4. **Progressive Disclosure**: give just enough to work correctly at this
    level. Link to `.context/CONTEXT.md` for depth.
 
@@ -113,6 +113,6 @@ rare; when it exists, put it below the `@AGENTS.md` import and expect
 Loading differs by level. At the root, each harness auto-loads its own
 file every session: Claude reads CLAUDE.md, others read AGENTS.md. In
 subdirectories, Claude auto-injects CLAUDE.md when it touches files there;
-other agents see nested AGENTS.md only by reading it on entry. Don't lean
-on Claude's auto-injection: a nested AGENTS.md carries the local additions
-an agent needs on entry, with everything else inherited from ancestors.
+other agents see nested AGENTS.md only by reading it on entry. Write each nested
+AGENTS.md for that reader: the local additions an agent needs on entry, with
+everything else inherited from ancestors.

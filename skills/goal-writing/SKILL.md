@@ -15,7 +15,7 @@ execute without reinterpreting intent.
 
 A goal is the control surface for agent work. It says what should become true,
 what evidence proves it, and what the agent must not do while pursuing it. A loop
-is only one way to execute a goal; do not make looping the primitive.
+is one way to execute a goal; the goal is the primitive.
 
 ## What a Good Goal Needs
 
@@ -39,8 +39,7 @@ Write goals with the parts that change behavior:
 10. **Report shape.** What should come back: changes, findings, decision,
    validation evidence, open risks, or next step?
 
-Do not fill every slot with boilerplate. Name only the information that would
-change what the agent does.
+Fill only the slots whose information would change what the agent does.
 
 ## Optimization Goals
 
@@ -60,8 +59,8 @@ For any goal shaped like "improve X," specify:
   attempt.
 
 If the strategy is unknown, write a learning goal first: identify mechanisms,
-baselines, constraints, or promising directions. Do not force a performance goal
-before the agent has a credible path to improve it.
+baselines, constraints, or promising directions. Set a performance goal once
+the agent has a credible path to improve it.
 
 ## Quality Checks
 

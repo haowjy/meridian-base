@@ -46,7 +46,7 @@ meridian session search "shape" --workspace         # current project + workspac
 Each hit prints a deterministic `Open:` command: run it to jump straight to
 the entry instead of recomputing windows.
 
-## Delegate Bulk Reading, Don't Inline It
+## Delegate Bulk Reading
 
 When the question spans long histories or multiple sessions, spawn @session-miner for transcript mining and synthesis. That keeps your context window focused on decisions instead of raw transcript paging.
 

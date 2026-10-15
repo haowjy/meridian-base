@@ -23,7 +23,7 @@ Spawn in parallel, each scoped to one angle and one question. Drain with `meridi
 - **Decision history** (`@session-miner`): why it's shaped this way. Prior choices, rejected alternatives, constraints discovered. Skip when there's no relevant session history.
 - **Domain concepts** (`@explorer`): the vocabulary in use (KB vocab pages, `.context/CONTEXT.md`, AGENTS.md).
 
-Scope each prompt to its angle with concrete path or topic targets. Don't let one explorer cover two angles: the value is independent coverage.
+Give each explorer one angle, scoped with concrete path or topic targets: the value is independent coverage.
 
 ## Synthesize
 
