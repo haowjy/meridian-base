@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `llm-writing`: state instructions flat; keep a condition only when the instruction is wrong on the other side.
+
 ## [0.10.18] - 2026-10-15
 
 ### Changed

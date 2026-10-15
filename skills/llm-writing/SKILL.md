@@ -26,6 +26,7 @@ Before producing a written artifact:
 - Stating conclusions without evidence. Show the evidence or drop the claim.
 - Hiding uncertainty behind confident language. Say what you don't know.
 - Softening every claim with qualifiers ("it's worth noting," "it's important to consider"). Say it or don't.
+- Conditions on an instruction ("only when," "unless," "if needed," "when you think it's ready"). Most are hedges. State the instruction flat; keep a condition only when the instruction is wrong on the other side.
 - Repeating what you already said in different words, or summarizing the body as a conclusion ("In summary," "Overall"). Delete it.
 - Connecting ideas with transition words instead of meaning ("Moreover," "Furthermore," "Additionally"). If the relationship isn't clear without the word, restructure.
 - Pairing clauses where one half already carries the meaning ("It's not X, it's Y"). Keep the half that carries it.
