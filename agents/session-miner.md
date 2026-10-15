@@ -12,6 +12,7 @@ model-policies:
   - match: {alias: sonnet}
     override: {effort: medium}
   - match: {alias: grok}
+    no-fallback: true
     override: {effort: medium}
 skills:
   load: [intent-modeling, session-mining]
