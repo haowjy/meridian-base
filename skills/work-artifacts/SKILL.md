@@ -10,7 +10,8 @@ model-invocable: true
 Active artifacts live in the work directory: the shared state between you,
 the user, and other agents. If understanding is not on disk, it does not
 survive. Write findings, decisions, and design artifacts as you produce them.
-Commit frequently: sessions crash and compact.
+Commit frequently where the work directory is version-controlled: sessions
+crash and compact.
 
 ## Finding the Work Directory
 

@@ -120,8 +120,9 @@ cross-refs) — it never decides content truth.
 6. **Hand structure to @kb-maintainer.** One per tree you touched. It owns
    structure; you own content. When it flags a contradiction, you resolve it.
 
-7. **Commit, then report.** The KB is often a separate repo from the project tree. Commit
-   each repo you touched; leave pushing to the caller. Name any repeated
+7. **Commit, then report.** The KB is often a separate repo from the project
+   tree. Commit each version-controlled tree you touched; leave pushing to
+   the caller. Name any repeated
    correction class in the report as ready for `/correct`.
 
 ## Hold the Line

@@ -17,7 +17,7 @@ Load `/llm-writing` if not already loaded.
 | Layer | What it holds | When to use it |
 |---|---|---|
 | `AGENTS.md` | Intent and mental model for a directory | First thing agents read on entry; what to understand *before* working here |
-| `.context/` | Contracts, architecture, rationale (`CONTEXT.md`); deferred work (`TODO`, `FUTURE`) | Reference depth and tracked deferrals, co-located with the code they describe |
+| `.context/` | Contracts, architecture, rationale (`CONTEXT.md`); deferred work (`TODO`, `FUTURE`) | Reference depth and tracked deferrals, co-located with the material they describe |
 | KB | Cross-cutting decisions, domain concepts, patterns | Spans directories; outlives sessions; no single directory owns it |
 | `docs/` | User-facing documentation | Different audience, different update cadence |
 | Work directory | Temporary design decisions and scratch | Not colocated with durable content; scoped to an active work item |
@@ -61,10 +61,11 @@ with nothing new to write in its place. Stale knowledge is worse than a
 gap: agents load it and reason from it. Deletion is the content-truth
 owner's call; structural roles flag instead.
 
-**Git history is the archive.** Commit untracked files before deleting them
-so the removal lands in history, and say what was removed and why in the
-commit message. Deletion is cheap because nothing tracked is ever truly
-lost.
+**History is the archive.** In a version-controlled tree, commit untracked
+files before deleting them so the removal lands in history, and say what was
+removed and why in the commit message. Elsewhere, preserve what still matters
+in the project's archive before deleting. Deletion is cheap because nothing
+preserved is truly lost.
 
 **Truth is anchored per layer.** AGENTS.md and `.context/` describe the
 tree that contains them: update them in the same change as what they

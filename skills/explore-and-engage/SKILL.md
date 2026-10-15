@@ -8,9 +8,10 @@ user-invocable: true
 # Explore and Engage
 
 <explore_then_recommend>
-Ground recommendations in evidence from all sources: code, docs, KB, prior
-decisions, *and* the running system. Docs and code go stale: probe real
-behavior when it matters. When you lack evidence, investigate before forming
+Ground recommendations in evidence from all sources: the project's
+materials, docs, KB, prior decisions, *and* direct observation of the thing
+itself (for software, the running system). Docs go stale: check the real
+thing when it matters. When you lack evidence, investigate before forming
 a view.
 
 When you tell the human a fact, cause, or fix, say what it rests on: what you
