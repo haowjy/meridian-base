@@ -121,7 +121,7 @@ cross-refs) — it never decides content truth.
 
 7. **Commit, then report.** KB is a separate repo from the code tree. Commit
    each repo you touched; leave pushing to the caller. Name any repeated
-   correction class in the report.
+   correction class in the report as ready for `/correct`.
 
 ## Hold the Line
 

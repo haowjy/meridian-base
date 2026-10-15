@@ -5,6 +5,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ## [Unreleased]
 
 ### Changed
+- New `/correct` (human-invoked, moved from dev-workflow and made domain-neutral): fixes each repeated mistake class at the strongest level that holds (remove the wrong way, an automated check, a tool permission, a written rule last), proves it on a real past mistake, and updates the KB corrections register. `resources/code.md` adds architecture, types, and tests. Adapted from pstack's `/correct`.
 - KB corrections register: `knowledge-layers/resources/corrections/register.md` defines it (class, correct behavior, enforced by, occurrences; singletons as candidates), domain-neutral; `corrections/code.md` gives code projects their enforcement kinds (architecture, type, lint/CI, test, permission, doc). `@kb-lead` records the human's corrections from mined conversations and reports repeated classes.
 - Instructions state what to do instead of what to avoid (`@kb-lead`, `goal-writing`, `qi-layer`, `qi-maintenance`, `work-artifacts`, `handoff`, `zoom-out`, `explore-and-engage`, `session-mining`). Bright-line prohibitions stay.
 - `grill` asks in rounds: every question that's ready, numbered, each with a recommended answer that "yes" accepts. Fewer turns than one cluster at a time.

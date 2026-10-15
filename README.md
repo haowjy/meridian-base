@@ -73,6 +73,7 @@ compatibility while its fallback references are retired.
 | `grill-with-docs` | Grilling grounded in project docs and prior decisions |
 | `grill-with-evidence` | Grilling grounded in project artifacts and primary sources |
 | `reflect` | A user-invoked check that you delivered what they needed before you report |
+| `correct` | A user-invoked fix for mistakes agents keep repeating: the strongest fix that holds, proven on a past mistake, from the KB corrections register |
 
 **Writing and knowledge**
 
