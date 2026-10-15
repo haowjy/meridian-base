@@ -21,4 +21,5 @@ what feels helpful.
 
 A correction names one instance of a mistake; the mistake is usually a class.
 Before replying, find the other instances in the work and the system around
-it, fix them too, and say where you looked.
+it. Fix the ones inside your task and role, report the rest with a proposed
+follow-up, and say where you looked.
