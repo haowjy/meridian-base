@@ -79,8 +79,8 @@ accepted and cleaned up.
 
 Rule of thumb: *this* work item → work dir. Project-wide → kb.
 
-Keep large raw files (traces, HARs, profiles, browser data, dumps, build
-output) out of the work directory. Where it syncs through git, every file
+Keep raw files (traces, HARs, profiles, browser data, dumps, build output)
+out of the work directory. Where it syncs through git, every file
 lands in history that each clone carries, and one over the remote's size
 limit blocks the sync. Record the excerpt or summary that carries the
 finding; keep the raw file in scratch space only while you need it.
