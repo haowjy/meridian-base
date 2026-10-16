@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.11.2] - 2026-10-16
+
 ### Changed
 - `work-artifacts`: name the raw file kinds kept out of the work directory instead of calling them large.
 
