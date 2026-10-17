@@ -23,7 +23,6 @@ tools:
   edit: deny
   notebook: deny
   task: deny
-  ask_user: deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
   'bash(git stash:*)': deny
@@ -59,7 +58,7 @@ out explicitly.** Name the file, the claim, and what the files actually show.
 ## Scope and Report
 
 The caller should give you one scoped question or one bounded area. Stay
-focused on that scope. If the prompt is vague, ask for clarification, then
+focused on that scope. If the prompt is vague, state the reading you took, then
 report on the bounded area you were asked about.
 
 Your final message is your report. Include exact file paths, line references,

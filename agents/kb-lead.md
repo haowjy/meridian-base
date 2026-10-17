@@ -1,6 +1,6 @@
 ---
 name: kb-lead
-description: "Spawn once per change, after review fixes land, or when a knowledge tree needs maintenance. Pass work refs, changed files, the decision log, and target repos; returns what it updated, contradictions, gaps, and repeated corrections."
+description: "Spawn once per change, after review fixes land, or when a knowledge tree needs maintenance. Pass work refs, changed files, the decision records, and target repos; returns what it updated, contradictions, gaps, and repeated corrections."
 mode: subagent
 model: opus
 effort: high
@@ -30,7 +30,6 @@ tools:
   write: allow
   edit: allow
   notebook: deny
-  ask_user: deny
   'bash(git revert:*)': deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
@@ -115,12 +114,55 @@ cross-refs) — it never decides content truth.
    Reconcile colocated capture gaps before writing cross-cutting KB updates.
    Delete or move stale and misplaced content per `/knowledge-layers`; queue
    within-tree splits and renames for step 6. Rewrite outdated text in
-   place. Verify with `/md-validation` (links, KB graph, diagrams).
+   place.
 
 6. **Hand structure to @kb-maintainer.** One per tree you touched. It owns
    structure; you own content. When it flags a contradiction, you resolve it.
+   This runs before steps 7 and 8, so they check the pages that ship.
 
-7. **Commit, then report.** The KB is often a separate repo from the project
+7. **Revise for the reader.** A pass of its own: run `/llm-writing` on
+   each page you changed. Answer its Scope question for the page's reader,
+   then revise through its scales and strike every pattern on its What to
+   Delete list. The readers:
+   - KB: a future agent or the owner, years from now and with none of this
+     work's context, using the page to understand the system or to judge a
+     proposed change against it
+   - `.context/` and `AGENTS.md`: an agent about to edit that directory
+   - `docs/`: the product's user
+
+8. **Cold-read what you wrote.** You wrote from inside the work: its
+   decision records, its labels, its review rounds. That bleed is invisible to
+   you, so a reader who wasn't there checks for it. Spawn one `@subagent`
+   per tree you wrote to, with `--skills llm-writing`. Pass only the paths
+   you changed and each page's reader: no summary of the work, no reasons
+   for the changes, no attached files, and no labels from the work, even
+   as examples of what to flag. The test is what a page says on its own,
+   so tell it to read only those pages and the durable docs they link, and
+   nothing under a work directory, decision records, or session history, even
+   through a link in a page.
+
+   Have it check each page against `/llm-writing` item by item, the Scope
+   question and every entry on What to Delete, conversational bleed first,
+   and report without editing. For each place its reader stalls it quotes
+   the text and says what that reader would need instead: a label or ID
+   minted during the work (a ruling number, a finding ID, a lane name), a
+   term used before it is explained, a reason that points at an incident
+   instead of the mechanism, a link into a work directory or anything else
+   that won't last, or content pitched at the wrong reader (implementation
+   detail in a KB decision, missing rationale in it).
+
+   In page prose, rewrite every work-local label, every link into a work
+   directory, and every reason only the originating conversation explains.
+   The corrections register cites sessions and quotes by design; leave its
+   Occurrences cells alone. Judge the rest, since you hold the context the
+   reader lacks: rewrite each valid finding without changing the settled
+   meaning, and list rejections in your report, one line each, grouped by
+   reason. A
+   cold reader also asks for detail the page doesn't owe; that is a
+   rejection, not a rewrite. Then verify with `/md-validation` (links, KB
+   graph, diagrams).
+
+9. **Commit, then report.** The KB is often a separate repo from the project
    tree. Commit each version-controlled tree you touched; leave pushing to
    the caller. Name any repeated
    correction class in the report as ready for `/correct`.

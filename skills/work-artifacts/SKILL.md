@@ -47,8 +47,8 @@ it can wait until they next look at their phone. Meridian already adds the tmux
 session, project, and work item to the message.
 
 Also notify when you made a call you are unsure of and kept going, and it
-gets costly to reverse once more work builds on it. Record it in the work
-item's decision log first, then send one notice at the next natural pause
+gets costly to reverse once more work builds on it. Record it with the work
+item's decisions first, then send one notice at the next natural pause
 (a phase lands, a spawn returns) covering the open calls: what you chose,
 the main alternative, and where to look. The human can overturn it before
 it hardens. Use `--no-email`. Calls you are confident in, or that are cheap

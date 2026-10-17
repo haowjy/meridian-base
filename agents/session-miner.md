@@ -25,7 +25,6 @@ tools:
   edit: deny
   write: deny
   notebook: deny
-  ask_user: deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
   'bash(git stash:*)': deny

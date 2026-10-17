@@ -4,6 +4,11 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `kb-lead`: after writing and structure work, a `/llm-writing` pass for each page's reader, then a cold read by a fresh `@subagent` that sees only the pages. Labels minted during the work, links into work directories, and reasons only the conversation explains get rewritten; other findings are judged, and rejections reported. Link validation runs last.
+- Decision records can span files or a directory; "the decision log" now reads "decision records" (`kb-lead`, `work-artifacts`).
+- Agent profiles drop `ask_user: deny`; `explorer` states the reading it took instead of asking.
+
 ## [0.11.2] - 2026-10-16
 
 ### Changed
