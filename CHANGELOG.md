@@ -6,6 +6,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ### Changed
 - `/notify`: `meridian notify "<title>" "<body>"`. The title is the one line the human reads first; detail goes in the optional body; files on disk go with `--attach` instead of `"$(cat file)"`. `--title` is gone from the examples (Meridian dropped it).
+- `/notify` delivery: results are per route (default push + email, plus hook channels); exit 0 means sent.
 
 ## [0.11.4] - 2026-10-17
 

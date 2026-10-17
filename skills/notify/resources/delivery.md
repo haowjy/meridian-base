@@ -1,11 +1,12 @@
 # Delivery
 
-`meridian notify` sends once to each backend the user configured: push
-(ntfy) and email (SMTP or Gmail). It never retries. `--json` prints a
-per-backend report.
+`meridian notify` sends once through each route the user configured: by
+default push (ntfy) and email (SMTP or Gmail), plus any channels they added
+as hooks. It never retries. `--json` prints one result per route; a failed
+route's error names the backends that failed.
 
-When a backend fails, the others still deliver; treat the notice as sent if
-any backend succeeded. When every backend failed, or none is configured,
+When a route fails, the others still deliver; treat the notice as sent if the
+command exits 0. When it exits 1 (nothing delivered), or nothing is configured,
 don't retry in a loop or try to configure delivery yourself; fall back in
 this order:
 
@@ -16,5 +17,5 @@ this order:
    message to them.
 
 Then keep working on whatever doesn't wait on their answer, and say in your
-report that delivery failed and which backend errors you saw. Leave
+report that delivery failed and which errors you saw. Leave
 credentials and tokens out of messages and reports.
