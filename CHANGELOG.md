@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.11.4] - 2026-10-17
+
 ### Added
 - `/notify`: for decisions the human must make, uncertain calls that will be costly to reverse, blockers, and finished tasks; the body is a few lines (`meridian notify`, first line says what to decide or see, details after it or from a file, once per thing). `resources/examples.md` has strong and weak lines, `--no-email`, batching uncertain calls, `--title` and `--priority`; `resources/delivery.md` has what to do when every backend fails (the harness's own notification tool, then the record and the top of the next message).
 
