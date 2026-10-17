@@ -4,6 +4,12 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `/notify`: for decisions the human must make, uncertain calls that will be costly to reverse, blockers, and finished tasks; the body is a few lines (`meridian notify`, first line says what to decide or see, details after it or from a file, once per thing). `resources/examples.md` has strong and weak lines, `--no-email`, batching uncertain calls, `--title` and `--priority`; `resources/delivery.md` has what to do when every backend fails (the harness's own notification tool, then the record and the top of the next message).
+
+### Changed
+- Leaner `work-artifacts`: what every agent needs (find the work directory with `meridian work current`, what goes there, raw files out, the owner holds work state). Starting and finishing work items, `DIVERGENCE/` and the work directory's AGENTS.md move to `resources/lifecycle.md`; notify guidance moves to `/notify`. `explore-and-engage` drops the subagent-mode paragraph and states the two tracks in three lines.
+
 ## [0.11.3] - 2026-10-17
 
 ### Added

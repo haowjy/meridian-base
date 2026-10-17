@@ -1,44 +1,31 @@
-# Work Item Lifecycle
+# Owning a Work Item
 
-## Dashboard and Discovery
+## Start and Track
 
-```bash
-meridian work                    # dashboard: what's in flight
-meridian work list               # list active work items
-meridian work list --done        # list done/archived items
-meridian work show auth-refactor # drill into one work item
-```
+Small direct tasks can run without a work item. Start one when the work
+needs its own artifacts or tracking: `meridian work start "<name>"`, or
+`meridian work switch <name>` to attach to an existing one. Spawns inherit
+the attachment. Rebind the checkout with `meridian work task-dir <path>`.
+`meridian work -h` lists the rest (dashboard, list, show, reopen, delete).
 
-## Status Management
+Keep the current phase visible in the free-form status:
+`meridian work update <name> --status <phase>`.
 
-Status values are free-form. Keep the current phase visible:
+## Finish
 
-```bash
-meridian work update auth-refactor --status designing
-meridian work update auth-refactor --status implementing
-meridian work reopen auth-refactor         # restore archived work
-meridian work delete stale-item            # remove empty work items
-meridian work delete old-item --force      # remove even if it has artifacts
-```
+Handing work off for review is not finishing it: set a status such as
+`pr-open` and leave the item active until the change is accepted and
+cleaned up. Then `meridian work done <name>` archives the work directory and
+detaches the session. Run it only when you own the whole lifecycle, not a
+slice of it; use `meridian work clear` to detach from an item you don't own.
 
-## Completion Lifecycle
+## The Work Directory
 
-The stable lifecycle:
-1. create work item
-2. do the work
-3. hand it off for review when applicable (a PR in a code project)
-4. wait for review and acceptance (a merge) when applicable
-5. mark the work item done when acceptance and cleanup are complete
+Its `AGENTS.md` orients a spawn arriving cold: the goal, the artifact
+layout, and what is settled versus still moving. Keep it current as the
+work shifts, per `/qi-layer`.
 
-Handing off for review is not finishing the work item. At that point, leave
-it active with an explicit status like `awaiting-review` or `pr-open`.
-`meridian work done` belongs after acceptance and cleanup.
-
-```bash
-meridian work done auth-refactor    # archives work directory, detaches from session
-meridian work clear                 # detach without archiving (work stays active for others)
-```
-
-`work done` archives the work directory and detaches the session. A prose
-status update does not complete the work item: only `work done` archives
-it. Use `work clear` to detach from a work item you don't own.
+Decisions scoped to one change go with it, in its commit message or a note
+beside what it explains; structural decisions go in the work directory.
+When the plan shifts during execution, log the shift in `DIVERGENCE/`.
+Reviewers check alignment against it, and knowledge capture mines it.

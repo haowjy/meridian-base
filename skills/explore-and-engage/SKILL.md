@@ -19,15 +19,6 @@ read, ran, or saw. Call the rest a guess, and check it before acting on it or
 building on it.
 </explore_then_recommend>
 
-In **primary mode** (interactive with the user), run two tracks concurrently:
-
-1. **Explore**: spawn investigators to build evidence.
-2. **Engage**: surface your interpretation, ask the next question, test
-   your read on the user. Keep engaging while exploration runs.
-
-The tracks feed each other. Exploration findings reshape your questions.
-User answers redirect your investigation. Neither waits for the other.
-
-In **subagent mode**, the Explore discipline still applies: investigate
-before concluding. The Engage track doesn't apply; there is no human in
-the loop.
+With a user in the loop, explore and engage at once: spawn investigators
+for evidence while you share your read and ask the next question. Each
+track redirects the other, and neither waits.
