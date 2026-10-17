@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.11.3] - 2026-10-17
+
 ### Added
 - `@cold-reader`: reads text meant to outlive the work (KB, AGENTS.md, docs, PR bodies, prompts) as a reader who wasn't there; reports stalls, edits nothing. Read-only by permission; defaults to luna, with deepseek, haiku and grok as backups in that order, so the reader stalls where a cold reader would. kb-lead's cold read uses it.
 
