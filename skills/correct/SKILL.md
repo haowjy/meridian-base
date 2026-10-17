@@ -25,7 +25,8 @@ Start from the KB corrections register (`/knowledge-layers`
 `resources/corrections/`) and any correction the human just gave. Add what the
 register missed: mine recent sessions with `@session-miner`, and read work the
 human undid or redirected and recent review findings. A class counts once it
-has happened twice; record a single occurrence as a candidate.
+has happened twice or the human names it; record other single occurrences as
+candidates.
 
 ## Fix Each Class at the Strongest Level That Holds
 

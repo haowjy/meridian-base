@@ -42,6 +42,7 @@ Each agent's `description` says when to spawn it, what to pass, and what comes b
 | `explorer` | luna | Read-only facts from a project's files and git history |
 | `session-miner` | luna | Decisions, rejected alternatives, constraints, and intent from past conversations |
 | `kb-lead` | opus | Writes durable knowledge to `.context/`, the KB, and `docs/` from the work and the human's decisions; deletes stale and misplaced docs; commits each repo it touches without pushing |
+| `cold-reader` | luna | Reads text meant to outlive the work as a reader who wasn't there; reports where that reader stalls, edits nothing |
 | `kb-maintainer` | luna | Restructures documentation trees and repairs cross-references; flags content questions instead of deciding them |
 
 These are profile defaults. Ordered alternatives and effort settings live in

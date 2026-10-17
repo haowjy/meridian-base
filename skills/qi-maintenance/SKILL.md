@@ -25,4 +25,4 @@ Track deferred work separately: directory-local must-do work goes in the
 nearest `.context/TODO`, directory-local nice-to-have work in
 `.context/FUTURE`, and cross-cutting or externally visible work in the project
 issue tracker. Load `/knowledge-layers` when placement is unclear.
-Cross-cutting KB synthesis belongs to `@kb-lead`, once per change after it settles.
+Cross-cutting KB synthesis belongs to `@kb-lead`, after the change settles.

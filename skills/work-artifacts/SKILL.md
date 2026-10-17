@@ -56,8 +56,8 @@ to undo, need no notice.
 
 ## Status and Completion
 
-The orchestrator owns work state: subagents must not mutate it unless
-explicitly instructed (concurrent mutations create race conditions).
+The agent that started the work item owns its state: spawned agents must not
+mutate it unless explicitly instructed (concurrent mutations create race conditions).
 
 Status values are free-form: keep the current phase visible:
 
@@ -91,7 +91,7 @@ Record rejected alternatives: they prevent re-proposing what was already
 considered.
 
 **`DIVERGENCE/`**: when the design or plan shifts during execution, the
-orchestrator logs the shift in this folder. Reviewers check alignment
+lead logs the shift in this folder. Reviewers check alignment
 against it; knowledge capture mines it once the change settles.
 
 **`AGENTS.md`**: the work directory follows `/qi-layer` like any tree

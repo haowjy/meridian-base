@@ -38,6 +38,7 @@ tools:
   'bash(git restore:*)': deny
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
+  ask_user: deny
 sandbox: workspace-write
 ---
 
@@ -52,13 +53,6 @@ for disclosure tiers. If no target is specified, default to the project KB
 
 ## Structural Refactoring
 
-- **Split oversized docs.** A doc covering multiple concepts becomes multiple
-  docs with cross-references.
-- **Create folder structure.** Group related pages into a domain directory
-  with an overview doc.
-- **Merge thin docs.** Two pages explaining fragments of the same concept
-  become one.
-- **Improve naming.** Rename when names drift from content.
 - **Prune structural dead weight.** Empty stubs, pages orphaned by a move or
   merge, indexes listing nothing: delete them. Content that merely looks
   stale is not yours to delete; flag it for the caller.

@@ -4,8 +4,20 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `@cold-reader`: reads text meant to outlive the work (KB, AGENTS.md, docs, PR bodies, prompts) as a reader who wasn't there; reports stalls, edits nothing. Read-only by permission; defaults to luna, with deepseek, haiku and grok as backups in that order, so the reader stalls where a cold reader would. kb-lead's cold read uses it.
+
 ### Changed
-- `kb-lead`: after writing and structure work, a `/llm-writing` pass for each page's reader, then a cold read by a fresh `@subagent` that sees only the pages. Labels minted during the work, links into work directories, and reasons only the conversation explains get rewritten; other findings are judged, and rejections reported. Link validation runs last.
+- `mars.toml`: `haiku` alias for the current Haiku.
+- `kb-lead` capture loop in six steps: investigate (with the wave limit), write, structure, then one check step (`/llm-writing` pass, cold read, `/md-validation` on every touched tree, so deletion-only runs still check links).
+- `cold-reader` reads what it was given and nothing else from the work, so a PR-body draft in a work directory is readable.
+- Subagent profiles deny `ask_user` again; the deny works on Codex, and on Claude once mars lowers it to `AskUserQuestion`.
+- Bodies no longer repeat "your final message is your report": Meridian injects it.
+- `llm-writing`: Draft step drafts wherever the piece can be revised before it reaches its reader (the file itself, a scratch file, or working notes), not always to disk. `correct`: a class the human names counts without a second occurrence. `zoom-out`: spawn the angles the area has material for. `work-artifacts`: work state belongs to the agent that started the item, not "the orchestrator". `explorer` description says what comes back.
+- Cut text agents already have: kb-lead's Hold the Line and layer list (in `/knowledge-layers`), its restated `/llm-writing` method; kb-maintainer's basic operations; explorer's and session-miner's explanations.
+- `explorer`: answers the question it was given and reports facts outside it that bear on the answer, marked as such; no "stay focused on that scope".
+- `kb-lead`: spawned when a change settles, not "once per change". Wave limit stays at three but reads as a limit, not a budget. `@kb-maintainer` only for trees with queued structure; cold reader only for trees with new or rewritten prose.
+- `kb-lead`: after writing and structure work, a `/llm-writing` pass for each page's reader, then a cold read by `@cold-reader` that sees only the pages. Labels minted during the work, links into work directories, and reasons only the conversation explains get rewritten; other findings are judged, and rejections reported. Link validation runs last.
 - Decision records can span files or a directory; "the decision log" now reads "decision records" (`kb-lead`, `work-artifacts`).
 - Agent profiles drop `ask_user: deny`; `explorer` states the reading it took instead of asking.
 

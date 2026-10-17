@@ -53,6 +53,12 @@ default_effort = "high"
 match = ["claude*sonnet*"]
 exclude = ["*:*"]
 
+[models.haiku]
+harness = "claude"
+description = "Small, fast Claude. Literal reading for cheap checks, such as a cold read of text meant to outlive the work."
+match = ["claude*haiku*"]
+exclude = ["*:*"]
+
 [models.fable]
 harness = "claude"
 description = "Reserve for consequential decisions and important communication that justify high-end judgment and writing quality."

@@ -16,18 +16,18 @@ Use when starting in an unfamiliar subsystem, picking up someone else's work, or
 
 ## Fan Out
 
-Spawn in parallel, each scoped to one angle and one question. Drain with `meridian spawn wait`.
+Spawn in parallel the angles the area has material for, each scoped to one angle and one question.
 
 - **Structure** (`@explorer`): how the area's parts connect and where behavior lives; in code, callers, dependencies, module boundaries, entry points.
 - **Documented knowledge** (`@explorer` over the KB, `meridian context kb`): what's been written about this area, including architecture, guides, synthesized research.
-- **Decision history** (`@session-miner`): why it's shaped this way. Prior choices, rejected alternatives, constraints discovered. Skip when there's no relevant session history.
+- **Decision history** (`@session-miner`): why it's shaped this way. Prior choices, rejected alternatives, constraints discovered.
 - **Domain concepts** (`@explorer`): the vocabulary in use (KB vocab pages, `.context/CONTEXT.md`, AGENTS.md).
 
 Give each explorer one angle, scoped with concrete path or topic targets: the value is independent coverage.
 
 ## Synthesize
 
-Read the reports and produce one orientation map, not four stitched-together dumps:
+Read the reports and produce one orientation map, not stitched-together dumps:
 
 - **What this is**: the area's purpose and boundaries, in two or three sentences.
 - **Structure**: the parts and interfaces that matter and how they connect (a mermaid diagram if the shape is spatial).
