@@ -13,12 +13,12 @@ models_cache_ttl_hours = 24
 
 [models.composer]
 harness = "cursor"
-description = "Strong and cheap coding model, but only for coding. Value 10, intelligence 6, taste 3."
+description = "Coding for bounded edits, scaffolding, tests, and implementing a settled plan. Unreliable on long-horizon, ambiguous, or high-risk work; plan and review with a stronger model. Value 10, intelligence 6, taste 3."
 model = "composer-2.5"
 provider = "cursor"
 
 [models.deepseek]
-description = "Low-cost general implementation and execution. Strong with detailed briefs; not preferred for polished prose."
+description = "Coding and agent work: concrete repo changes, tool loops, bulk drafting from focused briefs; takes image input. Review its ambiguous or high-stakes work. Value 9, intelligence 6, taste 3."
 prompting = "Give the desired outcome, relevant source/design context, constraints, acceptance criteria, and concrete verification evidence. Define a coherent objective rather than prescribing each edit."
 default_effort = "high"
 match = ["deepseek*flash*"]
@@ -30,7 +30,7 @@ exclude = [
 ]
 
 [models.deepseekpro]
-description = "DeepSeek Pro family. Late alternative for technical judgment and implementation; verify the resolved model and provider because retired endpoints may be remapped."
+description = "Legacy alias. Until DeepSeek ships a new Pro model, it routes Pro requests to Flash at Flash pricing, so this is `deepseek` under another name. Value 9, intelligence 6, taste 3."
 default_effort = "high"
 match = ["deepseek*pro*"]
 exclude = [
@@ -41,57 +41,57 @@ exclude = [
 
 [models.opus]
 harness = "claude"
-description = "Current Opus (5.5). Strong writing taste and intent inference; preferred for interactive primaries, prompt and prose writing, and deep sustained work."
+description = "Orchestration and interactive primaries, conversation, frontend, prompt and prose writing, deep sustained work. Can over-delegate. Value 5, intelligence 9, taste 9."
 default_effort = "high"
 match = ["claude*opus*"]
 exclude = ["*:*"]
 
 [models.sonnet]
 harness = "claude"
-description = "General implementation and execution alternative after Luna and DeepSeek. Also suitable for selected judgment and review lanes; resolves the current Sonnet family."
+description = "Daily implementation: bug fixes, multi-file coding, frontend polish, documents, bounded review. Opus is better for ambiguous architecture and open-ended judgment. Value 7, intelligence 8, taste 5."
 default_effort = "high"
 match = ["claude*sonnet*"]
 exclude = ["*:*"]
 
 [models.haiku]
 harness = "claude"
-description = "Small, fast Claude. Literal reading for cheap checks, such as a cold read of text meant to outlive the work."
+description = "Summaries, compaction, classification, notes, cold reads, lightweight review, parallel subagents; not ambiguous architecture or complex autonomous implementation. Value 9, intelligence 6."
 match = ["claude*haiku*"]
 exclude = ["*:*"]
 
 [models.fable]
 harness = "claude"
-description = "Reserve for consequential decisions and important communication that justify high-end judgment and writing quality."
+description = "Long-horizon planning, architecture, critique, and bug-finding; a second opinion on work that can be verified. Slow; Opus is the better general orchestrator. Value 2, intelligence 10, taste 8."
 default_effort = "high"
 match = ["claude*fable*"]
 exclude = ["*:*"]
 
 [models.glm]
 harness = "opencode"
-description = "Strong coder. Codes well but lacks writing taste. Value 7, intelligence 7, taste 3."
+description = "Open-weight coder for backend, repository-scale implementation, and code review. Slow to start and verbose; makes confident assumptions and stops following steering late in long runs. No image input; weak at UI. Value 7, intelligence 7, taste 3."
 default_effort = "high"
 model = "opencode-go/glm-5.2"
 provider = "opencode-go"
 
 [models.kimi]
 harness = "opencode"
-description = "Strong at long-running coding and research over large inputs. Slow and token-heavy; avoid bulk work. Value 4, intelligence 8, taste 6."
+description = "Long-running coding and research over large inputs; native multimodal, good at frontend and web apps. Slow and token-heavy; avoid bulk work. Value 4, intelligence 7, taste 5."
 default_effort = "high"
 model = "kimi-k3"
 
 [models.muse]
 harness = "opencode"
-description = "Muse Spark 1.3 Standard for coding, browser and computer use. Supports max reasoning; prompts and completions are not used for training."
+description = "Coding and agent or computer-use work; does well on simpler and UI tasks, loops on hard ones. Prompts and completions are not used for training. Value 6, intelligence 8, taste 4."
 model = "muse-spark-1.3"
 
 [models.muse-contributor]
 harness = "opencode"
-description = "Muse Spark 1.3 Contributor for coding, browser and computer use, currently through OpenCode Zen's limited-time free endpoint. Select only when training on submitted prompts/completions is acceptable. No max reasoning."
+description = "Same model as `muse` on a free endpoint that may train on submitted prompts and completions; select it only when that is acceptable."
 model = "muse-spark-1.3-contributor-free"
 
 [models.grok]
 harness = "opencode"
-description = "Grok family through OpenCode/xAI. Auto-resolves the newest Grok in the cache."
+description = "Long-horizon coding and knowledge work. Verbose and slow. Value 3, intelligence 8, taste 5."
 default_effort = "high"
 provider = "xai"
 match = ["grok-*"]
@@ -102,46 +102,26 @@ exclude = [
     "grok-build-*",
 ]
 
-[models.gptmini]
-description = "Fast and cheap. Good for bulk exploration and simple tasks. Value 9, intelligence 5, taste 3."
-default_effort = "high"
-provider = "openai"
-match = ["gpt-5*-mini"]
-exclude = ["*-nano"]
-
 [models.sol]
 harness = "codex"
-description = "Preferred for difficult technical analysis and technically demanding implementation when cheaper workers need more depth."
+description = "Difficult technical analysis, complex coding, computer use, long-horizon implementation. Slow to stream and output-heavy; a review benchmark on the previous version found many of its findings unactionable. Less sure-footed on ambiguous architecture. Value 8, intelligence 8, taste 5."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
 match = ["gpt-*-sol"]
 
 [models.terra]
 harness = "codex"
-description = "Best daily-driver coding value. Strong on bounded, verifiable work, but less reliable when ambiguity or taste matters. Value 9, intelligence 8, taste 4."
+description = "Scoped, repeatable implementation, triage, and lower-risk review; clear and less prone to overthinking than Sol. Emits several times Sol's output per task and passes fewer long tasks. Value 9, intelligence 8, taste 4."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
 match = ["gpt-*-terra"]
 
 [models.luna]
 harness = "codex"
-description = "Preferred inexpensive general worker for implementation, exploration, and bounded execution. Can own substantial coherent objectives with clear context and verification criteria."
+description = "General worker for implementation, exploration, summaries, and bounded execution; can own substantial coherent objectives given clear context and verification criteria. Can stall or report done early, so check its claims. Not for ambiguous architecture or subtle cross-module debugging. Value 10, intelligence 6, taste 4."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
 match = ["gpt-*-luna"]
 
 [models.astra]
 harness = "codex"
-description = "GPT-6 Astra for consequential decisions, cross-system judgment, and important communication."
+description = "The hardest cross-system decisions, computer use and browser work, software engineering, important communication. Slow; cyber-safety checks can pause legitimate security work. Value 5, intelligence 8, taste 6."
 default_effort = "high"
 match = ["gpt-*-astra"]
-
-[models.gpt]
-description = "Default GPT model family."
-default_effort = "high"
-match = ["gpt-*"]
-exclude = [
-    "*codex*",
-    "*-pro",
-    "*-mini",
-    "*-nano",
-    "*-chat",
-    "*-turbo",
-]

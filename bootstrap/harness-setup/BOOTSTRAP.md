@@ -49,14 +49,6 @@ The routing logic:
 This means **the model choice implicitly selects the harness**. You don't
 usually need to specify `--harness` explicitly.
 
-### Model → harness mapping
-
-```
-sonnet, opus, haiku           → claude harness
-codex, gpt55, gptmini, o3    → codex harness
-opencode-go/*, kimi-*         → opencode harness
-```
-
 Run `meridian mars models list` to see the configured model catalog: aliases,
 descriptions, and static routing hints. This command stays fast and does not
 probe every installed harness.

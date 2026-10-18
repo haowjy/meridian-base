@@ -46,8 +46,38 @@ Each agent's `description` says when to spawn it, what to pass, and what comes b
 | `kb-maintainer` | luna | Restructures documentation trees and repairs cross-references; flags content questions instead of deciding them |
 
 These are profile defaults. Ordered alternatives and effort settings live in
-`agents/*.md`. Model aliases live in `mars.toml`; Composer is retained there for
-compatibility while its fallback references are retired.
+`agents/*.md`; the model aliases they name are below.
+
+## Models
+
+The model aliases in `mars.toml`, scored 1–10 as of October 2026. Each alias
+resolves to the newest model in its family, or to the model it pins.
+Intelligence and value come from the Artificial Analysis Intelligence Index
+and its cost per task; taste is judged against Opus (9), the highest of any
+model here. Agents read each alias's description in `mars.toml` when picking a model;
+this table is generated from those descriptions with
+`uv run scripts/models_table.py`.
+
+<!-- models-table:start -->
+| Alias | Value | Intelligence | Taste | Description |
+|---|---|---|---|---|
+| `fable` | 2 | 10 | 8 | Long-horizon planning, architecture, critique, and bug-finding; a second opinion on work that can be verified. Slow; Opus is the better general orchestrator. |
+| `opus` | 5 | 9 | 9 | Orchestration and interactive primaries, conversation, frontend, prompt and prose writing, deep sustained work. Can over-delegate. |
+| `terra` | 9 | 8 | 4 | Scoped, repeatable implementation, triage, and lower-risk review; clear and less prone to overthinking than Sol. Emits several times Sol's output per task and passes fewer long tasks. |
+| `sol` | 8 | 8 | 5 | Difficult technical analysis, complex coding, computer use, long-horizon implementation. Slow to stream and output-heavy; a review benchmark on the previous version found many of its findings unactionable. Less sure-footed on ambiguous architecture. |
+| `sonnet` | 7 | 8 | 5 | Daily implementation: bug fixes, multi-file coding, frontend polish, documents, bounded review. Opus is better for ambiguous architecture and open-ended judgment. |
+| `muse` | 6 | 8 | 4 | Coding and agent or computer-use work; does well on simpler and UI tasks, loops on hard ones. Prompts and completions are not used for training. |
+| `astra` | 5 | 8 | 6 | The hardest cross-system decisions, computer use and browser work, software engineering, important communication. Slow; cyber-safety checks can pause legitimate security work. |
+| `grok` | 3 | 8 | 5 | Long-horizon coding and knowledge work. Verbose and slow. |
+| `glm` | 7 | 7 | 3 | Open-weight coder for backend, repository-scale implementation, and code review. Slow to start and verbose; makes confident assumptions and stops following steering late in long runs. No image input; weak at UI. |
+| `kimi` | 4 | 7 | 5 | Long-running coding and research over large inputs; native multimodal, good at frontend and web apps. Slow and token-heavy; avoid bulk work. |
+| `composer` | 10 | 6 | 3 | Coding for bounded edits, scaffolding, tests, and implementing a settled plan. Unreliable on long-horizon, ambiguous, or high-risk work; plan and review with a stronger model. |
+| `luna` | 10 | 6 | 4 | General worker for implementation, exploration, summaries, and bounded execution; can own substantial coherent objectives given clear context and verification criteria. Can stall or report done early, so check its claims. Not for ambiguous architecture or subtle cross-module debugging. |
+| `deepseek` | 9 | 6 | 3 | Coding and agent work: concrete repo changes, tool loops, bulk drafting from focused briefs; takes image input. Review its ambiguous or high-stakes work. |
+| `deepseekpro` | 9 | 6 | 3 | Legacy alias. Until DeepSeek ships a new Pro model, it routes Pro requests to Flash at Flash pricing, so this is `deepseek` under another name. |
+| `haiku` | 9 | 6 | — | Summaries, compaction, classification, notes, cold reads, lightweight review, parallel subagents; not ambiguous architecture or complex autonomous implementation. |
+| `muse-contributor` | — | — | — | Same model as `muse` on a free endpoint that may train on submitted prompts and completions; select it only when that is acceptable. |
+<!-- models-table:end -->
 
 ## Skills
 
@@ -61,6 +91,7 @@ compatibility while its fallback references are retired.
 | `goal-writing` | Turning intent into an executable goal: outcome, evidence, constraints, stop conditions |
 | `meridian-privilege-escalation` | Least-privilege fixes when a spawn hits sandbox or permission limits |
 | `session-mining` | Recovering decisions and context from conversation history |
+| `notify` | Telling the human about a decision, a costly uncertain call, a blocker, or a finished task |
 | `zoom-out` | Orienting in an unfamiliar area with parallel explorers and one synthesized map |
 
 **Thinking with the human**
