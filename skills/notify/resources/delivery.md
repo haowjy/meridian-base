@@ -12,7 +12,10 @@ than treating every exit 0 as delivery:
 - `Notification sent via notify (ntfy).` names the route, then its successful
   transports, and means at least one route delivered. With
   `--json`, at least one result has `status: "sent"`.
-- A warning with a sent result is partial delivery. In particular, when ntfy
+- A top-level `dropped invalid hook rows` warning is a configuration problem to
+  report, even when a route sent successfully. It does not mean delivery was
+  partial.
+- A route warning with a sent result is partial delivery. In particular, when ntfy
   accepted the text but rejected attached files, the warning names every file
   that failed. Do not resend the notification text; mention the missing
   attachments in the record or report.
