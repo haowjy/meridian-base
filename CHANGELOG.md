@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.11.6] - 2026-10-18
+
 ### Changed
 - `/qi-layer` and project-knowledge bootstrap: Claude Code reads `AGENTS.md` itself. No more `CLAUDE.md` mirrors or `meridian qi claude-md-fix`; a `CLAUDE.md` holds only Claude-specific lines and starts with `@AGENTS.md` (Claude reads it instead of `AGENTS.md`).
 
