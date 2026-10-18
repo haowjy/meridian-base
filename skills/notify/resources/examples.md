@@ -14,8 +14,8 @@ message.
 
 Weak titles make them open the session to find out whether it matters:
 "Update", "Done with phase 2", "Spawn p31 finished", "FYI". Meridian ends
-the body with the tmux session, project, and work item, so the message
-needn't name them.
+the body with a headline naming the tmux session, the agent, and the work
+item (or the project when there is none), so the message needn't name them.
 
 ## Push Only
 

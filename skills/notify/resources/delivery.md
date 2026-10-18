@@ -2,7 +2,8 @@
 
 `meridian notify` sends once through each route the user configured: by
 default push (ntfy) and email (SMTP or Gmail), plus any channels they added
-as hooks. It never retries. `--json` prints one result per route; a failed
+as hooks. It never retries. `--json` prints one result per route, named by
+its `channel` key (the hook name; `notify` is the default route); a failed
 route's error names the backends that failed, and a sent route's `transports`
 list names the backends that delivered.
 
@@ -20,8 +21,8 @@ than treating every exit 0 as delivery:
   that failed. Do not resend the notification text; mention the missing
   attachments in the record or report.
 - `Nothing delivered.` means every route was disabled, skipped, or selected a
-  `none` backend. The warning `no notification route ran` also covers hooks
-  being disabled. These outcomes exit 0 because delivery was intentionally
+  `none` backend. The warning `no notification route ran for <event>` also
+  covers hooks being disabled. These outcomes exit 0 because delivery was intentionally
   inactive, but the human was not notified.
 - Exit 1 means every attempted route failed and none delivered.
 
