@@ -49,7 +49,7 @@ Walk through these in order, skipping what's already configured:
 2. **Workspace setup** — configure sibling repo access, explain skill
    leakage
 3. **Context setup** — local vs git-backed, autosync hooks
-4. **Project knowledge** — create or verify CLAUDE.md / AGENTS.md
+4. **Project knowledge** — create or verify AGENTS.md
 
 Ask the user what they need help with. Don't dump everything at once —
 guide them through what's relevant to their situation.

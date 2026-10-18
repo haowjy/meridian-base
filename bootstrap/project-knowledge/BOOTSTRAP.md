@@ -1,4 +1,4 @@
-# Project Knowledge Setup (CLAUDE.md / AGENTS.md)
+# Project Knowledge Setup (AGENTS.md)
 
 When agents enter a directory, they automatically load instruction files
 that tell them how to work there. This is how you give agents project
@@ -8,15 +8,14 @@ context without repeating yourself in every prompt.
 
 | File | What it does | Who reads it |
 |---|---|---|
-| `CLAUDE.md` | Root-level project instructions. Loaded by Claude Code on every session. | Claude Code harness |
-| `AGENTS.md` | Directory-level intent. Loaded by any agent entering that directory. | All harnesses via meridian |
+| `AGENTS.md` | Directory-level intent. The root file loads every session; nested ones load when an agent works in that directory. | Every harness, Claude Code included |
 | `.context/CONTEXT.md` | Detailed reference docs colocated with code. Read on demand. | Agents that need depth |
 
-**`CLAUDE.md` and `AGENTS.md` at root are typically symlinked** — same
-content, but the filename determines which harness picks it up. Claude
-Code reads `CLAUDE.md`; other harnesses read `AGENTS.md`.
+A `CLAUDE.md` is needed only for instructions that apply to Claude Code
+alone. Start it with `@AGENTS.md`: when a directory has a `CLAUDE.md`,
+Claude reads it instead of `AGENTS.md`.
 
-## What goes in root CLAUDE.md / AGENTS.md
+## What goes in root AGENTS.md
 
 This is the project's "instruction manual for agents." Include:
 
@@ -73,7 +72,7 @@ when agents need to write inline knowledge.
 
 ## Getting started
 
-If this project does not have a root `CLAUDE.md` or `AGENTS.md` yet,
+If this project does not have a root `AGENTS.md` yet,
 create one now. Start with:
 
 1. What this project is (1-2 sentences)
@@ -82,7 +81,7 @@ create one now. Start with:
 4. Common mistakes to avoid
 
 Ask the user what they want agents to know about this project. Their
-answers become the initial CLAUDE.md content.
+answers become the initial AGENTS.md content.
 
 If the project already has these files, verify they are up to date with
 the current codebase and conventions.

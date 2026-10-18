@@ -1,7 +1,7 @@
 ---
 name: qi-layer
 type: reference
-description: "Use when writing or maintaining AGENTS.md, .context/CONTEXT.md, or CLAUDE.md mirrors: keep intent docs minimal and load-bearing."
+description: "Use when writing or maintaining AGENTS.md, .context/CONTEXT.md, or a Claude-specific CLAUDE.md: keep intent docs minimal and load-bearing."
 ---
 
 # qi-layer
@@ -99,21 +99,16 @@ Specific failure modes:
 - Lateral links between `.context/` directories with contracts between them
 - LCA deduplication: if two siblings share context, put it in the parent
 
-## CLAUDE.md Mirrors
+## CLAUDE.md
 
-Claude harnesses read CLAUDE.md, not AGENTS.md. Give every AGENTS.md a
-sibling CLAUDE.md whose first line is `@AGENTS.md` — normally the whole
-file. Run `meridian qi claude-md-fix <target-root>` on the containing tree
-after creating or moving AGENTS.md files: it creates missing mirrors, skips
-exact ones, and reports anything else as a conflict.
+Claude Code reads AGENTS.md when a directory has no CLAUDE.md, so most
+directories need only AGENTS.md. Add a CLAUDE.md only for Claude-specific
+instructions, and make `@AGENTS.md` its first line: when CLAUDE.md exists,
+Claude reads it instead of AGENTS.md. Never write shared instructions into
+CLAUDE.md.
 
-Never write shared instructions into CLAUDE.md. Claude-only knowledge is
-rare; when it exists, put it below the `@AGENTS.md` import and expect
-`claude-md-fix` to keep flagging the file, so the divergence stays visible.
-
-Loading differs by level. At the root, each harness auto-loads its own
-file every session: Claude reads CLAUDE.md, others read AGENTS.md. In
-subdirectories, Claude auto-injects CLAUDE.md when it touches files there;
-other agents see nested AGENTS.md only by reading it on entry. Write each nested
+Loading differs by level. At the root, every harness loads AGENTS.md each
+session. In subdirectories, Claude loads a nested AGENTS.md when it touches
+files there; other agents see nested AGENTS.md only by reading it on entry. Write each nested
 AGENTS.md for that reader: the local additions an agent needs on entry, with
 everything else inherited from ancestors.
