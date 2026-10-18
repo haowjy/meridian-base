@@ -3,17 +3,19 @@
 `meridian notify` sends once through each route the user configured: by
 default push (ntfy) and email (SMTP or Gmail), plus any channels they added
 as hooks. It never retries. `--json` prints one result per route; a failed
-route's error names the backends that failed.
+route's error names the backends that failed, and a sent route's `transports`
+list names the backends that delivered.
 
 When a route fails, the others still run. Read the command's output rather
 than treating every exit 0 as delivery:
 
-- `Notification sent via ...` means at least one route delivered. With
+- `Notification sent via notify (ntfy).` names the route, then its successful
+  transports, and means at least one route delivered. With
   `--json`, at least one result has `status: "sent"`.
 - A warning with a sent result is partial delivery. In particular, when ntfy
-  accepted the text but rejected an attached file, the warning names that
-  file. Do not resend the notification text; mention the missing attachment
-  in the record or report.
+  accepted the text but rejected attached files, the warning names every file
+  that failed. Do not resend the notification text; mention the missing
+  attachments in the record or report.
 - `Nothing delivered.` means every route was disabled, skipped, or selected a
   `none` backend. The warning `no notification route ran` also covers hooks
   being disabled. These outcomes exit 0 because delivery was intentionally
