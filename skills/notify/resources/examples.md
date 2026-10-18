@@ -1,19 +1,21 @@
 # Notify Examples
 
-## The Message
+## Title and Body
 
-The first line is what a lock screen shows: lead with what the human has
-to do or see. Details, options, or a summary can follow on later lines, or
-come from a file (`meridian notify "$(cat summary.md)"`); push and email
-both carry the whole message.
+The title is what a lock screen shows: lead with what the human has to do
+or see. A few lines of options or a summary go in the body. Files already
+on disk go as attachments: email carries them all, a phone push one per
+message.
 
-- `meridian notify "Pick auth storage: sessions table or JWT. Tradeoffs in decisions.md"`
-- `meridian notify "PR #412 ready for review: retry backoff, all checks green"`
-- `meridian notify "Blocked: staging DB refuses connections since 14:10; nothing else to do until it's back"`
+- `meridian notify "Pick auth storage: sessions table or JWT" "Tradeoffs in decisions.md"`
+- `meridian notify "PR #412 ready for review" "Retry backoff; all checks green"`
+- `meridian notify "Blocked: staging DB refuses connections" "Since 14:10; nothing else to do until it's back"`
+- `meridian notify "Review the new settings page" --attach screenshot.png --attach report.md`
 
-Weak first lines make them open the session to find out whether it matters:
-"Update", "Done with phase 2", "Spawn p31 finished", "FYI". Meridian adds
-the tmux session, project, and work item, so the message needn't.
+Weak titles make them open the session to find out whether it matters:
+"Update", "Done with phase 2", "Spawn p31 finished", "FYI". Meridian ends
+the body with a headline naming the tmux session, the agent, and the work
+item (or the project when there is none), so the message needn't name them.
 
 ## Push Only
 
@@ -29,13 +31,11 @@ with the work item's decisions, then batch: at the next pause (a phase
 lands, a spawn returns), send one notice that names each open call, what
 you chose, the main alternative, and where the record is.
 
-`meridian notify --no-email "2 open calls in decisions.md: kept the sync API (async rewrite deferred); split billing out of users"`
+`meridian notify --no-email "2 open calls in decisions.md" "Kept the sync API (async rewrite deferred); split billing out of users"`
 
 Calls you're confident in, or that are cheap to undo, need no notice.
 
-## Headline and Priority
+## Priority
 
-`--title` replaces the headline, and the session description moves into the
-body: use it when the session name won't tell them what this is about.
 `--priority` runs 1–5 (default 3). Raise it only for a failure that is
 costing something while it waits, such as a broken deploy or a runaway job.

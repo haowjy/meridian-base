@@ -4,6 +4,11 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/notify`: `meridian notify "<title>" "<body>"`. The title is the one line the human reads first; detail goes in the optional body; files on disk go with `--attach` instead of `"$(cat file)"`. `--title` is gone from the examples (Meridian dropped it).
+- `/notify` delivery: sent output names the route and transports (`notify (ntfy)`), and JSON includes each route's `transports`. Exit 0 can mean sent or intentionally inactive; ntfy text with rejected attachments is sent with a warning naming every failed file and must not be resent. A top-level dropped-hook-rows warning is a configuration problem, not partial delivery.
+- README notification usage now shows positional title/body and repeatable `--attach`.
+
 ## [0.11.6] - 2026-10-18
 
 ### Changed

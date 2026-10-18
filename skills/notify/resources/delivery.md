@@ -1,13 +1,33 @@
 # Delivery
 
-`meridian notify` sends once to each backend the user configured: push
-(ntfy) and email (SMTP or Gmail). It never retries. `--json` prints a
-per-backend report.
+`meridian notify` sends once through each route the user configured: by
+default push (ntfy) and email (SMTP or Gmail), plus any channels they added
+as hooks. It never retries. `--json` prints one result per route, named by
+its `channel` key (the hook name; `notify` is the default route); a failed
+route's error names the backends that failed, and a sent route's `transports`
+list names the backends that delivered.
 
-When a backend fails, the others still deliver; treat the notice as sent if
-any backend succeeded. When every backend failed, or none is configured,
-don't retry in a loop or try to configure delivery yourself; fall back in
-this order:
+When a route fails, the others still run. Read the command's output rather
+than treating every exit 0 as delivery:
+
+- `Notification sent via notify (ntfy).` names the route, then its successful
+  transports, and means at least one route delivered. With
+  `--json`, at least one result has `status: "sent"`.
+- A top-level `dropped invalid hook rows` warning is a configuration problem to
+  report, even when a route sent successfully. It does not mean delivery was
+  partial.
+- A route warning with a sent result is partial delivery. In particular, when ntfy
+  accepted the text but rejected attached files, the warning names every file
+  that failed. Do not resend the notification text; mention the missing
+  attachments in the record or report.
+- `Nothing delivered.` means every route was disabled, skipped, or selected a
+  `none` backend. The warning `no notification route ran for <event>` also
+  covers hooks being disabled. These outcomes exit 0 because delivery was intentionally
+  inactive, but the human was not notified.
+- Exit 1 means every attempted route failed and none delivered.
+
+For either no-delivery outcome, don't retry in a loop or try to configure
+delivery yourself; fall back in this order:
 
 1. The harness's own notification tool, when it has one (for example a
    push-notification tool in Claude Code).
@@ -16,5 +36,6 @@ this order:
    message to them.
 
 Then keep working on whatever doesn't wait on their answer, and say in your
-report that delivery failed and which backend errors you saw. Leave
+report that delivery was inactive or failed and which warnings or errors you
+saw. Leave
 credentials and tokens out of messages and reports.

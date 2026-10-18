@@ -26,7 +26,7 @@ meridian work show auth-refactor
 meridian session search "auth design decision"
 
 # Ask the human to come look
-meridian notify "<msg>" [--title T] [--no-email] [--priority 1..5] [--json]
+meridian notify "<title>" ["<body>"] [--attach <path>]... [--no-email] [--priority 1..5] [--json]
 ```
 
 Meridian's system prompt and each command's `-h` teach the CLI. The skills
