@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- Model descriptions say what each model judges best: Opus for code quality and long-term direction (structure, taste, refactoring, thermo-nuclear review, what to delete), Astra for correctness (bugs, security, regressions), Luna for quick low-risk checks; Fable is escalation only, never a default or fallback. Muse Contributor suits inexpensive visual probing.
+
 ## [0.11.7] - 2026-10-18
 
 ### Changed

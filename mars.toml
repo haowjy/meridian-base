@@ -41,7 +41,7 @@ exclude = [
 
 [models.opus]
 harness = "claude"
-description = "Orchestration and interactive primaries, conversation, frontend, prompt and prose writing, deep sustained work. Can over-delegate. Value 5, intelligence 9, taste 9."
+description = "Orchestration and interactive primaries, conversation, frontend, prompt and prose writing, deep sustained work. Best judge of code quality and long-term direction: structure, taste, refactoring, thermo-nuclear review, and what should be deleted. Can over-delegate. Value 5, intelligence 9, taste 9."
 default_effort = "high"
 match = ["claude*opus*"]
 exclude = ["*:*"]
@@ -61,7 +61,7 @@ exclude = ["*:*"]
 
 [models.fable]
 harness = "claude"
-description = "Long-horizon planning, architecture, critique, and bug-finding; a second opinion on work that can be verified. Slow; Opus is the better general orchestrator. Value 2, intelligence 10, taste 8."
+description = "Escalation only, never a default or fallback: when a strong model has run out of depth on long-horizon planning, architecture, critique, or bug-finding, a second opinion on work that can be verified. Slow and the most expensive; Opus is the better general orchestrator. Value 2, intelligence 10, taste 8."
 default_effort = "high"
 match = ["claude*fable*"]
 exclude = ["*:*"]
@@ -86,7 +86,7 @@ model = "muse-spark-1.3"
 
 [models.muse-contributor]
 harness = "opencode"
-description = "Same model as `muse` on a free endpoint that may train on submitted prompts and completions; select it only when that is acceptable."
+description = "Same model as `muse` on a free endpoint that may train on submitted prompts and completions; select it only when that is acceptable. Suits inexpensive visual probing."
 model = "muse-spark-1.3-contributor-free"
 
 [models.grok]
@@ -116,12 +116,12 @@ match = ["gpt-*-terra"]
 
 [models.luna]
 harness = "codex"
-description = "General worker for implementation, exploration, summaries, and bounded execution; can own substantial coherent objectives given clear context and verification criteria. Can stall or report done early, so check its claims. Not for ambiguous architecture or subtle cross-module debugging. Value 10, intelligence 6, taste 4."
+description = "General worker for implementation, exploration, summaries, and bounded execution; can own substantial coherent objectives given clear context and verification criteria. Can stall or report done early, so check its claims. Fine for quick, low-risk checks; not for ambiguous architecture or subtle cross-module debugging. Value 10, intelligence 6, taste 4."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
 match = ["gpt-*-luna"]
 
 [models.astra]
 harness = "codex"
-description = "The hardest cross-system decisions, computer use and browser work, software engineering, important communication. Slow; cyber-safety checks can pause legitimate security work. Value 5, intelligence 8, taste 6."
+description = "The hardest cross-system decisions, computer use and browser work, software engineering, important communication. Best judge of correctness: bugs, security, regressions. Slow; cyber-safety checks can pause legitimate security work. Value 5, intelligence 8, taste 6."
 default_effort = "high"
 match = ["gpt-*-astra"]
