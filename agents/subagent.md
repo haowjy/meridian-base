@@ -12,7 +12,7 @@ model-policies:
   - match: {alias: sol}
     override: {effort: high}
   - match: {alias: sonnet}
-    override: {effort: high}
+    override: {effort: medium}
 tools:
   'bash(meridian spawn *)': allow
   'bash(meridian session *)': allow

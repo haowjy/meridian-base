@@ -3,17 +3,17 @@ name: kb-lead
 description: "Spawn when a change settles, after its review fixes land, or when a knowledge tree needs maintenance. Pass work refs, changed files, the decision records, and target repos; returns what it updated, contradictions, gaps, and repeated corrections."
 mode: subagent
 model: opus
-effort: high
+effort: medium
 model-policies:
   - match: {alias: sol}
     override: {effort: high}
   - match: {alias: astra}
     override: {effort: high}
   - match: {alias: opus}
-    override: {effort: high}
+    override: {effort: medium}
   - match: {alias: sonnet}
     override: {effort: high}
-  - match: {alias: deepseekpro}
+  - match: {alias: deepseek}
     override: {effort: high}
 subagents: [explorer, session-miner, kb-maintainer, cold-reader, subagent]
 skills:
