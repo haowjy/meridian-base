@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.11.10] - 2026-10-21
+
 ### Changed
 - explorer: new "Start in the Right Place" section (`ls` the task directory first, read by absolute path); description says findings come back in the report and no files are written.
 
