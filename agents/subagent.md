@@ -13,12 +13,6 @@ model-policies:
     override: {effort: high}
   - match: {alias: sonnet}
     override: {effort: medium}
-tools:
-  'bash(meridian spawn *)': allow
-  'bash(meridian session *)': allow
-  'bash(meridian work *)': allow
-  'bash(meridian context *)': allow
-  'bash(meridian qi *)': allow
 sandbox: danger-full-access
 approval: auto
 ---
