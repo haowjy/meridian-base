@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.11.11] - 2026-10-22
+
 ### Changed
 - subagent: drop the scoped `bash(meridian …)` allows. Meridian now reads scoped-only allows as a bash allowlist, which would limit the generic worker to `meridian` commands; with `approval: auto` and `danger-full-access` the allows added nothing.
 
