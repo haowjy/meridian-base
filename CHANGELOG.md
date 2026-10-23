@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.11.15] - 2026-10-23
+
 ### Added
 - `argon` model alias for Gemini 4 Argon: creative writing and structural editing of long-form fiction. Mars picks the harness (OpenCode today). Its tool calling is unreliable, so give it text in and take text back.
 - `argon-contributor` alias: the same model on OpenCode Go's free endpoint, which may train on prompts and completions. `argon` never resolves to it.

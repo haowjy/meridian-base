@@ -1,6 +1,6 @@
 [package]
 name = "meridian-base"
-version = "0.11.14"
+version = "0.11.15"
 description = "Core coordination primitives for Meridian — agent profiles and skills for spawning, state tracking, and session context."
 
 [dependencies]
@@ -106,7 +106,12 @@ exclude = [
 [models.argon]
 description = "Creative writing and long-form fiction: a second voice for drafting and revision, and a strong structural editor of long manuscripts. Drafts can run dense and verbose. Tool calling is unreliable: send it the text inline and take text back."
 match = ["*gemini*argon*"]
-exclude = ["*image*", "*tts*", "*live*", "*contributor*"]
+exclude = [
+    "*image*",
+    "*tts*",
+    "*live*",
+    "*contributor*",
+]
 
 [models.argon-contributor]
 harness = "opencode"
