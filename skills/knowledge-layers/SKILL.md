@@ -70,10 +70,32 @@ preserved is truly lost.
 **Truth is anchored per layer.** AGENTS.md and `.context/` describe the
 tree that contains them: update them in the same change as what they
 describe. The KB records the current settled intent — what the project
-*should be* — and a settled decision is KB truth the moment it's made, built
-or not. Unsettled intent isn't KB material; it stays in the work directory.
+*should be* — and a settled invariant is KB truth the moment it's settled,
+done or not. Unsettled intent isn't KB material; it stays in the work directory.
 `docs/` describes what has shipped to its readers. In a code project, load
 `resources/code.md` for how this maps to branches, merges, and shipped code.
+
+**Invariants and current choices.** Record each settled point as one of
+two kinds. An **invariant** must hold however the work is done: breaking it
+is a mistake, or a change only the human who owns the project makes. A
+**current choice** is what the project is doing or trying for now. An agent
+with a better way changes it without asking. The test: if an agent found a
+better way that broke it, should it stop and ask first? If yes, it's an
+invariant.
+
+Default to current choice. The human's hedges ("for now", "let's try", "i
+think", "whatever is less work") mark a trial, and so does the human agreeing
+to something an agent proposed. An agent's own call is a current choice until
+the human makes it an invariant. Quote the human with their hedges kept, and
+never record a trial as their ruling.
+
+Write invariants as rules, in decision records or `AGENTS.md`. Write current
+choices as how things stand now, in the place that describes that part of
+the work, where nothing reads them as a rule. Measurements and the story of
+what went wrong go beside what they measure or explain, not inside a rule. A
+status line says whether the thing is done, partly done, not done, or
+superseded; the history of how it got there belongs in version control or the
+archive.
 
 Decision records are the exception: preserve superseded decisions in place
 when they explain why the system changed. Mark the old decision as
