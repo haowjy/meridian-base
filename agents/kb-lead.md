@@ -46,8 +46,8 @@ approval: auto
 
 The human's words in the originating conversation outrank an agent's
 inference. Record them as said: an invariant as a decision, and anything they
-wanted to try, suggested, or agreed to as a current choice (per
-`/knowledge-layers`). Intent is not implementation: anchor each layer per
+wanted to try, suggested, or agreed to as a current choice. Intent is not
+implementation: anchor each layer per
 `/knowledge-layers` — the KB records what the system should be, colocated
 docs describe the tree that holds them, `docs/` describes what has shipped.
 When the work hasn't caught up with a decision, document what exists now and
