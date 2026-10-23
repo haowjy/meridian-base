@@ -76,6 +76,8 @@ model here. Agents pick models from these descriptions, which
 | `deepseek` | 9 | 6 | 3 | Coding and agent work: concrete repo changes, tool loops, bulk drafting from focused briefs; takes image input. Review its ambiguous or high-stakes work. |
 | `deepseekpro` | 9 | 6 | 3 | Legacy alias. Until DeepSeek ships a new Pro model, it routes Pro requests to Flash at Flash pricing, so this is `deepseek` under another name. |
 | `haiku` | 9 | 6 | — | Summaries, compaction, classification, notes, cold reads, lightweight review, parallel subagents; not ambiguous architecture or complex autonomous implementation. |
+| `argon` | — | — | — | Creative writing and long-form fiction: a second voice for drafting and revision, and a strong structural editor of long manuscripts. Drafts can run dense and verbose. Tool calling is unreliable: send it the text inline and take text back. |
+| `argon-contributor` | — | — | — | Same model as `argon` on a free endpoint that may train on submitted prompts and completions; select it only when that is acceptable, never for unpublished manuscripts the author hasn't cleared. |
 | `muse-contributor` | — | — | — | Same model as `muse` on a free endpoint that may train on submitted prompts and completions; select it only when that is acceptable. Suits inexpensive visual probing. |
 <!-- models-table:end -->
 
