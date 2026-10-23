@@ -4,6 +4,17 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `argon` model alias for Gemini 4 Argon: creative writing and structural editing of long-form fiction. Mars picks the harness (OpenCode today). Its tool calling is unreliable, so give it text in and take text back.
+- `argon-contributor` alias: the same model on OpenCode Go's free endpoint, which may train on prompts and completions. `argon` never resolves to it.
+
+### Changed
+- knowledge-layers: before writing to the KB about some work, read the docs it updated, link to what they describe, and write only what they don't say. A KB section that restates them gets cut down to the link and what they don't say.
+- kb-lead: callers pass the docs the work already updated and the human's decisions and corrections quoted with their hedges. It mines sessions only for what the brief and logs lack, searches the KB for the names the work touched, and treats "nothing to add" as a result.
+
+### Fixed
+- `muse-contributor` resolves again: it pointed at `muse-spark-1.3-contributor-free`, which OpenCode no longer lists. It now pins `opencode-go/muse-spark-1.3-contributor`.
+
 ## [0.11.14] - 2026-10-23
 
 ### Changed

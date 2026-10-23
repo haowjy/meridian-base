@@ -45,6 +45,14 @@ survives a change to it. Knowledge that lives far from what it describes
 rots faster: changes to the thing don't trigger awareness that a distant doc
 needs updating.
 
+**The KB links to the work's own docs.** Before writing to the KB about
+some work, read the docs, `AGENTS.md`, `.context/`, and comments the work
+updated. Link to what they describe, and write only what they don't say:
+the settled intent, the reason, the rejected alternatives, how it relates
+to the rest of the project. When they say all of it, the KB gets a link or
+nothing. Cut a KB section that restates them down to the link and the
+parts they don't say; the copy drifts the next time they change.
+
 ## Current Truth Over History
 
 Every durable layer — AGENTS.md, `.context/`, KB, `docs/` — holds the best

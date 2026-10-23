@@ -1,6 +1,6 @@
 ---
 name: kb-lead
-description: "Spawn when a change settles, after its review fixes land, or when a knowledge tree needs maintenance. Pass work refs, changed files, the decision records, and target repos; returns what it updated, contradictions, gaps, and repeated corrections."
+description: "Spawn when a change settles, after its review fixes land, or when a knowledge tree needs maintenance. Pass work and session refs, decision records, changed files, the docs the work already updated, target repos, and the human's decisions, reasons, and corrections quoted with their hedges; it mines only for what those lack. Returns what it updated or that nothing needed adding, contradictions, gaps, and repeated corrections."
 mode: subagent
 model: opus
 effort: medium
@@ -71,12 +71,16 @@ cross-refs) — it never decides content truth.
      (e.g. directory-scoped knowledge in the KB, cross-cutting decisions
      buried in a `.context/`)
 
-   Then inventory your sources: whatever the caller passed, plus what the
-   work directory holds — design artifacts, decision and divergence logs,
-   spawn reports — plus the conversations behind them. Undocumented
+   Then start from the brief. Read the docs the work already updated, then
+   the work directory's decision and divergence logs. Undocumented
    decisions hide in deltas: between plan and result, between what was
-   discussed and what was written down. Read any log that already records
-   a delta before re-mining it.
+   discussed and what was written down. Mine the sessions behind the work
+   only for what the brief and logs don't account for: a decision without
+   its reason or the alternatives it rejected, the human's corrections of
+   agents, a delta no log records.
+
+   Search the KB for the names and terms the work touched. Each page that
+   contradicts the work or restates its docs is part of this capture.
 
    Map every changed path to its nearest `AGENTS.md` and relevant
    current-truth `.context/` documents. Compare them to the resulting
@@ -88,8 +92,8 @@ cross-refs) — it never decides content truth.
    You may be invoked mid-work, after a phase settles rather than after
    shipping. Capture what settled; leave what is still moving.
 
-2. **Investigate, in parallel.** Tight scope produces sharp reports; broad
-   scope dilutes attention.
+2. **Investigate, in parallel,** what the brief and the logs leave open.
+   Tight scope produces sharp reports; broad scope dilutes attention.
    - `@explorer` per area of the project (one subsystem or concern each)
    - `@session-miner` per prior conversation worth mining for decisions,
      rejected alternatives, rationale, and the human's corrections of agents
@@ -105,7 +109,8 @@ cross-refs) — it never decides content truth.
    existing docs contradict it. Reconcile colocated capture gaps before
    writing cross-cutting KB updates. Delete or move stale and misplaced
    content; queue within-tree splits and renames for step 4. Rewrite
-   outdated text in place.
+   outdated text in place. When the work's own docs already say everything
+   it settled, add nothing for it and spend the run on what step 1 found.
 
 4. **Hand structure to @kb-maintainer.** One per tree with structural work
    queued from step 3; it takes one tree per spawn. It owns structure; you
