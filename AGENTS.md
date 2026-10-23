@@ -65,3 +65,18 @@ model = "kimi-k3"
 ```
 
 After editing, test locally by running `meridian mars sync` in a downstream repo that imports this package.
+
+## Watching
+
+Behavior a released change expects but no real run has shown yet. Check it on
+the next runs that exercise it, then delete the entry, fixing the prompt first
+if the runs show otherwise.
+
+- **kb-lead link-first capture (0.11.15).** On the next few kb-lead runs from
+  `/post-dev`: a small change whose docs already cover it comes back "nothing
+  to add" or a link, not a new KB section; a brief that carries the human's
+  decisions, reasons and corrections gets no session-miner; the KB search
+  finds pages that contradict or restate the change, and its cuts keep
+  KB-only content (intent, reasons, rejected alternatives). Also watch for
+  kb-maintainer deleting prose on its own, and for a cut that loses
+  something.
