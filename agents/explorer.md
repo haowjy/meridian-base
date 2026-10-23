@@ -15,10 +15,26 @@ skills: []
 tools:
   'bash(meridian qi *)': allow
   'bash(rg *)': allow
+  'bash(grep *)': allow
   'bash(cat *)': allow
+  'bash(head *)': allow
+  'bash(tail *)': allow
+  'bash(sed -n *)': allow
+  'bash(wc *)': allow
   'bash(find *)': allow
+  'bash(ls *)': allow
+  'bash(pwd)': allow
+  'bash(cd *)': allow
+  'bash(stat *)': allow
   'bash(git show *)': allow
   'bash(git log *)': allow
+  'bash(git diff *)': allow
+  'bash(git status *)': allow
+  'bash(git branch *)': allow
+  'bash(git ls-files *)': allow
+  'bash(git grep *)': allow
+  'bash(git blame *)': allow
+  'bash(git rev-parse *)': allow
   agent: deny
   edit: deny
   notebook: deny

@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- explorer: allow the read-only commands exploration needs — `ls`, `pwd`, `cd`, `grep`, `head`, `tail`, `sed -n`, `wc`, `stat`, and `git diff`/`status`/`branch`/`ls-files`/`grep`/`blame`/`rev-parse`. A dead-code explorer asked to diff a branch had every bash call denied.
+
 ## [0.11.11] - 2026-10-22
 
 ### Changed
