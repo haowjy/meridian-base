@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- session-miner: allow the history commands it needs. Since Meridian reads scoped-only allows as a bash allowlist, miners were refused `meridian spawn list`, `meridian spawn -h`, `meridian task-dir`, `pwd`, `ls` and `git log`. It now has explorer's read-only command set plus those `meridian` reads.
+
 ## [0.11.13] - 2026-10-23
 
 ## [0.11.12] - 2026-10-23
