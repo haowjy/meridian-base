@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Removed
+- `deny-generic-agent` hook. Claude's built-in `Agent` tool (generic, `Explore`, `Plan`) is no longer blocked or redirected to `meridian spawn`. Projects that want that block add their own hook.
+
 ## [0.11.15] - 2026-10-23
 
 ### Added
