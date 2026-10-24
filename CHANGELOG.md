@@ -24,6 +24,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [0.11.13] - 2026-10-23
 
+### Changed
+- knowledge-layers: new section, Invariants and Current Choices. Something is an invariant only if an agent with a better way should stop and ask the human before breaking it; everything else, including what the human suggested, agreed to or wanted to try, is a current choice and lives beside the work it describes. Status lines say only done, partly done, not done or superseded.
+- kb-lead: record the human's words as said, an invariant as a decision and anything else as a current choice.
+
 ## [0.11.12] - 2026-10-23
 
 ### Changed
