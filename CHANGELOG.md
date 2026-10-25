@@ -9,6 +9,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 - Live references to runtime-owned guidance now use capability phrases; agent profiles no longer load or advertise the session-reading package skill.
 
 ### Removed
+- `notify`, `handoff`, `session-mining`, `meridian-privilege-escalation`, and the work-item lifecycle resource of `work-artifacts`: they describe Meridian itself and now ship with Meridian (`meridian skills <name>`). Breaking for packages that filter or load them.
 - Duplicated command recipes, flags, environment variables, and the markdown validation command reference from prompt text.
 
 ### Fixed

@@ -10,10 +10,8 @@ work.
 Shared workers and generic coordination guidance for workflows such as:
 
 - breaking work into bounded tasks and delegating them in parallel,
-- keeping findings and decisions in a work directory,
-- reading past sessions for missing context, and
-- notifying the human when a decision, blocker, or finished task needs their
-  attention.
+- keeping findings and decisions in a work directory, and
+- reading past sessions for missing context.
 
 Each runtime supplies the operations behind those capabilities. The agents and
 skills below teach the judgment that carries across runtimes.

@@ -19,6 +19,4 @@ out of the work directory, which syncs through git: record the excerpt that
 carries the finding.
 
 The agent that started a work item owns its state; leave it alone unless
-your brief says otherwise. The owner's side (starting and finishing work
-items, `DIVERGENCE/`, the work directory's AGENTS.md) is in
-`resources/lifecycle.md`.
+your brief says otherwise.
