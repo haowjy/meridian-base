@@ -21,11 +21,6 @@ skills:
   available: [session-mining, intent-modeling, shared-workspace, md-validation]
 tools:
   bash: allow
-  'bash(meridian spawn *)': allow
-  'bash(meridian session *)': allow
-  'bash(meridian work *)': allow
-  'bash(meridian context *)': allow
-  'bash(meridian qi *)': allow
   read: allow
   write: allow
   edit: allow

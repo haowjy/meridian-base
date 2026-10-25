@@ -6,6 +6,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ### Changed
 - Requires Meridian >=0.13.0 for platform-owned Meridian command permissions.
+- session-miner and kb-lead rely on Meridian's platform grants instead of repeating read-only and declared-subagent commands in their tool rules.
+- `meridian-privilege-escalation` routes access failures back to a caller or a profile that declares the required access; it no longer tells sandboxed agents to retry with `--sandbox danger-full-access`.
 
 ## [0.11.16] - 2026-10-24
 

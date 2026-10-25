@@ -20,10 +20,6 @@ skills:
 tools:
   'bash(meridian session *)': allow
   'bash(meridian work *)': allow
-  'bash(meridian spawn show *)': allow
-  'bash(meridian spawn list *)': allow
-  'bash(meridian spawn -h)': allow
-  'bash(meridian task-dir)': allow
   'bash(rg *)': allow
   'bash(grep *)': allow
   'bash(cat *)': allow
