@@ -4,32 +4,14 @@ type: reference
 description: Use when validating markdown links or Mermaid diagrams.
 ---
 
-# md-validation
+# Markdown Validation
 
-Meridian's markdown validation commands work on any markdown file or directory.
+Validate broken links before committing documentation changes. Inspect the
+link graph when you need to understand document topology or find orphan,
+hub, and disconnected pages.
 
-## Commands
-
-- **`meridian kg check [path]`**: broken-link gate. Exit `0` clean, `1` broken
-  links. Run before committing doc changes.
-- **`meridian kg graph [path]`**: link topology visualization. Use to understand
-  doc structure and find orphan pages.
-- **`meridian kg [path]`**: quick stats (file count, link count, broken count).
-
-Context aliases work as path: `kb`, `strategy`, `work` resolve to their
-context directories (e.g. `meridian kg check kb`, `meridian kg graph strategy`).
-- **`meridian mermaid check [path]`**: Mermaid diagram validation (syntax +
-  style warnings). Run after diagram edits.
-
-## Validation Flow
-
-1. `meridian kg [path]`: quick sanity check
-2. `meridian kg check [path]`: catch broken links
-3. `meridian mermaid check [path]`: validate diagrams
-4. Fix issues and re-run until exit codes are clean
-
-Use `meridian kg --help` and `meridian mermaid --help` for full flag coverage.
+Validate Mermaid syntax and style after diagram edits. Fix every reported
+issue and repeat the validation until it is clean.
 
 See `resources/mermaid-authoring.md` for diagram authoring rules (quoting,
 line breaks, reserved words, themes).
-See `resources/command-reference.md` for detailed flags and warning categories.

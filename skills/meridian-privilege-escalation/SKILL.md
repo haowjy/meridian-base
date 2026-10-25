@@ -1,67 +1,62 @@
 ---
 name: meridian-privilege-escalation
 type: reference
-description: Use when a spawn fails due to sandbox or permission restrictions.
+description: Use when a delegated agent fails because its sandbox, permissions, or network access are too narrow.
 ---
 
 # Privilege Escalation
 
-Treat access as part of staffing. What you can do depends on your own sandbox.
+Treat access as part of staffing. A sandboxed caller cannot give a delegated
+agent a weaker sandbox, broader network access, or a capability the caller does
+not have. Return that failure to the caller instead of retrying the same task
+with broader access.
 
-- **You are sandboxed** (`read-only` or `workspace-write`): Meridian refuses a child with a weaker sandbox, broader network access, or no declared spawn capability. Retrying with `--sandbox danger-full-access` or a wider `--network` is refused. Return the failure to your caller.
-- **You are not sandboxed** (`danger-full-access`): a per-spawn `--sandbox` override still works. Surface it to the user first and let them approve it; an agent silently granting itself maximum access defeats the tiers.
+An unsandboxed caller may grant a narrower one-off exception. Surface the
+exception to the user before granting it; an agent silently granting itself
+maximum access defeats the permission boundary.
 
 ## Escalation Discipline
 
-Name the operation the failed spawn could not perform and the access it needs, and pass the failed task and error to whoever acts next so it does not repeat the diagnosis.
+Name the operation the delegated agent could not perform and the access it
+needs. Pass the failed task and exact error to whoever acts next so it does not
+repeat the diagnosis.
 
-Prefer the narrowest fix: an existing profile that already declares the access, then an approved one-off override (unsandboxed callers only). Ask for a profile change only when the need recurs; a one-off failure is not a reason for a permanent grant.
+Prefer the narrowest fix: an existing agent profile that already declares the
+access, then a user-approved one-off exception from a caller allowed to grant
+it. Ask for a profile change only when the need recurs; a one-off failure is not
+a reason for a permanent grant.
 
-## Approval Modes
+Approval policy changes how the harness handles tool prompts; it does not widen
+the caller's sandbox. Use the least permissive policy that allows the work and
+surface any fully automatic approval to the user first.
 
-The `--approval` flag controls how the harness handles tool-call approvals:
+## Model and Harness Switching
 
-| Mode | Behavior |
-|---|---|
-| `default` | Harness decides (each harness has its own default policy). |
-| `confirm` | User approves each tool call. |
-| `auto` | Auto-approve safe operations, prompt for dangerous ones. |
-| `yolo` | Approve everything. No prompts. |
-
-Override per-spawn:
-```bash
-meridian spawn -a subagent --approval auto --prompt-file task.md --bg
-meridian spawn -a subagent --approval yolo --prompt-file task.md --bg   # use yolo sparingly
-```
-
-Approval changes how the harness handles tool prompts; it does not widen the caller's sandbox. Surface `yolo` to the user before using it.
-
-## Model/Harness Switching
-
-Different models route to different harnesses. Switch only when the task needs a capability the selected profile already permits; model routing is not a way around the caller's boundary.
-
-```bash
-# Choose an alias from `meridian mars models list`; use `--live` when you need
-# to confirm the needed harness is runnable on this machine.
-meridian spawn -a subagent -m MODEL_ALIAS --prompt-file task.md --bg
-```
-
-Run `meridian mars models list` to see catalog aliases and static routing hints.
-Run `meridian mars models list --live` to confirm the route is runnable.
+Different models may route to different harnesses. Check the live model catalog
+and model-specific prompting guidance before rerouting. Switch only when the
+task needs a capability that the selected profile already permits; model
+routing is not a way around the caller's boundary.
 
 ## Common Escalation Scenarios
 
 **"Can't bind to a port / start a server"**
-→ An offline sandbox blocks local listeners. `--network allow` (or a profile with `network: allow`) permits them; a sandboxed caller can grant that only if it has it, so otherwise return the error and port to your caller.
+→ Local listeners require network access. A sandboxed caller can grant it only
+if it already has that access; otherwise return the error and port to the
+caller.
 
-**"Can't write files outside workspace"**
-→ Return the target path and failed operation to the caller; use a profile whose sandbox declares that scope.
+**"Can't write files outside the workspace"**
+→ Return the target path and failed operation to the caller; use a profile
+whose sandbox declares that scope.
 
 **"Can't access the network / fetch URLs"**
-→ Use the profile's web tools when they fit. `--network allow|deny|allowlist` overrides shell network mode for one launch. `--network-allow HOST` takes effect only with `--network allowlist`; `--network-deny HOST` also narrows `allow`. A sandboxed caller cannot grant a child more network than it has: a child refused for the network floor can be relaunched with a narrower `--network`, otherwise return the failed destination and operation to the caller.
+→ Use the profile's web tools when they fit. Otherwise use the narrowest
+network access that permits the destination. A sandboxed caller cannot grant a
+child broader network access; return the failed destination and operation when
+the boundary blocks it.
 
-**"Permission denied on tool call"**: approval mode is blocking.
-→ `--approval auto` first. If that's not enough, surface to the user before using `--approval yolo`.
+**"Permission denied on tool call"**
+→ Use the least permissive approval policy that permits the operation. Surface
+unbounded approval to the user first.
 
-**"Context too small for the task"**: model limitation.
-→ Switch to a model with a larger context window via `-m`.
+**"Context too small for the task"**
+→ Choose a model with a larger context window from the live model catalog.

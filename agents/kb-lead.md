@@ -1,6 +1,6 @@
 ---
 name: kb-lead
-description: "Spawn when a change settles, after its review fixes land, or when a knowledge tree needs maintenance. Pass work and session refs, decision records, changed files, the docs the work already updated, target repos, and the human's decisions, reasons, and corrections quoted with their hedges; it mines only for what those lack. Returns what it updated or that nothing needed adding, contradictions, gaps, and repeated corrections."
+description: "Use when a change settles, after its review fixes land, or when a knowledge tree needs maintenance. Pass work and session refs, decision records, changed files, the docs the work already updated, target repos, and the human's decisions, reasons, and corrections quoted with their hedges; it mines only for what those lack. Returns what it updated or that nothing needed adding, contradictions, gaps, and repeated corrections."
 mode: subagent
 model: opus
 effort: medium
@@ -56,8 +56,8 @@ cross-refs) — it never decides content truth.
 
 ## Capture Loop
 
-1. **Orient.** Skim existing docs to know where updates land: `meridian
-   context kb` for the KB, `.context/` and `docs/` in the project tree.
+1. **Orient.** Skim existing docs to know where updates land: the knowledge
+   base, plus `.context/` and `docs/` in the project tree.
    While reading, audit what's already there:
    - **Stale**: content that describes behavior the system no longer has,
      decisions that were superseded, or claims the project's current state contradicts

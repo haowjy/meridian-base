@@ -4,6 +4,12 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- Agent and skill prompts name coordination capabilities instead of Meridian CLI syntax, so other runtimes can supply equivalent tools.
+
+### Removed
+- Duplicated command recipes, flags, environment variables, and the markdown validation command reference from prompt text.
+
 ## [0.11.18] - 2026-10-25
 
 ### Changed

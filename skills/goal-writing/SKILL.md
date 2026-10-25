@@ -2,8 +2,8 @@
 name: goal-writing
 type: reference
 description: >
-  Load when turning intent into an executable goal for an agent, spawn, work
-  item, experiment, or handoff. Use to define outcome, evidence, constraints,
+  Load when turning intent into an executable goal for an agent, delegated
+  run, work item, experiment, or handoff. Use to define outcome, evidence, constraints,
   anti-goals, stop conditions, and reporting shape before work begins.
 model-invocable: true
 ---
@@ -77,7 +77,7 @@ Before handing off a goal, check:
 - **Reportable:** Will the final answer include enough evidence to decide what
   to do next?
 
-If a goal fails these checks, rewrite it before spawning or starting the work.
+If a goal fails these checks, rewrite it before handing off or starting the work.
 
 ## When the Goal Drives a Loop
 

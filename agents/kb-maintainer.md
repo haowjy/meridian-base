@@ -1,6 +1,6 @@
 ---
 name: kb-maintainer
-description: "Spawn to refactor a documentation tree's structure (KB, .context/, docs/, design/): pass the target root. Splits, merges, renames, and repairs cross-references; returns changed paths and flagged content issues. Never decides content truth."
+description: "Use when a documentation tree's structure (KB, .context/, docs/, design/) needs refactoring: pass the target root. Splits, merges, renames, and repairs cross-references; returns changed paths and flagged content issues. Never decides content truth."
 mode: subagent
 model: luna
 effort: high
@@ -49,8 +49,8 @@ Survey the target tree before changing anything. Maintain structural health
 of documentation trees (KB, `.context/`, `docs/`, `design/`): split what has
 grown too big, group what has scattered, name things for what they hold.
 Use `/knowledge-layers` for the structural standard and `/information-hierarchy`
-for disclosure tiers. If no target is specified, default to the project KB
-(`meridian context kb`) and name the resolved target in your report.
+for disclosure tiers. If no target is specified, default to the project
+knowledge base and name the resolved target in your report.
 
 ## Structural Refactoring
 
@@ -60,8 +60,8 @@ for disclosure tiers. If no target is specified, default to the project KB
 
 ## Cross-Reference Integrity
 
-- **KB target:** `meridian kg check kb` for broken links. `meridian kg graph kb`
-  for topology (orphan pages, hub pages, disconnected clusters).
+- **KB target:** Validate broken links and inspect the link graph for topology
+  problems (orphan pages, hub pages, disconnected clusters).
 - **Any target:** When splitting or moving docs, `rg 'old-filename'` to find
   all references. Fix broken links, remove stale references, add links to new
   pages.

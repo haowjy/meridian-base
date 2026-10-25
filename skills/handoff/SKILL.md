@@ -1,7 +1,7 @@
 ---
 name: handoff
 type: mode-shift
-description: "Use when the next phase belongs to a different interactive lead: writes the transition brief and prints the command the user runs to start it."
+description: "Use when the next phase belongs to a different interactive lead: writes the transition brief and prepares the new primary session."
 argument-hint: "What will the next session focus on?"
 user-invocable: true
 model-invocable: true
@@ -9,20 +9,19 @@ model-invocable: true
 
 # Handoff
 
-Write a transition brief and print a primary launch command. The user
-runs the command to start a new interactive session with a different
-agent lead.
+Write a transition brief and prepare a new primary session. The user starts the
+new interactive session with a different agent lead.
 
 If arguments were passed, treat them as the focus for the next session.
 
 ## Write the Transition Brief
 
-Start with `/intent-modeling`: separate what the human has said from what
-they actually want to be true when this work is done. The modeled intent
-shapes everything in the brief.
+Start with `/intent-modeling`: separate what the human has said from what they
+actually want to be true when this work is done. The modeled intent shapes
+everything in the brief.
 
-Then compact the conversation into a file the next agent reads as its
-opening prompt:
+Then compact the conversation into a file the next agent reads as its opening
+prompt:
 
 - Human intent: the end goal in their terms, not implementation steps
 - Current state: what was accomplished, where things stand
@@ -31,45 +30,29 @@ opening prompt:
 - Artifact paths: exact file paths to read first
 - Suggested skills to invoke
 
-Keep artifact content in its files and give their paths in the brief.
-
-Write to the active work directory (`meridian work current`). No work item
-→ write to a temp file.
+Keep artifact content in its files and give their paths in the brief. Write the
+brief to the active work directory. Without a work item, use a temporary file.
 
 ## Run Pre-* Checks
 
-Before completing the handoff, check if any `pre-*` checkpoint skills are
-installed for the next phase (e.g., `pre-dev` for implementation handoffs).
-If present, load and run them to verify the next phase's
-prerequisites are ready for the next agent. Skip if none are installed.
+Before completing the handoff, check whether any `pre-*` checkpoint skills are
+installed for the next phase (for example, `pre-dev` for an implementation
+handoff). Load and run each applicable checkpoint so the next phase's
+prerequisites are ready.
 
 ## Choose the Next Agent
 
-Explicit argument wins: `/handoff tech-lead`.
-
-Otherwise infer from context. If ambiguous, run `meridian mars list --json`
-and ask.
+An explicit argument wins: `/handoff tech-lead`. Otherwise infer from context
+and the agents you can use. Ask when the choice is ambiguous.
 
 ## Show the Chain
 
-Before printing the launch command, show the user the handoff trail for the active work item so they can see where they've been:
+Show the user the primary-session trail for the active work item so they can see
+where they have been.
 
-```bash
-meridian work sessions --primary
-```
+## Prepare the Primary Session
 
-## Print the Launch Command
-
-Resolve `$MERIDIAN_CHAT_ID` to the concrete chat ID (e.g., `c102`): the
-user runs this in a new terminal where the env var no longer exists.
-
-```
-meridian -a [agent] \
-  --work [work-id] \
-  --task-dir [path] \
-  --prompt-file [path-to-brief] \
-  --from [resolved-chat-id]
-```
-
-Use `meridian`, not `meridian spawn` (primary launch, interactive). Include
-`--work` when active, `--task-dir` when in a worktree or sibling repo.
+Prepare a new primary session, not a delegated run. Carry the active work item,
+the source checkout, the transition brief, and the current primary session as
+its parent so the next lead can recover the chain. Present the prepared handoff
+so the user can start the next lead.
