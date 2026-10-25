@@ -10,6 +10,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ### Removed
 - Duplicated command recipes, flags, environment variables, and the markdown validation command reference from prompt text.
 
+### Fixed
+- Preserved handoff ownership, notification urgency, validation authoring controls, source-checkout fallback, and sandbox escalation judgment while removing CLI syntax.
+
 ## [0.11.18] - 2026-10-25
 
 ### Changed

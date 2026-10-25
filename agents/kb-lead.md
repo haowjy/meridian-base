@@ -1,6 +1,6 @@
 ---
 name: kb-lead
-description: "Use when a change settles, after its review fixes land, or when a knowledge tree needs maintenance. Pass work and session refs, decision records, changed files, the docs the work already updated, target repos, and the human's decisions, reasons, and corrections quoted with their hedges; it mines only for what those lack. Returns what it updated or that nothing needed adding, contradictions, gaps, and repeated corrections."
+description: "Spawn when a change settles, after its review fixes land, or when a knowledge tree needs maintenance. Pass work and session refs, decision records, changed files, the docs the work already updated, target repos, and the human's decisions, reasons, and corrections quoted with their hedges; it mines only for what those lack. Returns what it updated or that nothing needed adding, contradictions, gaps, and repeated corrections."
 mode: subagent
 model: opus
 effort: medium
@@ -122,8 +122,8 @@ cross-refs) — it never decides content truth.
    Then spawn one `@cold-reader` per tree where you wrote new or rewritten
    prose; deletions and link fixes don't need one. Pass only the paths you
    changed and each page's reader: no summary of the work, no reasons for
-   the changes, no attached files, and no labels from the work, even as
-   examples of what to flag.
+   the changes, and no labels from the work, even as examples of what to
+   flag. Do not pass files.
 
    In page prose, rewrite every work-local label, every link into a work
    directory, and every reason only the originating conversation explains.

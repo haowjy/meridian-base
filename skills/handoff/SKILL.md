@@ -1,7 +1,7 @@
 ---
 name: handoff
 type: mode-shift
-description: "Use when the next phase belongs to a different interactive lead: writes the transition brief and prepares the new primary session."
+description: "Use when the next phase belongs to a different interactive lead: writes the transition brief and gives the user what they need to start the new primary session."
 argument-hint: "What will the next session focus on?"
 user-invocable: true
 model-invocable: true
@@ -9,8 +9,8 @@ model-invocable: true
 
 # Handoff
 
-Write a transition brief and prepare a new primary session. The user starts the
-new interactive session with a different agent lead.
+Write a transition brief and give the user what they need to start a new
+interactive session with a different agent lead. Do not start it for them.
 
 If arguments were passed, treat them as the focus for the next session.
 
@@ -50,9 +50,10 @@ and the agents you can use. Ask when the choice is ambiguous.
 Show the user the primary-session trail for the active work item so they can see
 where they have been.
 
-## Prepare the Primary Session
+## Prepare the User's Launch
 
-Prepare a new primary session, not a delegated run. Carry the active work item,
-the source checkout, the transition brief, and the current primary session as
-its parent so the next lead can recover the chain. Present the prepared handoff
-so the user can start the next lead.
+Give the user what they need to start the new primary session themselves; do
+not start it for them. It runs in a new terminal where your environment is
+gone, so write out every reference as its concrete value, not as a variable:
+the work item, the source checkout, and the brief's path. Carry your current
+session as the prior run by writing its concrete ID as the parent.

@@ -11,9 +11,9 @@ agent a weaker sandbox, broader network access, or a capability the caller does
 not have. Return that failure to the caller instead of retrying the same task
 with broader access.
 
-An unsandboxed caller may grant a narrower one-off exception. Surface the
-exception to the user before granting it; an agent silently granting itself
-maximum access defeats the permission boundary.
+An unsandboxed caller may grant a one-off sandbox or network override for one
+run. Surface it to the user and get approval first; an agent silently granting
+itself maximum access defeats the permission boundary.
 
 ## Escalation Discipline
 
@@ -51,8 +51,9 @@ whose sandbox declares that scope.
 **"Can't access the network / fetch URLs"**
 → Use the profile's web tools when they fit. Otherwise use the narrowest
 network access that permits the destination. A sandboxed caller cannot grant a
-child broader network access; return the failed destination and operation when
-the boundary blocks it.
+child broader network access. A child refused for the network floor can be
+relaunched with narrower network access when the task permits; otherwise return
+the failed destination and operation to the caller.
 
 **"Permission denied on tool call"**
 → Use the least permissive approval policy that permits the operation. Surface

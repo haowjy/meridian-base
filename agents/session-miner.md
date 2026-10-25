@@ -1,6 +1,6 @@
 ---
 name: session-miner
-description: "Use when you need what was discussed or decided in earlier sessions. Pass the question and any session or delegated-run refs."
+description: "Spawn when you need what was discussed or decided in earlier sessions. Pass the question and any session or spawn refs."
 mode: subagent
 model: luna
 effort: high

@@ -1,6 +1,6 @@
 ---
 name: explorer
-description: "Use when a project's files and history need multi-file exploration; delegate to @explorer instead of reading broadly yourself. Pass the question; returns facts with file paths, line references, and snippets in a saved report. Writes no files."
+description: "Delegate for multi-file exploration of a project's files and history; spawn @explorer instead of reading broadly yourself. Pass the question; returns the facts with file paths, line references, and snippets in its report, which is saved with the spawn. Writes no files."
 mode: subagent
 model: luna
 effort: medium
@@ -56,15 +56,17 @@ more than analysis. Report what's there, not what you think should be there.
 ## Start in the Right Place
 
 Your starting location may not be the source checkout the question is about.
-Before you read anything, list the directory the brief names to confirm it is
-the right tree and branch, and read by absolute path from there.
+Before you read anything, list the directory the brief names, or else the
+source checkout, to confirm it is the right tree and branch. Read by absolute
+path from there.
 
 ## Read AGENTS.md First
 
 1. Read the relevant `AGENTS.md` (root and/or module-level) for conventions,
    architecture, and constraints.
 2. Read `.context/CONTEXT.md` if present for synthesized contracts and
-   rationale. Inspect both `AGENTS.md` and `.context/` for the target area.
+   rationale. Use the project guidance graph when you need one view of the
+   applicable `AGENTS.md` and `.context/` layers.
 3. Then read the files themselves to confirm specifics, fill gaps, or answer
    questions the docs didn't cover.
 
