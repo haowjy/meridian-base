@@ -6,6 +6,7 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ### Changed
 - Agent and skill prompts name coordination capabilities instead of Meridian CLI syntax, so other runtimes can supply equivalent tools.
+- Live references to runtime-owned guidance now use capability phrases; agent profiles no longer load or advertise the session-reading package skill.
 
 ### Removed
 - Duplicated command recipes, flags, environment variables, and the markdown validation command reference from prompt text.

@@ -1,36 +1,22 @@
 # meridian-base
 
 Core coordination primitives for [Meridian](https://github.com/haowjy/meridian-cli).
-Shared execution, exploration, and knowledge-maintenance agents, plus the
-skills that teach them how to spawn work, track state, and coordinate across
-sessions.
+Shared execution, exploration, and knowledge-maintenance agents, plus
+runtime-independent skills for planning, documenting, reviewing, and preserving
+work.
 
 ## What You Get
 
-Shared workers and coordination skills for workflows like these:
+Shared workers and generic coordination guidance for workflows such as:
 
-```bash
-# Break work into subtasks and delegate
-meridian spawn -a subagent --prompt-file implement-model.md -f plan/phase-1.md --bg
+- breaking work into bounded tasks and delegating them in parallel,
+- keeping findings and decisions in a work directory,
+- reading past sessions for missing context, and
+- notifying the human when a decision, blocker, or finished task needs their
+  attention.
 
-# Run tasks in parallel
-meridian spawn -a subagent --prompt-file phase-2a.md --bg
-meridian spawn -a subagent --prompt-file phase-2b.md --bg
-meridian spawn wait
-
-# Track work items across sessions
-meridian work start "auth-refactor"
-meridian work show auth-refactor
-
-# Search past context
-meridian session search "auth design decision"
-
-# Ask the human to come look
-meridian notify "<title>" ["<body>"] [--attach <path>]... [--no-email] [--priority 1..5] [--json]
-```
-
-Meridian's system prompt and each command's `-h` teach the CLI. The skills
-below teach agents how to coordinate with it.
+Each runtime supplies the operations behind those capabilities. The agents and
+skills below teach the judgment that carries across runtimes.
 
 ## Agents
 
@@ -87,13 +73,9 @@ model here. Agents pick models from these descriptions, which
 
 | Skill | What it covers |
 |---|---|
-| `work-artifacts` | Work items and the work directory: findings, decisions, and artifacts that survive compaction and reach other agents |
+| `work-artifacts` | Findings, decisions, and artifacts kept in the work directory so they survive compaction and reach other agents |
 | `shared-workspace` | Working safely in a checkout that holds other agents' changes |
-| `handoff` | Moving to a different interactive lead: transition brief and launch command |
 | `goal-writing` | Turning intent into an executable goal: outcome, evidence, constraints, stop conditions |
-| `meridian-privilege-escalation` | Least-privilege fixes when a spawn hits sandbox or permission limits |
-| `session-mining` | Recovering decisions and context from conversation history |
-| `notify` | Telling the human about a decision, a costly uncertain call, a blocker, or a finished task |
 | `zoom-out` | Orienting in an unfamiliar area with parallel explorers and one synthesized map |
 
 **Thinking with the human**

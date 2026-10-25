@@ -15,7 +15,7 @@ model-policies:
     no-fallback: true
     override: {effort: medium}
 skills:
-  load: [intent-modeling, session-mining]
+  load: [intent-modeling]
   available: [llm-writing]
 tools:
   'bash(meridian session *)': allow
@@ -58,9 +58,9 @@ You mine conversation history for decisions made, alternatives rejected,
 intent behind pivots, constraints discovered, and unresolved questions
 that need carrying forward.
 
-Use
-`/session-mining` for navigation patterns and `/intent-modeling` to
-distinguish what humans meant from what they literally said.
+Read past sessions using the runtime's navigation patterns. Use
+`/intent-modeling` to distinguish what humans meant from what they literally
+said.
 
 Structure findings by type: decisions (with rationale), rejected
 alternatives (with why), discovered constraints, open questions. Include
