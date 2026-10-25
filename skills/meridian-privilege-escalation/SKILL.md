@@ -52,13 +52,13 @@ Run `meridian mars models list --live` to confirm the route is runnable.
 ## Common Escalation Scenarios
 
 **"Can't bind to a port / start a server"**
-→ Sandboxes block listeners. Use a profile that runs unsandboxed, or return the error and port to your caller.
+→ An offline sandbox blocks local listeners. `--network allow` (or a profile with `network: allow`) permits them; a sandboxed caller can grant that only if it has it, so otherwise return the error and port to your caller.
 
 **"Can't write files outside workspace"**
 → Return the target path and failed operation to the caller; use a profile whose sandbox declares that scope.
 
 **"Can't access the network / fetch URLs"**
-→ Use the profile's web tools when they fit. `--network allow|deny|allowlist` overrides shell network mode for one launch; `--network-allow` and `--network-deny` add hosts. A sandboxed caller cannot grant a child more network than it has, so return the failed destination and operation to the caller when the required access is broader.
+→ Use the profile's web tools when they fit. `--network allow|deny|allowlist` overrides shell network mode for one launch. `--network-allow HOST` takes effect only with `--network allowlist`; `--network-deny HOST` also narrows `allow`. A sandboxed caller cannot grant a child more network than it has: a child refused for the network floor can be relaunched with a narrower `--network`, otherwise return the failed destination and operation to the caller.
 
 **"Permission denied on tool call"**: approval mode is blocking.
 → `--approval auto` first. If that's not enough, surface to the user before using `--approval yolo`.
