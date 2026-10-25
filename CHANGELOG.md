@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- Requires Meridian >=0.14.0 and Mars >=0.18.0 for portable network policies.
+
 ## [0.11.17] - 2026-10-25
 
 ### Changed
