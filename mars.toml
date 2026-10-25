@@ -2,6 +2,7 @@
 name = "meridian-base"
 version = "0.11.16"
 description = "Core coordination primitives for Meridian — agent profiles and skills for spawning, state tracking, and session context."
+requires-meridian = ">=0.13.0"
 
 [dependencies]
 
