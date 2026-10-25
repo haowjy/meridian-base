@@ -6,13 +6,16 @@ description: Use when a spawn fails due to sandbox or permission restrictions.
 
 # Privilege Escalation
 
-Treat access as part of staffing. A sandboxed caller cannot launch a child with a weaker sandbox, without its declared spawn capability, or with broader access than its own. Retrying with `--sandbox danger-full-access` is therefore refused instead of escaping the caller's boundary.
+Treat access as part of staffing. What you can do depends on your own sandbox.
+
+- **You are sandboxed** (`read-only` or `workspace-write`): Meridian refuses a child with a weaker sandbox than yours or with no declared spawn capability. Retrying with `--sandbox danger-full-access` is refused. Return the failure to your caller.
+- **You are not sandboxed** (`danger-full-access`): a per-spawn `--sandbox` override still works. Surface it to the user first and let them approve it; an agent silently granting itself maximum access defeats the tiers.
 
 ## Escalation Discipline
 
-Name the operation the failed spawn could not perform and the access it needs. Then return that evidence to the caller. The caller can select an existing profile that declares the required access, or ask the human to approve a profile change. Pass the failed task and error to the replacement spawn so it does not repeat the diagnosis.
+Name the operation the failed spawn could not perform and the access it needs, and pass the failed task and error to whoever acts next so it does not repeat the diagnosis.
 
-Do not turn a task-specific failure into a broad permanent grant. When no profile declares the needed access, ask the caller or human to perform the operation or decide whether a new profile is warranted.
+Prefer the narrowest fix: an existing profile that already declares the access, then an approved one-off override (unsandboxed callers only). Ask for a profile change only when the need recurs; a one-off failure is not a reason for a permanent grant.
 
 ## Approval Modes
 
@@ -49,7 +52,7 @@ Run `meridian mars models list --live` to confirm the route is runnable.
 ## Common Escalation Scenarios
 
 **"Can't bind to a port / start a server"**
-→ Return the error and required port to the caller; use a profile that declares the necessary process access.
+→ Sandboxes block listeners. Use a profile that runs unsandboxed, or return the error and port to your caller.
 
 **"Can't write files outside workspace"**
 → Return the target path and failed operation to the caller; use a profile whose sandbox declares that scope.
