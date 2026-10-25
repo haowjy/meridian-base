@@ -20,3 +20,14 @@ carries the finding.
 
 The agent that started a work item owns its state; leave it alone unless
 your brief says otherwise.
+
+## Maintain the Work Directory
+
+Its `AGENTS.md` orients a delegated agent arriving cold: the goal, the artifact
+layout, and what is settled versus still moving. Keep it current as the work
+shifts, following `/qi-layer`.
+
+Decisions scoped to one change go with it, in its commit message or a note
+beside what they explain; structural decisions go in the work directory. When
+the plan shifts during execution, log the shift in `DIVERGENCE/`. Reviewers
+check alignment against it, and knowledge capture mines it.

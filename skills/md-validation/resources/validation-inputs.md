@@ -2,9 +2,9 @@
 
 ## Context Paths
 
-When naming a validation target, `kb`, `strategy`, and `work` resolve to the
-configured knowledge-base, strategy, and work directories. Use the context name
-instead of copying an absolute path that changes between machines.
+When the validator supports context names, `kb`, `strategy`, and `work` resolve
+to the configured knowledge-base, strategy, and work directories. Use the
+context name instead of copying an absolute path that changes between machines.
 
 ## Persistent Exclusions
 

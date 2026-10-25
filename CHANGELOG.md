@@ -7,13 +7,11 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ### Changed
 - Agent and skill prompts name coordination capabilities instead of Meridian CLI syntax, so other runtimes can supply equivalent tools.
 - Live references to runtime-owned guidance now use capability phrases; agent profiles no longer load or advertise the session-reading package skill.
+- `handoff` keeps portable transition-brief and pre-checkpoint judgment while launch mechanics move to the runtime; `work-artifacts` keeps work-directory orientation, decision-placement, and divergence guidance.
 
 ### Removed
-- `notify`, `handoff`, `session-mining`, `meridian-privilege-escalation`, and the work-item lifecycle resource of `work-artifacts`: they describe Meridian itself and now ship with Meridian (`meridian skills <name>`). Breaking for packages that filter or load them.
+- `notify`, `session-mining`, `meridian-privilege-escalation`, and the work-item start, attach, and finish mechanics from `work-artifacts`: they describe Meridian itself and now ship with Meridian (`meridian skills <name>`). Breaking for packages that filter or load them.
 - Duplicated command recipes, flags, environment variables, and the markdown validation command reference from prompt text.
-
-### Fixed
-- Preserved handoff ownership, notification urgency, validation authoring controls, source-checkout fallback, and sandbox escalation judgment while removing CLI syntax.
 
 ## [0.11.18] - 2026-10-25
 

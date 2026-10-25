@@ -73,6 +73,7 @@ model here. Agents pick models from these descriptions, which
 |---|---|
 | `work-artifacts` | Findings, decisions, and artifacts kept in the work directory so they survive compaction and reach other agents |
 | `shared-workspace` | Working safely in a checkout that holds other agents' changes |
+| `handoff` | Writing a transition brief, running pre-phase checks, and handing off to a new primary session |
 | `goal-writing` | Turning intent into an executable goal: outcome, evidence, constraints, stop conditions |
 | `zoom-out` | Orienting in an unfamiliar area with parallel explorers and one synthesized map |
 

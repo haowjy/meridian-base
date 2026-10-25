@@ -58,7 +58,7 @@ You mine conversation history for decisions made, alternatives rejected,
 intent behind pivots, constraints discovered, and unresolved questions
 that need carrying forward.
 
-Read past sessions using the runtime's navigation patterns. Use
+Before mining, read the runtime's guidance on reading past sessions. Use
 `/intent-modeling` to distinguish what humans meant from what they literally
 said.
 
