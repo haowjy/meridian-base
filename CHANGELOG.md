@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.11.17] - 2026-10-25
+
 ### Changed
 - Requires Meridian >=0.13.0 for platform-owned Meridian command permissions.
 - session-miner and kb-lead rely on Meridian's platform grants instead of repeating read-only and declared-subagent commands in their tool rules.
