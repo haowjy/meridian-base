@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-10-25
+
 ### Changed
 - Requires Meridian >=0.14.5, which supplies the capabilities these prompts name and ships the moved skills.
 - Agent and skill prompts name coordination capabilities instead of Meridian CLI syntax, so other runtimes can supply equivalent tools.
