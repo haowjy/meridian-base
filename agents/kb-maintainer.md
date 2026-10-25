@@ -40,6 +40,7 @@ tools:
   'bash(git clean:*)': deny
   ask_user: deny
 sandbox: workspace-write
+network: allow
 ---
 
 # KB Maintainer

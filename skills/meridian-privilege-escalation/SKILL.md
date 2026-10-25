@@ -8,7 +8,7 @@ description: Use when a spawn fails due to sandbox or permission restrictions.
 
 Treat access as part of staffing. What you can do depends on your own sandbox.
 
-- **You are sandboxed** (`read-only` or `workspace-write`): Meridian refuses a child with a weaker sandbox than yours or with no declared spawn capability. Retrying with `--sandbox danger-full-access` is refused. Return the failure to your caller.
+- **You are sandboxed** (`read-only` or `workspace-write`): Meridian refuses a child with a weaker sandbox, broader network access, or no declared spawn capability. Retrying with `--sandbox danger-full-access` or a wider `--network` is refused. Return the failure to your caller.
 - **You are not sandboxed** (`danger-full-access`): a per-spawn `--sandbox` override still works. Surface it to the user first and let them approve it; an agent silently granting itself maximum access defeats the tiers.
 
 ## Escalation Discipline
@@ -58,7 +58,7 @@ Run `meridian mars models list --live` to confirm the route is runnable.
 → Return the target path and failed operation to the caller; use a profile whose sandbox declares that scope.
 
 **"Can't access the network / fetch URLs"**
-→ Use the profile's web tools when they fit. Otherwise return the failed destination and operation to the caller for a profile with the required access.
+→ Use the profile's web tools when they fit. `--network allow|deny|allowlist` overrides shell network mode for one launch; `--network-allow` and `--network-deny` add hosts. A sandboxed caller cannot grant a child more network than it has, so return the failed destination and operation to the caller when the required access is broader.
 
 **"Permission denied on tool call"**: approval mode is blocking.
 → `--approval auto` first. If that's not enough, surface to the user before using `--approval yolo`.

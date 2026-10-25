@@ -6,6 +6,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ### Changed
 - Requires Meridian >=0.14.0 and Mars >=0.18.0 for portable network policies.
+- `@kb-maintainer` explicitly keeps shell network access under its workspace sandbox.
+- `meridian-privilege-escalation` covers the sandboxed caller's network floor and the per-launch network controls.
 
 ## [0.11.17] - 2026-10-25
 
