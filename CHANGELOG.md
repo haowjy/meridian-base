@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.11.18] - 2026-10-25
+
 ### Changed
 - Requires Meridian >=0.14.0 and Mars >=0.18.0 for portable network policies.
 - `@kb-maintainer` explicitly keeps shell network access under its workspace sandbox.
