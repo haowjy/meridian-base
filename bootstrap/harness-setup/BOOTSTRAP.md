@@ -99,7 +99,15 @@ Route specific model patterns to different behavior:
 ```toml
 [[agents.tech-lead.model-policies]]
 match = { model-glob = "gpt*" }
-override = { effort = "medium", autocompact = 200000 }
+override = { effort = "medium" }
+```
+
+An `override` may set `effort`, `approval`, `sandbox` and `network`. Compaction
+belongs to the model, not the agent: set it on the alias.
+
+```toml
+[models.gpt55]
+autocompact = 200000
 ```
 
 ## Precedence

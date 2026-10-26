@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Fixed
+- The harness-setup bootstrap's `model-policies` example no longer sets `autocompact` in an `override`, which Mars 0.20.0 rejects; compaction is shown on the model alias.
+
 ## [0.12.0] - 2026-10-25
 
 ### Changed
