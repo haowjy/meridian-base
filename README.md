@@ -119,7 +119,7 @@ agents/*.md              # Agent profiles (YAML frontmatter + markdown)
 skills/*/SKILL.md        # Skills (with optional resources/ subdirectory)
 ```
 
-Meridian discovers these by layout convention — no manifest needed.
+Mars discovers these by layout; `mars.toml` does not list them.
 
 ## See Also
 
