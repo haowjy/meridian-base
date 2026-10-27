@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.13.1] - 2026-10-27
+
 ### Changed
 - Agent bodies keep the job, boundaries, engagement, and report; method moved into the skills each agent loads, so each rule has one owner.
 - kb-lead's capture loop is `knowledge-layers/resources/capture.md`, named from the Ingest operation; kb-lead loads `/qi-maintenance`, which now states the full colocated-gap test.
