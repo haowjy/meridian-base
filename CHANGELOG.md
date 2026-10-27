@@ -4,6 +4,16 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- Agent bodies keep the job, boundaries, engagement, and report; method moved into the skills each agent loads, so each rule has one owner.
+- kb-lead's capture loop is `knowledge-layers/resources/capture.md`, named from the Ingest operation; kb-lead loads `/qi-maintenance`, which now states the full colocated-gap test.
+- Commissioning a cold read and acting on it is `llm-writing/resources/cold-read.md`; `/post-dev` and the capture loop point there.
+- `/llm-writing`: the description names the artifacts it covers; adds Choose Words (plain words, the codebase as word list, no invented jargon, rhythm, one reading per sentence) with a before/after; conversational bleed names work-local labels, IDs, and links.
+- `/knowledge-layers`: a Reader column in the layer table; the human's words outrank an agent's reading; a reference sweep when moving a doc; the full FLAG example.
+- kb-maintainer loads `/md-validation`; kb-lead lists `/qi-layer` as available instead of loading it; session-miner and cold-reader drop lines their loaded skills already carry; subagent's body is empty.
+- `/llm-writing`'s ambiguity rules and example moved to `resources/word-choice.md`.
+- Descriptions of `llm-writing`, `information-hierarchy`, `md-validation`, `shared-dao`, `structured-artifact` and `explore-and-engage` open with the moment to load them.
+
 ## [0.13.0] - 2026-10-27
 
 ### Changed

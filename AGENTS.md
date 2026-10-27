@@ -72,6 +72,15 @@ Behavior a released change expects but no real run has shown yet. Check it on
 the next runs that exercise it, then delete the entry, fixing the prompt first
 if the runs show otherwise.
 
+- **kb-lead's capture loop behind a resource pointer.** The loop moved from
+  kb-lead's body to `knowledge-layers/resources/capture.md`, reached by a
+  pointer in the body and in `/knowledge-layers`' Ingest line. On the next
+  kb-lead run: it opens `capture.md` before writing, runs the investigation
+  waves and the cold read, and records corrections in the register. A run
+  that writes without opening it is the evidence for a `load:`-level home.
+- **kb-lead with `/qi-layer` available, not loaded.** `/knowledge-layers`
+  tells it to load `/qi-layer` when writing `AGENTS.md` or `.context/`; on a
+  capture that touches colocated docs, watch that it does.
 - **kb-lead link-first capture (0.11.15).** On the next few kb-lead runs from
   `/post-dev`: a small change whose docs already cover it comes back "nothing
   to add" or a link, not a new KB section; a brief that carries the human's

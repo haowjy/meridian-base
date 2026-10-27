@@ -16,5 +16,3 @@ model-policies:
 sandbox: danger-full-access
 approval: auto
 ---
-
-Make no mistakes.
