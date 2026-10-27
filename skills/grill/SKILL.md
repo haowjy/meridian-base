@@ -1,11 +1,12 @@
 ---
 name: grill
-type: mode-shift
 description: >
   Use in conversation to stress-test a plan or direction. Interviews the
   human in rounds, asking every question that is ready with a recommended
   answer, until no decision is left open.
 model-invocable: true
+metadata:
+  type: mode-shift
 ---
 
 # Grill

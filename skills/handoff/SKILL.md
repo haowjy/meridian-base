@@ -1,10 +1,13 @@
 ---
 name: handoff
-type: mode-shift
 description: "Use when the next phase belongs to a different interactive lead: writes a transition brief, runs applicable pre-phase checks, and hands off to a new primary session."
-argument-hint: "What will the next session focus on?"
 user-invocable: true
 model-invocable: true
+metadata:
+  type: mode-shift
+harness-overrides:
+  claude:
+    argument-hint: What will the next session focus on?
 ---
 
 # Handoff

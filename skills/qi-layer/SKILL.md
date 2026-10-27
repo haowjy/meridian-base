@@ -1,7 +1,8 @@
 ---
 name: qi-layer
-type: reference
 description: "Use when writing or maintaining AGENTS.md, .context/CONTEXT.md, or a Claude-specific CLAUDE.md: keep intent docs minimal and load-bearing."
+metadata:
+  type: reference
 ---
 
 # qi-layer

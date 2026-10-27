@@ -1,8 +1,9 @@
 ---
 name: qi-maintenance
-type: guardrail
 description: "Load on agents that make durable changes to a project's files, so the colocated AGENTS.md and .context/ docs stay true for the next cold agent."
 model-invocable: false
+metadata:
+  type: guardrail
 ---
 
 # Qi Maintenance

@@ -1,8 +1,9 @@
 ---
 name: explore-and-engage
-type: principle
 description: "Load on interactive leads, so you share your read while investigating instead of going silent until the evidence is complete."
 user-invocable: true
+metadata:
+  type: principle
 ---
 
 # Explore and Engage

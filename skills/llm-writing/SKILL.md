@@ -1,8 +1,9 @@
 ---
 name: llm-writing
-type: guardrail
 description: Load before writing or revising human-facing text. Choose words deliberately, ground the piece in the reader's context, and remove default LLM phrasing before the final draft.
 model-invocable: true
+metadata:
+  type: guardrail
 ---
 
 # LLM Writing

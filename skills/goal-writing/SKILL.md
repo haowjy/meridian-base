@@ -1,11 +1,12 @@
 ---
 name: goal-writing
-type: reference
 description: >
   Load when turning intent into an executable goal for an agent, delegated
   run, work item, experiment, or handoff. Use to define outcome, evidence, constraints,
   anti-goals, stop conditions, and reporting shape before work begins.
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Goal Writing

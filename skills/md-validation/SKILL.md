@@ -1,7 +1,8 @@
 ---
 name: md-validation
-type: reference
 description: Use when validating markdown links or Mermaid diagrams.
+metadata:
+  type: reference
 ---
 
 # Markdown Validation

@@ -1,11 +1,12 @@
 ---
 name: information-hierarchy
-type: principle
 description: |
   Load for large human-facing outputs: reports, docs, multi-section
   explanations, artifacts. Choose the right form for each beat (prose, diagram,
   table, mockup) and put the answer first, depth behind it. If the medium allows, use progressive disclosure.
 model-invocable: true
+metadata:
+  type: principle
 ---
 
 # Information Hierarchy

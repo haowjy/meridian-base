@@ -1,10 +1,13 @@
 ---
 name: correct
-type: mode-shift
 description: "Use when the human wants the mistakes agents keep repeating fixed for good. Works the KB corrections register: fixes each recurring class at the strongest level that holds (remove the wrong way, an automated check, a tool permission, a written rule last), proves each fix on a real past mistake, and updates the register."
 user-invocable: true
-argument-hint: "A correction or class to start from (optional)"
 model-invocable: false
+metadata:
+  type: mode-shift
+harness-overrides:
+  claude:
+    argument-hint: A correction or class to start from (optional)
 ---
 
 # Correct

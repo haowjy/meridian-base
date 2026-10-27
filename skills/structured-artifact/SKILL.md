@@ -1,9 +1,10 @@
 ---
 name: structured-artifact
-type: reference
 description: |
   Load when creating structured HTML artifacts to explain and present information.
 model-invocable: true
+metadata:
+  type: reference
 ---
 
 # Structured Artifact
