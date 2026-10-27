@@ -2,10 +2,10 @@
 name: cold-reader
 description: "Spawn to check text that outlives the work (KB pages, AGENTS.md, docs, PR bodies, prompts) for what a reader who wasn't there can't follow. Pass only the paths and who reads each one: no summary of the work, no reasons for the changes, and no labels from it, even as examples. Returns each place the reader stalls, quoted, with what that reader would need; edits nothing."
 mode: subagent
-model: luna
+model: terra
 effort: medium
 model-policies:
-  - match: {alias: luna}
+  - match: {alias: terra}
     override: {effort: medium}
   - match: {alias: deepseek}
     override: {}

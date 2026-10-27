@@ -9,8 +9,8 @@ model-policies:
     override: {effort: medium}
   - match: {alias: deepseek}
     override: {effort: low}
-  - match: {alias: sonnet}
-    override: {effort: low}
+  - match: {alias: haiku}
+    override: {effort: medium}
 skills: []
 tools:
   'bash(meridian qi *)': allow

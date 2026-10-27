@@ -124,14 +124,14 @@ provider = "opencode-go"
 
 [models.sol]
 harness = "codex"
-description = "Difficult technical analysis, complex coding, computer use, long-horizon implementation. Slow to stream and output-heavy; a review benchmark on the previous version found many of its findings unactionable. Less sure-footed on ambiguous architecture. Value 8, intelligence 8, taste 5."
+description = "Difficult technical analysis, complex coding, computer use, long-horizon implementation. Slow to stream and output-heavy; a review benchmark on the previous version found many of its findings unactionable. Less sure-footed on ambiguous architecture. Value 7, intelligence 8, taste 5."
 prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
 match = ["gpt-*-sol"]
 
 [models.terra]
 harness = "codex"
-description = "Scoped, repeatable implementation, triage, and lower-risk review; clear and less prone to overthinking than Sol. Emits several times Sol's output per task and passes fewer long tasks. Value 9, intelligence 8, taste 4."
-prompting = "Outcome-first executor. Include the north-star goal, success criteria, relevant high-level context, constraints, expected output shape, and concrete verification: how to prove the goal is met and what evidence to report."
+description = "Fast and capable computer use. Good technical communication (writing). Value 8, intelligence 7, taste 5."
+prompting = "To be used as as subagent. Make sure to provide all the important context of what it needs to do. "
 match = ["gpt-*-terra"]
 
 [models.luna]

@@ -2,9 +2,11 @@
 name: session-miner
 description: "Spawn when you need what was discussed or decided in earlier sessions. Pass the question and any session or spawn refs."
 mode: subagent
-model: luna
-effort: high
+model: terra
+effort: medium
 model-policies:
+  - match: {alias: terra}
+    override: {effort: medium}
   - match: {alias: luna}
     override: {effort: high}
   - match: {alias: deepseek}
