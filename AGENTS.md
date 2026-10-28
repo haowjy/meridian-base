@@ -89,3 +89,8 @@ if the runs show otherwise.
   KB-only content (intent, reasons, rejected alternatives). Also watch for
   kb-maintainer deleting prose on its own, and for a cut that loses
   something.
+- **session-miner, explorer and kb-maintainer without `bash(meridian …)`
+  allows (0.13.5).** Meridian's platform grant is meant to cover their
+  `session log/search`, `work show/sessions`, `qi`, `kg check` and
+  `mermaid check` calls; a dry run showed it projected for session-miner. On
+  the next real run of each: no refused or prompted `meridian` read command.
