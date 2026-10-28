@@ -29,6 +29,7 @@ export default function (pi: ExtensionAPI) {
   pi.on("tool_call", async (event) => {
     const command = (event.input as { command?: unknown }).command
     if (event.toolName !== "bash" || typeof command !== "string") return
+    if (!command.includes("tmux")) return // run.py allows these too; skip spawning it per shell call
     const reason = denial(command)
     if (reason) return { block: true, reason }
   })

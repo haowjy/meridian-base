@@ -31,6 +31,7 @@ export default {
       const command = e?.input?.command
       // OpenCode 2.x names the shell tool "shell"; 1.x called it "bash".
       if (!["shell", "bash"].includes(String(e?.tool).toLowerCase()) || typeof command !== "string") return
+      if (!command.includes("tmux")) return // run.py allows these too; skip spawning it per shell call
       const reason = denial(command)
       if (reason) throw new Error(reason)
     })
