@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.13.2] - 2026-10-28
+
 ### Changed
 - `/llm-writing`: Scope asks what the reader came for and how they arrive, and leads with what serves them; Choose Words names the project's own names as the word list and the reader's words, not a developer's, so the skill reads the same on a novel as on a codebase. `word-choice.md` adds a story-page before/after.
 
