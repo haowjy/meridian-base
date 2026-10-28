@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- Requires meridian >=0.17.3, which ships the bundled `md-validation__meridian` skill.
+- `md-validation` keeps the method (validate links and Mermaid syntax and style before committing, fix and rerun until clean, suppress narrowly, report checks you couldn't run) and the Mermaid authoring rules. The validators' commands, warning categories, suppression comments, ignore files and context names moved to `md-validation__meridian`; `resources/validation-inputs.md` is gone.
+
 ## [0.13.5] - 2026-10-28
 
 ### Changed
