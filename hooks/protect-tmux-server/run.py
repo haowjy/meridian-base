@@ -101,6 +101,19 @@ def argv_of(seg: str) -> list[str]:
     return words
 
 
+def names_default_server(flag: str, value: str) -> bool:
+    if flag == "L":
+        return value in ("", "default")
+    if not value:
+        return True
+    resolved = os.path.realpath(os.path.expanduser(value))
+    defaults = {os.path.join(os.environ.get("TMUX_TMPDIR") or "/tmp", f"tmux-{os.getuid()}", "default")}
+    tmux_env = os.environ.get("TMUX", "")
+    if tmux_env:
+        defaults.add(tmux_env.split(",", 1)[0])
+    return resolved in {os.path.realpath(d) for d in defaults} or os.path.basename(resolved) == "default"
+
+
 def violation(words: list[str]) -> str | None:
     if not words or os.path.basename(words[0]) != "tmux":
         return None
@@ -109,11 +122,15 @@ def violation(words: list[str]) -> str | None:
     while i < len(words) and words[i].startswith("-") and words[i] != "--":
         letters = words[i][1:]
         for j, ch in enumerate(letters):
-            if ch in "LS":
-                private = True
             if ch in TMUX_VALUE_OPTS:
-                if j == len(letters) - 1:
+                if j < len(letters) - 1:
+                    value = letters[j + 1 :]
+                else:
                     i += 1  # value is the next word
+                    value = words[i] if i < len(words) else ""
+                if ch in "LS":
+                    # `-L default` and the default socket path name the shared server too
+                    private = not names_default_server(ch, value)
                 break
         i += 1
     if private:
