@@ -4,6 +4,15 @@
 The owner's live sessions, including most agents, run on the default tmux server.
 `$TMUX` overrides `TMUX_TMPDIR`, so only `-L`/`-S` reliably avoids it. Read-only
 tmux commands pass.
+
+Sees through `VAR=` prefixes, wrappers (`env`, `sudo`, `timeout`, `xargs`, ...),
+`$(...)`, backticks, tmux's own command chaining, and the command string of `sh|bash|zsh|dash -c`
+and `eval`, recursively. Does not see commands built at runtime (`$T kill-server`,
+`python3 -c "os.system(...)"`, scripts that call tmux): those need a different
+control than a command-string check.
+
+Input is the Claude Code hook JSON on stdin; the OpenCode and Pi fragments send
+the same shape. Output is a Claude `permissionDecision: deny` JSON, or nothing.
 """
 
 from __future__ import annotations
@@ -20,8 +29,12 @@ DESTRUCTIVE = {
     "respawn-pane", "respawnp", "respawn-window", "respawnw",
 }
 SET_COMMANDS = {"set-option", "set", "set-window-option", "setw", "set-environment", "setenv"}
-WRAPPERS = {"env", "sudo", "command", "exec", "nohup", "time", "timeout", "nice", "stdbuf", "setsid"}
-WRAPPER_OPTS_WITH_ARG = {"-u", "-C", "-n", "-s", "-k", "--unset", "--chdir"}
+WRAPPERS = {"env", "sudo", "command", "exec", "nohup", "time", "timeout", "nice", "stdbuf", "setsid", "xargs"}
+WRAPPER_OPTS_WITH_ARG = {
+    "-u", "-C", "-n", "-s", "-k", "--unset", "--chdir",  # env, sudo, timeout, nice
+    "-I", "-P", "-L", "-E", "-d", "-a", "-J",  # xargs
+}
+SHELLS = {"sh", "bash", "zsh", "dash", "ksh", "ash"}
 # tmux global options that take a value
 TMUX_VALUE_OPTS = set("cfLST")
 ASSIGN = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*=")
@@ -67,12 +80,42 @@ def payload_command(payload: object) -> tuple[str, str]:
     return tool_name, ""
 
 
+SEPARATORS = ("||", "&&", ";", "|", "&", "\n", "(", ")")
+
+
+def split_unquoted(part: str):
+    """Split on shell separators outside quotes, so `bash -c "a; tmux kill-server"` stays whole."""
+    buf: list[str] = []
+    quote = ""
+    i = 0
+    while i < len(part):
+        ch = part[i]
+        if ch == "\\" and quote != "'" and i + 1 < len(part):
+            buf.append(part[i : i + 2])  # `\;` is tmux's own separator, not the shell's
+            i += 2
+            continue
+        if quote:
+            if ch == quote:
+                quote = ""
+        elif ch in "'\"":
+            quote = ch
+        else:
+            sep = next((s for s in SEPARATORS if part.startswith(s, i)), None)
+            if sep:
+                yield "".join(buf)
+                buf = []
+                i += len(sep)
+                continue
+        buf.append(ch)
+        i += 1
+    yield "".join(buf)
+
+
 def segments(command: str):
     """Split a shell command into simple commands, including $(...) and `...` bodies."""
     inner = re.findall(r"\$\(([^()]*)\)|`([^`]*)`", command)
     for part in [command] + [a or b for a, b in inner]:
-        # `\;` is tmux's own command separator, not the shell's
-        for seg in re.split(r"\|\||&&|(?<!\\);|[|&\n()]", part):
+        for seg in split_unquoted(part):
             if seg.strip():
                 yield seg
 
@@ -155,6 +198,43 @@ def violation(words: list[str]) -> str | None:
     return None
 
 
+def inner_command(words: list[str]) -> str | None:
+    """The command string a shell `-c` or `eval` will run, if `words` is one."""
+    if not words:
+        return None
+    prog = os.path.basename(words[0])
+    if prog == "eval":
+        return " ".join(words[1:])
+    if prog not in SHELLS:
+        return None
+    i = 1
+    while i < len(words):
+        w = words[i]
+        if w in ("-o", "-O", "+o", "+O"):
+            i += 2
+        elif w.startswith("-") and not w.startswith("--") and "c" in w:
+            return words[i + 1] if i + 1 < len(words) else None  # -c, -lc, -ec, ...
+        elif w.startswith(("-", "+")):
+            i += 1
+        else:
+            return None  # a script file: out of scope
+    return None
+
+
+def check(command: str) -> str | None:
+    """Name of the first destructive tmux subcommand `command` would run, or None."""
+    for seg in segments(command):
+        words = argv_of(seg)
+        name = violation(words)
+        if name:
+            return name
+        inner = inner_command(words)
+        name = check(inner) if inner else None  # inner is shorter than command, so this ends
+        if name:
+            return name
+    return None
+
+
 def main() -> int:
     try:
         payload = json.load(sys.stdin)
@@ -163,11 +243,9 @@ def main() -> int:
     tool_name, command = payload_command(payload)
     if "tmux" not in command or tool_name not in SHELL_TOOLS:
         return 0
-    for seg in segments(command):
-        name = violation(argv_of(seg))
-        if name:
-            deny(REASON.format(name=name))
-            return 0
+    name = check(command)
+    if name:
+        deny(REASON.format(name=name))
     return 0
 
 

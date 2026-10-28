@@ -4,6 +4,12 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `protect-tmux-server` now guards OpenCode (2.x `execute.before` hook) and Pi (`tool_call` event) too, through `opencode.ts` and `pi.ts` fragments that call the same `run.sh`. Each fails closed on a command that mentions `tmux` if the script can't run.
+
+### Fixed
+- `protect-tmux-server` sees the command inside `sh|bash|zsh|dash -c` (also `-lc`, `-ec`) and `eval`, recursively, and treats `xargs` as a wrapper, so `bash -c "tmux kill-server"` and `xargs tmux kill-session -t < names` are denied. Commands built at runtime (`$T kill-server`, `python3 -c`) are still out of reach.
+
 ## [0.13.3] - 2026-10-28
 
 ### Added
