@@ -8,12 +8,13 @@ metadata:
 # Markdown Validation
 
 Validate links before committing documentation changes, and read the link graph
-before and after restructuring a tree. Validate Mermaid syntax after diagram
-edits. Fix every reported issue and repeat the validation until it is clean.
+before and after restructuring a tree. Validate Mermaid syntax and style after
+diagram edits. Fix every reported issue and repeat the validation until it is clean.
 
-The validators' commands, warning categories, suppression comments, and ignore
-files belong to your runtime; read its Markdown-validation guidance before
-running them.
+Use the validators your project or runtime provides. Their commands, warning
+categories, suppression comments, and ignore files belong to that tool: when
+the runtime offers Markdown-validation guidance, read it before running them.
+Report any check you could not run.
 
 When a warning marks a construct you meant, suppress only that category, as
 narrowly as the validator allows, with the reason beside the diagram. Exclude
