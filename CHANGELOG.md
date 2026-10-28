@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.13.5] - 2026-10-28
+
 ### Changed
 - explorer, kb-maintainer and session-miner drop their `bash(meridian …)` tool allows: Meridian grants every launch its read-only commands (`session log/search`, `work show/sessions`, `qi`, `kg check`, `mermaid check`), and outside Meridian they did nothing. kb-maintainer no longer gets a blanket `meridian *`.
 - Skills stop stating Meridian mechanics as fact: work directories no longer "sync through git" (`work-artifacts`), `archive/` is excluded from link validation rather than assumed `.kgignore`'d (`knowledge-layers`), `/handoff` hands off to an interactive session rather than a "primary", explorer's report is no longer "saved with the spawn", and `word-choice.md`'s example uses a neutral `build` command.
