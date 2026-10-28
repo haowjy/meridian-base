@@ -20,8 +20,6 @@ skills:
   load: [intent-modeling]
   available: [llm-writing]
 tools:
-  'bash(meridian session *)': allow
-  'bash(meridian work *)': allow
   'bash(rg *)': allow
   'bash(grep *)': allow
   'bash(cat *)': allow
