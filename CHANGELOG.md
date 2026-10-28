@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.13.3] - 2026-10-28
+
 ### Added
 - `protect-tmux-server` hook (Claude and Codex): denies `tmux kill-server`, `kill-session`, `kill-window`, `kill-pane`, `source-file`, `respawn-*` and `set -g` unless the command names a private server with `-L` or `-S` (`-L default` and the default socket path don't count); sees through `VAR=` prefixes, `env`/`sudo`/`timeout`, `$(...)` and `\;` chaining, so `TMUX_TMPDIR=… tmux kill-server` no longer reaches the default server.
 
