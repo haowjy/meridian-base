@@ -4,6 +4,12 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `protect-tmux-server` and `context-autosync` use the portable `[hooks]` table in `hook.toml`; their per-target fragments (`claude.json`, `codex.json`, `opencode.ts`, `pi.ts`) are gone. Requires Mars >=0.25.0.
+- `protect-tmux-server` now blocks with exit 2 and the reason on stderr on every harness, instead of Claude's JSON deny.
+- `context-autosync` also runs on `SubagentStop`, and on Codex and Pi where those events exist.
+- Codex asks you to re-trust the changed hook handlers once.
+
 ## [0.13.7] - 2026-10-29
 
 ### Changed

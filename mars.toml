@@ -2,7 +2,7 @@
 name = "meridian-base"
 version = "0.13.7"
 description = "Core coordination primitives for Meridian — agent profiles and skills for spawning, state tracking, and session context."
-requires-mars = ">=0.20.0"
+requires-mars = ">=0.25.0"
 requires-meridian = ">=0.17.3"
 schema = 1
 
