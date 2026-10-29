@@ -97,3 +97,10 @@ if the runs show otherwise.
   `session log/search`, `work show/sessions`, `qi`, `kg check` and
   `mermaid check` calls; a dry run showed it projected for session-miner. On
   the next real run of each: no refused or prompted `meridian` read command.
+- **Earlier work accounted for (`/explore-and-engage`).** On the next lead
+  run on a subject with earlier work items or docs: the plan names what it
+  takes from each, stale ones are updated or removed, and the human's own
+  artifacts are left to them.
+- **One goal per work item (`/work-artifacts`).** On the next long lead run:
+  work beyond the item's goal gets its own work item instead of being filed
+  under the old one.
