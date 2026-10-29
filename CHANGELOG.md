@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.13.7] - 2026-10-29
+
 ### Changed
 - `/intent-modeling` gains The Human's Decisions: ask before departing from their invariant; change their current choice only when it buys nothing here, and report it; a tradeoff with no evidence is theirs; with no way to reach them, it goes to the caller. Another agent's account of what they want, or silence, is not their answer.
 - `/explore-and-engage`: before planning or recommending, account for every earlier artifact on the subject (KB, docs, `.context/`, open and finished work items, what the human handed over): used, or stale and fixed (or listed for its owner). Description says so.
