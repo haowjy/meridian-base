@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/information-hierarchy` rewritten for any reader-facing surface, UI and HTML reports alike: rank each piece by what the reader does next, write the ranking before drafting, layer by rank, keep decision-changing caveats with their claim, give the top answer the strongest emphasis and repeat the hierarchy at every scale, and check where the eye lands first.
+
 ## [0.14.1] - 2026-10-30
 
 - simplify bash
