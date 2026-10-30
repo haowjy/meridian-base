@@ -20,30 +20,9 @@ skills:
   load: [intent-modeling]
   available: [llm-writing]
 tools:
-  'bash(rg *)': allow
-  'bash(grep *)': allow
-  'bash(cat *)': allow
-  'bash(head *)': allow
-  'bash(tail *)': allow
-  'bash(sed -n *)': allow
-  'bash(wc *)': allow
-  'bash(find *)': allow
-  'bash(ls *)': allow
-  'bash(pwd)': allow
-  'bash(cd *)': allow
-  'bash(stat *)': allow
-  'bash(git show *)': allow
-  'bash(git log *)': allow
-  'bash(git diff *)': allow
-  'bash(git status *)': allow
-  'bash(git branch *)': allow
-  'bash(git ls-files *)': allow
-  'bash(git grep *)': allow
-  'bash(git blame *)': allow
-  'bash(git rev-parse *)': allow
+  bash: allow
   edit: deny
   write: deny
-  notebook: deny
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
   'bash(git stash:*)': deny
