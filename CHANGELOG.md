@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- corrections register evidence column: "Session or spawn ID" (was run ID). Meridian names it spawn ID everywhere.
+
 ## [0.14.2] - 2026-10-30
 
 ### Changed
