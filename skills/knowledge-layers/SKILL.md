@@ -92,17 +92,13 @@ carry what binds.
 ## Invariants and Current Choices
 
 Record each settled point as one of two kinds. An **invariant** must hold
-however the work is done. A **current choice** is what the project is doing
-or trying for now. The test: if an agent showed a clearly better way that
-broke it, would the human who owns the project still want it kept? If yes,
-it's an invariant; if not, it's a current choice.
+however the work is done; there are few, and the human names them. Everything
+else is a **current choice**: what the project does now, open to rewriting when
+evidence shows something better.
 
-Record the human's words as said; they outrank an agent's reading of
-them. Default to current choice. The human's hedges ("for now", "let's try", "i
-think", "whatever is less work") mark a trial, and so does the human agreeing
-to something an agent proposed. An agent's own call stays a current choice
-until the human makes it an invariant. Quote the human with their hedges
-kept, and never record a trial as their ruling.
+The human's words are direction, not rulings: reason against them when the
+evidence says to. State the behavior and its reason, with no names, quotes or
+session ids. A page says "for now" or "trying" where the human hedged.
 
 Write invariants as rules, in `AGENTS.md` or the KB page they govern. Write current
 choices as how things stand now, beside the work they describe. Measurements

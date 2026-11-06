@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/knowledge-layers`, `capture.md`: pages state the behavior and its reason, not who said it. Invariants are few and the human names them; everything else can be rewritten on evidence.
+- `/intent-modeling`: a live instruction binds its work; a recorded choice can be departed from on evidence, with a report.
+
 ## [0.14.3] - 2026-11-02
 
 ### Changed
