@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/work-artifacts`: goal shifts, update goal. Dropped "work beyond that goal gets its own item": agents read it as leave found fixes undone.
+
 ## [0.14.5] - 2026-11-06
 
 ### Changed
