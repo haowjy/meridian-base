@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/knowledge-layers`: defines an invariant by four tests that work in any field: a property, independently checked, guarding what redoing the work can't restore, changed only as its own visible step.
+- `resources/code.md`: invariants are checked by machine; a rule local to one module is a contract.
+
 ## [0.14.4] - 2026-11-06
 
 ### Changed

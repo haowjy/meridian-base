@@ -91,10 +91,17 @@ carry what binds.
 
 ## Invariants and Current Choices
 
-Record each settled point as one of two kinds. An **invariant** must hold
-however the work is done; there are few, and the human names them. Everything
-else is a **current choice**: what the project does now, open to rewriting when
-evidence shows something better.
+An **invariant** is a property of the work that must hold however the work is
+done. There are few, and the human names them. Each one:
+
+- says what must be true, not how to get there;
+- has a check that doesn't rest on the author's own reading, and the page says
+  when it has none yet;
+- guards what redoing the work can't restore;
+- changes only as its own visible step, never to get a task passing.
+
+Everything else is a **current choice**: what the project does now, open to
+rewriting when evidence shows something better.
 
 The human's words are direction, not rulings: reason against them when the
 evidence says to. State the behavior and its reason, with no names, quotes or
