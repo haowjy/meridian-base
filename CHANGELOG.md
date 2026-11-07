@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.14.7] - 2026-11-07
+
 ### Changed
 - Requires Meridian 0.20.0 or newer.
 
