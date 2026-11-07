@@ -17,9 +17,7 @@ skills:
   load: [llm-writing]
   available: [intent-modeling, information-hierarchy]
 tools:
-  'bash(rg *)': allow
-  'bash(cat *)': allow
-  'bash(find *)': allow
+  bash: allow
   agent: deny
   edit: deny
   write: deny

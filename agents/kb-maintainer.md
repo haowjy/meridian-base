@@ -16,13 +16,7 @@ model-policies:
 skills:
   load: [shared-dao, shared-workspace, llm-writing, information-hierarchy, knowledge-layers, qi-layer, md-validation]
 tools:
-  'bash(git status *)': allow
-  'bash(git diff *)': allow
-  'bash(git log *)': allow
-  'bash(git show *)': allow
-  'bash(git mv *)': allow
-  'bash(git rm *)': allow
-  'bash(rg *)': allow
+  bash: allow
   write: allow
   edit: allow
   read: allow
