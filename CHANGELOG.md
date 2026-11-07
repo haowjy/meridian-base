@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.14.8] - 2026-11-07
+
 ### Changed
 - `cold-reader` and `kb-maintainer` allow the shell outright (`bash: allow`) instead of listing scoped commands. Meridian 0.21 reads scoped allows as grants that restrict nothing, so the list no longer limited them.
 
