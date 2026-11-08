@@ -75,6 +75,11 @@ Behavior a released change expects but no real run has shown yet. Check it on
 the next runs that exercise it, then delete the entry, fixing the prompt first
 if the runs show otherwise.
 
+- **Floated ideas stay out of the KB (`/knowledge-layers`).** On the next
+  few kb-lead captures from a session where the human floated options with
+  "maybe" or "...?": those land in the work directory, and only what they
+  chose or the finished work established reaches the KB. A changed decision rewrites its
+  page instead of adding a second record.
 - **kb-lead's capture loop behind a resource pointer.** The loop moved from
   kb-lead's body to `knowledge-layers/resources/capture.md`, reached by a
   pointer in the body and in `/knowledge-layers`' Ingest line. On the next

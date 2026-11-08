@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/knowledge-layers`: the KB records what the human chose or the finished work established; an idea they floated, a question, or options left unpicked stays in the work directory. Dropped the rule that a changed decision adds a record and keeps the old one (also in `resources/bootstrap.md`): the page is rewritten and git keeps history. Long-running KB cleanups found superseded records kept live under that rule.
+- `/qi-maintenance`: a recorded divergence keeps the plan's intent unless a later choice replaced the plan. `/knowledge-layers` `resources/code.md`, `/zoom-out`: "settled intent" wording replaced to match.
+
 ## [0.14.8] - 2026-11-07
 
 ### Changed
