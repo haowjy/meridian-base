@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/knowledge-layers` corrections register: an occurrence cites the session and date and states in one line what the human corrected, instead of a short quote. A single message pulled out of its conversation misleads.
+
 ## [0.14.9] - 2026-11-08
 
 ### Changed
