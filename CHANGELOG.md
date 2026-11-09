@@ -5,6 +5,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ## [Unreleased]
 
 ### Changed
+- `/handoff`: starts a new interactive lead beside the session, which usually keeps working; also covers moving your own work to a fresh session. The brief says what the new lead owns and what stays with the sender. Dropped the relay framing (transition brief, compacting the conversation).
+- `kb-lead` description, `/knowledge-layers` `resources/capture.md`: callers pass what settled and the files that show it, not the human's decisions quoted with their hedges. Quoted chat lines got written into KB pages as rulings.
 - `/knowledge-layers` corrections register: an occurrence cites the session and date and states in one line what the human corrected, instead of a short quote. A single message pulled out of its conversation misleads.
 
 ## [0.14.9] - 2026-11-08

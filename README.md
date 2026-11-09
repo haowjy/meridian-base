@@ -25,7 +25,7 @@ Each agent's `description` says when to spawn it, what to pass, and what comes b
 | `subagent` | luna | General-purpose worker for a bounded task no specialist fits |
 | `explorer` | luna | Read-only facts from a project's files and git history |
 | `session-miner` | luna | Decisions, rejected alternatives, constraints, and intent from past conversations |
-| `kb-lead` | opus | Writes durable knowledge to `.context/`, the KB, and `docs/` from the work and the human's decisions; deletes stale and misplaced docs; commits each repo it touches without pushing |
+| `kb-lead` | opus | Writes durable knowledge to `.context/`, the KB, and `docs/` from the work; deletes stale and misplaced docs; commits each repo it touches without pushing |
 | `cold-reader` | luna | Reads text meant to outlive the work as a reader who wasn't there; reports where that reader stalls, edits nothing |
 | `kb-maintainer` | luna | Restructures documentation trees and repairs cross-references; flags content questions instead of deciding them |
 
@@ -73,7 +73,7 @@ model here. Agents pick models from these descriptions, which
 |---|---|
 | `work-artifacts` | Findings, decisions, and artifacts kept in the work directory so they survive compaction and reach other agents |
 | `shared-workspace` | Working safely in a checkout that holds other agents' changes |
-| `handoff` | Writing a transition brief, running pre-phase checks, and handing off to a new primary session |
+| `handoff` | Starting a new interactive lead on a piece of work, or moving your own work to a fresh session: its opening brief and pre-phase checks |
 | `goal-writing` | Turning intent into an executable goal: outcome, evidence, constraints, stop conditions |
 | `zoom-out` | Orienting in an unfamiliar area with parallel explorers and one synthesized map |
 

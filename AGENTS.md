@@ -75,6 +75,10 @@ Behavior a released change expects but no real run has shown yet. Check it on
 the next runs that exercise it, then delete the entry, fixing the prompt first
 if the runs show otherwise.
 
+- **`/handoff` starts a lead beside the sender.** On the next handoffs: the
+  sender keeps to what stays with it and leaves handed-over work to the new
+  lead; a lead on separate work starts its own work item before writing; a
+  session moving its own work stops once the user starts the new one.
 - **Floated ideas stay out of the KB (`/knowledge-layers`).** On the next
   few kb-lead captures from a session where the human floated options with
   "maybe" or "...?": those land in the work directory, and only what they
