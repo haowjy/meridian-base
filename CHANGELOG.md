@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.14.11] - 2026-11-10
+
 ### Changed
 - All profiles with tool rules deny `pkill -f` and `killall`: a name or pattern match also kills other agents' sessions. Stop a process by its PID.
 - `/llm-writing`: one short section on writing for the reader and revising before it reaches them.
