@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/qi-layer`: instructions go in `AGENTS.md`, with no `CLAUDE.md`; Claude reads `AGENTS.md` only when no `CLAUDE.md` sits in the directory or above it.
+
 ## [0.14.11] - 2026-11-10
 
 ### Changed
