@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.14.13] - 2026-11-10
+
 ### Changed
 - `/knowledge-layers`: an invariant is a rule users rely on, which the human can change as its own step; invariants sit in the root `AGENTS.md` beside who the users are, with a linked `.context/` page saying how each is kept and checked. A rule that protects no one you can name is its area's contract.
 - `/qi-layer`: `AGENTS.md` holds what an agent can't work out from the code (users, check commands, misleading code, choices the code doesn't show, repeated mistakes); overviews and occasional procedures go elsewhere, and rules with no exceptions become hooks, deny rules or CI checks. The root tells Codex agents to read an area's `AGENTS.md` before changing it.
