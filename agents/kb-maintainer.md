@@ -14,7 +14,8 @@ model-policies:
   - match: {alias: sonnet}
     override: {effort: medium}
 skills:
-  load: [shared-dao, shared-workspace, llm-writing, information-hierarchy, knowledge-layers, qi-layer, md-validation]
+  load: [knowledge-layers, qi-layer, md-validation, shared-workspace]
+  available: [llm-writing, information-hierarchy, shared-dao]
 tools:
   bash: allow
   write: allow
@@ -30,6 +31,8 @@ tools:
   'bash(git restore:*)': deny
   'bash(git reset --hard:*)': deny
   'bash(git clean:*)': deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
   ask_user: deny
 sandbox: workspace-write
 network: allow

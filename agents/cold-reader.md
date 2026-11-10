@@ -22,6 +22,8 @@ tools:
   edit: deny
   write: deny
   notebook: deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
   ask_user: deny
 sandbox: read-only
 ---
@@ -35,8 +37,8 @@ given and the durable docs they link. Leave out everything else from the
 work, such as the rest of a work directory, decision records, and session
 history, even when a page links to them.
 
-Check each page against `/llm-writing` item by item: its Scope question for
-the page's reader, then every entry on What to Delete, conversational bleed
+Check each page against `/llm-writing` item by item: its Write for the Reader
+section for the page's reader, then every entry on What to Delete, conversational bleed
 first. Wherever the reader would stall, quote the text and say what that
 reader would need instead.
 

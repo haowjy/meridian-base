@@ -24,7 +24,7 @@ Each agent's `description` says when to spawn it, what to pass, and what comes b
 |---|---|---|
 | `subagent` | luna | General-purpose worker for a bounded task no specialist fits |
 | `explorer` | luna | Read-only facts from a project's files and git history |
-| `session-miner` | luna | Decisions, rejected alternatives, constraints, and intent from past conversations |
+| `session-miner` | luna | Where past conversations discuss a question, for the caller to read |
 | `kb-lead` | opus | Writes durable knowledge to `.context/`, the KB, and `docs/` from the work; deletes stale and misplaced docs; commits each repo it touches without pushing |
 | `cold-reader` | luna | Reads text meant to outlive the work as a reader who wasn't there; reports where that reader stalls, edits nothing |
 | `kb-maintainer` | luna | Restructures documentation trees and repairs cross-references; flags content questions instead of deciding them |
@@ -84,9 +84,6 @@ model here. Agents pick models from these descriptions, which
 | `intent-modeling` | Separating what the human said from what they meant |
 | `explore-and-engage` | Sharing your read while investigating instead of going silent |
 | `shared-dao` | One name per concept, settled early, recorded in vocab files |
-| `grill` | Stress-testing a plan branch by branch with the human |
-| `grill-with-docs` | Grilling grounded in project docs and prior decisions |
-| `grill-with-evidence` | Grilling grounded in project artifacts and primary sources |
 | `reflect` | A user-invoked check that you delivered what they needed before you report |
 | `correct` | A user-invoked fix for mistakes agents keep repeating: the strongest fix that holds, proven on a past mistake, from the KB corrections register |
 

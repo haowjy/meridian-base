@@ -4,6 +4,28 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- All profiles with tool rules deny `pkill -f` and `killall`: a name or pattern match also kills other agents' sessions. Stop a process by its PID.
+- `/llm-writing`: one short section on writing for the reader and revising before it reaches them.
+- `/intent-modeling`: shorter.
+- `/knowledge-layers`: three places for knowledge: beside the code (`AGENTS.md`, `.context/`), the KB, and the work directory; colocate first. A KB page says what the project does, or what the human chose it should do, why, and what would change it. Only what the human chose or finished work established goes in the KB; options they float stay in the work directory. Topic pages, no decision IDs; a rejected option is kept only with the fact that ruled it out. Superseded content is deleted; version control is the archive.
+- `kb-lead`: owns the KB's content and structure. Capture checks each page the change touched against current code and docs, deletes or rewrites what it made stale, then writes; a chosen direction not built yet stays, marked so. It merges, splits, renames and moves pages it touches; `@kb-maintainer` is for a pass over a whole tree. Its report leads with what it deleted.
+- `kb-lead` loads `/knowledge-layers`, `/qi-maintenance`, `/llm-writing`; `kb-maintainer` loads `/knowledge-layers`, `/qi-layer`, `/md-validation`, `/shared-workspace`; the rest are available.
+- `session-miner`: returns where sessions discuss a question: each passage's location, a one-line note, and the command that opens it. The caller reads the passages and judges what was chosen; capture and `/zoom-out` work this way.
+- `/explore-and-engage`, `explorer`: find the earlier work that bears on a decision and read it yourself; in an area too large to search, an `@explorer` finds what's related first.
+- `/intent-modeling`: when the human asks for something a recorded choice argues against, the agent says once what the record says and why, then does what they ask.
+- `/qi-layer`: `AGENTS.md` holds only what matters most, since it loads automatically. A `CLAUDE.md` beside one starts with `@AGENTS.md`. Same in the `project-knowledge` bootstrap.
+- `/goal-writing`: one list of the parts of a goal that change what the agent does, plus guardrails for "improve X" goals.
+- `/information-hierarchy`, `/correct`: describe what the writer or contributor can see and why it ranks or copies as it does, and design from that.
+
+- `/zoom-out`: step back to the bigger picture; read the docs yourself; in a large area, explorers find what's related first. `explorer`: each one gets its own area, apart from what the caller reads.
+- `/handoff` leaves `/pre-dev` to the receiving lead. `session-miner` README entry matches what it returns.
+- `/grill`: zoom out to what the plan is for, then walk its decision tree one cluster of questions at a time, each with a recommended answer.
+- One `@cold-reader` reads all the pages a capture or change wrote.
+
+### Removed
+- `/grill-with-docs`, `/grill-with-evidence`: `/grill` covers both.
+
 ## [0.14.10] - 2026-11-09
 
 ### Changed

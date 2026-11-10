@@ -1,6 +1,6 @@
 ---
 name: explorer
-description: "Delegate for multi-file exploration of a project's files and history; spawn @explorer instead of reading broadly yourself. Pass the question; returns the facts with file paths, line references, and snippets in its report. Writes no files."
+description: "Spawn to find what bears on a question in an area of files and history too large to search yourself; it costs less than your context. Pass the question and give each explorer its own area, apart from what you or other explorers are reading. Returns the facts with file paths, line references and snippets, so you can read what matters yourself. Writes no files."
 mode: subagent
 model: luna
 effort: medium
@@ -21,6 +21,8 @@ tools:
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
   'bash(git stash:*)': deny
+  'bash(pkill -f:*)': deny
+  'bash(killall:*)': deny
   ask_user: deny
 sandbox: read-only
 ---

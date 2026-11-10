@@ -11,10 +11,6 @@ context without repeating yourself in every prompt.
 | `AGENTS.md` | Directory-level intent. The root file loads every session; nested ones load when an agent works in that directory. | Every harness, Claude Code included |
 | `.context/CONTEXT.md` | Detailed reference docs colocated with code. Read on demand. | Agents that need depth |
 
-A `CLAUDE.md` is needed only for instructions that apply to Claude Code
-alone. Start it with `@AGENTS.md`: when a directory has a `CLAUDE.md`,
-Claude reads it instead of `AGENTS.md`.
-
 ## What goes in root AGENTS.md
 
 This is the project's "instruction manual for agents." Include:
@@ -59,13 +55,10 @@ the way it is, or *what contracts* they must preserve when making changes.
 
 ## The qi-layer skill
 
-The `qi-layer` skill teaches agents how to write and maintain these files.
-It covers:
-
-- What belongs in AGENTS.md vs .context/ vs KB vs docs/
-- How to compress understanding (fractal compression)
-- How to deduplicate across the hierarchy (LCA rule)
-- When to create new AGENTS.md or .context/ files
+The `qi-layer` skill teaches agents how to write and maintain these files:
+what belongs in AGENTS.md and what goes in .context/, and how to keep each
+level from repeating its parent. `knowledge-layers` says what belongs in
+the KB, `docs/` and work directories instead.
 
 You don't need to configure anything — the skill is loaded automatically
 when agents need to write inline knowledge.
