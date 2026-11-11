@@ -85,7 +85,7 @@ model here. Agents pick models from these descriptions, which
 | `explore-and-engage` | Sharing your read while investigating instead of going silent |
 | `shared-dao` | One name per concept, settled early, recorded in vocab files |
 | `reflect` | A user-invoked check that you delivered what they needed before you report |
-| `correct` | A user-invoked fix for mistakes agents keep repeating: the strongest fix that holds, proven on a past mistake, from the KB corrections register |
+| `correct` | A user-invoked fix for a mistake agents keep making: finds what led the agent there and fixes the project's docs or code; a cause in an installed prompt becomes a note for its owner |
 
 **Writing and knowledge**
 

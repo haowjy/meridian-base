@@ -1,66 +1,62 @@
 ---
 name: correct
-description: "Use when the human wants the mistakes agents keep repeating fixed for good. Works the KB corrections register: fixes each recurring class at the strongest level that holds (remove the wrong way, an automated check, a tool permission, a written rule last), proves each fix on a real past mistake, and updates the register."
+description: "Use when the human wants a mistake agents keep making fixed. Starts from their correction or the mistake they name, finds what led the agent there, and fixes it where the next agent would meet it: the project's docs first, then the code's shape; a cause in an installed prompt becomes a note for that prompt's owner."
 user-invocable: true
 model-invocable: false
 metadata:
   type: mode-shift
 harness-overrides:
   claude:
-    argument-hint: A correction or class to start from (optional)
+    argument-hint: The correction or mistake to start from
 ---
 
 # Correct
 
-The human keeps correcting agents for the same mistakes. Change the project
-or the prompts so the next agent can't make them.
+The human corrected an agent and doesn't want to do it again. Find what led
+the agent to the mistake, and change that.
 
-Design for a contributor that sees only the files it opened and follows the
-nearest example, as any agent working from its context does: a change that
-looks right from one file must be right for the whole project.
+## Find the Cause
 
-In a code project, load `resources/code.md`: it adds architecture, types, and
-tests to the levels below.
+Start from the correction the human gave or the mistake they name. Read the
+session where it happened: what the agent read, what it was told, what it
+did (`@session-miner` finds the passages; read them yourself). When the
+human asks for a sweep, mine recent sessions for the same mistake.
 
-## Find the Classes
+A single occurrence can be a bad run, with nothing in the setup to blame.
+When that's what the evidence shows, say so and change nothing.
 
-Start from the KB corrections register (`/knowledge-layers`
-`resources/corrections/`) and any correction the human just gave. Add what the
-register missed: mine recent sessions with `@session-miner`, and read work the
-human undid or redirected and recent review findings. A class counts once it
-has happened twice or the human names it; record other single occurrences as
-candidates.
+The usual causes:
 
-## Fix Each Class at the Strongest Level That Holds
+- a line the agent read that misled it: stale, contradicted by the code, or
+  buried under lines that matter less
+- a code shape that invites the mistake: two ways to do one task, a
+  misleading name, an example that copies wrong
+- a prompt (an agent or a skill) that steers wrong, or says nothing at the
+  moment of choice
 
-1. **Remove the wrong way.** Give each piece of state one owner and each task
-   one supported way. Replace hand-synced copies with one source of truth.
-   Delete the old way and the examples an agent would copy.
-2. **An automated check** that fails and names what to do instead: a
-   validator, a schema, a check script. Where the pattern is already
-   common, fail only on additions.
-3. **A tool permission** in the agent profile, for agent behavior a tool rule
-   can block: a denied command, a read-only tool set.
-4. **A written rule, last**, for judgment calls nothing can check. Put it
-   where the agent reads it at the moment of choice: the nearest `AGENTS.md`,
-   or the skill or agent prompt that governs that step, edited in its source
-   package.
+## Fix It Where the Agent Meets It
 
-## Fix and Prove
+In this order:
 
-Fix the most frequent classes first, one change each. Prove each new check
-fails on a real past mistake: replay the change that made it and show the
-failure. An exception goes where the check fires, with a reason and the
-human's approval.
-
-## Update the Register
-
-Set each class's **Enforced by** to what now catches it. Delete a row once
-its mistake can no longer happen. When a class recurs under a written rule, look again for a stronger level. If
-none holds, sharpen the rule, move it closer to the moment of choice, and
-report the class as a judgment risk that remains.
+1. **The project's docs.** Correct or delete the line that misled the agent
+   in `AGENTS.md`, `.context/` or the KB. Thinning is often the fix: a rule
+   lost among ten others gets followed once they go. Add a line only when
+   nothing the agent read covers the choice, and put it where the agent
+   reads it as it makes that choice.
+2. **The code's shape.** One supported way per task, a name that says what
+   it does, no dead example to copy. This is a code change: it goes through
+   the project's normal flow, not in with the correction.
+3. **A prompt.** Leave an installed prompt as it is: the package is shared,
+   and the next sync overwrites a local edit. Find its source (the package
+   repository the project's Mars config names) and leave a note where its
+   owners will see it: wherever the source's `AGENTS.md` says, an issue on
+   its repository, or a message to whoever maintains it. The note says what
+   the human corrected, in which session, and the line you suspect.
+4. **A check or a permission**, only for a destructive mistake that has
+   repeated, and with the human's approval: a denied command or a failing
+   check blocks legitimate work too.
 
 ## Report
 
-Each class with its evidence, the level you picked, and why a stronger level
-didn't work.
+Each mistake with its evidence and cause, and what you changed or where you
+left the note; and each one you judged a bad run, with why.

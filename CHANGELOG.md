@@ -4,6 +4,12 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/correct`: starts from the correction the human gave, fixes the project's docs first (correcting or deleting the line that misled the agent), then the code's shape; a cause in an installed prompt becomes a note for the package's owners instead of an edit. Checks and permissions only for a repeated destructive mistake. A single occurrence may be a bad run.
+
+### Removed
+- The KB corrections register: `/knowledge-layers` `resources/corrections/`, recording corrections during capture, and kb-lead's report of repeated classes.
+
 ## [0.14.13] - 2026-11-10
 
 ### Changed

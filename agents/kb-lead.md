@@ -1,6 +1,6 @@
 ---
 name: kb-lead
-description: "Spawn when a change settles, after its review fixes land, or when a knowledge tree needs maintenance. Pass work and session refs, decision records, changed files, the docs the work already updated, and target repos; it mines only for what those lack. Returns what it deleted, added and reorganized, contradictions, gaps, and repeated corrections."
+description: "Spawn when a change settles, after its review fixes land, or when a knowledge tree needs maintenance. Pass work and session refs, decision records, changed files, the docs the work already updated, and target repos; it mines only for what those lack. Returns what it deleted, added and reorganized, contradictions and gaps."
 mode: subagent
 model: opus
 effort: medium
@@ -57,5 +57,4 @@ not write. Spawn `@kb-maintainer` only for a structural pass across a whole
 tree.
 
 Commit each version-controlled tree you touched; leave pushing to the
-caller. Report what you deleted and what you added, then contradictions, gaps, and any repeated correction class, named as ready for
-`/correct`.
+caller. Report what you deleted and what you added, then contradictions and gaps.
