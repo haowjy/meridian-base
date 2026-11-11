@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/correct`: the cause decides where the fix goes; finds every copy of the cause; code causes are fixed strongest first (one supported way, types, a lint proven on a past mistake); a prompt in the repository you work in is edited at its source.
+
 ## [0.15.0] - 2026-11-11
 
 ### Changed
