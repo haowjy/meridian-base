@@ -1,20 +1,17 @@
 # meridian-base
 
-Core coordination primitives for Meridian — agent profiles and skills for spawning, work tracking, and session context.
+The agents and skills every Meridian project gets: spawning and delegation, work
+tracking, the knowledge layers (`AGENTS.md`, `.context/`, the KB) and the agents that
+keep them, plus the model aliases in `mars.toml`. meridian-dev-workflow and
+creative-writing-skills depend on it and bundle it into their plugins. Codex and
+OpenCode plugin users get its skills but no agents, so an `@agent` a skill names
+doesn't resolve for them (meridian-dev-workflow's `AGENTS.md`).
 
-This package also ships inside meridian-dev-workflow's harness plugins; which
-harnesses get its agents is in that repo's `AGENTS.md`.
+## Model Aliases
 
-## Editing
-
-After changing a `[models.*]` entry in `mars.toml`, run `uv run scripts/models_table.py` to regenerate the README model table; `--check` fails when it is stale.
-
-### Model aliases
-
-Define aliases with bare canonical model IDs. Do not set `provider`; let Mars
-resolve the runnable provider through harness discovery. Add a provider only
-when an actual model-ID collision makes provider selection ambiguous and Mars
-cannot resolve it correctly.
+Define an alias with the bare canonical model ID and no `provider`, and let Mars
+resolve the runnable provider through harness discovery. Set `provider` only when two
+providers serve the same model ID and Mars picks the wrong one.
 
 ```toml
 [models.kimi]
@@ -22,11 +19,10 @@ harness = "opencode"
 model = "kimi-k3"
 ```
 
-## Watching
+After changing a `[models.*]` entry, run `uv run scripts/models_table.py` to
+regenerate the README model table; `--check` fails when it is stale.
 
-Behavior a released change expects but no real run has shown yet. Check it on
-the next runs that exercise it, then delete the entry, fixing the prompt first
-if the runs show otherwise.
+## Watching
 
 - **`/handoff` starts a lead beside the sender.** On the next handoffs: the
   sender keeps to what stays with it and leaves handed-over work to the new
@@ -37,8 +33,9 @@ if the runs show otherwise.
   decision IDs or bare rejected-option lists, and options the human floated
   stay in the work directory; kb-lead opens the passages session-miner
   points to rather than working from its notes. On the next run where the
-  human asks against a recorded choice: the agent says once what the record says, then does what was asked
-  (`/intent-modeling`), without demanding evidence first.
+  human asks against a recorded choice: the agent says once what the record
+  says, then does what was asked (`/intent-modeling`), without demanding
+  evidence first.
 - **Leads read for themselves; explorers find (`/zoom-out`,
   `/explore-and-engage`, `explorer`).** On the next runs that orient or
   plan: the agent reads the docs along the path itself, and in a large
