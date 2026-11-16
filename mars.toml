@@ -1,6 +1,6 @@
 [package]
 name = "meridian-base"
-version = "0.16.3"
+version = "0.16.4"
 description = "Core coordination primitives for Meridian — agent profiles and skills for spawning, state tracking, and session context."
 requires-mars = ">=0.30.0"
 requires-meridian = ">=0.21.0"
