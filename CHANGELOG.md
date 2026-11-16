@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Removed
+- `/intent-modeling`: the sentence on departing from a record, which repeated `/knowledge-layers`.
+
 ## [0.16.6] - 2026-11-16
 
 ### Changed

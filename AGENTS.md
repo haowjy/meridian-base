@@ -24,12 +24,32 @@ regenerate the README model table; `--check` fails when it is stale.
 
 ## Watching
 
-- **Only what waits on the human (`/explore-and-engage` Asking the
-  Human).** On the next lead runs that list what needs the user: nothing
-  already fixed or released is on it, what the lead's role and the project
-  let it do itself is done instead of listed, and an action only the user
-  can take that blocks nothing is filed as an issue instead. A check the
-  lead can run now starts in that turn, not "next".
+- **What goes to the human (`/explore-and-engage` Asking the Human,
+  `/intent-modeling`).** On the next lead runs that list what needs the user
+  (watch the Flow product lead once relaunched):
+  - the list holds only decisions the project's principles and the user's
+    earlier decisions leave open;
+  - no question the user already answered comes back, including ones other
+    leads raised;
+  - a call the principles settle is made and reported among what was done,
+    never put as "shall I record it as decided?";
+  - nothing already fixed or released is on it, and an action only the user
+    can take that blocks nothing is filed as an issue;
+  - questions sit under a heading per decision branch, each with background
+    and a recommended answer, no internal IDs, and those hanging on an open
+    answer wait; facts are looked up, and a conversational question stays
+    in chat;
+  - an idea the user floats comes back weighed, is acted on when the
+    principles settle it, and is relayed to a lead as their idea, not a
+    decision.
+  Watch for the overcorrection: a lead deciding a product call the
+  principles don't settle, or stretching "delete" to cut a feature.
+- **A check runs now, the read goes first (`/explore-and-engage`).** On the
+  next lead runs: a check the lead can run now starts in that turn, not
+  "next"; where the runtime makes it wait for spawns, it sends its read
+  before waiting.
+- **`/grill` zooms out first.** On the next grilling: it zooms out to what
+  the plan is for first, and stops when no decision is open.
 - **`/handoff` starts a lead beside the sender.** On the next handoffs: the
   sender keeps to what stays with it and leaves handed-over work to the new
   lead; a lead on separate work starts its own work item before writing; a
@@ -49,29 +69,17 @@ regenerate the README model table; `--check` fails when it is stale.
   reads what they point to. Watch for explorers spawned on a small area,
   and for agents that work from an explorer's summary without opening the
   files.
-- **Questions grouped by branch (`/explore-and-engage` Asking the Human,
-  `/work-artifacts`).** On the next lead runs that ask the human several
-  questions, grilling or not: they sit under a heading per decision branch,
-  each with background the human can answer from cold and a recommended
-  answer, no internal IDs; questions that hang on an open answer wait;
-  facts are looked up, not asked; a conversational question stays in chat. On the next grilling: it zooms out
-  first and stops when no decision is open.
 - **The work directory stays current (`/work-artifacts`).** On the next
   long lead runs: the state says where things stand now, finished and
   answered items leave it, and each decision carries its reason. Watch for
   append-only logs.
-- **The human's ideas are weighed (`/intent-modeling`).** On the next run
-  where the human floats an idea: the agent gives its gains, costs and
-  what it simplifies and recommends, instead of recording it bare; for
-  Jimmy it then acts on the recommendation where his instructions let it.
-  Relayed to a lead, the idea is marked as his idea, not a decision.
 - **Recorded choices read as tradeoffs (`/knowledge-layers` Every Choice
   Is a Tradeoff).** On the next runs that write `AGENTS.md`, `.context/` or
   KB pages: no "invariant" sections, no must/never rules the human didn't
   say, each choice with its reason and cost; agents that meet a recorded
   choice whose reason no longer holds change it and report, instead of
-  asking. Watch for the opposite failure: a human's product decision
-  dropped on an agent's own judgment.
+  asking. Watch for the opposite failure: a choice the human made dropped
+  on an agent's own judgment.
 - **`/handoff` ends with a launch command.** On the next handoffs, muse's
   included: the agent reads Meridian's handoff launch guidance and prints
   the full command (`-C`, `-a`, `--prompt-file`, `--from`, and `--work` or
