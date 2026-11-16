@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `[models.hydrogen]`: Gemini 4 Hydrogen, a fast, cheap worker for agentic coding and tool loops (matches `*gemini*hydrogen*`, with `argon`'s excludes).
+
 ## [0.16.2] - 2026-11-16
 
 ### Changed

@@ -120,6 +120,16 @@ exclude = [
     "*contributor*",
 ]
 
+[models.hydrogen]
+description = "Fast, cheap worker for agentic coding, web and UI builds, tool loops and documents: roughly `argon`-level on Artificial Analysis's index at a quarter less per token, at about 170 tokens a second. A capable prose drafter, behind `argon`. Trails Claude Sonnet 5.5 on terminal-heavy coding, computer use and science, and can overreach or refuse without cause. Untested under Meridian: check its tool calling before relying on it. Value 8, intelligence 7, taste 5."
+match = ["*gemini*hydrogen*"]
+exclude = [
+    "*image*",
+    "*tts*",
+    "*live*",
+    "*contributor*",
+]
+
 [models.argon-contributor]
 harness = "opencode"
 description = "Same model as `argon` on a free endpoint that may train on submitted prompts and completions; select it only when that is acceptable, never for unpublished manuscripts the author hasn't cleared."
