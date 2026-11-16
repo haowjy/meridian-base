@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `/explore-and-engage` Asking the Human: a question the human already answered is not listed again, including one another agent raised; a choice the project's principles or the human's stated preferences settle is the agent's to make, record and report.
+
 ## [0.16.4] - 2026-11-16
 
 ### Changed
