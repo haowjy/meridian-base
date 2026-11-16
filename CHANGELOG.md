@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- What goes to the human is one test everywhere: a decision the project's principles and the human's earlier decisions leave open. `/explore-and-engage`: a recommendation resting on a principle or an earlier decision is reported as done, not put to the human to confirm; a floated idea settles nothing by itself. `/intent-modeling`: a floated idea the principles settle is the agent's call (the "without word on trust, ask" default is gone). `/knowledge-layers`: "a choice the human made" replaces "a choice only the human could make".
+
 ## [0.16.5] - 2026-11-16
 
 ### Changed
