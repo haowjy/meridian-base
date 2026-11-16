@@ -24,6 +24,12 @@ regenerate the README model table; `--check` fails when it is stale.
 
 ## Watching
 
+- **Only what waits on the human (`/explore-and-engage` Asking the
+  Human).** On the next lead runs that list what needs the user: nothing
+  already fixed or released is on it, what the lead's role and the project
+  let it do itself is done instead of listed, and an action only the user
+  can take that blocks nothing is filed as an issue instead. A check the
+  lead can run now starts in that turn, not "next".
 - **`/handoff` starts a lead beside the sender.** On the next handoffs: the
   sender keeps to what stays with it and leaves handed-over work to the new
   lead; a lead on separate work starts its own work item before writing; a
