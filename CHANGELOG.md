@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.16.1] - 2026-11-16
+
 ### Changed
 - `/explore-and-engage`: bring the human only what is still open and waits on them (check it still holds; do what your role and the project let you do; an action of theirs that blocks nothing goes to the issue tracker); a check you can run now starts this turn. `/handoff`: unreviewed or unproven work goes in the brief as the new lead's first work.
 
