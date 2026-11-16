@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.16.0] - 2026-11-16
+
 ### Removed
 - `/goal-writing` (its checklist is `/handoff`'s brief) and `/reflect`: nothing loaded or named them.
 
