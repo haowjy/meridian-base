@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.16.2] - 2026-11-16
+
 ### Changed
 - `/explore-and-engage`: where the runtime has a lead wait for spawns before replying, it sends its read first, then waits.
 
