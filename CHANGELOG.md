@@ -4,6 +4,21 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Removed
+- `/goal-writing` (its checklist is `/handoff`'s brief) and `/reflect`: nothing loaded or named them.
+
+### Changed
+- kb-lead runs a sweep when asked: `/knowledge-layers` KB Operations "Sweep" (was "Lint") reads each page against the project and deletes or corrects what no longer holds.
+- Requires Mars 0.30 and Meridian 0.21. The `pkill -f` and `killall` denies are stated once in `[package.tools]` instead of in each of 5 agent profiles.
+- `/knowledge-layers`: the three places are worded for any project, not only code (`AGENTS.md` and `.context/` sit beside what they describe, chapters included). Invariants are gone; a choice only the human could make changes when they say so. Every recorded choice, the human's included, is a tradeoff with its reason and cost, changed when the reason stops holding; written as behavior and reason, not as a rule, and without new rules for what a careful agent protects unprompted. Instructions about how agents work stay instructions. `/intent-modeling`: a record of a choice only the human could make goes back to them with the evidence instead of an invariant gate.
+- `/explore-and-engage` Asking the Human: questions to the human are grouped under the decision branch each settles, each with the background to answer it cold (what it decides, what raised it, options and costs, a recommendation), named as the human would, not by internal IDs. `/grill` loads it for how to ask and keeps the zoom-out and tree walk.
+- `/work-artifacts`: no `DIVERGENCE/` log; when the plan shifts, the plan is updated and the change recorded as a decision with its reason (`/review-alignment` checks against the plan as it stands, capture reads the decisions). Keep the state you own current, each decision with its reason, the alternatives it beat and whether it is settled, and delete what the work moved past instead of logging it. `/knowledge-layers` describes the work directory as the work item's state, and deleting from one needs no copy.
+- `/intent-modeling`: the human's idea is passed to other agents as their idea until they confirm it as a decision.
+- `/intent-modeling`: an idea the human floats is a proposal to weigh (gains, costs, what it simplifies, state it adds) and recommend on, brought to them with that weighing; acting on it before they reply follows how far they've said to trust the agent's judgment.
+- `/handoff` ends with the command that starts the new lead, built from the runtime's guidance on launching a session (Meridian's `handoff__meridian`), not only the brief's path; agents that followed it literally stopped at the path.
+- `/intent-modeling`: an ambiguous goal gets the likeliest reading, stated, and a question, instead of a stop to ask. `/shared-workspace` cut to its rules. `/shared-dao`, `/qi-layer`, `/zoom-out` and `/explore-and-engage` lose lines that changed nothing. `/knowledge-layers` drops a pointer to a `/qi-layer` section that doesn't exist.
+- session-miner quotes the human's sentences that bear on the question, with a cursor that opens it (the session tool's open command, or transcript file and line), instead of a one-line note; without runtime guidance it reads the harness's transcript files.
+
 ## [0.15.1] - 2026-11-11
 
 ### Changed

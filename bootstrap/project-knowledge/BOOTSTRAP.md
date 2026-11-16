@@ -39,7 +39,7 @@ src/
 ```
 
 Each AGENTS.md answers: **what must an agent understand before working
-here?** Mental models, constraints, invariants, anti-patterns.
+here?** Mental models, constraints, anti-patterns.
 
 Context is hierarchical — agents accumulate understanding as they descend.
 Don't repeat parent content in children.

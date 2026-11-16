@@ -43,10 +43,38 @@ regenerate the README model table; `--check` fails when it is stale.
   reads what they point to. Watch for explorers spawned on a small area,
   and for agents that work from an explorer's summary without opening the
   files.
-- **`/grill` walks clusters.** On the next grilling: it zooms out to what
-  the plan is for, then asks one cluster of related decisions at a time,
-  each with a recommended answer, looks up facts itself, and stops when no
-  decision is open.
+- **Questions grouped by branch (`/explore-and-engage` Asking the Human,
+  `/work-artifacts`).** On the next lead runs that ask the human several
+  questions, grilling or not: they sit under a heading per decision branch,
+  each with background the human can answer from cold and a recommended
+  answer, no internal IDs; questions that hang on an open answer wait;
+  facts are looked up, not asked; a conversational question stays in chat. On the next grilling: it zooms out
+  first and stops when no decision is open.
+- **The work directory stays current (`/work-artifacts`).** On the next
+  long lead runs: the state says where things stand now, finished and
+  answered items leave it, and each decision carries its reason. Watch for
+  append-only logs.
+- **The human's ideas are weighed (`/intent-modeling`).** On the next run
+  where the human floats an idea: the agent gives its gains, costs and
+  what it simplifies and recommends, instead of recording it bare; for
+  Jimmy it then acts on the recommendation where his instructions let it.
+  Relayed to a lead, the idea is marked as his idea, not a decision.
+- **Recorded choices read as tradeoffs (`/knowledge-layers` Every Choice
+  Is a Tradeoff).** On the next runs that write `AGENTS.md`, `.context/` or
+  KB pages: no "invariant" sections, no must/never rules the human didn't
+  say, each choice with its reason and cost; agents that meet a recorded
+  choice whose reason no longer holds change it and report, instead of
+  asking. Watch for the opposite failure: a human's product decision
+  dropped on an agent's own judgment.
+- **`/handoff` ends with a launch command.** On the next handoffs, muse's
+  included: the agent reads Meridian's handoff launch guidance and prints
+  the full command (`-C`, `-a`, `--prompt-file`, `--from`, and `--work` or
+  `--task-dir` where they apply), not only the brief's path.
+- **session-miner quotes (`session-miner`).** On the next mining: each
+  passage comes as the human's verbatim words with a cursor that opens it
+  in one step, and the caller still opens the passages it relies on. On a
+  run without Meridian: it finds the harness's transcript files and gives
+  file and line.
 - **kb-lead deletes what a change made stale (`resources/capture.md`).** On
   the next captures: it searches for old names too, deletes or rewrites
   pages the code now contradicts, keeps a chosen direction that isn't built

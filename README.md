@@ -71,10 +71,9 @@ model here. Agents pick models from these descriptions, which
 
 | Skill | What it covers |
 |---|---|
-| `work-artifacts` | Findings, decisions, and artifacts kept in the work directory so they survive compaction and reach other agents |
+| `work-artifacts` | The work directory as current state that survives compaction and reaches other agents |
 | `shared-workspace` | Working safely in a checkout that holds other agents' changes |
 | `handoff` | Starting a new interactive lead on a piece of work, or moving your own work to a fresh session: its opening brief and pre-phase checks |
-| `goal-writing` | Turning intent into an executable goal: outcome, evidence, constraints, stop conditions |
 | `zoom-out` | Orienting in an unfamiliar area with parallel explorers and one synthesized map |
 
 **Thinking with the human**
@@ -84,7 +83,6 @@ model here. Agents pick models from these descriptions, which
 | `intent-modeling` | Separating what the human said from what they meant |
 | `explore-and-engage` | Sharing your read while investigating instead of going silent |
 | `shared-dao` | One name per concept, settled early, recorded in vocab files |
-| `reflect` | A user-invoked check that you delivered what they needed before you report |
 | `correct` | A user-invoked fix for a mistake agents keep making: finds what led the agent there and fixes the project's docs or code; a cause in an installed prompt becomes a note for its owner. Adapted from [pstack](https://github.com/backnotprop/pstack)'s `/correct` (MIT) |
 
 **Writing and knowledge**

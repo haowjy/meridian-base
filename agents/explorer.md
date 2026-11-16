@@ -21,8 +21,6 @@ tools:
   'bash(git checkout:*)': deny
   'bash(git switch:*)': deny
   'bash(git stash:*)': deny
-  'bash(pkill -f:*)': deny
-  'bash(killall:*)': deny
   ask_user: deny
 sandbox: read-only
 ---

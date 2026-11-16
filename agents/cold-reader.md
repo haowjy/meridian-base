@@ -22,8 +22,6 @@ tools:
   edit: deny
   write: deny
   notebook: deny
-  'bash(pkill -f:*)': deny
-  'bash(killall:*)': deny
   ask_user: deny
 sandbox: read-only
 ---
