@@ -4,6 +4,9 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- Model alias descriptions are one short line each, saying what the model is for.
+
 ## [0.16.3] - 2026-11-16
 
 ### Added
