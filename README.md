@@ -91,6 +91,7 @@ model here. Agents pick models from these descriptions, which
 |---|---|
 | `llm-writing` | Writing for the reader and cutting default LLM phrasing |
 | `structured-artifact` | Structured HTML artifacts for explaining and presenting |
+| `atlas` | Maps you click down through: Markdown pages with one diagram each, a viewer and a check |
 | `knowledge-layers` | Where knowledge lives: AGENTS.md, `.context/`, KB, `docs/`, work directories |
 | `qi-layer` | Keeping AGENTS.md and `.context/` minimal and load-bearing |
 | `qi-maintenance` | Keeping colocated docs true after source changes |

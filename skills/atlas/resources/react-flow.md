@@ -19,4 +19,4 @@ keyboard focus, pan, and zoom where they help readers explore.
 
 Use the current `@xyflow/react` [custom-node documentation](https://reactflow.dev/learn/customization/custom-nodes)
 and [layout guidance](https://reactflow.dev/learn/layouting/layouting). Deliver
-static output as described in [delivery](delivery.md).
+static output as `/structured-artifact` `resources/delivery.md` describes.

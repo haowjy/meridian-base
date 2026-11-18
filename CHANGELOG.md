@@ -4,6 +4,12 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Added
+- `/atlas`: maps you click down through, of anything with parts and relationships (a codebase, a design, a story's cast): Markdown pages with one Mermaid diagram each, how to draw them, and the engine projects copy in (`assets/atlas/`, the viewer and check from meridian-flow and voluma). The engine uses a neutral palette when a project names no design tokens, and its check fails when a project's copy differs from an installed skill's.
+
+### Changed
+- `/structured-artifact`: its diagram and React Flow guides move to `/atlas`, which it points to for diagrams.
+
 ## [0.17.0] - 2026-11-18
 
 ### Removed

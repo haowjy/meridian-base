@@ -1,14 +1,12 @@
-# Diagrams
-
-Load when rendering relationships, flows, or connected views.
+# Diagram Craft
 
 Use consistent names and visual identities across diagrams and accompanying
 text. Label connections whose meanings differ, and show direction only when
 the relationship has one.
 
-HTML/SVG allows precise custom composition; Mermaid expresses standard diagrams
-compactly. [React Flow](react-flow.md) supports connected React components and
-selection coordinated with surrounding content.
+Mermaid expresses standard diagrams compactly. HTML or SVG allows precise custom composition, and
+[React Flow](react-flow.md) supports connected React components and selection
+coordinated with surrounding content.
 
 For large diagrams, frame the relevant region initially. Group or separate
 views when that clarifies the structure; add pan/zoom when shrinking would
