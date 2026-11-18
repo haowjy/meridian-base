@@ -15,7 +15,7 @@ model-policies:
     override: {effort: medium}
 skills:
   load: [llm-writing]
-  available: [intent-modeling, information-hierarchy]
+  available: [intent-modeling]
 tools:
   bash: allow
   agent: deny

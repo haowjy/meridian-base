@@ -90,7 +90,6 @@ model here. Agents pick models from these descriptions, which
 | Skill | What it covers |
 |---|---|
 | `llm-writing` | Writing for the reader and cutting default LLM phrasing |
-| `information-hierarchy` | Answer first, depth behind it, the right form for each beat |
 | `structured-artifact` | Structured HTML artifacts for explaining and presenting |
 | `knowledge-layers` | Where knowledge lives: AGENTS.md, `.context/`, KB, `docs/`, work directories |
 | `qi-layer` | Keeping AGENTS.md and `.context/` minimal and load-bearing |

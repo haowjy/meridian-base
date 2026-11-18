@@ -4,6 +4,12 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Removed
+- `/information-hierarchy`. Its ranking formula shaped every long report without fixing what went wrong in them, and the method it was missing for screens now lives in meridian-dev-workflow's `/information-architecture`. Agents and `/llm-writing` no longer load it.
+
+### Changed
+- `/structured-artifact`: states what the first view of a page shows and what goes behind expansion, in place of loading `/information-hierarchy`. `resources/images-and-mockups.md` is now `resources/images.md`, cut to the lines a model would otherwise miss.
+
 ## [0.16.7] - 2026-11-16
 
 ### Removed

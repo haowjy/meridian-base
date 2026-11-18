@@ -24,6 +24,11 @@ regenerate the README model table; `--check` fails when it is stale.
 
 ## Watching
 
+- **Reports without `/information-hierarchy`.** On the next long reports
+  and HTML pages: the first view still says what the piece is and gives its
+  point, and a decision write-up carries the background the human needs to
+  decide. If reports get worse in either direction, bring back the line
+  that would have prevented it, not the whole skill.
 - **What goes to the human (`/explore-and-engage` Asking the Human,
   `/intent-modeling`).** On the next lead runs that list what needs the user
   (watch the Flow product lead once relaunched):

@@ -15,7 +15,7 @@ model-policies:
     override: {effort: medium}
 skills:
   load: [knowledge-layers, qi-layer, md-validation, shared-workspace]
-  available: [llm-writing, information-hierarchy, shared-dao]
+  available: [llm-writing, shared-dao]
 tools:
   bash: allow
   write: allow

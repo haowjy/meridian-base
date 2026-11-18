@@ -18,7 +18,7 @@ model-policies:
 subagents: [explorer, session-miner, kb-maintainer, cold-reader, subagent]
 skills:
   load: [knowledge-layers, qi-maintenance, llm-writing]
-  available: [qi-layer, shared-dao, information-hierarchy, intent-modeling, shared-workspace, md-validation]
+  available: [qi-layer, shared-dao, intent-modeling, shared-workspace, md-validation]
 tools:
   bash: allow
   read: allow
