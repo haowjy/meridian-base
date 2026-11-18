@@ -4,6 +4,8 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.17.0] - 2026-11-18
+
 ### Removed
 - `/information-hierarchy`. Its ranking formula shaped every long report without fixing what went wrong in them, and the method it was missing for screens now lives in meridian-dev-workflow's `/information-architecture`. Agents and `/llm-writing` no longer load it.
 
