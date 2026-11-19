@@ -4,7 +4,7 @@ The agents and skills every Meridian project gets: spawning and delegation, work
 tracking, the knowledge layers (`AGENTS.md`, `.context/`, the KB) and the agents that
 keep them, plus the model aliases in `mars.toml`. meridian-dev-workflow and
 creative-writing-skills depend on it and bundle it into their plugins. Codex and
-OpenCode plugin users get its skills but no agents, so an `@agent` a skill names
+OpenCode plugin users get its skills but no agents, so an agent a skill names
 doesn't resolve for them (meridian-dev-workflow's `AGENTS.md`).
 
 ## Model Aliases
@@ -98,4 +98,4 @@ regenerate the README model table; `--check` fails when it is stale.
   the next captures: it searches for old names too, deletes or rewrites
   pages the code now contradicts, keeps a chosen direction that isn't built
   yet, marked so, reorganizes the pages it touched, and its report leads
-  with deletions. One `@cold-reader` reads all the new prose.
+  with deletions. One `cold-reader` reads all the new prose.
