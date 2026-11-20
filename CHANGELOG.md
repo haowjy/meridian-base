@@ -4,6 +4,15 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+## [0.18.2] - 2026-11-20
+
+### Added
+- `/atlas` engine: a labelled Mermaid `subgraph` draws as a frame around its boxes; a page can carry box positions (`%% at <box id> <x> <y>`, copied from the viewer's Legend after dragging); a page can say which view it is (`- View: <kind>`); a config can list `documents`, opened from a Docs menu in the top bar; a wireframe opens full size; the details panel resizes and hides.
+
+### Changed
+- `/atlas` engine: arrows are routed around boxes, frame titles and each other, with every label on its own arrow, and `node --test` in the engine directory asserts it on the example atlas, the project's atlas and generated diagrams. A box that opens a page is drawn as a stacked card. Opening a page shows the whole level clear of the controls; the breadcrumb floats over the map. Light and dark is one icon.
+- `/atlas` `resources/diagrams.md`: keep connection labels short and put the sentence in a table under the diagram.
+
 ## [0.18.1] - 2026-11-19
 
 ### Changed
