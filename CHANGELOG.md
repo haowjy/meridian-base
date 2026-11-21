@@ -7,6 +7,11 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 ### Changed
 - `glm` matches the newest `glm-*` model on any provider instead of pinning opencode-go's `glm-5.2`, with a description of where it's strong.
 - README model table: one row per alias with its description, matching the one-line descriptions; the score columns they no longer carry are gone, and `hydrogen` is listed.
+- `/atlas`: link `resources/react-flow.md` from `SKILL.md` (fixing orphan resource after the 0.18.0 move) and trim description under 300 chars.
+- `/atlas`: drop the note about where engine changes go; the engine's own `README.md` and `AGENTS.md`, copied into the project, already say it.
+- `/llm-writing`: the description leads with reports, docs and prompts instead of commit messages and PR bodies.
+- `/qi-layer`, `/knowledge-layers`, `kb-maintainer`: wording that assumed a codebase now covers any project's files ("reading the files", "pages and code", "restructure").
+- `explorer`: drop the pointer to a project guidance graph, which only Meridian has and announces itself.
 
 ## [0.18.2] - 2026-11-20
 
