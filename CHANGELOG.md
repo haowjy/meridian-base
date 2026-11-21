@@ -4,6 +4,10 @@ Be brief. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Vers
 
 ## [Unreleased]
 
+### Changed
+- `glm` matches the newest `glm-*` model on any provider instead of pinning opencode-go's `glm-5.2`, with a description of where it's strong.
+- README model table: one row per alias with its description, matching the one-line descriptions; the score columns they no longer carry are gone, and `hydrogen` is listed.
+
 ## [0.18.2] - 2026-11-20
 
 ### Added

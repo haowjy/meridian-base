@@ -74,11 +74,14 @@ match = ["claude*fable*"]
 exclude = ["*:*"]
 
 [models.glm]
-harness = "opencode"
-description = "Open-weight coder for backend and repo-scale work; weak at UI."
+description = "Open-weight coder for backend, repo-scale work and 3D builds; mid-pack on frontend UI, behind Opus and Fable on design taste."
 default_effort = "high"
-model = "opencode-go/glm-5.2"
-provider = "opencode-go"
+match = ["glm-*"]
+exclude = [
+    "*/*",
+    "*:*",
+    "*flash*",
+]
 
 [models.kimi]
 harness = "opencode"

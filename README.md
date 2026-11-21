@@ -34,35 +34,33 @@ These are profile defaults. Ordered alternatives and effort settings live in
 
 ## Models
 
-The model aliases in `mars.toml`, scored 1–10 as of October 2026. Each alias
-resolves to the newest model in its family, or to the model it pins.
-Intelligence and value come from the Artificial Analysis Intelligence Index
-and its cost per task; taste is judged against Opus (9), the highest of any
-model here. Agents pick models from these descriptions, which
-`meridian mars models aliases` prints; this table is generated from them with
-`uv run scripts/models_table.py`.
+The model aliases in `mars.toml`. Each alias resolves to the newest model in
+its family, or to the model it pins. Agents pick models from these
+descriptions, which `meridian mars models aliases` prints; this table is
+generated from them with `uv run scripts/models_table.py`.
 
 <!-- models-table:start -->
-| Alias | Value | Intelligence | Taste | Description |
-|---|---|---|---|---|
-| `fable` | 2 | 10 | 8 | Escalation only, never a default or fallback: when a strong model has run out of depth on long-horizon planning, architecture, critique, or bug-finding, a second opinion on work that can be verified. Slow and the most expensive; Opus is the better general orchestrator. |
-| `opus` | 5 | 9 | 9 | Orchestration and interactive primaries, conversation, frontend, prompt and prose writing, deep sustained work. Best judge of code quality and long-term direction: structure, taste, refactoring, thermo-nuclear review, and what should be deleted. Can over-delegate. |
-| `terra` | 9 | 8 | 4 | Scoped, repeatable implementation, triage, and lower-risk review; clear and less prone to overthinking than Sol. Emits several times Sol's output per task and passes fewer long tasks. |
-| `sol` | 8 | 8 | 5 | Difficult technical analysis, complex coding, computer use, long-horizon implementation. Slow to stream and output-heavy; a review benchmark on the previous version found many of its findings unactionable. Less sure-footed on ambiguous architecture. |
-| `sonnet` | 7 | 8 | 5 | Daily implementation: bug fixes, multi-file coding, frontend polish, documents, bounded review. Opus is better for ambiguous architecture and open-ended judgment. |
-| `muse` | 6 | 8 | 4 | Coding and agent or computer-use work; does well on simpler and UI tasks, loops on hard ones. Prompts and completions are not used for training. |
-| `astra` | 5 | 8 | 6 | The hardest cross-system decisions, computer use and browser work, software engineering, important communication. Best judge of correctness: bugs, security, regressions. Slow; cyber-safety checks can pause legitimate security work. |
-| `grok` | 3 | 8 | 5 | Long-horizon coding and knowledge work. Verbose and slow. |
-| `glm` | 7 | 7 | 3 | Open-weight coder for backend, repository-scale implementation, and code review. Slow to start and verbose; makes confident assumptions and stops following steering late in long runs. No image input; weak at UI. |
-| `kimi` | 4 | 7 | 5 | Long-running coding and research over large inputs; native multimodal, good at frontend and web apps. Slow and token-heavy; avoid bulk work. |
-| `composer` | 10 | 6 | 3 | Coding for bounded edits, scaffolding, tests, and implementing a settled plan. Unreliable on long-horizon, ambiguous, or high-risk work; plan and review with a stronger model. |
-| `luna` | 10 | 6 | 4 | General worker for implementation, exploration, summaries, and bounded execution; can own substantial coherent objectives given clear context and verification criteria. Can stall or report done early, so check its claims. Fine for quick, low-risk checks; not for ambiguous architecture or subtle cross-module debugging. |
-| `deepseek` | 9 | 6 | 3 | Coding and agent work: concrete repo changes, tool loops, bulk drafting from focused briefs; takes image input. Review its ambiguous or high-stakes work. |
-| `deepseekpro` | 9 | 6 | 3 | Legacy alias. Until DeepSeek ships a new Pro model, it routes Pro requests to Flash at Flash pricing, so this is `deepseek` under another name. |
-| `haiku` | 9 | 6 | — | Summaries, compaction, classification, notes, cold reads, lightweight review, parallel subagents; not ambiguous architecture or complex autonomous implementation. |
-| `argon` | — | — | — | Creative writing and long-form fiction: a second voice for drafting and revision, and a strong structural editor of long manuscripts. Drafts can run dense and verbose. Tool calling is unreliable: send it the text inline and take text back. |
-| `argon-contributor` | — | — | — | Same model as `argon` on a free endpoint that may train on submitted prompts and completions; select it only when that is acceptable, never for unpublished manuscripts the author hasn't cleared. |
-| `muse-contributor` | — | — | — | Same model as `muse` on a free endpoint that may train on submitted prompts and completions; select it only when that is acceptable. Suits inexpensive visual probing. |
+| Alias | Description |
+|---|---|
+| `argon` | Creative writing and editing long manuscripts; send the text inline, since its tool calling is unreliable. |
+| `argon-contributor` | `argon` on a free endpoint that may train on your prompts; never for manuscripts the author hasn't cleared. |
+| `astra` | The hardest cross-system decisions, and finding bugs, security issues and regressions. Slow. |
+| `composer` | Cheap coder for bounded edits, tests and implementing a settled plan. |
+| `deepseek` | Cheap coder for concrete repo changes, tool loops and bulk drafting. |
+| `deepseekpro` | Legacy alias for `deepseek`. |
+| `fable` | Escalation only: a second opinion when a strong model runs out of depth. Slowest and priciest. |
+| `glm` | Open-weight coder for backend, repo-scale work and 3D builds; mid-pack on frontend UI, behind Opus and Fable on design taste. |
+| `grok` | Long-horizon coding and knowledge work. Slow. |
+| `haiku` | Summaries, classification, notes and light parallel subagents. |
+| `hydrogen` | Fast, cheap worker for agentic coding, UI builds and tool loops. |
+| `kimi` | Long coding and research over large inputs; good at frontend. Slow. |
+| `luna` | Cheap general worker for implementation, exploration and summaries; check its claims. |
+| `muse` | Coding and computer use on simpler and UI tasks. |
+| `muse-contributor` | `muse` on a free endpoint that may train on your prompts; use only when that's acceptable. |
+| `opus` | Orchestration, conversation, writing, and judging code quality and direction. |
+| `sol` | Hard technical analysis, complex coding and long implementation. Slow. |
+| `sonnet` | Daily implementation, frontend polish, documents and bounded review. |
+| `terra` | Fast computer use and clear technical writing. |
 <!-- models-table:end -->
 
 ## Skills

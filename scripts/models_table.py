@@ -7,13 +7,10 @@ Usage:
     uv run scripts/models_table.py          # rewrite the table in README.md
     uv run scripts/models_table.py --check  # exit 1 if README.md is out of date
 
-Each [models.<alias>] description may end with
-"Value N, intelligence N, taste N." (taste optional); those become columns.
-The table sits between the README markers below. Rows sort by intelligence,
-then value, highest first; aliases without scores go last.
+The table sits between the README markers below, one row per [models.<alias>],
+sorted by alias.
 """
 
-import re
 import sys
 import tomllib
 from pathlib import Path
@@ -23,35 +20,20 @@ MARS = ROOT / "mars.toml"
 README = ROOT / "README.md"
 START = "<!-- models-table:start -->"
 END = "<!-- models-table:end -->"
-SCORES = re.compile(
-    r"\s*Value (\d+), intelligence (\d+)(?:, taste (\d+))?\.\s*$"
-)
-
-
-def rows() -> list[str]:
-    models = tomllib.loads(MARS.read_text())["models"]
-    entries = []
-    for alias, spec in models.items():
-        desc = spec.get("description", "").strip()
-        m = SCORES.search(desc)
-        if m:
-            value, intel, taste = m.group(1), m.group(2), m.group(3) or "—"
-            desc = desc[: m.start()].strip()
-            key = (0, -int(intel), -int(value), alias)
-        else:
-            value = intel = taste = "—"
-            key = (1, 0, 0, alias)
-        entries.append((key, f"| `{alias}` | {value} | {intel} | {taste} | {desc} |"))
-    return [row for _, row in sorted(entries)]
 
 
 def render() -> str:
-    lines = [
-        "| Alias | Value | Intelligence | Taste | Description |",
-        "|---|---|---|---|---|",
-        *rows(),
-    ]
-    return "\n".join(lines)
+    models = tomllib.loads(MARS.read_text())["models"]
+    return "\n".join(
+        [
+            "| Alias | Description |",
+            "|---|---|",
+            *(
+                f"| `{alias}` | {spec.get('description', '').strip()} |"
+                for alias, spec in sorted(models.items())
+            ),
+        ]
+    )
 
 
 def main() -> int:
